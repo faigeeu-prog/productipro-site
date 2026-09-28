@@ -158,6 +158,42 @@ section{padding-top:130px}
 .cl li em{margin-left:auto;font-style:normal;font-size:10.5px;color:var(--green);background:var(--green-soft);padding:1px 6px;border-radius:5px}
 .cl li.on{opacity:1;transform:none}
 
+/* how v2 */
+.tk{opacity:.25;transform:translateY(6px);transition:opacity .6s var(--ease),transform .6s var(--ease);transition-delay:var(--d,0ms)}
+.in .tk{opacity:1;transform:none}
+.ag{display:flex;flex-direction:column;gap:10px}
+.ag-h,.rp-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.ag-h b,.rp-h b{font-size:13.5px;font-weight:600}
+.ag-h span{font-size:11px;color:var(--blue);background:var(--blue-soft);padding:3px 8px;border-radius:999px}
+.ag-r{display:grid;grid-template-columns:44px 1fr;gap:10px;align-items:start;padding-top:9px;border-top:1px solid var(--line)}
+.ag-r time{font-size:12px;font-weight:600;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.ag-r b{display:block;font-size:12.5px;font-weight:500}
+.ag-r small{display:block;font-size:11px;color:var(--muted)}
+.rp{display:flex;flex-direction:column;gap:7px}
+.rp-h{justify-content:flex-start;gap:10px}
+.rp-h small{display:block;font-size:11px;color:var(--muted);font-weight:400}
+.doc{width:28px;height:34px;border-radius:5px;border:1.5px solid var(--ink-2);position:relative;flex:none}
+.doc::before{content:"";position:absolute;left:5px;right:5px;top:8px;height:1.5px;background:var(--ink-2);box-shadow:0 5px 0 var(--ink-2),0 10px 0 var(--dim)}
+.rp-s{font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin-top:6px}
+.rp-l{display:flex;align-items:center;gap:9px;font-size:12.5px}
+.rp-l i{width:16px;height:16px;border-radius:5px;flex:none;display:grid;place-items:center}
+.rp-l i.ok{background:var(--green-soft)}
+.rp-l i.ok::before{content:"";width:7px;height:4px;border-left:1.8px solid var(--green);border-bottom:1.8px solid var(--green);transform:rotate(-45deg) translate(1px,-1px)}
+.rp-l i.lock{background:#FEF3C7}
+.rp-l i.lock::before{content:"";width:7px;height:6px;border-radius:1.5px;background:var(--amber);box-shadow:0 -3px 0 -1px transparent}
+.app{border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.app-bar{display:flex;align-items:center;gap:5px;padding:8px 10px;background:var(--panel);border-bottom:1px solid var(--line)}
+.app-bar i{width:7px;height:7px;border-radius:50%;background:var(--line-2)}
+.app-bar span{margin-left:8px;font-size:11.5px;font-weight:600;color:var(--ink-2)}
+.app-b{padding:6px 12px}
+.app-r{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px;font-weight:500}
+.app-r:last-child{border-bottom:0}
+.sw{width:32px;height:18px;border-radius:999px;background:var(--line-2);position:relative;flex:none;transition:background .4s;transition-delay:var(--d)}
+.sw i{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.2);transition:transform .4s var(--ease);transition-delay:var(--d)}
+.in .sw{background:var(--green)}
+.in .sw i{transform:translateX(14px)}
+.hc .ui::after{height:24px}
+.hc .ui{height:300px}
 /* benefits */
 .ben{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
 .bc{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:6px;min-height:190px;transition:transform .4s var(--ease),box-shadow .4s}
@@ -295,6 +331,7 @@ section{padding-top:130px}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .rv.pre{opacity:1;transform:none}
   .an .pb i{transform:none}.cl li{opacity:1;transform:none}
+  .tk{opacity:1;transform:none}
   .mtrack{animation:none}
 }
 </style>
@@ -363,52 +400,57 @@ section{padding-top:130px}
   <!-- COMMENT -->
   <section id="comment">
     <div class="sh rv">
-      <span class="tag">Comment ça marche</span>
-      <h2>Comment on automatise ce qui vous prend du temps et de l'argent</h2>
+      <span class="tag">Comment on procède</span>
+      <h2>Une journée chez vous. Un rapport clair. Un logiciel qui travaille pour vous.</h2>
+      <p>Pas de jargon, pas de promesse floue. Voici exactement comment se passe une mission avec nous.</p>
     </div>
     <div class="how" id="how">
       <div class="hc rv">
         <div class="ui">
-          <div class="an">
-            <div class="r"><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></span><div><small>Suivi commercial</small><b>Relances manquées repérées</b><div class="pb"><i style="--w:72%"></i></div></div></div>
-            <div class="r"><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><div><small>Communication</small><b>Temps perdu sur les tâches répétitives</b><div class="pb red"><i style="--w:58%"></i></div></div></div>
-            <div class="r"><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><small>Agenda</small><b>Rendez-vous mal qualifiés détectés</b><div class="pb"><i style="--w:44%"></i></div></div></div>
-            <div class="r"><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><div><small>Délais</small><b>Délais dépassés identifiés</b><div class="pb red"><i style="--w:30%"></i></div></div></div>
+          <div class="ag">
+            <div class="ag-h"><b>Journée d'audit</b><span>Dans vos locaux</span></div>
+            <div class="ag-r tk" style="--d:0ms"><time>09:00</time><div><b>Rencontre avec vos équipes</b><small>Qui fait quoi, au quotidien</small></div></div>
+            <div class="ag-r tk" style="--d:150ms"><time>10:30</time><div><b>Observation des tâches</b><small>Ce qui est répétitif, ce qui bloque</small></div></div>
+            <div class="ag-r tk" style="--d:300ms"><time>14:00</time><div><b>Revue de vos outils</b><small>Logiciels, fichiers, accès</small></div></div>
+            <div class="ag-r tk" style="--d:450ms"><time>17:00</time><div><b>Premier retour à chaud</b><small>Les pistes les plus rentables</small></div></div>
           </div>
         </div>
         <span class="st">Étape 1</span>
-        <h3>Analyse de vos processus</h3>
-        <p>On repère ce qui prend du temps à vos équipes et ce qui vous fait perdre des ventes.</p>
+        <h3>On passe une journée chez vous</h3>
+        <p>On observe comment votre entreprise fonctionne vraiment : vos équipes, vos tâches, vos outils. Sur place, pas à distance.</p>
       </div>
       <div class="hc rv">
         <div class="ui">
-          <div class="ig">
-            <div class="r"><b>Vos logiciels métier</b><small>Synchronisez vos dossiers et vos tâches</small><div class="apps"><em>HubSpot</em><em>Pipedrive</em><em>Notion</em></div></div>
-            <div class="r"><b>Vos messageries</b><small>WhatsApp, SMS ou e-mail</small><div class="apps"><em>WhatsApp</em><em>Gmail</em><em>Outlook</em></div></div>
-            <div class="r"><b>Votre suivi clients</b><small>Prospects et rendez-vous suivis automatiquement</small><div class="apps"><em>Google Agenda</em><em>Calendly</em><em>+ vos outils</em></div></div>
+          <div class="rp">
+            <div class="rp-h"><span class="doc"></span><div><b>Compte rendu d'audit</b><small>Remis sous quelques jours</small></div></div>
+            <div class="rp-s">Automatisable</div>
+            <div class="rp-l tk" style="--d:0ms"><i class="ok"></i>Relances et suivi clients</div>
+            <div class="rp-l tk" style="--d:120ms"><i class="ok"></i>Saisie et envoi des documents</div>
+            <div class="rp-l tk" style="--d:240ms"><i class="ok"></i>Prise de rendez-vous</div>
+            <div class="rp-s">Sécurité</div>
+            <div class="rp-l tk" style="--d:360ms"><i class="lock"></i>Accès et mots de passe</div>
+            <div class="rp-l tk" style="--d:480ms"><i class="lock"></i>Protection des données (RGPD)</div>
           </div>
         </div>
         <span class="st">Étape 2</span>
-        <h3>Intégration des solutions</h3>
-        <p>On connecte l'IA à vos outils actuels. Rien à changer de votre côté.</p>
+        <h3>On vous remet un compte rendu</h3>
+        <p>Tout ce qui peut être automatisé, ce que ça vous fait gagner, et tous les points de sécurité à régler. Vous décidez ensuite.</p>
       </div>
       <div class="hc rv">
         <div class="ui">
-          <div class="cl">
-            <b>Mises à jour · Octobre 2026</b><small>Liste des améliorations effectuées ce mois-ci</small>
-            <ul id="clog">
-              <li><i style="background:var(--green)"></i>E-mails de relance automatisés<em>Nouveau</em></li>
-              <li><i style="background:var(--blue)"></i>Réponses clients plus rapides</li>
-              <li><i style="background:var(--green)"></i>Synchronisation avec votre agenda</li>
-              <li><i style="background:var(--blue)"></i>Suivi des factures impayées<em>Nouveau</em></li>
-              <li><i style="background:var(--amber)"></i>Correctif d'affichage sur mobile</li>
-              <li><i style="background:var(--blue)"></i>Intégration Stripe pour la facturation</li>
-            </ul>
+          <div class="app">
+            <div class="app-bar"><i></i><i></i><i></i><span>Votre logiciel</span></div>
+            <div class="app-b">
+              <div class="app-r"><span>Relances clients</span><em class="sw" style="--d:100ms"><i></i></em></div>
+              <div class="app-r"><span>Rendez-vous</span><em class="sw" style="--d:300ms"><i></i></em></div>
+              <div class="app-r"><span>Documents</span><em class="sw" style="--d:500ms"><i></i></em></div>
+              <div class="app-r"><span>Réponses clients</span><em class="sw" style="--d:700ms"><i></i></em></div>
+            </div>
           </div>
         </div>
         <span class="st">Étape 3</span>
-        <h3>Maintenance et évolution</h3>
-        <p>On suit, corrige et améliore votre système en continu.</p>
+        <h3>On installe tout dans un logiciel</h3>
+        <p>Toutes les automatisations validées sont réunies dans un seul logiciel, simple à utiliser. Vous activez, vous suivez, c'est tout.</p>
       </div>
     </div>
   </section>
