@@ -196,6 +196,8 @@ section{padding-top:130px}
 .slot:hover{border-color:var(--ink);background:var(--panel)}
 .bk-note{text-align:center;color:var(--dim);font-size:13px;margin-top:14px}
 
+.calwrap{margin-top:40px}
+#my-cal-inline-30min{min-height:640px}
 /* compare */
 .vs{margin-top:56px;display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:stretch}
 .vcol{border-radius:22px;padding:28px}
@@ -431,23 +433,9 @@ section{padding-top:130px}
     <div class="sh c rv">
       <span class="tag">Audit gratuit</span>
       <h2>Réservez un appel de découverte</h2>
-      <p>20 minutes pour voir ce que l'IA peut faire pour votre entreprise.</p>
+      <p>20 minutes pour voir ce que l'IA peut faire pour votre entreprise. Choisissez directement votre créneau.</p>
     </div>
-    <div class="book rv">
-      <div class="bk-a">
-        <span class="av"><svg class="mk" style="width:40px;height:40px" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#0A0A0B"/><path d="M11.5 23.5V8.5h6a4.75 4.75 0 0 1 0 9.5h-6" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22.8" cy="22.8" r="2.3" fill="#0A5CFF"/></svg></span>
-        <span style="color:var(--muted);font-size:14px">Productipro</span>
-        <h3>Échange en visio</h3>
-        <p>On regarde ensemble votre activité et ce qui peut être automatisé.</p>
-        <div class="meta"><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>20 min</span><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3"/></svg>Visioconférence</span><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>Europe/Paris</span></div>
-      </div>
-      <div class="bk-b">
-        <div class="mh"><b id="calTitle">Octobre <span>2026</span></b></div>
-        <div class="cal" id="cal"></div>
-      </div>
-      <div class="bk-c" id="slots"></div>
-    </div>
-    <p class="bk-note">Choisissez un créneau : vous serez redirigé vers notre agenda pour confirmer.</p>
+    <div class="calwrap rv"><div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-30min"></div></div>
   </section>
 
   <!-- COMPARAISON -->
@@ -533,7 +521,6 @@ section{padding-top:130px}
   const $=id=>document.getElementById(id);
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const root=document.documentElement;
-  const BOOKING='https://productipro.fr';
 
   /* smooth scroll */
   let lenis=null;
@@ -584,31 +571,6 @@ section{padding-top:130px}
     const items=[...document.querySelectorAll('#clog li')];let i=0;
     const t=()=>{if(i<items.length){items[i++].classList.add('on');setTimeout(t,reduce?0:380);}};setTimeout(t,500);o.disconnect();}},{threshold:.3}).observe(how);
 
-  /* booking calendar (upcoming weekdays) */
-  const mois=['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
-  const jours=['Lun','Mar','Mer','Jeu','Ven','Sam','Dim'];
-  const now=new Date(); let y=now.getFullYear(), m=now.getMonth(), minDay=now.getDate();
-  if(new Date(y,m+1,0).getDate()-minDay<7){ m++; if(m>11){m=0;y++;} minDay=0; }
-  $('calTitle').innerHTML=mois[m]+' <span>'+y+'</span>';
-  const cal=$('cal');
-  jours.forEach(j=>{const d=document.createElement('div');d.className='dw';d.textContent=j;cal.appendChild(d);});
-  const first=new Date(y,m,1); const offset=(first.getDay()+6)%7; const dim=new Date(y,m+1,0).getDate();
-  for(let k=0;k<offset;k++) cal.appendChild(document.createElement('div'));
-  let sel=null;
-  const slotsFor=d=>{const base=['9:00','9:30','10:30','14:00','15:30','17:00'];return base.filter((_,i)=>(d+i)%3!==0);};
-  function showSlots(day){
-    const s=$('slots'); const dt=new Date(y,m,day);
-    s.innerHTML='<div class="dh">'+jours[(dt.getDay()+6)%7]+'. '+day+' <span>'+mois[m].toLowerCase()+'</span></div>'+slotsFor(day).map(h=>'<a class="slot" href="'+BOOKING+'" target="_blank" rel="noopener">'+h+'</a>').join('');
-  }
-  for(let d=1;d<=dim;d++){
-    const b=document.createElement('button'); b.type='button'; b.textContent=d;
-    const wd=new Date(y,m,d).getDay(); const avail=d>minDay && wd!==0 && wd!==6;
-    if(avail){b.className='av'; b.addEventListener('click',()=>{sel&&sel.classList.remove('sel');b.classList.add('sel');sel=b;showSlots(d);}); if(!sel){sel=b;b.classList.add('sel');showSlots(d);} }
-    else b.tabIndex=-1;
-    cal.appendChild(b);
-  }
-  if(!sel){ $('slots').innerHTML='<div class="dh">Prochains créneaux</div><a class="slot" href="'+BOOKING+'" target="_blank" rel="noopener">Voir l’agenda</a>'; }
-
   /* faq */
   document.querySelectorAll('.q button').forEach(b=>b.addEventListener('click',()=>{const q=b.parentElement,open=!q.classList.contains('open');document.querySelectorAll('.q').forEach(x=>{x.classList.remove('open');x.querySelector('button').setAttribute('aria-expanded','false');});if(open){q.classList.add('open');b.setAttribute('aria-expanded','true');}}));
 
@@ -619,5 +581,21 @@ section{padding-top:130px}
   $('copy').addEventListener('click',()=>{const done=()=>{$('copy').textContent='Copié';setTimeout(()=>$('copy').textContent='Copier',1600);};const sel2=()=>{const r=document.createRange();r.selectNodeContents($('mail'));const s=getSelection();s.removeAllRanges();s.addRange(r);};try{navigator.clipboard.writeText($('mail').textContent).then(done).catch(sel2);}catch(e){sel2();}});
 })();
 </script>
+<!-- Cal inline embed code begins -->
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "30min", {origin:"https://app.cal.com"});
+Cal.config = Cal.config || {};
+Cal.config.forwardQueryParams = true;
+
+  Cal.ns["30min"]("inline", {
+    elementOrSelector:"#my-cal-inline-30min",
+    config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+    calLink: "productipro/30min",
+  });
+
+  Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+</script>
+<!-- Cal inline embed code ends -->
 </body>
 </html>
