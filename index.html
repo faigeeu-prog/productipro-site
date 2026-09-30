@@ -129,6 +129,7 @@ section{padding-top:130px}
 .hc{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:14px 14px 24px;display:flex;flex-direction:column}
 .hc .ui{background:var(--card);border:1px solid var(--line);border-radius:14px;height:250px;overflow:hidden;padding:16px 18px;position:relative;box-shadow:var(--shadow)}
 .hc .ui::after{content:"";position:absolute;left:0;right:0;bottom:0;height:60px;background:linear-gradient(transparent,var(--card));pointer-events:none}
+.hc .ui.mo{padding:0}.hc .ui.mo::after{display:none}.mo-c{display:block;width:100%;height:100%}
 .hc .st{margin:20px 10px 0;font-size:12px;font-weight:500;color:var(--blue)}
 .hc h3{font-size:21px;letter-spacing:-.03em;margin:6px 10px 0}
 .hc p{color:var(--muted);font-size:15px;margin:8px 10px 0}
@@ -897,48 +898,19 @@ Promise.race([fontsReady,new Promise(function(r){setTimeout(r,2500)})]).then(sta
     </div>
     <div class="how" id="how">
       <div class="hc rv">
-        <div class="ui">
-          <div class="ag">
-            <div class="ag-h"><b>Journée d'audit</b><span>Dans vos locaux</span></div>
-            <div class="ag-r tk" style="--d:0ms"><time>09:00</time><div><b>Rencontre avec vos équipes</b><small>Qui fait quoi, au quotidien</small></div></div>
-            <div class="ag-r tk" style="--d:150ms"><time>10:30</time><div><b>Observation des tâches</b><small>Ce qui est répétitif, ce qui bloque</small></div></div>
-            <div class="ag-r tk" style="--d:300ms"><time>14:00</time><div><b>Revue de vos outils</b><small>Logiciels, fichiers, accès</small></div></div>
-            <div class="ag-r tk" style="--d:450ms"><time>17:00</time><div><b>Premier retour à chaud</b><small>Les pistes les plus rentables</small></div></div>
-          </div>
-        </div>
+        <div class="ui mo"><canvas class="mo-c" data-s="1" aria-hidden="true"></canvas></div>
         <span class="st">Étape 1</span>
         <h3>On passe une journée chez vous</h3>
         <p>On observe comment votre entreprise fonctionne vraiment : vos équipes, vos tâches, vos outils. Sur place, pas à distance.</p>
       </div>
       <div class="hc rv">
-        <div class="ui">
-          <div class="rp">
-            <div class="rp-h"><span class="doc"></span><div><b>Compte rendu d'audit</b><small>Remis sous quelques jours</small></div></div>
-            <div class="rp-s">Automatisable</div>
-            <div class="rp-l tk" style="--d:0ms"><i class="ok"></i>Relances et suivi clients</div>
-            <div class="rp-l tk" style="--d:120ms"><i class="ok"></i>Saisie et envoi des documents</div>
-            <div class="rp-l tk" style="--d:240ms"><i class="ok"></i>Prise de rendez-vous</div>
-            <div class="rp-s">Sécurité</div>
-            <div class="rp-l tk" style="--d:360ms"><i class="lock"></i>Accès et mots de passe</div>
-            <div class="rp-l tk" style="--d:480ms"><i class="lock"></i>Protection des données (RGPD)</div>
-          </div>
-        </div>
+        <div class="ui mo"><canvas class="mo-c" data-s="2" aria-hidden="true"></canvas></div>
         <span class="st">Étape 2</span>
         <h3>On vous remet un compte rendu</h3>
         <p>Tout ce qui peut être automatisé, ce que ça vous fait gagner, et tous les points de sécurité à régler. Vous décidez ensuite.</p>
       </div>
       <div class="hc rv">
-        <div class="ui">
-          <div class="app">
-            <div class="app-bar"><i></i><i></i><i></i><span>Votre logiciel</span></div>
-            <div class="app-b">
-              <div class="app-r"><span>Relances clients</span><em class="sw" style="--d:100ms"><i></i></em></div>
-              <div class="app-r"><span>Rendez-vous</span><em class="sw" style="--d:300ms"><i></i></em></div>
-              <div class="app-r"><span>Documents</span><em class="sw" style="--d:500ms"><i></i></em></div>
-              <div class="app-r"><span>Réponses clients</span><em class="sw" style="--d:700ms"><i></i></em></div>
-            </div>
-          </div>
-        </div>
+        <div class="ui mo"><canvas class="mo-c" data-s="3" aria-hidden="true"></canvas></div>
         <span class="st">Étape 3</span>
         <h3>On installe tout dans un logiciel</h3>
         <p>Toutes les automatisations validées sont réunies dans un seul logiciel, simple à utiliser. Vous activez, vous suivez, c'est tout.</p>
@@ -1130,5 +1102,171 @@ Cal.config.forwardQueryParams = true;
   Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
 </script>
 <!-- Cal inline embed code ends -->
+<script>/* motions comment on procède */
+(function(){
+var cs=[].slice.call(document.querySelectorAll('.mo-c'));if(!cs.length)return;
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var INK='#0A0A0B',INK2='#2C2C30',BLUE='#0A5CFF',MUT='#6E6E76',DIM='#A6A6AD',LINE='#E8E8EB',PAN='#F6F6F7',PAN2='#EFEFF1',GREEN='#16A34A',GS='#E7F6EC',BS='#EAF1FF';
+var FD='"Inter Tight",Inter,system-ui,sans-serif',FS='Inter,system-ui,sans-serif',FM='"JetBrains Mono",ui-monospace,monospace';
+function cl(x){return x<0?0:x>1?1:x}
+function P(t,a,b){return cl((t-a)/(b-a))}
+function eo(x){return x>=1?1:1-Math.pow(2,-10*x)}
+function eio(x){return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2}
+function bk(x){var k=1.7;return 1+(k+1)*Math.pow(x-1,3)+k*Math.pow(x-1,2)}
+function rr(c,x,y,w,h,r){c.beginPath();if(c.roundRect)c.roundRect(x,y,w,h,r);else c.rect(x,y,w,h)}
+function A(c,a,f){c.save();c.globalAlpha*=a;f();c.restore()}
+function txt(c,s,x,y,font,col,al){c.font=font;c.fillStyle=col;c.textAlign=al||'left';c.fillText(s,x,y);c.textAlign='left'}
+function pad2(n){return(n<10?'0':'')+n}
+
+/* 1 — la journée d'audit */
+var REP={'0,1':1,'0,5':1,'1,0':1,'1,2':1,'1,3':1,'1,6':1,'2,4':1};
+function s1(c,w,h,t){
+  var p=18,kl=P(t,.5,5.3);
+  A(c,eo(P(t,0,.6)),function(){
+    txt(c,'AUDIT · SUR PLACE',p,28,'500 9.5px '+FM,DIM);
+    var m=9*60+Math.floor(kl*32)*15;
+    txt(c,pad2(Math.floor(m/60))+':'+pad2(m%60),w-p,33,'600 26px '+FD,INK,'right');
+    var on=kl>0&&kl<1; if(on){c.fillStyle=BLUE;c.beginPath();c.arc(w-p-c.measureText('00:00').width-10,24,3,0,7);c.fill()}
+  });
+  var rows=['ACCUEIL','ADMIN','SUIVI'],gx0=p+58,gx1=w-p,gy0=Math.round(46+(h-70-46-98)/2),cols=8,gap=4,cw=(gx1-gx0-gap*(cols-1))/cols,ch=26,found=0;
+  for(var r=0;r<3;r++){
+    var y=gy0+r*36;
+    A(c,eo(P(t,.1+r*.1,.7+r*.1)),function(){txt(c,rows[r],p,y+17,'500 9px '+FM,MUT)});
+    for(var k=0;k<cols;k++){
+      var x=gx0+k*(cw+gap),cx=x+cw/2,tin=.15+k*.05+r*.07,a=eo(P(t,tin,tin+.5));
+      var tc=.5+((cx-gx0)/(gx1-gx0))*4.8,rep=REP[r+','+k],pp=P(t,tc,tc+.45);
+      if(rep&&t>=tc)found++;
+      c.save();c.globalAlpha*=a;c.translate(cx,y+ch/2);
+      var s=rep?(.94+.06*(pp<1?bk(pp):1)):1;c.scale(s,s);
+      rr(c,-cw/2,-ch/2,cw,ch,6);
+      if(rep&&pp>0){c.fillStyle=PAN2;c.fill();c.save();c.globalAlpha*=eo(pp);c.fillStyle=BLUE;c.fill();
+        c.strokeStyle='#fff';c.lineWidth=1.4;c.lineCap='round';c.beginPath();c.arc(0,0,4.2,-.4,Math.PI*1.45);c.stroke();
+        c.beginPath();c.moveTo(4.2*Math.cos(-.4)+2.4,4.2*Math.sin(-.4)-2.6);c.lineTo(4.2*Math.cos(-.4),4.2*Math.sin(-.4));c.lineTo(4.2*Math.cos(-.4)-2.9,4.2*Math.sin(-.4)-1.2);c.stroke();c.restore()}
+      else{c.fillStyle=t>=tc?'#E6E6EA':PAN;c.fill()}
+      c.restore();
+    }
+  }
+  var sa=P(t,.4,.7)*(1-P(t,5.3,5.7));
+  if(sa>0){var sx=gx0-6+kl*(gx1-gx0+12);
+    A(c,sa,function(){var g=c.createLinearGradient(sx-46,0,sx,0);g.addColorStop(0,'rgba(10,92,255,0)');g.addColorStop(1,'rgba(10,92,255,.14)');
+      c.fillStyle=g;c.fillRect(sx-46,gy0-8,46,3*36+2);c.fillStyle=BLUE;c.fillRect(sx-.75,gy0-10,1.5,3*36+6);
+      c.beginPath();c.arc(sx,gy0-10,3,0,7);c.fill()});}
+  A(c,eo(P(t,.6,1.2)),function(){
+    c.fillStyle=LINE;c.fillRect(p,h-62,w-2*p,1);
+    txt(c,'Tâches répétitives',p,h-34,'500 12.5px '+FS,INK2);
+    txt(c,'repérées pendant la journée',p,h-18,'400 11px '+FS,MUT);
+    txt(c,String(found),w-p,h-19,'600 34px '+FD,BLUE,'right');
+  });
+}
+
+/* 2 — le compte rendu */
+var BARS=[['Relances',5],['Documents',4],['Rendez-vous',3],['Saisie',2]];
+function s2(c,w,h,t){
+  var p=18;
+  A(c,eo(P(t,0,.6)),function(){
+    c.save();c.translate(0,8*(1-eo(P(t,0,.7))));
+    rr(c,p,16,22,28,4);c.strokeStyle=INK;c.lineWidth=1.4;c.stroke();
+    c.fillStyle=INK;for(var i=0;i<3;i++){var lw=eo(P(t,.3+i*.12,.9+i*.12))*(i==2?8:12);c.fillRect(p+5,25+i*5,lw,1.4)}
+    txt(c,'Compte rendu d’audit',p+32,29,'600 13px '+FS,INK);
+    txt(c,'12 PAGES · PDF',p+32,43,'500 9px '+FM,DIM);
+    c.restore();
+  });
+  var dn=P(t,5.4,5.9);
+  if(dn>0){c.save();c.globalAlpha*=eo(dn);var s=bk(dn);var cw=72,x=w-p-cw/2,y=30;c.translate(x,y);c.scale(s,s);rr(c,-cw/2,-11,cw,22,11);c.fillStyle=GS;c.fill();
+    c.strokeStyle=GREEN;c.lineWidth=1.6;c.lineCap='round';c.lineJoin='round';c.beginPath();c.moveTo(-25,0);c.lineTo(-22,3);c.lineTo(-17,-3);c.stroke();
+    txt(c,'Remis',8,4,'600 11px '+FS,GREEN,'center');c.restore()}
+  var colW=86,bx=p+78,bxe=w-p-colW-30,y0=Math.round(50+(h-66-50-84)/2+12);
+  for(var i=0;i<BARS.length;i++){(function(i){
+    var y=y0+i*24,a=eo(P(t,.6+i*.1,1.1+i*.1)),g=eo(P(t,1.1+i*.2,2.2+i*.2));
+    A(c,a,function(){
+      txt(c,BARS[i][0],p,y+4,'500 11.5px '+FS,INK2);
+      rr(c,bx,y-3,bxe-bx,6,3);c.fillStyle=PAN2;c.fill();
+      var bw=Math.max(6,(bxe-bx)*BARS[i][1]/5*g);rr(c,bx,y-3,bw,6,3);c.fillStyle=i==0?BLUE:INK;c.fill();
+      A(c,P(t,1.6+i*.2,2+i*.2),function(){txt(c,BARS[i][1]+' h',bx+bw+6,y+4,'500 10px '+FM,MUT)});
+    });
+  })(i)}
+  var tot=Math.round(eio(P(t,1.2,2.9))*14);
+  A(c,eo(P(t,1,1.5)),function(){
+    c.fillStyle=LINE;c.fillRect(w-p-colW,y0-12,1,3*24+16);
+    txt(c,tot+' h',w-p,y0+30,'600 34px '+FD,BLUE,'right');
+    txt(c,'gagnées',w-p,y0+48,'400 11px '+FS,MUT,'right');
+    txt(c,'par semaine',w-p,y0+62,'400 11px '+FS,MUT,'right');
+  });
+  var by=h-58;
+  A(c,eo(P(t,2.9,3.4)),function(){
+    c.save();c.translate(0,10*(1-eo(P(t,2.9,3.6))));
+    rr(c,p,by,w-2*p,40,10);c.fillStyle=PAN;c.fill();c.strokeStyle=LINE;c.lineWidth=1;c.stroke();
+    var sx=p+14,sy=by+10,dp=P(t,3.2,4);
+    c.save();c.strokeStyle=INK;c.lineWidth=1.5;c.lineJoin='round';c.setLineDash([60,60]);c.lineDashOffset=60*(1-eo(dp));
+    c.beginPath();c.moveTo(sx+8,sy);c.lineTo(sx+16,sy+3);c.lineTo(sx+16,sy+10);c.quadraticCurveTo(sx+16,sy+17,sx+8,sy+20);c.quadraticCurveTo(sx,sy+17,sx,sy+10);c.lineTo(sx,sy+3);c.closePath();c.stroke();c.restore();
+    var ck=P(t,3.9,4.3);if(ck>0){c.save();c.strokeStyle=GREEN;c.lineWidth=1.7;c.lineCap='round';c.setLineDash([12,12]);c.lineDashOffset=12*(1-eo(ck));c.beginPath();c.moveTo(sx+4.5,sy+10);c.lineTo(sx+7,sy+12.5);c.lineTo(sx+11.5,sy+7.5);c.stroke();c.restore()}
+    txt(c,'Sécurité',sx+28,by+18,'600 12px '+FS,INK);
+    txt(c,'Accès, données, RGPD',sx+28,by+32,'400 10.5px '+FS,MUT);
+    for(var j=0;j<5;j++){var tj=3.9+j*.22,q=P(t,tj,tj+.35),dx=w-p-14-(4-j)*13,dy=by+20;
+      c.beginPath();c.arc(dx,dy,4.2,0,7);c.fillStyle=LINE;c.fill();
+      if(q>0){c.save();c.translate(dx,dy);var ss=bk(q);c.scale(ss,ss);c.beginPath();c.arc(0,0,4.2,0,7);c.fillStyle=GREEN;c.fill();c.restore()}}
+    c.restore();
+  });
+}
+
+/* 3 — le logiciel */
+var SRC=['E-mails','Agenda','Documents'],OUT=['Relances','Rendez-vous','Factures'];
+function bez(a,b,u){var mx=(a[0]+b[0])/2,v=1-u;return[v*v*v*a[0]+3*v*v*u*mx+3*v*u*u*mx+u*u*u*b[0],v*v*v*a[1]+3*v*v*u*a[1]+3*v*u*u*b[1]+u*u*u*b[1]]}
+function curve(c,a,b,pr){c.beginPath();for(var i=0;i<=28;i++){var q=bez(a,b,i/28*pr);i?c.lineTo(q[0],q[1]):c.moveTo(q[0],q[1])}c.stroke()}
+function s3(c,w,h,t){
+  var p=18,hx=w/2,hy=Math.round((46+h-70)/2),sw=Math.min(84,w*.25),ow=Math.min(114,Math.max(108,w*.34)),ys=[hy-40,hy,hy+40];
+  A(c,eo(P(t,0,.6)),function(){txt(c,'VOTRE LOGICIEL',p,28,'500 9.5px '+FM,DIM)});
+  var lv=P(t,3.6,4.1);
+  if(lv>0)A(c,eo(lv),function(){c.font='600 10.5px '+FS;var tw=c.measureText('En marche').width,bw=tw+26,bx=w-p-bw;rr(c,bx,15,bw,20,10);c.fillStyle=GS;c.fill();
+    c.fillStyle=GREEN;c.beginPath();c.arc(bx+10,25,2.8+.8*Math.sin(t*5),0,7);c.fill();txt(c,'En marche',bx+18,29,'600 10.5px '+FS,GREEN)});
+  c.lineWidth=1.3;
+  for(var i=0;i<3;i++){
+    var a=[p+sw,ys[i]],b=[hx-24,hy],dr=eio(P(t,1+i*.12,1.8+i*.12));
+    if(dr>0){c.strokeStyle=LINE;curve(c,a,b,dr)}
+    var on=2.8+i*.35,a2=[hx+24,hy],b2=[w-p-ow,ys[i]],dr2=eio(P(t,2.2+i*.12,3+i*.12));
+    if(dr2>0){c.strokeStyle=t>on?'rgba(22,163,74,.35)':LINE;curve(c,a2,b2,dr2)}
+    if(t>1.9){for(var k=0;k<2;k++){var u=((t-1.9)*.55+k*.5+i*.17)%1,q=bez(a,b,eio(u));A(c,Math.sin(u*Math.PI)*P(t,1.9,2.3),function(){c.fillStyle=BLUE;c.beginPath();c.arc(q[0],q[1],2.4,0,7);c.fill()})}}
+    if(t>on+.3){for(var k2=0;k2<2;k2++){var u2=((t-on)*.55+k2*.5)%1,q2=bez(a2,b2,eio(u2));A(c,Math.sin(u2*Math.PI)*P(t,on+.3,on+.7),function(){c.fillStyle=GREEN;c.beginPath();c.arc(q2[0],q2[1],2.4,0,7);c.fill()})}}
+  }
+  for(var i=0;i<3;i++){(function(i){
+    var ai=P(t,.2+i*.1,.8+i*.1);
+    A(c,eo(ai),function(){c.save();c.translate(-10*(1-eo(ai)),0);rr(c,p,ys[i]-13,sw,26,8);c.fillStyle='#fff';c.fill();c.strokeStyle=LINE;c.lineWidth=1;c.stroke();
+      c.fillStyle=INK;c.beginPath();c.arc(p+11,ys[i],2.2,0,7);c.fill();txt(c,SRC[i],p+19,ys[i]+4,'500 11px '+FS,INK2);c.restore()});
+    var ao=P(t,1.9+i*.12,2.5+i*.12),on=2.8+i*.35,sp=eio(P(t,on,on+.35));
+    A(c,eo(ao),function(){var x=w-p-ow;c.save();c.translate(10*(1-eo(ao)),0);rr(c,x,ys[i]-13,ow,26,8);c.fillStyle='#fff';c.fill();c.strokeStyle=LINE;c.lineWidth=1;c.stroke();
+      txt(c,OUT[i],x+9,ys[i]+4,'500 '+(w<360?'10':'11')+'px '+FS,INK2);
+      var tx=x+ow-29,ty=ys[i]-6;rr(c,tx,ty,21,12,6);c.fillStyle=PAN2;c.fill();if(sp>0){A(c,sp,function(){rr(c,tx,ty,21,12,6);c.fillStyle=GREEN;c.fill()})}
+      c.fillStyle='#fff';c.beginPath();c.arc(tx+6+9*sp,ty+6,4.3,0,7);c.fill();c.restore()});
+  })(i)}
+  var ha=P(t,.5,1.1);
+  if(ha>0){c.save();c.translate(hx,hy);var hs=bk(ha);c.scale(hs,hs);
+    if(t>2){var pu=((t-2)%1.6)/1.6;c.save();c.globalAlpha*=(1-pu)*.5;rr(c,-24-10*pu,-24-10*pu,48+20*pu,48+20*pu,13+6*pu);c.strokeStyle=BLUE;c.lineWidth=1.2;c.stroke();c.restore()}
+    rr(c,-24,-24,48,48,13);c.fillStyle=INK;c.fill();
+    c.strokeStyle='#fff';c.lineWidth=3.6;c.lineCap='round';c.lineJoin='round';c.beginPath();c.moveTo(-6,10);c.lineTo(-6,-10);c.lineTo(2,-10);c.arc(2,-3.7,6.3,-Math.PI/2,Math.PI/2);c.lineTo(-6,2.6);c.stroke();
+    c.fillStyle=BLUE;c.beginPath();c.arc(9.5,9.5,3,0,7);c.fill();c.restore()}
+  var n=Math.floor(eio(P(t,3.2,6.6))*128);
+  A(c,eo(P(t,.6,1.2)),function(){c.fillStyle=LINE;c.fillRect(p,h-62,w-2*p,1);
+    txt(c,'Tâches traitées',p,h-34,'500 12.5px '+FS,INK2);
+    txt(c,'automatiquement aujourd’hui',p,h-18,'400 11px '+FS,MUT);
+    txt(c,String(n),w-p,h-19,'600 34px '+FD,INK,'right')});
+}
+
+var SC=[[s1,7.4,5.9],[s2,7.6,6.2],[s3,7.8,6.9]];
+var items=cs.map(function(cv){var i=(+cv.getAttribute('data-s')||1)-1;return{cv:cv,c:cv.getContext('2d'),f:SC[i][0],L:SC[i][1],still:SC[i][2],vis:false,t0:null,w:0,h:0}});
+var dpr=1;
+function size(it){var r=it.cv.getBoundingClientRect();dpr=Math.min(2,window.devicePixelRatio||1);it.w=r.width;it.h=r.height;it.cv.width=Math.round(r.width*dpr);it.cv.height=Math.round(r.height*dpr)}
+function frame(it,t){var c=it.c;c.setTransform(dpr,0,0,dpr,0,0);c.clearRect(0,0,it.w,it.h);c.globalAlpha=reduce?1:P(t,0,.3)*(1-P(t,it.L-.45,it.L));it.f(c,it.w,it.h,t)}
+items.forEach(function(it){size(it);frame(it,reduce?it.still:0)});
+if('ResizeObserver' in window)new ResizeObserver(function(){items.forEach(function(it){size(it);if(reduce||!it.vis)frame(it,reduce?it.still:(it.last||0))})}).observe(cs[0].closest('.how')||document.body);
+if(reduce){if(document.fonts)document.fonts.ready.then(function(){items.forEach(function(it){frame(it,it.still)})});return}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){var it=items.filter(function(x){return x.cv===e.target})[0];it.vis=e.isIntersecting;if(!it.vis)it.t0=null});kick()},{threshold:.25});
+items.forEach(function(it){io.observe(it.cv)});
+var running=false;
+function kick(){if(!running&&items.some(function(x){return x.vis})){running=true;requestAnimationFrame(loop)}}
+function loop(now){var any=false;items.forEach(function(it){if(!it.vis)return;any=true;if(it.t0===null)it.t0=now;var t=((now-it.t0)/1000)%it.L;it.last=t;frame(it,t)});
+  if(any&&!document.hidden)requestAnimationFrame(loop);else running=false}
+document.addEventListener('visibilitychange',function(){if(!document.hidden)kick()});
+})();
+</script>
 </body>
 </html>
