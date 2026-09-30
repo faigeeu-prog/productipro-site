@@ -351,6 +351,20 @@ section{padding-top:130px}
   .tk{opacity:1;transform:none}
   .mtrack{animation:none}
 }
+
+/* bouton WhatsApp */
+.wa{position:fixed;right:clamp(16px,2.2vw,28px);bottom:calc(clamp(16px,2.2vw,28px) + env(safe-area-inset-bottom,0px));z-index:55;display:flex;align-items:center;justify-content:flex-end;opacity:0;transform:translateY(14px) scale(.9);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.wa.show{opacity:1;transform:none}
+.wa a{position:relative;display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:linear-gradient(220deg,#3a3a3e 0%,#141416 60%,#0A0A0B 100%);color:#fff;box-shadow:-10px 8px 9px rgba(10,10,11,.12),-4px 3px 6px rgba(10,10,11,.2),0 1px 0 rgba(255,255,255,.14) inset;will-change:transform;transition:transform .25s var(--ease),box-shadow .3s}
+.wa a svg{width:32px;height:32px;transition:transform .3s var(--ease)}
+.wa a::before{content:"";position:absolute;inset:0;border-radius:50%;border:1.5px solid var(--blue);opacity:0;animation:waPing 2.8s ease-out infinite;pointer-events:none}
+.wa a i{position:absolute;top:3px;right:3px;width:13px;height:13px;border-radius:50%;background:#25D366;border:2.5px solid #fff;box-sizing:content-box;margin:-2.5px}
+.wa a:hover svg{transform:scale(1.08) rotate(-6deg)}
+.wa .tip{position:absolute;right:calc(100% + 12px);top:50%;transform:translate(8px,-50%);white-space:nowrap;background:#fff;color:var(--ink);font:500 13.5px var(--sans);padding:10px 14px;border-radius:999px;border:1px solid var(--line);box-shadow:0 10px 30px -14px rgba(10,10,11,.3);opacity:0;pointer-events:none;transition:opacity .25s,transform .35s var(--ease)}
+.wa:hover .tip,.wa a:focus-visible+.tip{opacity:1;transform:translate(0,-50%)}
+@keyframes waPing{0%{transform:scale(1);opacity:.55}70%,100%{transform:scale(1.55);opacity:0}}
+@media (max-width:560px){.wa a{width:58px;height:58px}.wa a svg{width:29px;height:29px}.wa .tip{display:none}}
+@media (prefers-reduced-motion:reduce){.wa a::before{animation:none}.wa{transition:none}}
 </style>
 </head>
 <body>
@@ -1285,5 +1299,19 @@ function loop(now){var any=false;items.forEach(function(it){if(!it.vis)return;an
 document.addEventListener('visibilitychange',function(){if(!document.hidden)kick()});
 })();
 </script>
+
+<div class="wa" id="wa">
+  <a href="https://wa.me/33767717586?text=Bonjour%20Productipro%2C%20je%20voudrais%20en%20savoir%20plus%20sur%20vos%20automatisations." target="_blank" rel="noopener" aria-label="Discuter sur WhatsApp" id="wa-a">
+    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 3.8A12.2 12.2 0 0 0 5.4 22.1L3.8 28.2l6.3-1.6A12.2 12.2 0 1 0 16 3.8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M11.6 10.4c.4-.9 1.2-1 1.6-.8l1.3 2.7c.2.4.1.8-.3 1.2l-.7.7c.9 1.7 2.3 3 4 3.9l.8-.8c.4-.4.8-.5 1.2-.3l2.6 1.3c.5.3.5 1.1-.1 1.9-.8 1.1-2.2 1.4-3.9.8-4.2-1.5-7-4.3-8.1-7.4-.3-1 0-1.8.6-3.2z" fill="currentColor"/></svg><i></i>
+  </a>
+  <span class="tip">Une question ? Écrivez-nous sur WhatsApp</span>
+</div>
+<script>/* bouton whatsapp */
+(function(){var w=document.getElementById('wa'),a=document.getElementById('wa-a');if(!w)return;
+setTimeout(function(){w.classList.add('show')},2600);
+if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+w.addEventListener('mousemove',function(e){var r=a.getBoundingClientRect(),x=e.clientX-(r.left+r.width/2),y=e.clientY-(r.top+r.height/2);a.style.transform='translate('+x*.28+'px,'+y*.28+'px)'});
+w.addEventListener('mouseleave',function(){a.style.transform=''})}
+})();</script>
 </body>
 </html>
