@@ -406,11 +406,15 @@ section{padding-top:130px}
 @keyframes ppmEq{0%,100%{height:4px}50%{height:14px}}
 .ppm-sound:not(.on)::after{content:"";position:absolute;inset:-5px;border-radius:999px;border:1px solid rgba(10,92,255,.9);animation:ppmPing 2s ease-out infinite;pointer-events:none}
 @keyframes ppmPing{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(1.18)}}
-.ppm-bar{position:absolute;left:0;right:0;bottom:0;z-index:3;display:flex;align-items:center;gap:14px;padding:clamp(10px,2.4%,18px) clamp(12px,2.2%,22px);background:linear-gradient(0deg,rgba(0,0,0,.45),transparent);opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s}
-.ppm:hover .ppm-bar,.ppm.paused .ppm-bar,.ppm:focus-within .ppm-bar{opacity:1;transform:none}
-@media (hover:none){.ppm-bar{opacity:1;transform:none}}
-.ppm-pp{width:34px;height:34px;border-radius:50%;background:#fff!important;color:#0A0A0B!important;display:grid!important;place-items:center;flex:none}
-.ppm-pp svg{width:13px;height:13px}
+.ppm-bar{position:absolute;left:50%;bottom:clamp(12px,2.6%,22px);z-index:3;display:flex;align-items:center;gap:0;height:32px;width:78px;max-width:calc(100% - 24px);padding:0 14px;border-radius:999px;background:rgba(10,10,11,.6);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.2);overflow:hidden;transform:translateX(-50%);transition:width .5s cubic-bezier(.2,.8,.2,1),padding .4s,background .3s}
+.ppm-bar:hover,.ppm-bar:focus-within{width:min(520px,calc(100% - 24px));padding:0 8px 0 5px;background:rgba(10,10,11,.78)}
+.ppm-bar .ppm-pp,.ppm-bar .ppm-time{flex:none;visibility:hidden;opacity:0;max-width:0;overflow:hidden;transition:opacity .3s,max-width .5s cubic-bezier(.2,.8,.2,1),margin .5s}
+.ppm-bar:hover .ppm-pp,.ppm-bar:focus-within .ppm-pp{visibility:visible;opacity:1;max-width:30px;margin-right:12px}
+.ppm-bar:hover .ppm-time,.ppm-bar:focus-within .ppm-time{visibility:visible;opacity:.85;max-width:90px;margin-left:12px}
+.ppm-bar .ppm-track{min-width:0}
+@media (hover:none),(max-width:560px){.ppm-bar{display:none}}
+.ppm-pp{width:26px;height:26px;flex:none;border-radius:50%;background:#fff!important;color:#0A0A0B!important;display:grid!important;place-items:center;flex:none}
+.ppm-pp svg{width:11px;height:11px}
 .ppm-track{position:relative;flex:1;height:22px;display:flex;align-items:center;cursor:pointer;touch-action:none}
 .ppm-track::before{content:"";position:absolute;left:0;right:0;height:3px;border-radius:3px;background:rgba(255,255,255,.28)}
 .ppm-fill{position:absolute;left:0;height:3px;border-radius:3px;background:#fff;width:0}
@@ -823,6 +827,7 @@ bSound.addEventListener('click',function(){
   soundOn=!soundOn;master.gain.setTargetAtTime(soundOn?.85:0,A.currentTime,.05);ui()});
 big.addEventListener('click',function(){started=true;enableSound(true)});
 bPP.addEventListener('click',function(){playing?pause():play()});
+if(matchMedia('(hover:none)').matches){cv.addEventListener('click',function(){playing?pause():play()});/*ppm-tap*/}
 function seekFromEvent(e){var r=track.getBoundingClientRect(),x=(e.clientX-r.left)/r.width;seek(cl(x)*DUR);draw(curT());bar(curT())}
 var dragging=false;
 track.addEventListener('pointerdown',function(e){dragging=true;track.setPointerCapture(e.pointerId);seekFromEvent(e)});
