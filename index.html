@@ -852,14 +852,31 @@ track.addEventListener('pointerup',function(){dragging=false});
 track.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){seek(curT()+2);e.preventDefault()}if(e.key==='ArrowLeft'){seek(curT()-2);e.preventDefault()}draw(curT());bar(curT())});
 root.addEventListener('keydown',function(e){if(e.code==='Space'&&e.target===root){e.preventDefault();playing?pause():play()}});
 
-/* autoplay muted while visible; pause when off-screen */
+/* son par défaut : démarre avec le son ; si le navigateur bloque l'audio, le son s'active au premier geste */
+var pending=false,GEV=['pointerdown','keydown','touchend','click'];
+function unlockRm(){GEV.forEach(function(n){document.removeEventListener(n,unlock,true)})}
+function unlock(e){
+  if(!pending||!A)return;
+  if(e&&e.target&&e.target.closest&&e.target.closest('.ppm-sound'))return;
+  A.resume().then(function(){if(A.state==='running'&&pending){pending=false;unlockRm();enableSound(false)}},function(){});
+}
+function autoStart(){
+  started=true;
+  try{if(!A)initAudio()}catch(err){play();return}
+  var fin=false;
+  function go(){if(fin)return;fin=true;
+    if(A.state==='running'){enableSound(true)}
+    else{pending=true;GEV.forEach(function(n){document.addEventListener(n,unlock,true)});play()}}
+  A.resume().then(go,go);setTimeout(go,180);
+}
+/* autoplay avec le son ; pause hors écran */
 var wasPlaying=false,visible=false;
 function start(){
   resize();
   if(reduce){baseT=38.9;draw(baseT);bar(baseT);root.classList.add('idle');ui();return}
   draw(0);bar(0);ui();
   var io=new IntersectionObserver(function(es){es.forEach(function(e){visible=e.isIntersecting&&e.intersectionRatio>.35;
-    if(visible){if(!playing&&(wasPlaying||!started)){started=true;play()}}else{wasPlaying=playing;pause()}})},{threshold:[0,.35,.6]});
+    if(visible){if(!playing&&!started){autoStart()}else if(!playing&&wasPlaying){play()}}else{wasPlaying=playing;pause()}})},{threshold:[0,.35,.6]});
   io.observe(root);
   document.addEventListener('visibilitychange',function(){if(document.hidden){wasPlaying=playing;pause()}else if(visible&&wasPlaying)play()});
 }
