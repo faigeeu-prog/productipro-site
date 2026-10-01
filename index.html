@@ -130,7 +130,7 @@ html.is-loading .loader{display:flex}
 .tools-note{text-align:center;color:var(--muted);font-size:14px;margin-top:22px}
 /* big number */
 .bign{position:relative;padding-block:130px 40px;text-align:center}
-.bign .num{font-family:var(--display);font-weight:600;font-size:clamp(150px,27vw,360px);letter-spacing:-.07em;line-height:.8;background:linear-gradient(180deg,#EDEDF0 0%,#FFFFFF 95%);-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums;user-select:none}
+.bign .num{font-family:var(--display);font-weight:600;font-size:min(180px,18vw);letter-spacing:-.06em;padding:0 .06em .08em 0;white-space:nowrap;line-height:1;display:flex;justify-content:center;background:linear-gradient(180deg,#EDEDF0 0%,#FFFFFF 95%);-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums;user-select:none}
 .bign h2{position:absolute;left:50%;top:56%;transform:translate(-50%,-50%);font-size:clamp(30px,3.8vw,50px);width:min(640px,90%)}
 .bign h2 span{color:var(--blue)}
 
@@ -356,7 +356,7 @@ section{padding-top:130px}
   .how,.ben{grid-template-columns:1fr}
   .bc.big{grid-column:auto}
   .bign{padding-top:90px}
-  .bign h2{position:static;transform:none;width:auto;margin-top:-40px}
+  .bign h2{position:static;transform:none;width:auto;margin-top:-6px}
   .foot{padding:26px}
   .foot .cols{grid-template-columns:1fr 1fr}
   .bk-c{grid-template-columns:1fr 1fr}
@@ -963,7 +963,7 @@ Promise.race([fontsReady,new Promise(function(r){setTimeout(r,2500)})]).then(sta
 
   <!-- BIG NUMBER -->
   <div class="bign">
-    <div class="num" id="bignum" aria-hidden="true">×0</div>
+    <div class="num" id="bignum" aria-hidden="true">productipro</div>
     <h2 class="rv">Faites <span>×3</span> sur la productivité de votre entreprise grâce à l'IA</h2>
   </div>
 
@@ -1148,7 +1148,7 @@ Promise.race([fontsReady,new Promise(function(r){setTimeout(r,2500)})]).then(sta
 
   /* big number count ×0 -> ×3 */
   const bn=$('bignum');
-  const runBig=()=>{ if(reduce){bn.textContent='×3';return;} let v=0; const t0=performance.now(); (function s(n){const p=Math.min(1,(n-t0)/1400); v=(1-Math.pow(1-p,3))*3; bn.textContent='×'+(p<1?v.toFixed(1).replace('.',','):'3'); if(p<1) requestAnimationFrame(s);})(t0); };
+  const runBig=()=>{ if(reduce) return; bn.animate([{opacity:0,transform:'translateY(30px)'},{opacity:1,transform:'none'}],{duration:1200,easing:'cubic-bezier(.16,1,.3,1)',fill:'backwards'}); };
   new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){runBig();o.disconnect();}},{threshold:.4}).observe(bn);
 
   /* how: bars + changelog */
