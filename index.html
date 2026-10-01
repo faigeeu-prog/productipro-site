@@ -861,15 +861,15 @@ function stopAll(){live.forEach(function(n){try{n.stop()}catch(e){}});live=[]}
 function scheduleFrom(t0){if(!A)return;stopAll();var base=A.currentTime+.04;EVENTS.forEach(function(e){if(e.t>=t0-.005)e.fn(base+(e.t-t0))});return base}
 
 /* ——— transport ——— */
-var playing=false,baseT=0,startClock=0,useAudio=false,started=false;
+var playing=false,baseT=0,startClock=0,useAudio=false,started=false,dead=false;
 function clockNow(){return useAudio?A.currentTime:performance.now()/1000}
 function curT(){return playing?Math.min(DUR,baseT+(clockNow()-startClock)):baseT}
 function seek(t){baseT=cl(t,0,DUR);startClock=clockNow();if(useAudio&&playing){var b=scheduleFrom(baseT);startClock=b}}
-function play(){if(playing)return;playing=true;root.classList.remove('paused','idle');
+function play(){if(playing||dead)return;playing=true;root.classList.remove('paused','idle');
   if(useAudio){A.resume();startClock=scheduleFrom(baseT)}else startClock=clockNow();ui();loop()}
 function pause(){if(!playing)return;baseT=curT();playing=false;if(useAudio)stopAll();root.classList.add('paused');ui()}
 var raf=0;function loop(){cancelAnimationFrame(raf);raf=requestAnimationFrame(function f(){var t=curT();
-  if(t>=DUR){if(OPT.onEnd){t=DUR;draw(t);bar(t);pause();var cb=OPT.onEnd;OPT.onEnd=null;cb();return}seek(0);t=0}draw(t);bar(t);if(playing)raf=requestAnimationFrame(f)})}
+  if(t>=DUR){if(OPT.onEnd){t=DUR;draw(t);bar(t);pause();dead=true;pending=false;unlockRm();stopAll();try{if(A)A.close()}catch(e){}var cb=OPT.onEnd;OPT.onEnd=null;cb();return}seek(0);t=0}draw(t);bar(t);if(playing)raf=requestAnimationFrame(f)})}
 
 /* ——— UI ——— */
 var bSound=document.getElementById(PRE+'-sound'),lbl=document.getElementById(PRE+'-lbl'),bPP=document.getElementById(PRE+'-pp'),ppi=document.getElementById(PRE+'-ppi'),
@@ -881,6 +881,7 @@ function ui(){bPP.setAttribute('aria-label',playing?'Pause':'Lecture');
   bSound.classList.toggle('on',soundOn);bSound.setAttribute('aria-pressed',soundOn);lbl.textContent=soundOn?(OPT.lblOn||'Son activé'):(OPT.lblOff||'Activer le son');
   document.getElementById(PRE+'-snd-w').setAttribute('opacity',soundOn?'1':'.35')}
 function enableSound(restart){
+  if(dead)return;pending=false;unlockRm();
   if(!A)initAudio();
   var t=restart?0:curT();playing=false;useAudio=true;soundOn=true;master.gain.cancelScheduledValues(A.currentTime);master.gain.setValueAtTime(.85,A.currentTime);
   A.resume().then(function(){baseT=t;play()});ui()}
@@ -902,7 +903,7 @@ root.addEventListener('keydown',function(e){if(e.code==='Space'&&e.target===root
 var pending=false,GEV=['pointerdown','keydown','touchend','click'];
 function unlockRm(){GEV.forEach(function(n){document.removeEventListener(n,unlock,true)})}
 function unlock(e){
-  if(!pending||!A)return;
+  if(!pending||!A||dead)return;
   if(e&&e.target&&e.target.closest&&e.target.closest('.ppm-sound'))return;
   A.resume().then(function(){if(A.state==='running'&&pending){pending=false;unlockRm();enableSound(false)}},function(){});
 }
