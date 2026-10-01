@@ -6,7 +6,7 @@
 <meta name="description" content="Productipro installe dans votre entreprise des automatisations IA qui relancent vos devis, répondent à vos clients et gèrent le suivi à votre place.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230A0A0B'/%3E%3Cpath d='M11.5 23.5V8.5h6a4.75 4.75 0 0 1 0 9.5h-6' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='22.8' cy='22.8' r='2.3' fill='%230A5CFF'/%3E%3C/svg%3E">
 <title>Productipro</title>
-<script>(function(){try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('is-loading');setTimeout(function(){document.documentElement.classList.remove('is-loading')},4500);}}catch(e){}})();</script>
+<script>(function(){try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches){var d=document.documentElement;d.classList.add('is-loading','splash-on');setTimeout(function(){if(d.classList.contains('splash-on')){d.classList.remove('splash-on');window.__ppSplashDone=true;dispatchEvent(new Event('pp:splashdone'))}},90000);}}catch(e){}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500&display=swap">
@@ -20,6 +20,11 @@
   --ease:cubic-bezier(.16,1,.3,1);
   --shadow:0 1px 2px rgba(10,10,11,.04),0 10px 30px -14px rgba(10,10,11,.14);
 }
+/* desktop: réduire taille motion */
+@media (min-width:1024px){
+  .ppm-wrap{max-width:900px;margin-inline:auto}
+  .ppm{aspect-ratio:16/9}
+}
 *{box-sizing:border-box}
 html{overflow-x:clip}
 html.lenis,html.lenis body{height:auto}
@@ -32,6 +37,18 @@ h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:600;letter-spacing:-
 :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:8px}
 section,#contact{scroll-margin-top:90px}
 
+/* splash intro : motion design seul sur fond blanc */
+.pps{display:none}
+html.splash-on,html.splash-on body{overflow:hidden!important;height:100%;touch-action:none}
+html.splash-on .pps{position:fixed;inset:0;z-index:500;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(18px,3vh,28px);padding:20px;overscroll-behavior:none}
+.pps.out{opacity:0;transition:opacity .7s cubic-bezier(.16,1,.3,1);pointer-events:none}
+.pps-box{width:min(88vw,calc(74vh * 16 / 9),1080px);width:min(88vw,calc(74dvh * 16 / 9),1080px)}
+.pps-box .ppm{margin:0}
+.pps-box .ppm-bar,.pps-box .ppm-big{display:none!important}
+.pps-snd{position:relative;display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 22px 0 18px;border-radius:999px;border:0;background:#0A0A0B;color:#fff;font:600 15px "Inter",ui-sans-serif,system-ui,sans-serif;cursor:pointer;box-shadow:0 10px 24px -12px rgba(10,10,11,.6);transition:transform .3s cubic-bezier(.16,1,.3,1),background .2s}
+.pps-snd:hover{transform:translateY(-2px)}
+.pps-snd.on{background:#2C2C30}
+.pps-snd svg{width:18px;height:18px;flex:none}
 /* loader */
 .loader{position:fixed;inset:0;z-index:200;background:var(--bg);display:none;flex-direction:column;justify-content:space-between;padding:28px clamp(20px,4vw,48px)}
 html.is-loading .loader{display:flex}
@@ -368,6 +385,20 @@ section{padding-top:130px}
 </style>
 </head>
 <body>
+<div class="pps" id="pps-screen" aria-label="Introduction Productipro">
+  <div class="pps-box">
+    <div class="ppm paused" id="pps" role="region" aria-label="Film : Productipro met votre entreprise en pilote automatique">
+      <canvas id="pps-c" role="img" aria-label="Animation Productipro"></canvas>
+      <button class="ppm-big" id="pps-big" type="button" tabindex="-1" aria-hidden="true"></button>
+      <div class="ppm-bar"><button class="ppm-pp" id="pps-pp" type="button" tabindex="-1"><svg viewBox="0 0 12 12" id="pps-ppi"></svg></button><div class="ppm-track" id="pps-track"><div class="ppm-fill" id="pps-fill"></div><div class="ppm-knob" id="pps-knob"></div></div><span class="ppm-time" id="pps-time"></span></div>
+    </div>
+  </div>
+  <button class="ppm-sound pps-snd" id="pps-sound" type="button" aria-pressed="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path id="pps-snd-w" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11" opacity=".35"/></svg>
+    <span class="ppm-eq" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span id="pps-lbl">Lancer le son</span>
+  </button>
+</div>
 
 <div class="loader" id="loader" aria-hidden="true">
   <div class="lt"><span>Productipro</span><span>Ingénierie IA</span></div>
@@ -473,11 +504,12 @@ section{padding-top:130px}
   </div>
 </div>
 <script>
-(function(){
+function PPM(PRE,OPT){
 "use strict";
+OPT=OPT||{};
 var DUR=40.5, W=1920, H=1080, CX=960, CY=540;
 var INK="#0A0A0B", WHITE="#FFFFFF", BLUE="#0A5CFF", DIM="#8A8A93", MUTED="#6E6E76", GREEN="#16A34A", AMBER="#D97706";
-var root=document.getElementById('ppm'), cv=document.getElementById('ppm-c'), ctx=cv.getContext('2d');
+var root=document.getElementById(PRE), cv=document.getElementById(PRE+'-c'), ctx=cv.getContext('2d');
 var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ——— math ——— */
@@ -837,27 +869,27 @@ function play(){if(playing)return;playing=true;root.classList.remove('paused','i
   if(useAudio){A.resume();startClock=scheduleFrom(baseT)}else startClock=clockNow();ui();loop()}
 function pause(){if(!playing)return;baseT=curT();playing=false;if(useAudio)stopAll();root.classList.add('paused');ui()}
 var raf=0;function loop(){cancelAnimationFrame(raf);raf=requestAnimationFrame(function f(){var t=curT();
-  if(t>=DUR){seek(0);t=0}draw(t);bar(t);if(playing)raf=requestAnimationFrame(f)})}
+  if(t>=DUR){if(OPT.onEnd){t=DUR;draw(t);bar(t);pause();var cb=OPT.onEnd;OPT.onEnd=null;cb();return}seek(0);t=0}draw(t);bar(t);if(playing)raf=requestAnimationFrame(f)})}
 
 /* ——— UI ——— */
-var bSound=document.getElementById('ppm-sound'),lbl=document.getElementById('ppm-lbl'),bPP=document.getElementById('ppm-pp'),ppi=document.getElementById('ppm-ppi'),
-    track=document.getElementById('ppm-track'),fill=document.getElementById('ppm-fill'),knob=document.getElementById('ppm-knob'),time=document.getElementById('ppm-time'),big=document.getElementById('ppm-big');
+var bSound=document.getElementById(PRE+'-sound'),lbl=document.getElementById(PRE+'-lbl'),bPP=document.getElementById(PRE+'-pp'),ppi=document.getElementById(PRE+'-ppi'),
+    track=document.getElementById(PRE+'-track'),fill=document.getElementById(PRE+'-fill'),knob=document.getElementById(PRE+'-knob'),time=document.getElementById(PRE+'-time'),big=document.getElementById(PRE+'-big');
 function fmt(s){s=Math.floor(s);return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')}
 function bar(t){var p=t/DUR*100;fill.style.width=p+'%';knob.style.left=p+'%';time.textContent=fmt(t)+' / '+fmt(DUR);track.setAttribute('aria-valuenow',Math.round(t))}
 function ui(){bPP.setAttribute('aria-label',playing?'Pause':'Lecture');
   ppi.innerHTML=playing?'<rect x="2" y="1.5" width="2.6" height="9" rx="1" fill="currentColor"/><rect x="7.4" y="1.5" width="2.6" height="9" rx="1" fill="currentColor"/>':'<path d="M2.5 1.3v9.4L10.3 6z" fill="currentColor"/>';
-  bSound.classList.toggle('on',soundOn);bSound.setAttribute('aria-pressed',soundOn);lbl.textContent=soundOn?'Son activé':'Activer le son';
-  document.getElementById('ppm-snd-w').setAttribute('opacity',soundOn?'1':'.35')}
+  bSound.classList.toggle('on',soundOn);bSound.setAttribute('aria-pressed',soundOn);lbl.textContent=soundOn?(OPT.lblOn||'Son activé'):(OPT.lblOff||'Activer le son');
+  document.getElementById(PRE+'-snd-w').setAttribute('opacity',soundOn?'1':'.35')}
 function enableSound(restart){
   if(!A)initAudio();
   var t=restart?0:curT();playing=false;useAudio=true;soundOn=true;master.gain.cancelScheduledValues(A.currentTime);master.gain.setValueAtTime(.85,A.currentTime);
   A.resume().then(function(){baseT=t;play()});ui()}
 bSound.addEventListener('click',function(){
-  if(!soundOn){enableSound(!started||true);started=true;return}
+  if(!soundOn){enableSound(!OPT.splash);started=true;return}
   soundOn=!soundOn;master.gain.setTargetAtTime(soundOn?.85:0,A.currentTime,.05);ui()});
 big.addEventListener('click',function(){started=true;enableSound(true)});
 bPP.addEventListener('click',function(){playing?pause():play()});
-if(matchMedia('(hover:none)').matches){cv.addEventListener('click',function(){playing?pause():play()});/*ppm-tap*/}
+if(!OPT.splash&&matchMedia('(hover:none)').matches){cv.addEventListener('click',function(){playing?pause():play()});/*ppm-tap*/}
 function seekFromEvent(e){var r=track.getBoundingClientRect(),x=(e.clientX-r.left)/r.width;seek(cl(x)*DUR);draw(curT());bar(curT())}
 var dragging=false;
 track.addEventListener('pointerdown',function(e){dragging=true;track.setPointerCapture(e.pointerId);seekFromEvent(e)});
@@ -889,6 +921,7 @@ function start(){
   resize();
   if(reduce){baseT=38.9;draw(baseT);bar(baseT);root.classList.add('idle');ui();return}
   draw(0);bar(0);ui();
+  if(OPT.splash){autoStart();visible=true;document.addEventListener('visibilitychange',function(){if(document.hidden){wasPlaying=playing;pause()}else if(wasPlaying)play()});return}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){visible=e.isIntersecting&&e.intersectionRatio>.35;
     if(visible){if(!playing&&!started){autoStart()}else if(!playing&&wasPlaying){play()}}else{wasPlaying=playing;pause()}})},{threshold:[0,.35,.6]});
   io.observe(root);
@@ -896,6 +929,19 @@ function start(){
 }
 var fontsReady=Promise.all(['600 100px "Inter Tight"','700 100px "Inter Tight"','500 20px Inter','600 20px Inter','400 20px Inter','500 20px "JetBrains Mono"'].map(function(f){return document.fonts.load(f)}));
 Promise.race([fontsReady,new Promise(function(r){setTimeout(r,2500)})]).then(start,start);
+}
+/* boot : intro plein écran puis film normal sous la hero */
+(function(){
+  var html=document.documentElement,scr=document.getElementById('pps-screen'),done=false;
+  function startMain(){PPM('ppm')}
+  function finish(){
+    if(done)return;done=true;
+    scr.classList.add('out');
+    setTimeout(function(){html.classList.remove('splash-on');scr.style.display='none';window.__ppSplashDone=true;dispatchEvent(new Event('pp:splashdone'));startMain()},700);
+  }
+  if(!html.classList.contains('splash-on')||!scr){startMain();return}
+  addEventListener('pp:splashdone',function(){if(!done){done=true;scr.style.display='none';startMain()}});
+  try{PPM('pps',{splash:true,lblOff:'Lancer le son',lblOn:'Son activé',onEnd:finish})}catch(e){finish()}
 })();
 </script>
 <!-- /PRODUCTIPRO MOTION -->
@@ -1081,11 +1127,14 @@ Promise.race([fontsReady,new Promise(function(r){setTimeout(r,2500)})]).then(sta
 
   /* loader */
   const ld=$('loader');
-  if(root.classList.contains('is-loading')){
+  function runLoader(){
     const t0=performance.now(),D=1400,ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
     (function step(now){const p=Math.min(1,(now-t0)/D),v=ease(p)*100;$('lcount').textContent=String(Math.round(v)).padStart(3,'0');$('lbar').style.transform='scaleX('+v/100+')';
       if(p<1) requestAnimationFrame(step); else setTimeout(()=>{ld.classList.add('out');setTimeout(heroIn,400);setTimeout(()=>{root.classList.remove('is-loading');ld.style.display='none';lenis&&lenis.start();},1000);},150);
     })(t0);
+  }
+  if(root.classList.contains('is-loading')){
+    if(root.classList.contains('splash-on')&&!window.__ppSplashDone) addEventListener('pp:splashdone',runLoader,{once:true}); else runLoader();
   } else { ld.style.display='none'; heroIn(); }
 
   /* reveal */
