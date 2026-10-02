@@ -33,7 +33,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16p
 a{color:inherit;text-decoration:none}
 p{margin:0}
 h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:600;letter-spacing:-.04em;line-height:1.02;text-wrap:balance}
-.wrap{max-width:1320px;margin-inline:auto;position:relative}
+.wrap{max-width:1560px;margin-inline:auto;position:relative}
 :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:8px}
 section,#contact{scroll-margin-top:90px}
 
@@ -66,7 +66,7 @@ html.is-loading .loader{display:flex}
 
 /* nav */
 .nav{position:fixed;top:0;left:0;right:0;z-index:60;padding:14px 24px;padding-top:calc(env(safe-area-inset-top,0px) + 14px);pointer-events:none}
-.nav-in{pointer-events:auto;max-width:1320px;margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 8px 8px 16px;border-radius:16px;border:1px solid transparent;transition:background .35s,border-color .35s,box-shadow .35s}
+.nav-in{pointer-events:auto;max-width:1560px;margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 8px 8px 16px;border-radius:16px;border:1px solid transparent;transition:background .35s,border-color .35s,box-shadow .35s}
 .nav.scrolled .nav-in{background:rgba(255,255,255,.9);-webkit-backdrop-filter:saturate(160%) blur(12px);backdrop-filter:saturate(160%) blur(12px);border-color:var(--line);box-shadow:0 8px 24px -16px rgba(10,10,11,.25)}
 .brandlink{display:flex;align-items:center;gap:9px;font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:-.045em}
 .brandlink .mk{width:28px;height:28px}
@@ -79,7 +79,7 @@ html.is-loading .loader{display:flex}
 .burger span{display:block;width:16px;height:1.5px;background:var(--ink);transition:transform .3s var(--ease)}
 .nav.open .burger span:first-child{transform:translateY(3.25px) rotate(45deg)}
 .nav.open .burger span:last-child{transform:translateY(-3.25px) rotate(-45deg)}
-.mnav{pointer-events:auto;display:none;max-width:1320px;margin:8px auto 0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px;box-shadow:0 16px 40px -20px rgba(10,10,11,.3);flex-direction:column;gap:2px}
+.mnav{pointer-events:auto;display:none;max-width:1560px;margin:8px auto 0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px;box-shadow:0 16px 40px -20px rgba(10,10,11,.3);flex-direction:column;gap:2px}
 .mnav a{padding:12px 14px;border-radius:10px;font-size:16px}
 .mnav a:hover{background:var(--panel)}
 .mnav .btn{margin-top:6px;justify-content:center;color:#fff}
@@ -104,6 +104,8 @@ html.is-loading .loader{display:flex}
 .htools{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 22px;margin-top:64px;font-size:14px;color:var(--muted)}
 .htools b{font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:-.03em;color:#9A9AA2}
 .hero .sub{color:var(--muted);font-size:clamp(14.5px,1.15vw,16px);max-width:500px;margin-top:18px}
+@media (max-width:1023px){.hero h1 br{display:none}}
+@media (min-width:1024px){body{padding-inline:24px}.hero h1{max-width:none;font-size:clamp(52px,5.4vw,84px)}.hero .sub{max-width:900px}}
 .hero .cta{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:30px}
 .hero .w{display:inline-block}
 .floaters{position:absolute;inset:0;pointer-events:none;z-index:1}
@@ -417,7 +419,7 @@ section{padding-top:130px}
   <!-- HERO -->
   <div class="hero">
     <span class="pill h-in"><b>Audit offert</b>Solutions IA sur mesure</span>
-    <h1 id="h1"><span class="w">Moins</span> <span class="w">de</span> <span class="w">tâches</span> <span class="w">répétitives.</span> <span class="w lt">Plus</span> <span class="w lt">de</span> <span class="w lt">clients.</span></h1>
+    <h1 id="h1"><span class="w">Moins</span> <span class="w">de</span> <span class="w">tâches</span> <span class="w">répétitives.</span><br> <span class="w lt">Plus</span> <span class="w lt">de</span> <span class="w lt">clients.</span></h1>
     <p class="sub h-in">On installe dans votre entreprise des automatisations IA qui prennent en charge vos tâches répétitives, répondent à vos clients et font avancer vos ventes. Vous gardez la main, on s'occupe du reste.</p>
     <div class="cta h-in">
       <a href="#rdv" class="btn btn-dark">Audit gratuit <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
