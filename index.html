@@ -480,7 +480,7 @@ section{padding-top:130px}
 
 <div class="ppm-wrap">
 <div class="ppm paused" id="ppm" role="region" aria-label="Film : Productipro gère votre site internet et votre fiche Google">
-  <canvas id="ppm-c" role="img" aria-label="Animation : un client cherche une entreprise sur Google ; Productipro crée le site, gère la fiche Google et fait les modifications, pour 290 € par mois."></canvas>
+  <canvas id="ppm-c" role="img" aria-label="Animation : un client cherche une entreprise sur Google ; Productipro crée le site, gère la fiche Google et assure la maintenance SEO et la sécurité, pour 290 € par mois."></canvas>
   <button class="ppm-big" id="ppm-big" type="button" aria-label="Lire le film avec le son"><span><i><svg width="14" height="14" viewBox="0 0 12 12"><path d="M2.5 1.3v9.4L10.3 6z" fill="#fff"/></svg></i>Lire le film · 40 s</span></button>
   <button class="ppm-sound" id="ppm-sound" type="button" aria-pressed="false">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path id="ppm-snd-w" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11" opacity=".35"/></svg>
@@ -708,7 +708,7 @@ function lightScenes(t){
   ctx.save();ctx.translate(0,-cam);
   panel(t,0,22.3,"01","MISE EN LIGNE",[["Votre site",INK]],[["en ligne.",BLUE]],cardSite);
   panel(t,1080,25.2,"02","FICHE GOOGLE",[["On gère",INK]],[["votre fiche.",BLUE]],cardFiche);
-  panel(t,2160,28.0,"03","MODIFICATIONS",[["Une demande ?",INK]],[["C'est fait.",BLUE]],cardModif);
+  panel(t,2160,28.0,"03","SEO ET SÉCURITÉ",[["Votre site",INK]],[["protégé et suivi.",BLUE]],cardModif);
   ctx.restore();
 }
 function panel(t,oy,t0,num,name,l1,l2,card){
@@ -759,14 +759,15 @@ function bubble(x,y,txt,mine,p){
   ctx.restore();
 }
 function cardModif(t,t0){
-  var y=cardBase(t,t0,"MODIFICATIONS  ·  SUR DEMANDE");
-  font(38,600,'d',-1);ctx.fillStyle=INK;ctx.fillText("Modifications du site",1100,y+122);
-  font(22,400,'s',0);ctx.fillStyle=MUTED;ctx.fillText("Vous demandez, on s'en occupe.",1100,y+158);
-  bubble(1100,y+196,"Peux-tu changer les horaires d'été ?",false,eo(P(t,28.4,28.75)));
-  bubble(1740,y+256,"C'est fait, en ligne.",true,eo(P(t,28.85,29.2)));
-  bubble(1100,y+322,"Ajoute notre dernière réalisation.",false,eo(P(t,29.35,29.7)));
-  bubble(1740,y+382,"Ajouté et en ligne.",true,eo(P(t,29.8,30.15)));
-  var cp=P(t,30.2,30.5);if(cp>0){ctx.globalAlpha=eo(cp);chip(1100,y+448,"Inclus dans l'abonnement, sans surcoût","#EAF1FF",BLUE,false,17)}
+  var y=cardBase(t,t0,"SEO ET SÉCURITÉ  ·  CHAQUE MOIS");
+  font(38,600,'d',-1);ctx.fillStyle=INK;ctx.fillText("Maintenance SEO et sécurité",1100,y+122);
+  font(22,400,'s',0);ctx.fillStyle=MUTED;ctx.fillText("Votre site reste rapide, protégé et bien placé.",1100,y+158);
+  var rows=[["Mises à jour et sauvegardes",28.4],["Site sécurisé (HTTPS)",28.85],["Référencement suivi et amélioré",29.3],["Vitesse et bon fonctionnement",29.75]];
+  rows.forEach(function(r,i){var p=eo(P(t,r[1],r[1]+.45));if(p<=0)return;var yy=y+226+i*54;ctx.globalAlpha=p;
+    font(18,500,'m',0);ctx.fillStyle=BLUE;ctx.fillText('0'+(i+1),1100,yy);
+    font(24,500,'s',0);ctx.fillStyle=INK;ctx.fillText(r[0],1160+(1-p)*20,yy);
+    check(1728,yy-8,13,GREEN,P(t,r[1]+.2,r[1]+.55))});
+  var cp=P(t,30.2,30.5);if(cp>0){ctx.globalAlpha=eo(cp);chip(1100,y+440,"Inclus dans l'abonnement, sans surcoût","#EAF1FF",BLUE,false,17)}
   ctx.globalAlpha=1;
 }
 
@@ -781,7 +782,7 @@ function end(t){
   mline([["+ site internet.",'#A6A6AD']],CX,CY+120,150,P(t,31.45,32.15),P(t,33.1,33.55),{align:'center'});
   mline([["290 € par mois.",WHITE]],CX,CY-50,150,P(t,33.5,34.2),P(t,35.2,35.6),{align:'center'});
   mline([["Engagement de 12 mois.",BLUE]],CX,CY+80,92,P(t,33.75,34.45),P(t,35.3,35.7),{align:'center'});
-  mline([["Modifications du site incluses.",'#A6A6AD']],CX,CY+170,40,P(t,34.2,34.8),P(t,35.35,35.75),{align:'center',w:500,f:'s',ls:-0.3});
+  mline([["Maintenance SEO et sécurité incluses.",'#A6A6AD']],CX,CY+170,40,P(t,34.2,34.8),P(t,35.35,35.75),{align:'center',w:500,f:'s',ls:-0.3});
   if(t<35.55)return;
   font(124,600,'d',-0.045*124);var word="productipro",ww=tw(word),ms=132,gap=34,tot=ms+gap+ww,x0=CX-tot/2,my=CY-ms/2-40;
   var dotP=P(t,36.85,37.35),dy=-120*(1-eo(dotP));
@@ -999,7 +1000,7 @@ window.__ppmDebug=window.__ppmDebug||{};window.__ppmDebug[PRE]={draw:draw,resize
       <div class="pl">
         <div class="pi"><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><div><h3>Votre fiche Google</h3><p>On complète et on gère votre fiche : informations, horaires, photos, publications. Vos clients vous trouvent.</p></div></div>
         <div class="pi"><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><div><h3>Votre site internet</h3><p>On crée votre site et on le gère : un site clair, professionnel et toujours en ligne.</p></div></div>
-        <div class="pi"><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><div><h3>Vos modifications du site</h3><p>Un changement à faire ? Vous nous le demandez, on le met en ligne.</p></div></div>
+        <div class="pi"><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><div><h3>Maintenance SEO et sécurité</h3><p>On garde votre site à jour, sécurisé et bien référencé sur Google, chaque mois.</p></div></div>
       </div>
     </div>
   </section>
@@ -1033,8 +1034,8 @@ window.__ppmDebug=window.__ppmDebug||{};window.__ppmDebug[PRE]={draw:draw,resize
       <div class="hc rv">
         <div class="ui mo"><canvas class="mo-c" data-s="3" aria-hidden="true"></canvas></div>
         <span class="st">Étape 3</span>
-        <h3>On gère, vous demandez</h3>
-        <p>Un horaire à changer, une offre à ajouter ? Vous nous écrivez, on modifie votre site. Vous n'avez rien à gérer.</p>
+        <h3>On entretient, vous êtes tranquille</h3>
+        <p>Mises à jour, sauvegardes, sécurité, suivi du référencement : on s'occupe de la maintenance de votre site chaque mois.</p>
       </div>
     </div>
   </section>
@@ -1049,7 +1050,7 @@ window.__ppmDebug=window.__ppmDebug||{};window.__ppmDebug[PRE]={draw:draw,resize
       <div class="bc big rv"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19.5c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5"/><path d="M17 8v6M14 11h6"/></svg></span><div><h3>Être trouvé quand on vous cherche.</h3><p style="margin-top:10px">Une fiche Google complète et un site à jour : vos clients vous trouvent, vous font confiance et vous appellent, plutôt que le voisin.</p></div></div>
       <div class="bc rv"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 1.5M9.5 2.5h5"/></svg></span><h3>Visibilité locale</h3><p>Vous apparaissez quand on cherche votre métier près de chez vous.</p></div>
       <div class="bc rv"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h11M4 12h16M4 17h8"/><path d="M17 4l3 3-3 3"/></svg></span><h3>Image soignée</h3><p>Un site clair et une fiche à jour inspirent confiance.</p></div>
-      <div class="bc rv"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3.5" width="16" height="17" rx="2.5"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><h3>Zéro prise de tête</h3><p>Création, hébergement, modifications : on s'en occupe.</p></div>
+      <div class="bc rv"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3.5" width="16" height="17" rx="2.5"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><h3>Zéro prise de tête</h3><p>Création, hébergement, sécurité, référencement : on s'en occupe.</p></div>
       <div class="bc rv"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></span><h3>Prix fixe</h3><p>290 € par mois, sans mauvaise surprise.</p></div>
     </div>
   </section>
@@ -1076,7 +1077,7 @@ window.__ppmDebug=window.__ppmDebug||{};window.__ppmDebug[PRE]={draw:draw,resize
         <ul>
           <li><i><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></i>Une fiche Google incomplète ou oubliée</li>
           <li><i><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></i>Pas de site, ou un site qui date</li>
-          <li><i><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></i>Des modifications qui traînent</li>
+          <li><i><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></i>Un site jamais mis à jour ni sécurisé</li>
           <li><i><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></i>Le client appelle le concurrent</li>
           <li><i><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></i>Un site et une fiche à gérer en plus de votre métier</li>
           <li><i><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></i>Peu de visibilité sur Google</li>
@@ -1088,7 +1089,7 @@ window.__ppmDebug=window.__ppmDebug||{};window.__ppmDebug[PRE]={draw:draw,resize
         <ul>
           <li><i><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i>Fiche Google complète et à jour</li>
           <li><i><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i>Un site professionnel, toujours en ligne</li>
-          <li><i><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i>Vos modifications faites sur demande</li>
+          <li><i><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i>Un site à jour, sécurisé et bien référencé</li>
           <li><i><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i>Vos clients vous trouvent et vous appellent</li>
           <li><i><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i>Zéro gestion de votre côté</li>
           <li><i><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i>Un prix fixe : 290 € par mois</li>
@@ -1106,11 +1107,11 @@ window.__ppmDebug=window.__ppmDebug||{};window.__ppmDebug[PRE]={draw:draw,resize
         <p>Une question spécifique ? <a href="#contact">Contactez-nous</a></p>
       </div>
       <div class="qs">
-        <div class="q open rv"><button type="button" aria-expanded="true">Qu'est-ce qui est inclus dans les 290 € par mois ?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="a"><div><p>La gestion de votre fiche Google, la création et la gestion de votre site internet, et vos modifications du site. Un seul prix, chaque mois.</p></div></div></div>
+        <div class="q open rv"><button type="button" aria-expanded="true">Qu'est-ce qui est inclus dans les 290 € par mois ?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="a"><div><p>La gestion de votre fiche Google, la création et la gestion de votre site internet, et la maintenance SEO et sécurité. Un seul prix, chaque mois.</p></div></div></div>
         <div class="q rv"><button type="button" aria-expanded="false">Quel est l'engagement ?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="a"><div><p>L'abonnement est de 12 mois minimum. Pendant cette période, tout ce qui est inclus est géré pour vous.</p></div></div></div>
         <div class="q rv"><button type="button" aria-expanded="false">Pour quel type d'entreprise ?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="a"><div><p>Toutes les PME dont les clients cherchent sur Google : artisans, commerces, restaurants, cabinets, professions libérales… Dès qu'on peut vous trouver en ligne, on peut vous aider.</p></div></div></div>
         <div class="q rv"><button type="button" aria-expanded="false">Ai-je besoin de connaissances techniques ?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="a"><div><p>Aucune. Vous nous dites ce que vous voulez, on s'occupe de tout.</p></div></div></div>
-        <div class="q rv"><button type="button" aria-expanded="false">Comment demander une modification ?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="a"><div><p>Vous nous écrivez ce que vous voulez changer sur votre site, et on le met en ligne.</p></div></div></div>
+        <div class="q rv"><button type="button" aria-expanded="false">Que comprend la maintenance SEO et sécurité ?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="a"><div><p>Les mises à jour, les sauvegardes, la sécurité du site (HTTPS) et le suivi du référencement sur Google, pour que votre site reste rapide, protégé et bien placé.</p></div></div></div>
       </div>
     </div>
   </section>
@@ -1305,27 +1306,32 @@ function s2(c,w,h,t){
     txt(c,'Inclus',w-p,h-19,'600 26px '+FD,INK,'right')});
 }
 
-/* 3 — les modifications */
-var MSG=[[0,.5,'On change les horaires d’été ?'],[1,2.1,'C’est fait, c’est en ligne.'],[0,3.7,'Ajoutez notre nouvelle offre.'],[1,5.3,'Ajoutée sur le site.']];
+/* 3 — maintenance SEO et sécurité */
+var MT=['Mises à jour et sauvegardes','Site sécurisé (HTTPS)','Référencement suivi','Vitesse et fonctionnement'];
 function s3(c,w,h,t){
   var p=18;
-  A(c,eo(P(t,0,.6)),function(){txt(c,'VOS DEMANDES',p,28,'500 9.5px '+FM,DIM)});
-  var y=48;
-  for(var i=0;i<MSG.length;i++){(function(i){
-    var m=MSG[i],q=P(t,m[1],m[1]+.5),bh=30;
-    if(q>0){c.save();c.globalAlpha*=eo(q);c.translate(0,8*(1-eo(q)));
-      c.font='500 11px '+FS;var tw=c.measureText(m[2]).width+(m[0]?32:24),x=m[0]?p:w-p-tw;
-      rr(c,x,y,tw,bh,14);c.fillStyle=m[0]?BLUE:PAN2;c.fill();
-      if(m[0]){c.strokeStyle='#fff';c.lineWidth=1.6;c.lineCap='round';c.lineJoin='round';c.beginPath();c.moveTo(x+10,y+15);c.lineTo(x+13,y+18);c.lineTo(x+18,y+12);c.stroke();txt(c,m[2],x+24,y+19,'500 11px '+FS,'#fff')}
-      else txt(c,m[2],x+12,y+19,'500 11px '+FS,INK2);
-      c.restore()}
-    y+=bh+10;
+  A(c,eo(P(t,0,.6)),function(){txt(c,'MAINTENANCE',p,28,'500 9.5px '+FM,DIM)});
+  var sh=P(t,.3,1.1),sx=p+17,sy=64;
+  if(sh>0){c.save();c.globalAlpha*=eo(sh);c.translate(sx,sy);var ss=bk(sh);c.scale(ss,ss);
+    c.beginPath();c.moveTo(0,-17);c.lineTo(15,-11);c.lineTo(15,2);c.quadraticCurveTo(15,13,0,19);c.quadraticCurveTo(-15,13,-15,2);c.lineTo(-15,-11);c.closePath();c.fillStyle=INK;c.fill();
+    var ck=P(t,3.6,4.1);c.strokeStyle='#fff';c.lineWidth=2.4;c.lineCap='round';c.lineJoin='round';c.beginPath();c.moveTo(-6,2);c.lineTo(-2,6);c.lineTo(6,-4);c.setLineDash([24,24]);c.lineDashOffset=24*(1-eo(ck));c.stroke();c.restore()}
+  A(c,eo(P(t,.5,1.1)),function(){txt(c,'Votre site',p+44,59,'600 14px '+FS,INK);
+    var on=P(t,4.2,4.7);txt(c,on>0?'Protégé et à jour':'Surveillance en cours…',p+44,76,'400 11px '+FS,on>0?GREEN:MUT)});
+  var y0=Math.round(100+(h-100-70-4*26)/2);
+  for(var i=0;i<4;i++){(function(i){
+    var y=y0+i*26,a=eo(P(t,.8+i*.15,1.3+i*.15)),tk=1.4+i*.65,q=P(t,tk,tk+.4);
+    A(c,a,function(){
+      rr(c,p,y-10,w-2*p,22,7);c.fillStyle=PAN;c.fill();
+      txt(c,MT[i],p+12,y+4,'500 11.5px '+FS,INK2);
+      var cx=w-p-14;c.beginPath();c.arc(cx,y+1,7,0,7);c.fillStyle=LINE;c.fill();
+      if(q>0){c.save();c.translate(cx,y+1);var s2=bk(q);c.scale(s2,s2);c.beginPath();c.arc(0,0,7,0,7);c.fillStyle=GREEN;c.fill();
+        c.strokeStyle='#fff';c.lineWidth=1.7;c.lineCap='round';c.lineJoin='round';c.beginPath();c.moveTo(-3,0);c.lineTo(-1,2.4);c.lineTo(3.2,-2.4);c.stroke();c.restore()}
+    });
   })(i)}
-  var n=t>=5.5?2:t>=2.3?1:0;
   A(c,eo(P(t,.6,1.2)),function(){c.fillStyle=LINE;c.fillRect(p,h-62,w-2*p,1);
-    txt(c,'Modifications du site',p,h-34,'500 12.5px '+FS,INK2);
-    txt(c,'faites sur simple demande',p,h-18,'400 11px '+FS,MUT);
-    txt(c,String(n),w-p,h-19,'600 34px '+FD,INK,'right')});
+    txt(c,'Maintenance SEO et sécurité',p,h-34,'500 12.5px '+FS,INK2);
+    txt(c,'chaque mois, sans y penser',p,h-18,'400 11px '+FS,MUT);
+    txt(c,'Inclus',w-p,h-19,'600 26px '+FD,INK,'right')});
 }
 
 var SC=[[s1,7.4,5.9],[s2,7.6,6.2],[s3,7.8,6.9]];
