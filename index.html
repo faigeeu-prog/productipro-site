@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Productipro apporte des demandes de devis qualifiées aux chauffagistes, couvreurs et installateurs de bornes de recharge : publicités, qualification et relance par IA. 1 290 € par mois.">
+<meta name="description" content="Productipro apporte des demandes de devis qualifiées aux chauffagistes, couvreurs et installateurs de bornes de recharge : publicités, qualification et relance par IA. Rémunération au résultat : pas de résultat, pas de paiement.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230A0A0B'/%3E%3Cpath d='M11.5 23.5V8.5h6a4.75 4.75 0 0 1 0 9.5h-6' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='22.8' cy='22.8' r='2.3' fill='%230A5CFF'/%3E%3C/svg%3E">
 <title>Productipro – Leads chauds pour artisans de l’énergie</title>
 <script>(function(){try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('is-loading');setTimeout(function(){document.documentElement.classList.remove('is-loading')},4500);}}catch(e){}})();</script>
@@ -419,7 +419,7 @@ section{padding-top:130px}
 
   <!-- HERO -->
   <div class="hero">
-    <span class="pill h-in"><b>1 290 €/mois</b>Leads chauds par publicité</span>
+    <span class="pill h-in"><b>Payé au résultat</b>Leads chauds par publicité</span>
     <h1 id="h1"><span class="w">Des</span> <span class="w">leads</span> <span class="w">chauds,</span><br> <span class="w lt">pour</span> <span class="w lt">vos</span> <span class="w lt">chantiers.</span></h1>
     <p class="sub h-in">Chauffagistes, couvreurs, installateurs de bornes de recharge : on lance vos publicités, l'IA qualifie et relance chaque demande, et vous recevez des rendez-vous prêts à devis.</p>
     <div class="cta h-in">
@@ -480,7 +480,7 @@ section{padding-top:130px}
 
 <div class="ppm-wrap">
 <div class="ppm paused" id="ppm" role="region" aria-label="Film : Productipro apporte des leads chauds aux artisans de l’énergie">
-  <canvas id="ppm-c" role="img" aria-label="Animation : un propriétaire cherche une pompe à chaleur et sa demande est envoyée à cinq installateurs ; avec Productipro, des publicités amènent des demandes exclusives, l'IA les qualifie et les relance, pour 1 290 € par mois, avec une garantie de résultat."></canvas>
+  <canvas id="ppm-c" role="img" aria-label="Animation : un propriétaire cherche une pompe à chaleur et sa demande est envoyée à cinq installateurs ; avec Productipro, des publicités amènent des demandes exclusives, l'IA les qualifie et les relance, rémunérée uniquement au résultat."></canvas>
   <button class="ppm-big" id="ppm-big" type="button" aria-label="Lire le film avec le son"><span><i><svg width="14" height="14" viewBox="0 0 12 12"><path d="M2.5 1.3v9.4L10.3 6z" fill="#fff"/></svg></i>Lire le film · 40 s</span></button>
   <button class="ppm-sound" id="ppm-sound" type="button" aria-pressed="false">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path id="ppm-snd-w" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11" opacity=".35"/></svg>
@@ -766,12 +766,12 @@ function cardModif(t,t0){
   var y=cardBase(t,t0,"RELANCE ET RDV  ·  CHAQUE MOIS");
   font(38,600,'d',-1);ctx.fillStyle=INK;ctx.fillText("Relance et rendez-vous",1100,y+122);
   font(22,400,'s',0);ctx.fillStyle=MUTED;ctx.fillText("Aucune demande oubliée.",1100,y+158);
-  var rows=[["Relance par SMS et e-mail",28.4],["Rendez-vous dans votre agenda",28.85],["Rapport clair chaque mois",29.3],["Garantie : pubs prolongées",29.75]];
+  var rows=[["Relance par SMS et e-mail",28.4],["Rendez-vous dans votre agenda",28.85],["Rapport clair chaque mois",29.3],["Payé uniquement au résultat",29.75]];
   rows.forEach(function(r,i){var p=eo(P(t,r[1],r[1]+.45));if(p<=0)return;var yy=y+226+i*54;ctx.globalAlpha=p;
     font(18,500,'m',0);ctx.fillStyle=BLUE;ctx.fillText('0'+(i+1),1100,yy);
     font(24,500,'s',0);ctx.fillStyle=INK;ctx.fillText(r[0],1160+(1-p)*20,yy);
     check(1728,yy-8,13,GREEN,P(t,r[1]+.2,r[1]+.55))});
-  var cp=P(t,30.2,30.5);if(cp>0){ctx.globalAlpha=eo(cp);chip(1100,y+440,"Inclus dans l'abonnement","#EAF1FF",BLUE,false,17)}
+  var cp=P(t,30.2,30.5);if(cp>0){ctx.globalAlpha=eo(cp);chip(1100,y+440,"Pas de résultat, pas de paiement","#EAF1FF",BLUE,false,17)}
   ctx.globalAlpha=1;
 }
 
@@ -784,9 +784,9 @@ function end(t){
   grid(t,false,1);
   mline([["Des leads chauds",WHITE]],CX,CY-30,150,P(t,31.2,31.9),P(t,33.0,33.45),{align:'center'});
   mline([["pour vos chantiers.",'#A6A6AD']],CX,CY+120,150,P(t,31.45,32.15),P(t,33.1,33.55),{align:'center'});
-  mline([["1 290 € par mois.",WHITE]],CX,CY-50,150,P(t,33.5,34.2),P(t,35.2,35.6),{align:'center'});
-  mline([["Garantie résultat.",BLUE]],CX,CY+80,92,P(t,33.75,34.45),P(t,35.3,35.7),{align:'center'});
-  mline([["Pubs prolongées gratuitement si l'objectif n'est pas atteint.",'#A6A6AD']],CX,CY+170,40,P(t,34.2,34.8),P(t,35.35,35.75),{align:'center',w:500,f:'s',ls:-0.3});
+  mline([["Payé au résultat.",WHITE]],CX,CY-50,150,P(t,33.5,34.2),P(t,35.2,35.6),{align:'center'});
+  mline([["Pas de résultat, pas de paiement.",BLUE]],CX,CY+80,80,P(t,33.75,34.45),P(t,35.3,35.7),{align:'center'});
+  mline([["Vous ne payez notre travail que si vous avez des résultats.",'#A6A6AD']],CX,CY+170,40,P(t,34.2,34.8),P(t,35.35,35.75),{align:'center',w:500,f:'s',ls:-0.3});
   if(t<35.55)return;
   font(124,600,'d',-0.045*124);var word="productipro",ww=tw(word),ms=132,gap=34,tot=ms+gap+ww,x0=CX-tot/2,my=CY-ms/2-40;
   var dotP=P(t,36.85,37.35),dy=-120*(1-eo(dotP));
@@ -993,19 +993,19 @@ window.__ppmDebug=window.__ppmDebug||{};window.__ppmDebug[PRE]={draw:draw,resize
 <section class="tools" id="outils">
     <div class="sh c rv">
       <span class="tag">Tarif</span>
-      <h2>Un seul abonnement. Tout est inclus.</h2>
-      <p>On s'occupe des pubs, des demandes et des relances, pour un prix fixe chaque mois.</p>
+      <h2>On est payé au résultat. Pas de résultat, pas de paiement.</h2>
+      <p>On s'occupe des pubs, des demandes et des relances, et notre rémunération dépend de vos résultats.</p>
     </div>
     <div class="price rv">
       <div class="pc">
-        <div><div class="l">Abonnement mensuel</div><div class="n">1 290 €<small>/mois</small></div><div class="e">Budget publicitaire à part, payé directement aux plateformes.</div></div>
+        <div><div class="l">Rémunération au résultat</div><div class="n">0 €<small> si pas de résultat</small></div><div class="e">Vous ne nous payez que si vous avez des résultats. Le budget publicitaire est à part, payé directement aux plateformes.</div></div>
         <a href="#rdv" class="btn">Réserver un appel de 20 min</a>
       </div>
       <div class="pl">
         <div class="pi"><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><div><h3>Des publicités qui amènent des demandes</h3><p>Campagnes pour votre métier et votre zone, créées, testées et améliorées chaque mois, avec une page de demande de devis.</p></div></div>
         <div class="pi"><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><div><h3>Qualification par l'IA</h3><p>Chaque demande est contactée, le projet, le logement, le budget et le délai sont vérifiés. Vous ne recevez que les contacts sérieux.</p></div></div>
         <div class="pi"><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><div><h3>Relance et rendez-vous</h3><p>Les demandes sans réponse sont relancées par message, jusqu'au rendez-vous dans votre agenda. Un rapport clair chaque mois.</p></div></div>
-        <div class="pi"><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><div><h3>Garantie résultat</h3><p>On fixe ensemble un objectif de rendez-vous qualifiés. S'il n'est pas atteint, on prolonge les pubs gratuitement jusqu'à ce qu'il le soit.</p></div></div>
+        <div class="pi"><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><div><h3>Payé au résultat</h3><p>On définit ensemble ce qui compte comme un résultat (par exemple un rendez-vous qualifié). Pas de résultat, vous ne nous payez pas.</p></div></div>
       </div>
     </div>
   </section>
@@ -1013,7 +1013,7 @@ window.__ppmDebug=window.__ppmDebug||{};window.__ppmDebug[PRE]={draw:draw,resize
   <!-- BIG NUMBER -->
   <div class="bign">
     <div class="num" id="bignum" aria-hidden="true">productipro</div>
-    <h2 class="rv">Des demandes de devis qualifiées pour <span>1 290 €</span> par mois</h2>
+    <h2 class="rv">Des demandes de devis qualifiées. <span>Pas de résultat, pas de paiement.</span></h2>
   </div>
 
   <!-- COMMENT -->
@@ -1056,7 +1056,7 @@ window.__ppmDebug=window.__ppmDebug||{};window.__ppmDebug[PRE]={draw:draw,resize
       <div class="bc rv"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 1.5M9.5 2.5h5"/></svg></span><h3>Qualifiées par l'IA</h3><p>Projet, budget et délai vérifiés avant votre appel.</p></div>
       <div class="bc rv"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h11M4 12h16M4 17h8"/><path d="M17 4l3 3-3 3"/></svg></span><h3>Relance automatique</h3><p>Aucune demande oubliée, même en dehors des horaires.</p></div>
       <div class="bc rv"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3.5" width="16" height="17" rx="2.5"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><h3>Rien à gérer</h3><p>Pubs, réponses et relances sont faites pour vous.</p></div>
-      <div class="bc rv"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></span><h3>Garantie résultat</h3><p>Objectif fixé ensemble, sinon pubs prolongées gratuitement.</p></div>
+      <div class="bc rv"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></span><h3>Payé au résultat</h3><p>Pas de résultat, vous ne nous payez pas.</p></div>
     </div>
   </section>
 
@@ -1097,7 +1097,7 @@ window.__ppmDebug=window.__ppmDebug||{};window.__ppmDebug[PRE]={draw:draw,resize
           <li><i><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i>Des relances faites à votre place</li>
           <li><i><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i>Des rendez-vous dans votre agenda</li>
           <li><i><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i>Un rapport clair chaque mois</li>
-          <li><i><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i>Pubs prolongées si l'objectif n'est pas atteint</li>
+          <li><i><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i>Pas de résultat, pas de paiement</li>
         </ul>
       </div>
     </div>
@@ -1112,8 +1112,8 @@ window.__ppmDebug=window.__ppmDebug||{};window.__ppmDebug[PRE]={draw:draw,resize
         <p>Une question spécifique ? <a href="#contact">Contactez-nous</a></p>
       </div>
       <div class="qs">
-        <div class="q open rv"><button type="button" aria-expanded="true">Qu'est-ce qui est inclus dans les 1 290 € par mois ?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="a"><div><p>La création et la gestion de vos publicités, la page de demande de devis, la qualification et la relance des demandes par IA, et un rapport chaque mois. Le budget publicitaire est payé à part, directement aux plateformes.</p></div></div></div>
-        <div class="q rv"><button type="button" aria-expanded="false">Comment fonctionne la garantie ?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="a"><div><p>On fixe ensemble, au départ, un objectif de rendez-vous qualifiés. Si on ne l'atteint pas, on prolonge la campagne gratuitement jusqu'à ce qu'il soit atteint. Les conditions sont écrites dans le contrat.</p></div></div></div>
+        <div class="q open rv"><button type="button" aria-expanded="true">Comment êtes-vous payés ?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="a"><div><p>Au résultat. On définit ensemble, avant de démarrer, ce qui compte comme un résultat et ce que vous payez pour chacun. Si vous n'avez pas de résultat, vous ne nous payez pas. Nous créons et gérons les publicités, la page de demande de devis, la qualification et la relance par IA. Le budget publicitaire est à part, payé directement aux plateformes.</p></div></div></div>
+        <div class="q rv"><button type="button" aria-expanded="false">Que comprend « pas de résultat, pas de paiement » ?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="a"><div><p>Notre rémunération n'est due que pour les résultats obtenus : sans résultat, rien à nous payer. La définition d'un résultat et le tarif correspondant sont écrits dans le contrat avant le lancement.</p></div></div></div>
         <div class="q rv"><button type="button" aria-expanded="false">Pour quels métiers ?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="a"><div><p>Les chauffagistes et installateurs de pompes à chaleur et de climatisation, les couvreurs, et les installateurs de bornes de recharge à domicile.</p></div></div></div>
         <div class="q rv"><button type="button" aria-expanded="false">Que fait l'IA exactement ?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="a"><div><p>Elle contacte chaque demande dès son arrivée, pose quelques questions (projet, logement, budget, délai) et relance ceux qui ne répondent pas. Vous recevez les contacts sérieux, prêts pour un rendez-vous.</p></div></div></div>
         <div class="q rv"><button type="button" aria-expanded="false">Quel budget publicitaire prévoir ?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="a"><div><p>Cela dépend de votre zone et de votre objectif. On le définit ensemble pendant l'appel de 20 minutes. Il est payé directement aux plateformes publicitaires.</p></div></div></div>
@@ -1302,7 +1302,7 @@ function s2(c,w,h,t){
 }
 
 /* 3 — relance et rendez-vous */
-var MT=['Relance par SMS et e-mail','Rendez-vous dans votre agenda','Rapport clair chaque mois','Garantie résultat'];
+var MT=['Relance par SMS et e-mail','Rendez-vous dans votre agenda','Rapport clair chaque mois','Payé au résultat'];
 function s3(c,w,h,t){
   var p=18;
   A(c,eo(P(t,0,.6)),function(){txt(c,'RELANCE ET RENDEZ-VOUS',p,28,'500 9.5px '+FM,DIM)});
