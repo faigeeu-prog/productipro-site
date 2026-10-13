@@ -70,8 +70,8 @@ h4{font-size:20px;letter-spacing:-.03em}
 .nav.stuck{background:rgba(238,238,238,.82);backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px);box-shadow:0 1px 0 rgba(0,0,0,.06)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;gap:18px}
 .brand{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:600;letter-spacing:-.045em}
-.mark{width:28px;height:28px;border-radius:50%;background:var(--ink);display:grid;place-items:center;flex:none;box-shadow:0 2px 8px rgba(0,0,0,.25)}
-.mark svg{width:14px;height:14px}
+.mark{width:30px;height:30px;flex:none;display:block;filter:drop-shadow(0 2px 7px rgba(0,0,0,.22))}
+.mark svg{width:100%;height:100%;display:block}
 .links{display:flex;align-items:center;gap:28px}
 .links a{font-size:16px;font-weight:500;letter-spacing:-.02em;color:var(--ink);opacity:.92}
 .links a:hover{opacity:.6}
@@ -95,8 +95,8 @@ h4{font-size:20px;letter-spacing:-.03em}
 .proof .ic span{width:34px;height:34px;border-radius:50%;background:var(--card);display:grid;place-items:center;margin-left:-9px;box-shadow:0 1px 3px rgba(0,0,0,.14);border:2px solid var(--bg)}
 .proof .ic span:first-child{margin-left:0}
 .proof .ic span svg{width:17px;height:17px}
-.proof .ic .last{background:var(--ink)}
-.proof .ic .last svg{width:14px;height:14px}
+.proof .ic .last{background:var(--ink);padding:0;border:2px solid var(--bg)}
+.proof .ic .last svg{width:34px;height:34px;border-radius:50%}
 .proof .l1{font-size:14px;font-weight:600}
 .proof .l2{font-size:14px;color:var(--mut);font-weight:500}
 
@@ -106,7 +106,7 @@ h4{font-size:20px;letter-spacing:-.03em}
 .reel-wrap:hover .reel{animation-play-state:paused}
 @keyframes mq{to{transform:translateX(-50%)}}
 .rcard{position:relative;width:258px;aspect-ratio:9/15.2;border-radius:var(--r);overflow:hidden;background:#111;box-shadow:var(--sh)}
-.rcard img{width:100%;height:100%;object-fit:cover}
+.rcard img,.rcard video{width:100%;height:100%;object-fit:cover;background:#111}
 .rcard .tag{position:absolute;left:0;right:0;bottom:0;padding:44px 14px 15px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.8));color:#fff;font-size:13.5px;font-weight:500;display:flex;align-items:center;gap:7px;white-space:nowrap;overflow:hidden}
 .rcard .tag b{font-weight:600}
 .rcard .vb{width:15px;height:15px;flex:none}
@@ -141,7 +141,7 @@ h4{font-size:20px;letter-spacing:-.03em}
 /* ---------- services ---------- */
 .svc{background:var(--card);border-radius:var(--r);padding:16px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:center;box-shadow:var(--sh-s);margin-top:22px}
 .svc .media{border-radius:16px;overflow:hidden;background:var(--card2);aspect-ratio:4/3}
-.svc .media img{width:100%;height:100%;object-fit:cover}
+.svc .media img,.svc .media video{width:100%;height:100%;object-fit:cover;background:#111}
 .svc .tx{padding:10px 18px 18px}
 .svc .tx p.d{margin-top:12px;color:var(--mut);font-size:15.5px;line-height:1.5;max-width:44ch}
 .svc ul{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:9px}
@@ -154,7 +154,7 @@ h4{font-size:20px;letter-spacing:-.03em}
 /* ---------- mission ---------- */
 .mission{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
 .mission .ph{border-radius:var(--r);overflow:hidden;background:#111;aspect-ratio:3/3.6;box-shadow:var(--sh)}
-.mission .ph img{width:100%;height:100%;object-fit:cover}
+.mission .ph img,.mission .ph video{width:100%;height:100%;object-fit:cover;background:#111}
 .mission h2{margin-top:16px}
 .mission .sub{margin-top:16px;max-width:42ch}
 .boxes{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px}
@@ -166,7 +166,7 @@ h4{font-size:20px;letter-spacing:-.03em}
 .proj{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;margin-top:48px}
 .pj{background:var(--card);border-radius:var(--r);padding:8px;box-shadow:var(--sh-s)}
 .pj .im{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:16/13;background:#111}
-.pj .im img{width:100%;height:100%;object-fit:cover}
+.pj .im img,.pj .im video{width:100%;height:100%;object-fit:cover;background:#111}
 .pj .chips{position:absolute;left:0;right:0;bottom:0;padding:40px 12px 12px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.75));display:flex;gap:7px;flex-wrap:wrap}
 .pj .chips span{background:rgba(255,255,255,.17);backdrop-filter:blur(8px);color:#fff;border-radius:100px;padding:6px 11px;font-size:12.5px;font-weight:500;display:flex;align-items:center;gap:5px}
 .pj .chips svg{width:13px;height:13px}
@@ -264,7 +264,7 @@ h4{font-size:20px;letter-spacing:-.03em}
 .final .btn{margin-top:26px}
 .phone{justify-self:center;width:min(300px,78vw);aspect-ratio:9/18.6;border-radius:42px;background:#0d0d0f;padding:8px;box-shadow:0 14px 40px rgba(0,0,0,.26),0 50px 90px rgba(0,0,0,.2)}
 .phone .s{position:relative;width:100%;height:100%;border-radius:35px;overflow:hidden;background:#111}
-.phone .s img{width:100%;height:100%;object-fit:cover}
+.phone .s img,.phone .s video{width:100%;height:100%;object-fit:cover;background:#111}
 .phone .nt{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:36%;height:19px;background:#0d0d0f;border-radius:99px;z-index:3}
 .phone .hd{position:absolute;left:12px;bottom:14px;display:flex;align-items:center;gap:7px;color:#fff;font-size:13px;font-weight:500;text-shadow:0 1px 6px rgba(0,0,0,.6)}
 
@@ -346,7 +346,7 @@ footer{padding:70px 0 26px}
 <body>
 
 <svg style="display:none" aria-hidden="true">
-<symbol id="bolt" viewBox="0 0 24 24"><path d="M13.4 2L4.8 13.4h5.5L9.9 22l9-11.7h-5.9L13.4 2z" fill="currentColor"/></symbol>
+<symbol id="logo" viewBox="0 0 48 48"><rect width="48" height="48" rx="13" fill="#1C1C1C"/><path fill="#FDFDFD" fill-rule="evenodd" d="M13 11.2a1.6 1.6 0 0 1 1.6-1.6h10.3c6.4 0 10.9 4.2 10.9 10.2s-4.5 10.2-10.9 10.2h-4.8v7.8a1.6 1.6 0 0 1-1.6 1.6h-3.9a1.6 1.6 0 0 1-1.6-1.6V11.2zm7.1 4.7v8.2h4.5c2.7 0 4.5-1.6 4.5-4.1s-1.8-4.1-4.5-4.1h-4.5z"/><path fill="#FDFDFD" d="M22.7 17.5l4 2.3-4 2.3z"/></symbol>
 <symbol id="ig" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="6" fill="#C7417E"/><circle cx="12" cy="12" r="4.6" fill="none" stroke="#fff" stroke-width="1.9"/><circle cx="17.3" cy="6.7" r="1.3" fill="#fff"/></symbol>
 <symbol id="tk" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="6" fill="#111"/><path d="M14.2 6.1c.3 1.6 1.3 2.7 2.9 2.9v2.1c-1 .1-1.9-.2-2.9-.8v3.9c0 2.5-1.9 4.1-4 4.1-2 0-3.6-1.5-3.6-3.6 0-2.2 1.9-3.8 4.2-3.4v2.2c-1.1-.3-2.1.3-2.1 1.3 0 .8.6 1.4 1.5 1.4.9 0 1.6-.6 1.6-1.8V6.1h2.4z" fill="#fff"/></symbol>
 <symbol id="yt" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="6" fill="#FF0000"/><path d="M9.8 8.4l6.2 3.6-6.2 3.6z" fill="#fff"/></symbol>
@@ -375,7 +375,7 @@ footer{padding:70px 0 26px}
 <nav class="nav" id="nav">
   <div class="wrap">
     <div class="nav-in">
-      <a class="brand" href="#top"><span class="mark"><svg style="color:#FDFDFD"><use href="#bolt"/></svg></span>productipro</a>
+      <a class="brand" href="#top"><span class="mark"><svg><use href="#logo"/></svg></span>productipro</a>
       <div class="links">
         <a href="#format">Format</a>
         <a href="#methode">Méthode</a>
@@ -412,7 +412,7 @@ footer{padding:70px 0 26px}
         <span><svg><use href="#tk"/></svg></span>
         <span><svg><use href="#yt"/></svg></span>
         <span><svg><use href="#fb"/></svg></span>
-        <span class="last"><svg style="color:#FDFDFD"><use href="#bolt"/></svg></span>
+        <span class="last"><svg><use href="#logo"/></svg></span>
       </div>
       <div class="l1">4 plateformes, 1 seul abonnement</div>
       <div class="l2">Instagram · TikTok · YouTube Shorts · Facebook</div>
@@ -505,7 +505,7 @@ footer{padding:70px 0 26px}
     </div>
 
     <div class="svc rev rv">
-      <div class="media"><img src="assets/v4.webp" alt="Montage vertical sous-titré"></div>
+      <div class="media"><video class="pv" src="assets/v4.mp4" poster="assets/v4.webp" muted loop playsinline preload="none" aria-label="Montage vertical sous-titré"></video></div>
       <div class="tx">
         <h3>On monte et on sous-titre</h3>
         <p class="d">Découpe, accroche dans les deux premières secondes, sous-titres lisibles, format vertical. Vous n'ouvrez aucun logiciel et vous ne montez rien.</p>
@@ -538,7 +538,7 @@ footer{padding:70px 0 26px}
 <section class="sec tight">
   <div class="wrap">
     <div class="mission">
-      <div class="ph rv"><img src="assets/hero-c.webp" alt="Vidéo filmée au travail avec des lunettes connectées"></div>
+      <div class="ph rv"><video class="pv" src="assets/v1.mp4" poster="assets/hero-c.webp" muted loop playsinline preload="none" aria-label="Vidéo filmée au travail avec des lunettes connectées"></video></div>
       <div class="rv d1">
         <span class="badge">Notre approche</span>
         <h2>On ne vend pas des vues. <span class="acc">On vend des clients.</span></h2>
@@ -612,7 +612,7 @@ footer{padding:70px 0 26px}
         </ul>
       </div>
       <div class="c me rv d1">
-        <h4><span class="mark" style="width:24px;height:24px"><svg style="color:#FDFDFD;width:12px;height:12px"><use href="#bolt"/></svg></span> Productipro</h4>
+        <h4><span class="mark" style="width:24px;height:24px"><svg><use href="#logo"/></svg></span> Productipro</h4>
         <ul>
           <li><svg style="color:var(--ink)"><use href="#ck"/></svg> Vous ne bloquez aucune journée</li>
           <li><svg style="color:var(--ink)"><use href="#ck"/></svg> 8 à 15 vidéos chaque mois, sans interruption</li>
@@ -785,7 +785,7 @@ footer{padding:70px 0 26px}
       </div>
       <div class="phone rv d1">
         <div class="s"><div class="nt"></div>
-          <img src="assets/final.webp" alt="Vidéo verticale publiée pour un client">
+          <video class="pv" src="assets/v6.mp4" poster="assets/final.webp" muted loop playsinline preload="none" aria-label="Vidéo verticale publiée pour un client"></video>
           <div class="hd">productipro <svg width="14" height="14"><use href="#vb"/></svg></div>
         </div>
       </div>
@@ -812,7 +812,7 @@ footer{padding:70px 0 26px}
   <div class="wrap">
     <div class="fg">
       <div>
-        <a class="brand" href="#top"><span class="mark"><svg style="color:#FDFDFD"><use href="#bolt"/></svg></span>productipro</a>
+        <a class="brand" href="#top"><span class="mark"><svg><use href="#logo"/></svg></span>productipro</a>
         <p class="tag">Vos journées filmées aux lunettes connectées, montées et publiées chaque semaine.</p>
         <div class="soc">
           <a href="https://wa.me/33767717586" aria-label="WhatsApp"><svg><use href="#wa"/></svg></a>
@@ -862,18 +862,18 @@ document.getElementById('drawer').addEventListener('click',function(e){if(e.targ
 
 /* reel + projets */
 (function(){
-  var V=[['v1','Agriculture','Journée au champ'],['v2','Nettoyage','Avant / après'],['v3','Terrain','Arrivée sur site'],
-         ['v4','Installation','Geste technique'],['v5','Déplacement','Entre deux rendez-vous'],['v6','Dépannage','Le détail qui compte']];
+  var V=[['v1','Agriculture','Journée au champ'],['v2','Automobile','Avant / après'],['v3','Terrain','Arrivée sur site'],
+         ['v4','Installation','Geste technique'],['v5','Automobile','Le détail soigné'],['v6','Dépannage','Le réglage qui compte']];
   var r=V.map(function(v){
-    return '<div class="rcard"><img src="assets/'+v[0]+'.webp" alt="Vidéo verticale — '+v[1]+'">'+
+    return '<div class="rcard"><video class="pv" src="assets/'+v[0]+'.mp4" poster="assets/'+v[0]+'.webp" muted loop playsinline preload="none" aria-label="Vidéo verticale — '+v[1]+'"></video>'+
       '<div class="tag"><b>'+v[1]+'</b> · '+v[2]+'<svg class="vb"><use href="#vb"/></svg></div></div>';
   }).join('');
   document.getElementById('reel').innerHTML=r+r;
 
-  var P=[['v1','Agriculture','Journée au champ'],['v2','Nettoyage','Avant / après'],
-         ['v6','Dépannage','Geste technique'],['v5','Déplacement','Coulisses']];
+  var P=[['v1','Agriculture','Journée au champ'],['v2','Automobile','Avant / après'],
+         ['v6','Dépannage','Le réglage qui compte'],['v5','Automobile','La finition']];
   document.getElementById('proj').innerHTML=P.map(function(p,i){
-    return '<div class="pj rv'+(i%2?' d1':'')+'"><div class="im"><img src="assets/'+p[0]+'.webp" alt="Vidéo verticale — '+p[1]+'">'+
+    return '<div class="pj rv'+(i%2?' d1':'')+'"><div class="im"><video class="pv" src="assets/'+p[0]+'.mp4" poster="assets/'+p[0]+'.webp" muted loop playsinline preload="none" aria-label="Vidéo verticale — '+p[1]+'"></video>'+
       '<div class="chips"><span><svg><use href="#cam"/></svg> Filmé aux lunettes</span><span><svg><use href="#cut"/></svg> Monté + sous-titré</span><span><svg><use href="#up"/></svg> 4 réseaux</span></div></div>'+
       '<div class="ft"><b>'+p[2]+'</b><span>'+p[1]+'</span></div></div>';
   }).join('');
@@ -906,6 +906,21 @@ document.querySelectorAll('.q>button').forEach(function(b){
     if(!open)q.classList.add('open');
   });
 });
+
+/* lecture des vidéos uniquement quand elles sont visibles */
+(function(){
+  var vs=[].slice.call(document.querySelectorAll('video.pv'));
+  if(!vs.length)return;
+  vs.forEach(function(v){v.muted=true;v.setAttribute('muted','');});
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      var v=e.target;
+      if(e.isIntersecting){ if(v.preload==='none')v.preload='auto'; var p=v.play(); if(p&&p.catch)p.catch(function(){}); }
+      else { v.pause(); }
+    });
+  },{rootMargin:'120px',threshold:.15});
+  vs.forEach(function(v){io.observe(v)});
+})();
 
 /* reveal */
 (function(){
