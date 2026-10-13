@@ -4,468 +4,692 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Productipro – Vos chantiers filmés, transformés en demandes de devis</title>
-<meta name="description" content="Productipro transforme les vidéos de vos chantiers, filmées avec des lunettes connectées, en contenus qui ramènent des demandes de devis. Montage, sous-titres et publication sur Instagram, TikTok, YouTube Shorts et Facebook. Artisans d'Île-de-France.">
-<meta property="og:title" content="Productipro – Vos chantiers filmés, transformés en demandes de devis">
+<meta name="description" content="Vous filmez vos chantiers avec des lunettes connectées. Productipro monte, sous-titre et publie vos vidéos sur Instagram, TikTok, YouTube Shorts et Facebook, et compte les demandes de devis qu'elles vous ramènent. Artisans d'Île-de-France.">
+<meta property="og:title" content="Productipro – Vos chantiers deviennent vos meilleurs commerciaux">
 <meta property="og:description" content="Vous filmez en travaillant. On monte, on publie, et on compte les demandes de devis.">
+<meta property="og:image" content="https://www.productipro.fr/assets/terrasse.webp">
+<meta name="theme-color" content="#ffffff">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230A0A0B'/%3E%3Cpath d='M11.5 23.5V8.5h6a4.75 4.75 0 0 1 0 9.5h-6' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='22.8' cy='22.8' r='2.3' fill='%230A5CFF'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0A0A0B;--ink2:#2C2C30;--mut:#6E6E76;--dim:#A6A6AD;--line:#E8E8EB;--line2:#DCDCE0;--panel:#F6F6F7;--panel2:#EFEFF1;--blue:#0A5CFF;--bsoft:#EAF1FF;--green:#16A34A;--gsoft:#E7F6EC;--r:28px;
+:root{--ink:#0A0A0B;--ink2:#2C2C30;--mut:#6E6E76;--dim:#A6A6AD;--line:#E8E8EB;--line2:#DCDCE0;--panel:#F6F6F7;--panel2:#EFEFF1;--blue:#0A5CFF;--blue2:#3D7BFF;--bsoft:#EAF1FF;--green:#16A34A;--gsoft:#E7F6EC;
 --disp:"Inter Tight",ui-sans-serif,system-ui,sans-serif;--sans:"Inter",ui-sans-serif,system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;
---shadow:0 1px 2px rgba(10,10,11,.04),0 10px 30px rgba(10,10,11,.06)}
+--sh1:0 1px 2px rgba(10,10,11,.04),0 8px 24px rgba(10,10,11,.06);--sh2:0 2px 4px rgba(10,10,11,.04),0 30px 60px -12px rgba(10,10,11,.18);--ease:cubic-bezier(.16,1,.3,1)}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:clip}
 a{color:inherit;text-decoration:none}
-img,svg{display:block}
-.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
-h1,h2,h3{font-family:var(--disp);letter-spacing:-.035em;line-height:1.02;font-weight:700}
+img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+h1,h2,h3,h4{font-family:var(--disp);font-weight:700;letter-spacing:-.04em;line-height:1}
 .g{color:var(--dim)}
-.tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
-.tag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--blue)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:54px;padding:0 24px;border-radius:999px;font-family:var(--disp);font-weight:600;font-size:17px;letter-spacing:-.01em;transition:transform .2s,background .2s,box-shadow .2s;white-space:nowrap}
-.btn-dark{background:var(--ink);color:#fff;box-shadow:0 10px 24px rgba(10,10,11,.18)}
-.btn-dark:hover{transform:translateY(-1px);background:#1c1c20}
-.btn-soft{background:var(--panel2);color:var(--ink)}
-.btn-soft:hover{background:var(--line)}
-.btn-blue{background:var(--blue);color:#fff;box-shadow:0 10px 24px rgba(10,92,255,.25)}
-.btn-blue:hover{transform:translateY(-1px)}
-.mk{width:30px;height:30px;flex:none}
+.chip{display:inline-flex;align-items:center;gap:8px;height:32px;padding:0 14px 0 10px;border-radius:999px;background:#fff;border:1px solid var(--line);box-shadow:var(--sh1);font-size:13.5px;font-weight:500;color:var(--ink2)}
+.chip .mk{width:18px;height:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 24px;border-radius:999px;font-family:var(--disp);font-weight:600;font-size:16.5px;letter-spacing:-.01em;transition:transform .25s var(--ease),box-shadow .25s,background .2s;white-space:nowrap;cursor:pointer;border:0}
+.btn svg{width:15px;height:15px;transition:transform .25s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn-dark{background:var(--ink);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 10px 24px -6px rgba(10,10,11,.45)}
+.btn-dark:hover{transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 16px 30px -8px rgba(10,10,11,.5)}
+.btn-light{background:#fff;color:var(--ink);border:1px solid var(--line);box-shadow:var(--sh1)}
+.btn-light:hover{transform:translateY(-2px)}
+.btn-blue{background:var(--blue);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 12px 28px -8px rgba(10,92,255,.6)}
+.btn-blue:hover{transform:translateY(-2px)}
+.mk{width:30px;height:30px;flex:none;display:block}
+.sec{padding:130px 0 0}
+.head{text-align:center;max-width:760px;margin:0 auto 54px}
+.head h2{font-size:clamp(36px,5vw,62px);margin:18px 0 18px}
+.head p{font-size:18px;color:var(--mut);max-width:560px;margin:0 auto}
+.rv{opacity:0;transform:translateY(28px);filter:blur(6px);transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease)}
+.rv.in{opacity:1;transform:none;filter:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+
+/* platform glyphs */
+.pf{width:20px;height:20px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.pf svg{width:12px;height:12px}
+.pf.ig{background:radial-gradient(circle at 30% 110%,#ffd776 0,#f9733d 30%,#e1306c 60%,#8a3ab9 100%)}
+.pf.tt{background:#0A0A0B}
+.pf.yt{background:#FF0033}
+.pf.fb{background:#1877F2}
 
 /* nav */
-.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:border-color .2s}
-.nav.sc{border-color:var(--line)}
-.nav-in{display:flex;align-items:center;justify-content:space-between;height:68px}
-.brand{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:700;font-size:21px;letter-spacing:-.04em}
-.links{display:flex;gap:30px;font-size:15px;color:var(--ink2)}
-.links a:hover{color:var(--ink)}
+.nav{position:fixed;top:14px;left:0;right:0;z-index:80;display:flex;justify-content:center;padding:0 14px;pointer-events:none}
+.nav-in{pointer-events:auto;display:flex;align-items:center;gap:28px;height:60px;padding:0 8px 0 18px;border-radius:999px;background:rgba(255,255,255,.72);backdrop-filter:saturate(1.6) blur(18px);-webkit-backdrop-filter:saturate(1.6) blur(18px);border:1px solid rgba(232,232,235,.9);box-shadow:0 8px 30px rgba(10,10,11,.08);width:100%;max-width:820px;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:700;font-size:20px;letter-spacing:-.045em}
+.brand .mk{width:28px;height:28px}
+.links{display:flex;gap:24px;font-size:14.5px;color:var(--ink2);font-weight:500}
+.links a{transition:color .2s}.links a:hover{color:var(--blue)}
 .nav .btn{height:44px;font-size:15px;padding:0 18px}
-@media(max-width:860px){.links{display:none}}
+@media(max-width:820px){.links{display:none}}
 
 /* hero */
-.hero{padding:22px 0 0}
-.hero-card{background:var(--panel);border:1px solid var(--line);border-radius:36px;padding:56px 24px 0;overflow:hidden;position:relative}
-.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:end;max-width:1080px;margin:0 auto}
-.pill{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 14px 5px 5px;font-size:14px;font-weight:500;box-shadow:var(--shadow)}
-.pill b{background:var(--blue);color:#fff;border-radius:999px;padding:5px 12px;font-weight:600}
-.hero h1{font-size:clamp(40px,5.6vw,70px);margin:22px 0 20px;font-weight:800;letter-spacing:-.045em}
-.hero p.lead{font-size:clamp(17px,1.7vw,20px);color:var(--ink2);max-width:540px}
-.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 26px}
-.trust{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;color:var(--mut);padding-bottom:56px}
-.trust span{display:inline-flex;align-items:center;gap:8px}
-.trust svg{width:16px;height:16px;color:var(--green)}
-.hero-copy{padding-bottom:0}
+.hero{position:relative;padding:150px 0 0;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto;height:1100px;background:radial-gradient(ellipse 50% 40% at 50% 38%,rgba(10,92,255,.10),transparent 70%),radial-gradient(ellipse 35% 30% at 18% 20%,rgba(10,10,11,.05),transparent 70%),radial-gradient(ellipse 35% 30% at 85% 30%,rgba(61,123,255,.09),transparent 70%);pointer-events:none;z-index:-1}
+.hero .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(10,10,11,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(10,10,11,.035) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse 60% 50% at 50% 30%,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse 60% 50% at 50% 30%,#000 30%,transparent 75%);z-index:-1}
+.hero-txt{text-align:center;max-width:1040px;margin:0 auto;position:relative;z-index:3}
+.hero .chip .pfs{display:inline-flex;gap:4px;margin-left:2px}
+.hero .chip .pf{width:18px;height:18px;border-radius:5px}
+.hero h1{font-size:clamp(42px,6.6vw,86px);font-weight:700;letter-spacing:-.055em;line-height:.95;margin:26px 0 24px}
+.hero h1 .g{background:linear-gradient(180deg,#B8B8BF,#8E8E96);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:clamp(17px,1.8vw,20px);color:var(--ink2);max-width:600px;margin:0 auto;line-height:1.55}
+.hero p.lead b{font-weight:600;color:var(--ink)}
+.hero .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:34px 0 0}
+.hero .note{margin-top:18px;font-size:13.5px;color:var(--mut);display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+.hero .note span{display:inline-flex;align-items:center;gap:7px}
+.hero .note svg{width:15px;height:15px;color:var(--green)}
 
-/* phone */
-.stagev{position:relative;height:560px;display:flex;justify-content:center;align-items:flex-end}
-.phone{position:relative;width:290px;height:540px;border-radius:44px 44px 0 0;background:#0A0A0B;padding:12px 12px 0;box-shadow:0 40px 80px rgba(10,10,11,.25)}
-.screen{position:relative;width:100%;height:100%;border-radius:34px 34px 0 0;overflow:hidden;background:#1a1a1d}
-.scene{position:absolute;inset:0;opacity:0;animation:sw 8s infinite}
-.scene.b{animation-delay:4s}
-@keyframes sw{0%,4%{opacity:0}8%,46%{opacity:1}52%,100%{opacity:0}}
-.tiles{position:absolute;inset:0;background-color:#d9d4cb;background-image:linear-gradient(#bdb6aa 2px,transparent 2px),linear-gradient(90deg,#bdb6aa 2px,transparent 2px);background-size:46px 46px}
-.scene.a .tiles{filter:saturate(.5) brightness(.78);background-color:#a89f91;background-image:linear-gradient(#7d7466 3px,transparent 3px),linear-gradient(90deg,#7d7466 3px,transparent 3px),radial-gradient(circle at 30% 60%,rgba(60,50,40,.35),transparent 40%),radial-gradient(circle at 75% 30%,rgba(60,50,40,.3),transparent 35%)}
-.scene.b .tiles{background-color:#ECEBE7;background-image:linear-gradient(#d4d2cc 2px,transparent 2px),linear-gradient(90deg,#d4d2cc 2px,transparent 2px);background-size:60px 120px}
-.tub{position:absolute;left:18px;right:18px;bottom:120px;height:120px;border-radius:18px 18px 40px 40px;background:#fff;box-shadow:inset 0 -10px 20px rgba(0,0,0,.06),0 10px 30px rgba(0,0,0,.15)}
-.scene.a .tub{background:#cfc8bb;box-shadow:inset 0 -10px 20px rgba(0,0,0,.2)}
-.mirror{position:absolute;left:60px;right:60px;top:110px;height:120px;border-radius:14px;background:linear-gradient(135deg,#e9f0f7,#c9d6e3);border:6px solid #fff}
-.scene.a .mirror{background:linear-gradient(135deg,#8b8a86,#6f6d68);border-color:#9d978c}
-.lab{position:absolute;top:56px;right:16px;font-family:var(--disp);font-weight:800;font-size:22px;color:#fff;background:rgba(10,10,11,.75);padding:6px 12px;border-radius:10px;letter-spacing:-.02em}
-.scene.b .lab{background:var(--blue)}
-.ui-top{position:absolute;top:14px;left:0;right:0;display:flex;justify-content:center;gap:18px;font-size:13px;font-weight:600;color:rgba(255,255,255,.7);z-index:3}
-.ui-top b{color:#fff;border-bottom:2px solid #fff;padding-bottom:3px}
-.ui-bot{position:absolute;left:0;right:0;bottom:0;padding:16px 14px 18px;background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff;z-index:3}
-.ui-bot .who{display:flex;align-items:center;gap:8px;font-weight:600;font-size:14px}
-.ui-bot .who i{width:26px;height:26px;border-radius:50%;background:#fff;display:block}
-.ui-bot .cap{font-size:13px;opacity:.92;margin-top:6px;line-height:1.35}
-.ui-bot .devis{margin-top:10px;display:flex;align-items:center;justify-content:center;gap:8px;height:40px;border-radius:12px;background:var(--blue);font-family:var(--disp);font-weight:700;font-size:15px}
-.sub{position:absolute;left:14px;right:14px;top:250px;text-align:center;font-family:var(--disp);font-weight:800;font-size:21px;color:#fff;text-shadow:0 2px 0 #000,0 0 12px rgba(0,0,0,.6);z-index:3;letter-spacing:-.01em}
-.sub em{font-style:normal;color:#FFD84A}
-.float{position:absolute;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 20px 40px rgba(10,10,11,.12);padding:14px 16px;z-index:4}
-.f1{left:-40px;top:150px;width:210px;animation:fl 6s ease-in-out infinite}
-.f2{right:-30px;top:330px;width:200px;animation:fl 6s ease-in-out infinite 1.5s}
-@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.f1 .k,.f2 .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--mut);text-transform:uppercase}
-.f1 .row{display:flex;align-items:center;gap:10px;margin-top:8px}
-.f1 .ic{width:34px;height:34px;border-radius:10px;background:var(--ink);display:flex;align-items:center;justify-content:center;flex:none}
-.f1 .t{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:-.02em;line-height:1.15}
-.f2 .t2{font-family:var(--disp);font-weight:700;font-size:17px;letter-spacing:-.02em;margin-top:6px}
-.f2 .s{font-size:12.5px;color:var(--mut)}
-.f2 .ex{display:inline-block;margin-top:6px;font-size:10.5px;font-family:var(--mono);color:var(--blue);background:var(--bsoft);padding:2px 8px;border-radius:6px}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:10px}.hero-card{padding-top:40px}.trust{padding-bottom:20px}.hero-copy{text-align:center}.hero p.lead{margin:0 auto}.hero .cta,.trust{justify-content:center}.stagev{height:520px}.phone{width:270px;height:500px}.f1{left:0;top:130px}.f2{right:0;top:300px}}
-@media(max-width:520px){.stagev{height:470px}.phone{width:250px;height:450px}.f1{width:170px;left:-2px;top:130px;padding:10px 12px}.f2{display:none}.f1 .t{font-size:13px}.f2 .t2{font-size:15px}.sub{font-size:18px;top:210px}.mirror{top:90px;height:100px}}
+.stage{position:relative;height:640px;margin-top:40px;max-width:1000px;margin-left:auto;margin-right:auto}
+.glasses{position:absolute;left:50%;top:-10px;width:min(780px,92%);transform:translateX(-50%);z-index:1;filter:drop-shadow(0 40px 50px rgba(10,10,11,.22))}
+.phones{position:absolute;left:-60px;right:-60px;bottom:-40px;height:600px;padding-top:40px;z-index:2;-webkit-mask-image:linear-gradient(#000 70%,transparent 96%);mask-image:linear-gradient(#000 70%,transparent 96%)}
+.ph{position:absolute;bottom:0;width:250px;height:520px;border-radius:42px;background:#111;padding:9px;box-shadow:0 0 0 1px rgba(255,255,255,.08) inset,0 50px 80px -20px rgba(10,10,11,.45),0 20px 30px -10px rgba(10,10,11,.25)}
+.ph::before{content:"";position:absolute;inset:0;border-radius:42px;background:linear-gradient(140deg,rgba(255,255,255,.22),transparent 30%);pointer-events:none;z-index:5}
+.ph .scr{position:relative;width:100%;height:100%;border-radius:34px;overflow:hidden;background:#222}
+.ph .scr img{width:100%;height:100%;object-fit:cover}
+.ph .isl{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:84px;height:24px;border-radius:20px;background:#000;z-index:4}
+.ph.l{left:calc(50% - 340px);transform:rotate(-9deg) translateY(30px);transform-origin:bottom center}
+.ph.c{left:calc(50% - 135px);width:270px;height:560px;z-index:3}
+.ph.r{left:calc(50% + 90px);transform:rotate(9deg) translateY(30px);transform-origin:bottom center}
+.ov{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;justify-content:space-between;padding:44px 14px 16px;background:linear-gradient(180deg,rgba(0,0,0,.25),transparent 22%,transparent 55%,rgba(0,0,0,.7))}
+.ov .hook{align-self:center;margin-top:60px;text-align:center;font-family:var(--disp);font-weight:800;font-size:19px;line-height:1.15;color:#fff;letter-spacing:-.02em;text-transform:uppercase;padding:8px 10px;background:rgba(10,10,11,.0);text-shadow:0 2px 0 #000,0 0 14px rgba(0,0,0,.55)}
+.ov .hook em{font-style:normal;color:#FFD84A}
+.ov .bot{color:#fff}
+.ov .who{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600}
+.ov .who i{width:22px;height:22px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}
+.ov .who i svg{width:14px;height:14px}
+.ov .cap{font-size:11.5px;opacity:.9;margin:5px 0 9px;line-height:1.35}
+.ov .dv{height:36px;border-radius:11px;background:var(--blue);display:flex;align-items:center;justify-content:center;gap:6px;font-family:var(--disp);font-weight:700;font-size:13.5px;letter-spacing:-.01em}
+.side{position:absolute;right:10px;bottom:120px;display:flex;flex-direction:column;gap:14px;z-index:4;align-items:center}
+.side i{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);display:block}
+.ntf{position:absolute;z-index:6;background:rgba(255,255,255,.86);backdrop-filter:blur(16px) saturate(1.6);-webkit-backdrop-filter:blur(16px) saturate(1.6);border:1px solid rgba(255,255,255,.9);border-radius:20px;box-shadow:var(--sh2);padding:12px 14px;display:flex;gap:11px;align-items:center;width:270px}
+.ntf .ic{width:38px;height:38px;border-radius:11px;background:var(--ink);display:flex;align-items:center;justify-content:center;flex:none}
+.ntf .ic svg{width:22px;height:22px}
+.ntf b{display:block;font-family:var(--disp);font-weight:700;font-size:14.5px;letter-spacing:-.02em}
+.ntf span{display:block;font-size:12.5px;color:var(--mut)}
+.ntf small{position:absolute;top:10px;right:12px;font-size:11px;color:var(--dim)}
+.ntf.n1{right:calc(50% - 470px);top:210px;animation:pop 7s var(--ease) infinite}
+.rec{position:absolute;z-index:6;left:calc(50% - 470px);top:250px;display:flex;align-items:center;gap:10px;background:#0A0A0B;color:#fff;border-radius:16px;padding:10px 14px;box-shadow:var(--sh2);font-family:var(--mono);font-size:12.5px;animation:fl 6s ease-in-out infinite}
+.rec i{width:9px;height:9px;border-radius:50%;background:#FF3B30;box-shadow:0 0 0 4px rgba(255,59,48,.25);animation:blink 1.2s infinite}
+@keyframes blink{50%{opacity:.25}}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes pop{0%,8%{opacity:0;transform:translateY(-14px) scale(.96)}14%,80%{opacity:1;transform:none}90%,100%{opacity:0;transform:translateY(-8px) scale(.98)}}
+.fade-b{position:absolute;left:-20px;right:-20px;bottom:-41px;height:240px;background:linear-gradient(transparent,#fff);z-index:4}
+@media(max-width:980px){.ntf.n1{right:10px;top:150px}.rec{left:10px;top:190px}}
+@media(max-width:760px){.stage{height:520px}.phones{height:470px;bottom:-30px}.ph{width:190px;height:400px;border-radius:34px}.ph .scr{border-radius:27px}.ph.c{width:215px;height:450px;left:calc(50% - 107px)}.ph.l{left:calc(50% - 235px)}.ph.r{left:calc(50% + 45px)}.ov .hook{font-size:15px;margin-top:40px}.ntf{width:230px;padding:10px 12px}.ntf.n1{right:6px;top:110px}.rec{left:6px;top:150px}.glasses{top:20px}}
 
-/* sections */
-section{padding:110px 0 0}
-.sh{max-width:760px;margin-bottom:46px}
-.sh.c{margin-left:auto;margin-right:auto;text-align:center}
-.sh h2{font-size:clamp(34px,4.6vw,56px);margin:14px 0 16px}
-.sh p{font-size:18px;color:var(--mut)}
+/* marquee */
+.mq{margin-top:30px;position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.mq-t{display:flex;gap:12px;width:max-content;animation:mq 38s linear infinite}
+.mq:hover .mq-t{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.mt{display:inline-flex;align-items:center;gap:10px;height:50px;padding:0 20px 0 8px;border-radius:999px;background:var(--panel);border:1px solid var(--line);font-family:var(--disp);font-weight:600;font-size:16px;letter-spacing:-.02em;color:var(--ink2)}
+.mt i{width:34px;height:34px;border-radius:50%;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+.mt i svg{width:18px;height:18px}
+.mq-l{text-align:center;font-size:13.5px;color:var(--mut);margin-top:90px;position:relative;z-index:5}
 
-/* metiers */
-.met{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
-.m{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:22px 16px;text-align:center}
-.m .i{width:52px;height:52px;margin:0 auto 12px;border-radius:16px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
-.m .i svg{width:26px;height:26px}
-.m b{font-family:var(--disp);font-weight:700;font-size:17px;letter-spacing:-.02em}
-.note{margin-top:18px;text-align:center;color:var(--mut);font-size:15.5px}
-.note b{color:var(--ink);font-weight:600}
-@media(max-width:900px){.met{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:520px){.met{grid-template-columns:repeat(2,1fr)}}
+/* reels wall */
+.wall{position:relative;overflow:hidden;padding:10px 0 30px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.wall-t{display:flex;gap:16px;width:max-content;animation:mq 60s linear infinite}
+.wall:hover .wall-t{animation-play-state:paused}
+.rl{position:relative;width:250px;height:444px;border-radius:26px;overflow:hidden;flex:none;box-shadow:var(--sh2);background:#ddd;transition:transform .4s var(--ease)}
+.rl:hover{transform:translateY(-6px)}
+.rl img{width:100%;height:100%;object-fit:cover}
+.rl .ov{padding:14px 13px 14px}
+.rl .tp{display:flex;justify-content:space-between;align-items:center}
+.rl .tg{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;color:#fff;background:rgba(10,10,11,.45);backdrop-filter:blur(8px);padding:4px 9px;border-radius:999px}
+.rl .hook{margin-top:0;font-size:18px}
+.wall-n{text-align:center;font-size:13px;color:var(--mut);margin-top:8px}
 
-/* steps */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.st{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:28px 24px 26px;position:relative;min-height:290px;display:flex;flex-direction:column}
-.st .n{font-family:var(--mono);font-size:12px;color:var(--blue);letter-spacing:.08em}
-.st h3{font-size:24px;margin:14px 0 10px;letter-spacing:-.03em}
-.st p{color:var(--mut);font-size:15.5px}
-.st .who{margin-top:auto;padding-top:18px;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:8px}
-.st .who i{width:8px;height:8px;border-radius:50%;background:var(--dim);display:block}
-.st .who.us i{background:var(--blue)}
-.st.dk{background:var(--ink);border-color:var(--ink);color:#fff}
-.st.dk p{color:#A6A6AD}
-.st.dk .n{color:#7FA8FF}
-@media(max-width:980px){.steps{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.steps{grid-template-columns:1fr}.st{min-height:0}}
+/* pov */
+.pov{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.pov h2{font-size:clamp(36px,4.6vw,58px);margin:18px 0 20px}
+.pov p.l{font-size:18px;color:var(--mut);max-width:460px}
+.pts{margin-top:30px;display:flex;flex-direction:column;gap:14px}
+.pt{display:flex;gap:14px;align-items:flex-start}
+.pt .ck{width:30px;height:30px;border-radius:50%;background:var(--gsoft);display:flex;align-items:center;justify-content:center;flex:none;margin-top:1px}
+.pt .ck svg{width:15px;height:15px}
+.pt b{font-family:var(--disp);font-weight:600;font-size:17.5px;letter-spacing:-.02em;display:block}
+.pt span{color:var(--mut);font-size:15.5px}
+.view{position:relative;border-radius:36px;overflow:hidden;aspect-ratio:16/11;box-shadow:var(--sh2);background:#222}
+.view img{width:100%;height:100%;object-fit:cover;transform:scale(1.04)}
+.view .hud{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 80% 75% at 50% 50%,transparent 55%,rgba(0,0,0,.45))}
+.hud .cn{position:absolute;width:44px;height:44px;border:3px solid rgba(255,255,255,.9)}
+.hud .c1{top:26px;left:26px;border-right:0;border-bottom:0;border-radius:12px 0 0 0}
+.hud .c2{top:26px;right:26px;border-left:0;border-bottom:0;border-radius:0 12px 0 0}
+.hud .c3{bottom:26px;left:26px;border-right:0;border-top:0;border-radius:0 0 0 12px}
+.hud .c4{bottom:26px;right:26px;border-left:0;border-top:0;border-radius:0 0 12px 0}
+.hud .top{position:absolute;top:34px;left:0;right:0;display:flex;justify-content:center;gap:10px}
+.hud .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(10,10,11,.55);backdrop-filter:blur(10px);color:#fff;border-radius:999px;padding:7px 13px;font-family:var(--mono);font-size:12px}
+.hud .pill i{width:8px;height:8px;border-radius:50%;background:#FF3B30;animation:blink 1.2s infinite}
+.hud .bl{position:absolute;bottom:34px;left:0;right:0;text-align:center}
+.hud .bl span{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.88);color:var(--ink);border-radius:999px;padding:8px 14px;font-weight:600;font-size:13px;font-family:var(--disp)}
+@media(max-width:900px){.pov{grid-template-columns:1fr;gap:36px}}
 
-/* lunettes */
-.glass{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.gv{background:var(--ink);border-radius:36px;color:#fff;padding:44px 38px;position:relative;overflow:hidden;min-height:440px;display:flex;flex-direction:column;justify-content:space-between}
-.gv h3{font-size:clamp(30px,3.4vw,42px);letter-spacing:-.04em}
-.gv h3 span{color:#6E6E76}
-.gsvg{width:100%;max-width:420px;margin:30px auto 0}
-.gl{display:flex;flex-direction:column;gap:12px}
-.gi{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:26px 24px;display:flex;gap:18px}
-.gi .ck{width:40px;height:40px;border-radius:50%;background:var(--gsoft);display:flex;align-items:center;justify-content:center;flex:none}
-.gi .ck svg{width:18px;height:18px}
-.gi h4{font-family:var(--disp);font-weight:700;font-size:20px;letter-spacing:-.02em;margin-bottom:4px}
-.gi p{color:var(--mut);font-size:15.5px}
-@media(max-width:900px){.glass{grid-template-columns:1fr}.gv{min-height:0}}
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.bx{background:var(--panel);border:1px solid var(--line);border-radius:32px;padding:12px 12px 28px;display:flex;flex-direction:column;overflow:hidden}
+.bx.w7{grid-column:span 7}.bx.w5{grid-column:span 5}
+.bx .vis{position:relative;height:290px;border-radius:24px;background:#fff;border:1px solid var(--line);overflow:hidden;margin-bottom:24px}
+.bx .tx{padding:0 16px}
+.bx .k{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--blue);text-transform:uppercase}
+.bx h3{font-size:clamp(24px,2.4vw,30px);margin:10px 0 10px;letter-spacing:-.035em}
+.bx p{color:var(--mut);font-size:15.5px;max-width:480px}
+@media(max-width:900px){.bx.w7,.bx.w5{grid-column:span 12}}
+/* vis 1 call */
+.call{position:absolute;left:24px;top:24px;bottom:24px;width:200px;border-radius:22px;background:linear-gradient(160deg,#1a1a1e,#0A0A0B);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;box-shadow:var(--sh2)}
+.call small{font-size:11.5px;color:#7FA8FF;font-family:var(--mono)}
+.call .av{width:64px;height:64px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 6px rgba(255,255,255,.08),0 0 0 14px rgba(255,255,255,.04)}
+.call .av svg{width:40px;height:40px}
+.call b{font-family:var(--disp);font-weight:600;font-size:17px;letter-spacing:-.02em}
+.call .hang{width:38px;height:38px;border-radius:50%;background:#FF3B30;display:flex;align-items:center;justify-content:center;margin-top:4px}
+.call .hang svg{width:18px;height:18px}
+.msgs{position:absolute;left:246px;right:20px;top:34px;display:flex;flex-direction:column;gap:10px}
+.msg{align-self:flex-start;max-width:100%;background:var(--panel);border:1px solid var(--line);border-radius:16px 16px 16px 6px;padding:9px 12px;font-size:13px;line-height:1.35}
+.msg.me{align-self:flex-end;background:var(--blue);color:#fff;border-color:var(--blue);border-radius:16px 16px 6px 16px}
+.msg.list{padding:10px 12px}
+.msg.list div{display:flex;gap:7px;align-items:center;font-size:12.5px;padding:2px 0}
+.msg.list div::before{content:"";width:14px;height:14px;border-radius:50%;background:var(--gsoft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2316A34A' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/9px no-repeat;flex:none}
+@media(max-width:520px){.call{width:150px;left:14px}.msgs{left:176px;right:12px}.msg{font-size:12px}}
+/* vis 2 glasses */
+.v2{display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 60%,#EEF3FF,#fff 70%)}
+.v2 svg.gl{width:84%;filter:drop-shadow(0 24px 30px rgba(10,10,11,.25))}
+.thumb{position:absolute;width:74px;height:110px;border-radius:14px;overflow:hidden;border:3px solid #fff;box-shadow:var(--sh2)}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.t1{left:8%;top:12%;transform:rotate(-8deg);animation:fl 6s ease-in-out infinite}
+.t2{right:9%;top:9%;transform:rotate(7deg);animation:fl 7s ease-in-out infinite .8s}
+.t3{right:22%;bottom:-30px;transform:rotate(-4deg);animation:fl 6.5s ease-in-out infinite 1.6s}
+/* vis 3 editor */
+.ed{position:absolute;inset:18px;display:flex;flex-direction:column;gap:10px}
+.ed .bar{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:11px;color:var(--mut)}
+.ed .bar b{color:var(--ink);font-weight:500}
+.ed .pv{flex:1;display:flex;gap:10px;min-height:0}
+.ed .pv .scrn{width:92px;border-radius:12px;overflow:hidden;position:relative;background:#222}
+.ed .pv .scrn img{width:100%;height:100%;object-fit:cover}
+.ed .pv .scrn span{position:absolute;left:6px;right:6px;top:40%;text-align:center;color:#fff;font-family:var(--disp);font-weight:800;font-size:10px;text-transform:uppercase;text-shadow:0 1px 0 #000,0 0 6px rgba(0,0,0,.6)}
+.ed .pv .props{flex:1;display:flex;flex-direction:column;gap:7px}
+.ed .props div{height:24px;border-radius:7px;background:var(--panel);border:1px solid var(--line);display:flex;align-items:center;padding:0 9px;font-size:11px;color:var(--ink2);gap:6px}
+.ed .props div b{margin-left:auto;font-weight:600;color:var(--blue)}
+.tl{position:relative;display:flex;flex-direction:column;gap:6px;padding-top:4px}
+.tr{display:flex;gap:4px;height:26px}
+.tr span{border-radius:6px;display:block;height:100%}
+.tr.v span{background-size:cover;background-position:center;border:1.5px solid #fff;box-shadow:0 0 0 1px var(--line)}
+.tr.s span{background:var(--bsoft);border:1px solid #BFD3FF;height:18px;margin-top:4px;font-size:9px;color:var(--blue);display:flex;align-items:center;padding-left:5px;font-weight:600}
+.tr.a{height:22px;align-items:center;background:var(--gsoft);border-radius:6px;padding:0 6px;gap:2px}
+.tr.a i{display:block;width:2px;border-radius:1px;background:var(--green);opacity:.75}
+.ph-l{position:absolute;top:0;bottom:0;width:2px;background:var(--blue);left:38%;animation:scan 6s linear infinite}
+.ph-l::before{content:"";position:absolute;top:-4px;left:-5px;width:12px;height:12px;border-radius:3px;background:var(--blue)}
+@keyframes scan{from{left:2%}to{left:96%}}
+/* vis 4 publish */
+.v4{display:flex;align-items:center;justify-content:center;gap:24px;background:radial-gradient(ellipse at 30% 50%,#F1F5FF,#fff 70%)}
+.mini{width:132px;height:250px;border-radius:24px;background:#111;padding:6px;box-shadow:var(--sh2);transform:rotate(-4deg);margin-top:40px}
+.mini div{width:100%;height:100%;border-radius:19px;overflow:hidden;position:relative}
+.mini img{width:100%;height:100%;object-fit:cover}
+.mini span{position:absolute;left:8px;right:8px;bottom:10px;height:24px;border-radius:7px;background:var(--blue);color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:var(--disp)}
+.pubs{display:flex;flex-direction:column;gap:9px;width:200px}
+.pub{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:9px 11px;box-shadow:var(--sh1);font-size:13px;font-weight:600;font-family:var(--disp);letter-spacing:-.01em}
+.pub em{margin-left:auto;font-style:normal;font-size:10.5px;font-weight:600;color:var(--green);background:var(--gsoft);padding:3px 8px;border-radius:999px;font-family:var(--sans)}
+.pub.sch em{color:var(--blue);background:var(--bsoft)}
+@media(max-width:520px){.v4{gap:12px}.mini{width:110px;height:210px}.pubs{width:170px}.pub{font-size:12px;padding:8px}}
 
-/* difference */
-.vs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.vcol{border-radius:var(--r);padding:32px 30px;border:1px solid var(--line)}
-.vcol.a{background:var(--panel)}
-.vcol.b{background:#fff;box-shadow:var(--shadow);border-color:var(--line2)}
-.vcol .h{font-family:var(--disp);font-weight:700;font-size:22px;letter-spacing:-.03em;display:flex;align-items:center;gap:10px;margin-bottom:20px}
-.vcol ul{list-style:none;display:flex;flex-direction:column;gap:14px}
-.vcol li{display:flex;gap:12px;font-size:16px;color:var(--ink2)}
-.vcol li svg{width:20px;height:20px;flex:none;margin-top:2px}
-.vcol.a li{color:var(--mut)}
-@media(max-width:800px){.vs{grid-template-columns:1fr}}
-.report{margin-top:14px;background:var(--panel);border:1px solid var(--line);border-radius:36px;padding:34px 30px;display:grid;grid-template-columns:.9fr 1.1fr;gap:30px;align-items:center}
-.report h3{font-size:clamp(28px,3vw,38px);letter-spacing:-.04em}
-.report p{color:var(--mut);margin-top:12px;font-size:16px}
-.rep{background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:var(--shadow)}
-.rep .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
-.rep .top b{font-family:var(--disp);font-weight:700;font-size:17px;letter-spacing:-.02em}
-.rep .top span{font-family:var(--mono);font-size:10.5px;color:var(--blue);background:var(--bsoft);padding:3px 8px;border-radius:6px;letter-spacing:.04em}
-.kp{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.kp div{background:var(--panel);border-radius:16px;padding:14px}
-.kp small{display:block;font-size:12px;color:var(--mut)}
-.kp strong{font-family:var(--disp);font-weight:800;font-size:28px;letter-spacing:-.04em}
-.kp .hi{background:var(--ink);color:#fff}
-.kp .hi small{color:#A6A6AD}
-.bars{display:flex;align-items:flex-end;gap:6px;height:80px;margin-top:16px}
-.bars i{flex:1;background:var(--line);border-radius:6px 6px 2px 2px;display:block}
-.bars i.on{background:var(--blue)}
-.rep .lg{display:flex;gap:16px;margin-top:10px;font-size:12px;color:var(--mut)}
-.rep .lg span{display:inline-flex;align-items:center;gap:6px}
-.rep .lg span::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--line)}
-.rep .lg span.on::before{background:var(--blue)}
-@media(max-width:860px){.report{grid-template-columns:1fr}}
-@media(max-width:420px){.kp strong{font-size:22px}.kp div{padding:12px 10px}}
+/* dark proof */
+.dark{background:var(--ink);color:#fff;border-radius:44px;padding:90px 56px;position:relative;overflow:hidden}
+.dark::before{content:"";position:absolute;width:700px;height:700px;right:-200px;top:-300px;background:radial-gradient(circle,rgba(10,92,255,.35),transparent 60%);pointer-events:none}
+.dark .k{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:#7FA8FF;text-transform:uppercase}
+.dk-g{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;position:relative}
+.dark h2{font-size:clamp(36px,4.6vw,58px);margin:18px 0 22px;letter-spacing:-.05em}
+.dark h2 span{color:#5E5E66}
+.dark p.l{color:#A6A6AD;font-size:17.5px;max-width:470px}
+.cmp{margin-top:34px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cmp div{border-radius:20px;padding:18px 18px;font-size:14.5px;line-height:1.4}
+.cmp .a{background:#161619;color:#8A8A93;border:1px solid #232327}
+.cmp .b{background:#fff;color:var(--ink)}
+.cmp b{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;margin-bottom:8px;font-weight:500}
+.cmp .a b{color:#6E6E76}.cmp .b b{color:var(--blue)}
+.dash{background:#fff;color:var(--ink);border-radius:28px;padding:22px;box-shadow:0 40px 80px rgba(0,0,0,.4)}
+.dash .t{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.dash .t b{font-family:var(--disp);font-weight:700;font-size:17px;letter-spacing:-.02em;display:flex;align-items:center;gap:9px}
+.dash .t b .mk{width:24px;height:24px}
+.dash .t span{font-family:var(--mono);font-size:10.5px;color:var(--blue);background:var(--bsoft);padding:3px 8px;border-radius:6px;letter-spacing:.05em}
+.kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.kpi div{background:var(--panel);border-radius:16px;padding:13px}
+.kpi small{display:block;font-size:11.5px;color:var(--mut)}
+.kpi strong{font-family:var(--disp);font-weight:800;font-size:30px;letter-spacing:-.05em}
+.kpi .hi{background:var(--blue);color:#fff}.kpi .hi small{color:#CFE0FF}
+.chart{margin:12px 0 4px;height:96px;position:relative}
+.chart svg{width:100%;height:100%}
+.rows{display:flex;flex-direction:column;gap:7px;margin-top:10px}
+.rw{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:14px;border:1px solid var(--line);font-size:13px}
+.rw .pf{width:24px;height:24px;border-radius:7px}
+.rw .pf svg{width:13px;height:13px}
+.rw b{font-family:var(--disp);font-weight:600;letter-spacing:-.01em}
+.rw span{color:var(--mut)}
+.rw em{margin-left:auto;font-style:normal;font-size:11px;font-weight:600;color:var(--green);background:var(--gsoft);padding:3px 8px;border-radius:999px;white-space:nowrap}
+@media(max-width:900px){.dark{padding:64px 22px;border-radius:32px}.dk-g{grid-template-columns:1fr;gap:40px}}
+@media(max-width:480px){.cmp{grid-template-columns:1fr}.kpi strong{font-size:24px}.rw span{display:none}}
 
 /* pricing */
-.plans{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:940px;margin:0 auto}
-.plan{border:1px solid var(--line);border-radius:32px;padding:34px 30px;background:#fff;display:flex;flex-direction:column;position:relative}
-.plan.pro{background:var(--ink);color:#fff;border-color:var(--ink);box-shadow:0 30px 60px rgba(10,10,11,.18)}
-.plan .badge{position:absolute;top:26px;right:26px;background:var(--blue);color:#fff;font-size:12.5px;font-weight:600;border-radius:999px;padding:5px 12px}
-.plan h3{font-size:26px;letter-spacing:-.03em}
-.plan .d{color:var(--mut);font-size:15px;margin-top:6px}
-.plan.pro .d{color:#A6A6AD}
-.price{display:flex;align-items:baseline;gap:8px;margin:26px 0 4px}
-.price b{font-family:var(--disp);font-weight:800;font-size:58px;letter-spacing:-.05em;line-height:1}
-.price span{color:var(--mut);font-size:15px}
-.plan.pro .price span{color:#A6A6AD}
-.plan ul{list-style:none;margin:24px 0 30px;display:flex;flex-direction:column;gap:12px}
-.plan li{display:flex;gap:12px;font-size:15.5px}
-.plan li svg{width:20px;height:20px;flex:none;margin-top:1px}
-.plan .btn{margin-top:auto;width:100%}
-.plan.pro .btn-dark{background:#fff;color:var(--ink)}
-.extras{max-width:940px;margin:14px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.ex{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:24px}
-.ex .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--mut);text-transform:uppercase}
-.ex b{display:block;font-family:var(--disp);font-weight:800;font-size:28px;letter-spacing:-.04em;margin:8px 0 6px}
-.ex p{font-size:14.5px;color:var(--mut)}
-.small{max-width:940px;margin:16px auto 0;text-align:center;font-size:13.5px;color:var(--mut)}
-@media(max-width:820px){.plans,.extras{grid-template-columns:1fr}}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:980px;margin:0 auto;align-items:stretch}
+.pl{position:relative;border-radius:34px;padding:34px 32px 30px;background:#fff;border:1px solid var(--line);box-shadow:var(--sh1);display:flex;flex-direction:column}
+.pl.pro{background:linear-gradient(170deg,#1b1b20,#0A0A0B 60%);color:#fff;border-color:#0A0A0B;box-shadow:0 50px 90px -30px rgba(10,10,11,.6)}
+.pl.pro::after{content:"";position:absolute;inset:0;border-radius:34px;padding:1px;background:linear-gradient(160deg,rgba(255,255,255,.35),transparent 40%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.pl .tag{position:absolute;top:28px;right:28px;display:inline-flex;align-items:center;gap:6px;background:var(--blue);color:#fff;font-size:12.5px;font-weight:600;border-radius:999px;padding:6px 12px}
+.pl h3{font-size:28px;letter-spacing:-.035em}
+.pl .d{font-size:15px;color:var(--mut);margin-top:8px;max-width:300px}
+.pl.pro .d{color:#A6A6AD}
+.pr{display:flex;align-items:baseline;gap:8px;margin:28px 0 24px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.pl.pro .pr{border-color:#26262b}
+.pr b{font-family:var(--disp);font-weight:700;font-size:64px;letter-spacing:-.06em;line-height:.9}
+.pr span{font-size:15px;color:var(--mut)}
+.pl.pro .pr span{color:#8A8A93}
+.pl ul{list-style:none;display:flex;flex-direction:column;gap:13px;margin-bottom:30px}
+.pl li{display:flex;gap:11px;font-size:15.5px;align-items:flex-start}
+.pl li svg{width:20px;height:20px;flex:none;margin-top:1px}
+.pl .btn{margin-top:auto;width:100%}
+.pl.pro .btn{background:#fff;color:var(--ink)}
+.opt{max-width:980px;margin:16px auto 0;border-radius:30px;background:linear-gradient(100deg,#0A0A0B 0%,#1d1d22 55%,#3a3a42 100%);color:#fff;display:grid;grid-template-columns:280px 1fr auto;gap:28px;align-items:center;padding:22px 32px 22px 18px;overflow:hidden}
+.opt svg.gl{width:100%;filter:drop-shadow(0 18px 24px rgba(0,0,0,.5))}
+.opt h4{font-size:24px;letter-spacing:-.035em}
+.opt p{color:#A6A6AD;font-size:15px;margin-top:6px}
+.opt .pp{font-family:var(--disp);font-weight:700;font-size:30px;letter-spacing:-.04em;text-align:right;white-space:nowrap}
+.opt .pp small{display:block;font-family:var(--sans);font-size:12.5px;font-weight:500;color:#8A8A93;letter-spacing:0}
+.xt{max-width:980px;margin:16px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.xt>div{border-radius:26px;background:var(--panel);border:1px solid var(--line);padding:22px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.xt b{font-family:var(--disp);font-weight:700;font-size:20px;letter-spacing:-.03em;display:block}
+.xt span{font-size:14px;color:var(--mut)}
+.xt strong{font-family:var(--disp);font-weight:700;font-size:28px;letter-spacing:-.04em;white-space:nowrap}
+.fine{text-align:center;font-size:13px;color:var(--mut);max-width:680px;margin:20px auto 0}
+@media(max-width:860px){.plans,.xt{grid-template-columns:1fr}.opt{grid-template-columns:1fr;text-align:center;padding:24px}.opt svg.gl{max-width:260px;margin:0 auto}.opt .pp{text-align:center}}
 
 /* faq */
-.faq{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
-.qa{background:var(--panel);border:1px solid var(--line);border-radius:22px}
-.qa button{width:100%;background:none;border:0;text-align:left;font:inherit;font-family:var(--disp);font-weight:600;font-size:18px;letter-spacing:-.02em;padding:22px 24px;display:flex;justify-content:space-between;align-items:center;gap:20px;cursor:pointer;color:var(--ink)}
-.qa button svg{width:20px;height:20px;flex:none;transition:transform .25s}
-.qa.open button svg{transform:rotate(45deg)}
-.qa .a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s}
+.faqw{max-width:860px;margin:0 auto;background:var(--panel);border:1px solid var(--line);border-radius:34px;padding:10px}
+.qa{background:#fff;border:1px solid var(--line);border-radius:24px;margin:6px 0;transition:box-shadow .25s}
+.qa:hover{box-shadow:var(--sh1)}
+.qa button{width:100%;background:none;border:0;text-align:left;font:inherit;font-family:var(--disp);font-weight:600;font-size:17.5px;letter-spacing:-.02em;padding:20px 22px;display:flex;justify-content:space-between;align-items:center;gap:20px;cursor:pointer;color:var(--ink)}
+.qa button i{width:30px;height:30px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;flex:none;transition:transform .35s var(--ease),background .2s}
+.qa button i svg{width:14px;height:14px}
+.qa.open button i{transform:rotate(45deg);background:var(--blue)}
+.qa .a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s var(--ease)}
 .qa.open .a{grid-template-rows:1fr}
 .qa .a>div{overflow:hidden}
-.qa .a p{padding:0 24px 22px;color:var(--mut);font-size:16px}
+.qa .a p{padding:0 22px 22px;color:var(--mut);font-size:15.5px;max-width:720px}
 
 /* rdv */
-.calwrap{background:var(--panel);border:1px solid var(--line);border-radius:32px;height:720px;overflow:hidden;max-width:1000px;margin:0 auto}
+.calwrap{background:var(--panel);border:1px solid var(--line);border-radius:34px;height:720px;overflow:hidden;max-width:1000px;margin:0 auto;padding:6px}
+.calwrap>div{border-radius:28px;background:#fff}
 .alt{text-align:center;margin-top:18px;font-size:15px;color:var(--mut)}
 .alt a{color:var(--ink);font-weight:600;border-bottom:1px solid var(--line2)}
 
 /* final */
-.final{margin:110px 0 0;background:var(--ink);color:#fff;border-radius:40px;padding:80px 28px;text-align:center}
-.final .brand{justify-content:center}
-.final .brand .mk rect{fill:#fff}
-.final h2{font-size:clamp(36px,5.4vw,64px);margin:22px auto 30px;max-width:820px;letter-spacing:-.045em}
-.final h2 span{color:#6E6E76}
-.final .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.final .btn-soft{background:#1c1c20;color:#fff}
+.fin{display:grid;grid-template-columns:1fr 380px;gap:56px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:44px;padding:64px 64px 0;overflow:hidden}
+.fin h2{font-size:clamp(38px,5vw,64px);letter-spacing:-.055em;line-height:.96}
+.fin ul{list-style:none;margin:28px 0 34px;display:flex;flex-direction:column;gap:11px}
+.fin li{display:flex;gap:11px;align-items:center;font-size:16px;color:var(--ink2)}
+.fin li svg{width:20px;height:20px;flex:none}
+.fin .txt{padding-bottom:64px}
+.fin .ph{position:relative;left:auto;bottom:auto;transform:none;width:300px;height:560px;margin:0 auto -120px}
+.slides{position:absolute;inset:0}
+.slides .s{position:absolute;inset:0;opacity:0;animation:sl 16s infinite}
+.slides .s:nth-child(2){animation-delay:4s}.slides .s:nth-child(3){animation-delay:8s}.slides .s:nth-child(4){animation-delay:12s}
+@keyframes sl{0%{opacity:0}4%,25%{opacity:1}29%,100%{opacity:0}}
+@media(max-width:900px){.fin{grid-template-columns:1fr;padding:48px 24px 0;gap:10px}.fin .txt{padding-bottom:20px;text-align:center}.fin li{justify-content:center}.fin .ph{width:250px;height:470px}}
 
-footer{padding:56px 0 40px;color:var(--mut);font-size:14px}
-.foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
-.foot .cols{display:flex;gap:56px}
-.foot .cols div{display:flex;flex-direction:column;gap:10px}
-.foot .cols b{color:var(--ink);font-weight:600}
-.foot .cols a:hover{color:var(--ink)}
-.legal{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px}
+/* footer */
+footer{margin-top:130px;background:var(--ink);color:#fff;border-radius:44px 44px 0 0;padding:70px 0 0;overflow:hidden;position:relative}
+.ft{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.ft .brand{color:#fff}
+.ft .brand .mk rect{fill:#fff}.ft .brand .mk path{stroke:#0A0A0B}
+.ft p{color:#A6A6AD;margin-top:14px;max-width:330px;font-size:15px}
+.ft .cols{display:flex;gap:64px}
+.ft .cols div{display:flex;flex-direction:column;gap:10px;font-size:14.5px;color:#A6A6AD}
+.ft .cols b{color:#fff;font-weight:600;margin-bottom:4px;font-family:var(--disp)}
+.ft .cols a:hover{color:#fff}
+.giant{font-family:var(--disp);font-weight:800;font-size:clamp(60px,16.5vw,240px);letter-spacing:-.07em;line-height:.8;text-align:center;margin-top:70px;background:linear-gradient(180deg,#55555e,#0A0A0B 88%);-webkit-background-clip:text;background-clip:text;color:transparent;user-select:none;white-space:nowrap}
+.legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px;color:#6E6E76;padding:26px 0 22px;border-top:1px solid #1f1f23;margin-top:50px}
+.legal a:hover{color:#fff}
 
-.wa{position:fixed;right:18px;bottom:18px;width:58px;height:58px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px rgba(10,10,11,.3);z-index:60}
+.wa{position:fixed;right:18px;bottom:18px;width:58px;height:58px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px rgba(10,10,11,.3);z-index:70;transition:transform .25s var(--ease)}
+.wa:hover{transform:scale(1.06)}
 .wa svg{width:28px;height:28px}
 .wa::after{content:"";position:absolute;top:2px;right:2px;width:13px;height:13px;border-radius:50%;background:#22c55e;border:3px solid #fff}
-
-.rv{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
-.rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.scene,.float{animation:none}.scene.b{opacity:1}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none;filter:none}.slides .s:first-child{opacity:1}}
 </style>
 </head>
 <body id="top">
 
-<header class="nav" id="nav">
- <div class="wrap nav-in">
-  <a href="#top" class="brand" aria-label="Productipro, accueil"><svg class="mk" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#0A0A0B"/><path d="M11.5 23.5V8.5h6a4.75 4.75 0 0 1 0 9.5h-6" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22.8" cy="22.8" r="2.3" fill="#0A5CFF"/></svg>productipro</a>
-  <nav class="links"><a href="#comment">Comment ça marche</a><a href="#lunettes">Les lunettes</a><a href="#formules">Formules</a><a href="#faq">FAQ</a></nav>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <symbol id="logo" viewBox="0 0 32 32"><rect width="32" height="32" rx="9" fill="#0A0A0B"/><path d="M11.5 23.5V8.5h6a4.75 4.75 0 0 1 0 9.5h-6" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22.8" cy="22.8" r="2.3" fill="#0A5CFF"/></symbol>
+  <symbol id="ck" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="arr" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="5" fill="none" stroke="#fff" stroke-width="2.4"/><circle cx="12" cy="12" r="3.6" fill="none" stroke="#fff" stroke-width="2.4"/><circle cx="17" cy="7" r="1.3" fill="#fff"/></symbol>
+  <symbol id="i-tt" viewBox="0 0 24 24"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><path d="M14 3c.5 2.8 2.4 4.5 5 4.7" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24"><path d="M9.5 7.5v9l7.5-4.5z" fill="#fff"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M13.5 21v-7.5H16l.5-3h-3V8.6c0-.9.3-1.6 1.6-1.6h1.5V4.3a19 19 0 0 0-2.3-.1c-2.3 0-3.8 1.4-3.8 3.9v2.4H8v3h2.5V21z" fill="#fff"/></symbol>
+  <linearGradient id="gF" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2e2e34"/><stop offset=".3" stop-color="#121215"/><stop offset="1" stop-color="#050506"/></linearGradient>
+  <linearGradient id="gL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#55606f"/><stop offset=".35" stop-color="#262c35"/><stop offset="1" stop-color="#0b0d10"/></linearGradient>
+  <linearGradient id="gR" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".0"/><stop offset=".5" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  <linearGradient id="gT" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  <symbol id="glasses" viewBox="0 0 860 300">
+   <path d="M44 74 L12 80 Q4 82 5 92 L7 104 Q8 110 16 109 L46 104 Z" fill="url(#gF)"/>
+   <path d="M816 74 L848 80 Q856 82 855 92 L853 104 Q852 110 844 109 L814 104 Z" fill="url(#gF)"/>
+   <path d="M40 72 Q40 48 66 46 L370 42 Q400 42 402 70 L398 116 Q390 264 266 268 L176 268 Q58 264 46 146 Z" fill="url(#gF)"/>
+   <path d="M820 72 Q820 48 794 46 L490 42 Q460 42 458 70 L462 116 Q470 264 594 268 L684 268 Q802 264 814 146 Z" fill="url(#gF)"/>
+   <path d="M392 74 Q430 52 468 74 L470 108 Q430 88 390 108 Z" fill="url(#gF)"/>
+   <path d="M78 82 L360 78 Q372 78 370 92 L364 134 Q354 238 264 240 L180 240 Q92 238 84 152 Z" fill="url(#gL)"/>
+   <path d="M782 82 L500 78 Q488 78 490 92 L496 134 Q506 238 596 240 L680 240 Q768 238 776 152 Z" fill="url(#gL)"/>
+   <path d="M98 88 L230 86 L128 232 Q100 222 92 190 Z" fill="#fff" opacity=".13"/>
+   <path d="M250 86 L285 85 L190 238 L168 238 Z" fill="#fff" opacity=".08"/>
+   <path d="M520 86 L640 84 L556 236 Q522 226 514 180 Z" fill="#fff" opacity=".11"/>
+   <path d="M60 52 L370 48 Q392 48 396 66" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="4" stroke-linecap="round"/>
+   <path d="M464 66 Q468 48 490 48 L800 52" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="4" stroke-linecap="round"/>
+   <circle cx="62" cy="66" r="9" fill="#050506" stroke="#3a3a40" stroke-width="2.5"/><circle cx="62" cy="66" r="4.5" fill="#1b2a52"/><circle cx="60.5" cy="64.5" r="1.6" fill="#a9c2ff"/>
+   <circle cx="798" cy="66" r="3.5" fill="#fff" opacity=".85"/>
+  </symbol>
+ </defs>
+</svg>
+
+<header class="nav">
+ <div class="nav-in">
+  <a href="#top" class="brand" aria-label="Productipro, accueil"><svg class="mk"><use href="#logo"/></svg>productipro</a>
+  <nav class="links"><a href="#format">Le format</a><a href="#methode">Méthode</a><a href="#formules">Formules</a><a href="#faq">FAQ</a></nav>
   <a href="#rdv" class="btn btn-dark">Réserver un appel</a>
  </div>
 </header>
 
 <main>
 <!-- HERO -->
-<section class="hero" style="padding-top:22px">
+<section class="hero">
+ <div class="grid-bg"></div>
  <div class="wrap">
-  <div class="hero-card">
-   <div class="hero-grid">
-    <div class="hero-copy">
-     <span class="pill"><b>Artisans IDF</b>Vidéos de chantier</span>
-     <h1>Vous filmez vos chantiers. <span class="g">On en fait des demandes de devis.</span></h1>
-     <p class="lead">Avec des lunettes connectées, vous filmez en travaillant. On transforme ces images en vidéos qui vous ramènent des demandes de devis, chaque mois, sans que vous touchiez à votre téléphone.</p>
-     <div class="cta">
-      <a href="#rdv" class="btn btn-dark">Réserver un appel <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a href="#formules" class="btn btn-soft">Voir les formules</a>
-     </div>
-     <div class="trust">
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Montage et publication inclus</span>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>4 réseaux</span>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Demandes de devis comptées</span>
+  <div class="hero-txt">
+   <span class="chip rv">On publie pour vous sur <span class="pfs"><span class="pf ig"><svg><use href="#i-ig"/></svg></span><span class="pf tt"><svg><use href="#i-tt"/></svg></span><span class="pf yt"><svg><use href="#i-yt"/></svg></span><span class="pf fb"><svg><use href="#i-fb"/></svg></span></span></span>
+   <h1 class="rv d1">Vos chantiers deviennent <span class="g">vos meilleurs commerciaux.</span></h1>
+   <p class="lead rv d2">Vous filmez en travaillant avec des lunettes connectées. <b>On monte, on publie et on compte les demandes de devis</b> que vos vidéos vous ramènent, chaque mois.</p>
+   <div class="cta rv d3"><a href="#rdv" class="btn btn-dark">Réserver un appel <svg><use href="#arr"/></svg></a><a href="#format" class="btn btn-light">Voir le format</a></div>
+   <div class="note rv d3"><span><svg><use href="#ck"/></svg>Artisans d'Île-de-France</span><span><svg><use href="#ck"/></svg>Zéro montage de votre côté</span><span><svg><use href="#ck"/></svg>Demandes de devis comptées</span></div>
+  </div>
+  <div class="stage rv d2" aria-hidden="true">
+   <svg class="glasses" viewBox="0 0 860 300"><use href="#glasses"/></svg>
+   <div class="rec"><i></i>REC · 00:00:12</div>
+   <div class="ntf n1"><div class="ic"><svg><use href="#logo"/></svg></div><div><b>Nouvelle demande de devis</b><span>Terrasse bois · via Instagram</span></div><small>maintenant</small></div>
+   <div class="phones">
+    <div class="ph l"><div class="scr"><div class="isl"></div><img src="assets/toiture.webp" alt=""><div class="ov"><span></span><div class="hook">Réfection de toiture <em>jour 1</em></div><div class="bot"><div class="who"><i><svg><use href="#logo"/></svg></i>Votre entreprise</div><div class="cap">Dépose des anciennes tuiles.</div><div class="dv">Demander un devis</div></div></div></div></div>
+    <div class="ph c"><div class="scr"><div class="isl"></div><img src="assets/terrasse.webp" alt=""><div class="ov"><span></span><div class="hook">POV : on pose <em>votre terrasse</em></div><div class="bot"><div class="who"><i><svg><use href="#logo"/></svg></i>Votre entreprise</div><div class="cap">Lame après lame, filmé pendant le chantier.</div><div class="dv">Demander un devis →</div></div></div><div class="side"><i></i><i></i><i></i></div></div></div>
+    <div class="ph r"><div class="scr"><div class="isl"></div><img src="assets/piscine.webp" alt=""><div class="ov"><span></span><div class="hook">Le résultat <em>final</em></div><div class="bot"><div class="who"><i><svg><use href="#logo"/></svg></i>Votre entreprise</div><div class="cap">Piscine intérieure livrée.</div><div class="dv">Demander un devis</div></div></div></div></div>
+   </div>
+  </div>
+ </div>
+ <p class="mq-l">Pour les métiers où un seul chantier signé rembourse des mois d'abonnement</p>
+ <div class="mq">
+  <div class="mq-t">
+   <span class="mt"><i><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></i>Rénovation</span>
+   <span class="mt"><i><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16v3a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M6 12V6a2 2 0 0 1 4 0"/></svg></i>Salles de bain</span>
+   <span class="mt"><i><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0B" stroke-width="1.8" stroke-linecap="round"><path d="M2 16c2 0 2 1.5 4 1.5S8 16 10 16s2 1.5 4 1.5 2-1.5 4-1.5 2 1.5 4 1.5"/><path d="M8 13V5a2 2 0 0 1 4 0M14 13V5a2 2 0 0 1 4 0"/></svg></i>Pisciniers</span>
+   <span class="mt"><i><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13l10-8 10 8"/><path d="M5 11v9h14v-9"/></svg></i>Couvreurs</span>
+   <span class="mt"><i><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V11"/><path d="M12 11c0-4 3-7 7-7 0 4-3 7-7 7z"/><path d="M12 14c0-3-2.5-5.5-6-5.5 0 3 2.5 5.5 6 5.5z"/></svg></i>Paysagistes</span>
+   <span class="mt"><i><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0B" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M12 3v18M5 12h14"/></svg></i>Menuisiers</span>
+   <span class="mt"><i><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-5 7 5v11"/><path d="M9 21v-6h6v6"/></svg></i>Extensions</span>
+   <span class="mt"><i><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0B" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></svg></i>Cuisinistes</span>
+   <span class="mt"><i><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></i>Rénovation</span>
+   <span class="mt"><i><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16v3a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M6 12V6a2 2 0 0 1 4 0"/></svg></i>Salles de bain</span>
+   <span class="mt"><i><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0B" stroke-width="1.8" stroke-linecap="round"><path d="M2 16c2 0 2 1.5 4 1.5S8 16 10 16s2 1.5 4 1.5 2-1.5 4-1.5 2 1.5 4 1.5"/><path d="M8 13V5a2 2 0 0 1 4 0M14 13V5a2 2 0 0 1 4 0"/></svg></i>Pisciniers</span>
+   <span class="mt"><i><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13l10-8 10 8"/><path d="M5 11v9h14v-9"/></svg></i>Couvreurs</span>
+   <span class="mt"><i><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V11"/><path d="M12 11c0-4 3-7 7-7 0 4-3 7-7 7z"/><path d="M12 14c0-3-2.5-5.5-6-5.5 0 3 2.5 5.5 6 5.5z"/></svg></i>Paysagistes</span>
+   <span class="mt"><i><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0B" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M12 3v18M5 12h14"/></svg></i>Menuisiers</span>
+   <span class="mt"><i><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-5 7 5v11"/><path d="M9 21v-6h6v6"/></svg></i>Extensions</span>
+   <span class="mt"><i><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0B" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></svg></i>Cuisinistes</span>
+  </div>
+ </div>
+</section>
+
+<!-- FORMAT -->
+<section class="sec" id="format">
+ <div class="wrap">
+  <div class="head rv"><span class="chip"><svg class="mk"><use href="#logo"/></svg>Le format</span><h2>Des vidéos qui donnent <span class="g">envie d'appeler.</span></h2><p>Des gestes, des finitions, des avant/après. Montés pour être regardés jusqu'au bout, avec un bouton pour vous demander un devis.</p></div>
+ </div>
+ <div class="wall rv">
+  <div class="wall-t">
+   <div class="rl"><img src="assets/terrasse.webp" alt="Pose d'une terrasse en bois" loading="lazy"><div class="ov"><div class="tp"><span class="pf ig"><svg><use href="#i-ig"/></svg></span><span class="tg">MENUISERIE</span></div><div class="hook">POV : vous voyez <em>la pose</em> de près</div><div class="bot"><div class="dv">Demander un devis</div></div></div></div>
+   <div class="rl"><img src="assets/decoupe.webp" alt="Découpe à la scie circulaire" loading="lazy"><div class="ov"><div class="tp"><span class="pf tt"><svg><use href="#i-tt"/></svg></span><span class="tg">GESTE</span></div><div class="hook">Une découpe <em>au millimètre</em></div><div class="bot"><div class="dv">Demander un devis</div></div></div></div>
+   <div class="rl"><img src="assets/cuisine.webp" alt="Cuisine terminée" loading="lazy"><div class="ov"><div class="tp"><span class="pf fb"><svg><use href="#i-fb"/></svg></span><span class="tg">APRÈS</span></div><div class="hook">Le jour de <em>la livraison</em></div><div class="bot"><div class="dv">Demander un devis</div></div></div></div>
+   <div class="rl"><img src="assets/couvreur.webp" alt="Couvreur au travail" loading="lazy"><div class="ov"><div class="tp"><span class="pf yt"><svg><use href="#i-yt"/></svg></span><span class="tg">COUVERTURE</span></div><div class="hook">Une journée <em>sur le toit</em></div><div class="bot"><div class="dv">Demander un devis</div></div></div></div>
+   <div class="rl"><img src="assets/jardin.webp" alt="Jardin aménagé" loading="lazy"><div class="ov"><div class="tp"><span class="pf ig"><svg><use href="#i-ig"/></svg></span><span class="tg">PAYSAGE</span></div><div class="hook">Le jardin <em>6 semaines après</em></div><div class="bot"><div class="dv">Demander un devis</div></div></div></div>
+   <div class="rl"><img src="assets/piscine.webp" alt="Piscine intérieure" loading="lazy"><div class="ov"><div class="tp"><span class="pf tt"><svg><use href="#i-tt"/></svg></span><span class="tg">PISCINE</span></div><div class="hook">Premier <em>remplissage</em></div><div class="bot"><div class="dv">Demander un devis</div></div></div></div>
+   <div class="rl"><img src="assets/toiture.webp" alt="Réfection de toiture" loading="lazy"><div class="ov"><div class="tp"><span class="pf fb"><svg><use href="#i-fb"/></svg></span><span class="tg">AVANT</span></div><div class="hook">On dépose <em>tout</em></div><div class="bot"><div class="dv">Demander un devis</div></div></div></div>
+   <div class="rl"><img src="assets/perceuse.webp" alt="Assemblage bois" loading="lazy"><div class="ov"><div class="tp"><span class="pf ig"><svg><use href="#i-ig"/></svg></span><span class="tg">ATELIER</span></div><div class="hook">Ce qu'on ne voit <em>jamais</em></div><div class="bot"><div class="dv">Demander un devis</div></div></div></div>
+   <div class="rl" aria-hidden="true"><img src="assets/terrasse.webp" alt="" loading="lazy"><div class="ov"><div class="tp"><span class="pf ig"><svg><use href="#i-ig"/></svg></span><span class="tg">MENUISERIE</span></div><div class="hook">POV : vous voyez <em>la pose</em> de près</div><div class="bot"><div class="dv">Demander un devis</div></div></div></div>
+   <div class="rl" aria-hidden="true"><img src="assets/decoupe.webp" alt="" loading="lazy"><div class="ov"><div class="tp"><span class="pf tt"><svg><use href="#i-tt"/></svg></span><span class="tg">GESTE</span></div><div class="hook">Une découpe <em>au millimètre</em></div><div class="bot"><div class="dv">Demander un devis</div></div></div></div>
+   <div class="rl" aria-hidden="true"><img src="assets/cuisine.webp" alt="" loading="lazy"><div class="ov"><div class="tp"><span class="pf fb"><svg><use href="#i-fb"/></svg></span><span class="tg">APRÈS</span></div><div class="hook">Le jour de <em>la livraison</em></div><div class="bot"><div class="dv">Demander un devis</div></div></div></div>
+   <div class="rl" aria-hidden="true"><img src="assets/couvreur.webp" alt="" loading="lazy"><div class="ov"><div class="tp"><span class="pf yt"><svg><use href="#i-yt"/></svg></span><span class="tg">COUVERTURE</span></div><div class="hook">Une journée <em>sur le toit</em></div><div class="bot"><div class="dv">Demander un devis</div></div></div></div>
+   <div class="rl" aria-hidden="true"><img src="assets/jardin.webp" alt="" loading="lazy"><div class="ov"><div class="tp"><span class="pf ig"><svg><use href="#i-ig"/></svg></span><span class="tg">PAYSAGE</span></div><div class="hook">Le jardin <em>6 semaines après</em></div><div class="bot"><div class="dv">Demander un devis</div></div></div></div>
+   <div class="rl" aria-hidden="true"><img src="assets/piscine.webp" alt="" loading="lazy"><div class="ov"><div class="tp"><span class="pf tt"><svg><use href="#i-tt"/></svg></span><span class="tg">PISCINE</span></div><div class="hook">Premier <em>remplissage</em></div><div class="bot"><div class="dv">Demander un devis</div></div></div></div>
+   <div class="rl" aria-hidden="true"><img src="assets/toiture.webp" alt="" loading="lazy"><div class="ov"><div class="tp"><span class="pf fb"><svg><use href="#i-fb"/></svg></span><span class="tg">AVANT</span></div><div class="hook">On dépose <em>tout</em></div><div class="bot"><div class="dv">Demander un devis</div></div></div></div>
+   <div class="rl" aria-hidden="true"><img src="assets/perceuse.webp" alt="" loading="lazy"><div class="ov"><div class="tp"><span class="pf ig"><svg><use href="#i-ig"/></svg></span><span class="tg">ATELIER</span></div><div class="hook">Ce qu'on ne voit <em>jamais</em></div><div class="bot"><div class="dv">Demander un devis</div></div></div></div>
+  </div>
+ </div>
+ <p class="wall-n">Exemples de formats et d'accroches. Images d'illustration.</p>
+</section>
+
+<!-- POV -->
+<section class="sec">
+ <div class="wrap">
+  <div class="pov">
+   <div class="rv">
+    <span class="chip"><svg class="mk"><use href="#logo"/></svg>Lunettes connectées</span>
+    <h2>Personne ne vous filme. <span class="g">C'est vous qui filmez.</span></h2>
+    <p class="l">Les lunettes ressemblent à des lunettes normales. Elles filment ce que vous voyez, à hauteur d'yeux, pendant que vos deux mains restent sur le chantier.</p>
+    <div class="pts">
+     <div class="pt"><span class="ck"><svg style="color:#16A34A"><use href="#ck"/></svg></span><div><b>Pas besoin de parler à la caméra</b><span>On voit vos gestes et votre travail, pas votre visage.</span></div></div>
+     <div class="pt"><span class="ck"><svg style="color:#16A34A"><use href="#ck"/></svg></span><div><b>Quelques secondes par chantier</b><span>Un avant, un geste, une finition. Rien à préparer.</span></div></div>
+     <div class="pt"><span class="ck"><svg style="color:#16A34A"><use href="#ck"/></svg></span><div><b>Vos clients respectés</b><span>Visages, plaques et adresses floutés avant publication.</span></div></div>
+    </div>
+   </div>
+   <div class="view rv d1">
+    <img src="assets/pov.webp" alt="Vue à hauteur d'yeux d'un artisan qui rabote une pièce de bois" loading="lazy">
+    <div class="hud"><span class="cn c1"></span><span class="cn c2"></span><span class="cn c3"></span><span class="cn c4"></span>
+     <div class="top"><span class="pill"><i></i>REC 00:00:08</span><span class="pill">1080p · 30 i/s</span></div>
+     <div class="bl"><span><svg class="mk" style="width:18px;height:18px"><use href="#logo"/></svg>Filmé à hauteur d'yeux</span></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- METHODE -->
+<section class="sec" id="methode">
+ <div class="wrap">
+  <div class="head rv"><span class="chip"><svg class="mk"><use href="#logo"/></svg>Méthode</span><h2>Vous travaillez. <span class="g">On s'occupe du reste.</span></h2></div>
+  <div class="bento">
+   <div class="bx w7 rv">
+    <div class="vis">
+     <div class="call"><small>APPEL · 00:47</small><div class="av"><svg><use href="#logo"/></svg></div><b>Productipro</b><div class="hang"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 9c-2.2 0-4.3.4-6.2 1.2-.6.2-1 .8-1 1.5v2.1c0 .7.6 1.2 1.3 1.1l2.6-.4c.6-.1 1-.6 1-1.2v-1.6a12 12 0 0 1 4.6 0v1.6c0 .6.4 1.1 1 1.2l2.6.4c.7.1 1.3-.4 1.3-1.1v-2.1c0-.7-.4-1.3-1-1.5A16 16 0 0 0 12 9z"/></svg></div></div>
+     <div class="msgs">
+      <div class="msg">On a fait le tour de vos chantiers en cours. Je vous envoie le plan.</div>
+      <div class="msg list"><div>20 idées de tournage pour votre métier</div><div>Guide d'utilisation des lunettes</div><div>Comptes Instagram, TikTok, YouTube, Facebook</div></div>
+      <div class="msg me">Parfait, je filme dès demain 👍</div>
      </div>
     </div>
-    <div class="stagev" aria-hidden="true">
-     <div class="phone">
-      <div class="screen">
-       <div class="scene a"><div class="tiles"></div><div class="mirror"></div><div class="tub"></div><div class="lab">AVANT</div></div>
-       <div class="scene b"><div class="tiles"></div><div class="mirror"></div><div class="tub"></div><div class="lab">APRÈS</div></div>
-       <div class="ui-top"><span>Abonnements</span><b>Pour toi</b></div>
-       
-       <div class="ui-bot">
-        <div class="who"><i></i>Votre entreprise</div>
-        <div class="cap">Rénovation complète d'une salle de bain à Vincennes. Filmé pendant le chantier.</div>
-        <div class="devis">Demander un devis →</div>
-       </div>
+    <div class="tx"><span class="k">01 · Lancement</span><h3>Un appel pour tout cadrer</h3><p>On choisit ensemble ce qu'il faut filmer pour votre métier. Vous repartez avec une liste d'idées, le guide des lunettes et des comptes prêts à publier.</p></div>
+   </div>
+   <div class="bx w5 rv d1">
+    <div class="vis v2">
+     <div class="thumb t1"><img src="assets/terrasse.webp" alt="" loading="lazy"></div>
+     <div class="thumb t2"><img src="assets/decoupe.webp" alt="" loading="lazy"></div>
+     <div class="thumb t3"><img src="assets/toiture.webp" alt="" loading="lazy"></div>
+     <svg class="gl" viewBox="0 0 860 300"><use href="#glasses"/></svg>
+    </div>
+    <div class="tx"><span class="k">02 · Tournage</span><h3>Vous filmez en travaillant</h3><p>Un appui sur la branche et ça tourne. Pas de trépied, pas de mise en scène, pas de journée bloquée.</p></div>
+   </div>
+   <div class="bx w5 rv">
+    <div class="vis">
+     <div class="ed">
+      <div class="bar"><b>terrasse_v2.mp4</b><span>00:00:21 / 00:00:34</span></div>
+      <div class="pv"><div class="scrn"><img src="assets/terrasse.webp" alt="" loading="lazy"><span>POV : on pose votre terrasse</span></div>
+       <div class="props"><div>Accroche<b>Ajoutée</b></div><div>Sous-titres<b>Auto</b></div><div>Format<b>9:16</b></div><div>Musique<b>Tendance</b></div></div></div>
+      <div class="tl">
+       <div class="tr v"><span style="flex:3;background-image:url(assets/toiture.webp)"></span><span style="flex:2;background-image:url(assets/decoupe.webp)"></span><span style="flex:3;background-image:url(assets/terrasse.webp)"></span><span style="flex:2;background-image:url(assets/piscine.webp)"></span></div>
+       <div class="tr s"><span style="flex:2">POV : on pose…</span><span style="flex:3">lame après lame</span><span style="flex:2">le résultat</span><span style="flex:3">demandez un devis</span></div>
+       <div class="tr a" id="wave"></div>
+       <span class="ph-l"></span>
       </div>
      </div>
-     <div class="float f1"><div class="k">Filmé sur le chantier</div><div class="row"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><circle cx="6.5" cy="13" r="3.5"/><circle cx="17.5" cy="13" r="3.5"/><path d="M10 13h4M3 13V9.5M21 13V9.5"/></svg></div><div class="t">Lunettes connectées, mains libres</div></div></div>
-     <div class="float f2"><div class="k">Nouvelle demande</div><div class="t2">Demande de devis</div><div class="s">Salle de bain · via Instagram</div><span class="ex">COMPTÉE DANS LE BILAN</span></div>
     </div>
+    <div class="tx"><span class="k">03 · Montage</span><h3>On produit vos vidéos</h3><p>Découpe, accroches, sous-titres, musique, format vertical. Vous n'ouvrez aucun logiciel.</p></div>
+   </div>
+   <div class="bx w7 rv d1">
+    <div class="vis v4">
+     <div class="mini"><div><img src="assets/cuisine.webp" alt="" loading="lazy"><span>Demander un devis</span></div></div>
+     <div class="pubs">
+      <div class="pub"><span class="pf ig"><svg><use href="#i-ig"/></svg></span>Instagram<em>Publié</em></div>
+      <div class="pub"><span class="pf tt"><svg><use href="#i-tt"/></svg></span>TikTok<em>Publié</em></div>
+      <div class="pub"><span class="pf yt"><svg><use href="#i-yt"/></svg></span>YouTube Shorts<em>Publié</em></div>
+      <div class="pub sch"><span class="pf fb"><svg><use href="#i-fb"/></svg></span>Facebook<em>Jeudi 18h</em></div>
+     </div>
+    </div>
+    <div class="tx"><span class="k">04 · Publication</span><h3>On publie partout, et on mesure</h3><p>Descriptions rédigées, publications programmées sur 4 réseaux, et chaque vidéo renvoie vers un moyen de vous demander un devis.</p></div>
    </div>
   </div>
  </div>
 </section>
 
-<!-- POUR QUI -->
-<section id="pourqui">
+<!-- PREUVE -->
+<section class="sec">
  <div class="wrap">
-  <div class="sh c rv"><span class="tag">Pour qui</span><h2>Les artisans à gros panier. <span class="g">Un chantier signé rembourse des mois d'abonnement.</span></h2></div>
-  <div class="met rv">
-   <div class="m"><div class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div><b>Rénovation</b></div>
-   <div class="m"><div class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16v3a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M6 12V6a2 2 0 0 1 4 0"/><path d="M8 20l-1 2M16 20l1 2"/></svg></div><b>Salles de bain</b></div>
-   <div class="m"><div class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15c2 0 2 1.5 4 1.5S8 15 10 15s2 1.5 4 1.5 2-1.5 4-1.5 2 1.5 4 1.5"/><path d="M2 19c2 0 2 1.5 4 1.5S8 19 10 19s2 1.5 4 1.5 2-1.5 4-1.5 2 1.5 4 1.5"/><path d="M8 13V5a2 2 0 0 1 4 0M14 13V5a2 2 0 0 1 4 0M8 8h6"/></svg></div><b>Pisciniers</b></div>
-   <div class="m"><div class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13l10-8 10 8"/><path d="M5 11l7-5.5L19 11"/><path d="M5 11v9h14v-9"/></svg></div><b>Couvreurs</b></div>
-   <div class="m"><div class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V11"/><path d="M12 11c0-4 3-7 7-7 0 4-3 7-7 7z"/><path d="M12 14c0-3-2.5-5.5-6-5.5 0 3 2.5 5.5 6 5.5z"/><path d="M5 22h14"/></svg></div><b>Paysagistes</b></div>
-   <div class="m"><div class="i"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M12 3v18M5 12h14"/><circle cx="10" cy="15" r=".6" fill="#0A0A0B"/></svg></div><b>Menuisiers</b></div>
-  </div>
-  <p class="note rv">Vos clients veulent voir votre travail avant de vous appeler. <b>Vos chantiers sont votre meilleure publicité</b>, encore faut-il qu'ils soient vus.</p>
- </div>
-</section>
-
-<!-- COMMENT -->
-<section id="comment">
- <div class="wrap">
-  <div class="sh rv"><span class="tag">Comment ça marche</span><h2>Vous travaillez. <span class="g">On s'occupe du reste.</span></h2><p>Quelques secondes de vidéo par chantier, c'est tout ce qu'on vous demande.</p></div>
-  <div class="steps">
-   <div class="st rv"><span class="n">ÉTAPE 01</span><h3>Appel de lancement</h3><p>On choisit ensemble les sujets à filmer pour votre métier. Vous repartez avec une liste d'idées et un guide d'utilisation des lunettes.</p><span class="who us"><i></i>Ensemble, en visio</span></div>
-   <div class="st rv"><span class="n">ÉTAPE 02</span><h3>Vous filmez en travaillant</h3><p>Quelques secondes par chantier : un avant, un après, une finition. Rien à préparer, pas besoin de parler à la caméra.</p><span class="who"><i></i>Vous, sur le chantier</span></div>
-   <div class="st dk rv"><span class="n">ÉTAPE 03</span><h3>On fait tout le reste</h3><p>Montage, sous-titres, accroches, descriptions, publication sur Instagram, TikTok, YouTube Shorts et Facebook.</p><span class="who us"><i></i>Productipro</span></div>
-   <div class="st rv"><span class="n">ÉTAPE 04</span><h3>Un bilan chaque mois</h3><p>Vues, messages reçus, et surtout le nombre de demandes de devis venues des vidéos. Vous savez ce que ça vous rapporte.</p><span class="who us"><i></i>Productipro</span></div>
-  </div>
- </div>
-</section>
-
-<!-- LUNETTES -->
-<section id="lunettes">
- <div class="wrap">
-  <div class="glass">
-   <div class="gv rv">
-    <div><span class="tag" style="color:#A6A6AD">Les lunettes connectées</span><h3 style="margin-top:14px">Vos mains restent sur le chantier. <span>La caméra filme ce que vous voyez.</span></h3></div>
-    <svg class="gsvg" viewBox="0 0 420 170" fill="none" aria-hidden="true">
-     <path d="M20 70 Q 20 50 40 50 L 380 50 Q 400 50 400 70" stroke="#2C2C30" stroke-width="10" stroke-linecap="round"/>
-     <rect x="40" y="56" width="150" height="96" rx="38" fill="#161619" stroke="#2C2C30" stroke-width="8"/>
-     <rect x="230" y="56" width="150" height="96" rx="38" fill="#161619" stroke="#2C2C30" stroke-width="8"/>
-     <path d="M190 86 Q 210 70 230 86" stroke="#2C2C30" stroke-width="8" stroke-linecap="round"/>
-     <circle cx="62" cy="74" r="7" fill="#0A5CFF"/><circle cx="62" cy="74" r="14" stroke="#0A5CFF" stroke-opacity=".35" stroke-width="3"/>
-     <path d="M70 120 Q 115 95 160 112" stroke="#2C2C30" stroke-width="4" stroke-linecap="round" opacity=".7"/>
-     <path d="M260 120 Q 305 95 350 112" stroke="#2C2C30" stroke-width="4" stroke-linecap="round" opacity=".7"/>
-    </svg>
-   </div>
-   <div class="gl">
-    <div class="gi rv"><div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><div><h4>Mains libres</h4><p>Pas de téléphone à tenir ni de trépied à installer. Un appui sur la branche et ça filme.</p></div></div>
-    <div class="gi rv"><div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><div><h4>Le point de vue de l'artisan</h4><p>Vos gestes, vos finitions, votre savoir-faire filmés à hauteur d'yeux. C'est ce format que les gens regardent jusqu'au bout.</p></div></div>
-    <div class="gi rv"><div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><div><h4>Vous n'avez pas de lunettes ?</h4><p>On peut vous les fournir en option : 90 € HT par mois pendant 6 mois, puis elles sont à vous.</p></div></div>
-    <div class="gi rv"><div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><div><h4>Vos clients respectés</h4><p>Vous filmez le chantier, pas les gens. On floute les visages, les plaques et les adresses avant publication.</p></div></div>
-   </div>
-  </div>
- </div>
-</section>
-
-<!-- DIFFERENCE -->
-<section id="difference">
- <div class="wrap">
-  <div class="sh c rv"><span class="tag">Notre différence</span><h2>On ne vend pas des vues. <span class="g">On compte les demandes de devis.</span></h2></div>
-  <div class="vs">
-   <div class="vcol a rv"><div class="h">Une agence vidéo classique</div><ul>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="#A6A6AD" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Elle vous parle de vues et de likes.</li>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="#A6A6AD" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Les vidéos ne renvoient vers rien de précis.</li>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="#A6A6AD" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Impossible de savoir combien de clients ça vous a ramené.</li>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="#A6A6AD" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Un tournage à organiser, une équipe à recevoir.</li>
-   </ul></div>
-   <div class="vcol b rv"><div class="h"><svg class="mk" style="width:26px;height:26px" viewBox="0 0 32 32"><rect width="32" height="32" rx="9" fill="#0A0A0B"/><path d="M11.5 23.5V8.5h6a4.75 4.75 0 0 1 0 9.5h-6" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22.8" cy="22.8" r="2.3" fill="#0A5CFF"/></svg>Productipro</div><ul>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>On vous parle de demandes de devis.</li>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Chaque vidéo renvoie vers un moyen de vous contacter.</li>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Chaque demande est comptée et vous est transmise.</li>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Vous filmez pendant vos chantiers, sans rien organiser.</li>
-   </ul></div>
-  </div>
-  <div class="report rv">
-   <div><span class="tag">Le bilan mensuel</span><h3 style="margin-top:12px">Un chiffre qui compte vraiment. <span class="g">Le nombre de demandes de devis.</span></h3><p>Chaque mois, vous recevez un bilan simple : ce qui a été publié, ce qui a été vu, et combien de personnes vous ont demandé un devis grâce aux vidéos.</p></div>
-   <div class="rep" aria-label="Aperçu du bilan mensuel">
-    <div class="top"><b>Bilan du mois</b><span>EXEMPLE</span></div>
-    <div class="kp"><div><small>Vidéos publiées</small><strong>15</strong></div><div><small>Messages reçus</small><strong>23</strong></div><div class="hi"><small>Demandes de devis</small><strong>6</strong></div></div>
-    <div class="bars"><i style="height:30%"></i><i style="height:42%"></i><i style="height:38%"></i><i style="height:55%"></i><i class="on" style="height:48%"></i><i class="on" style="height:66%"></i><i class="on" style="height:60%"></i><i class="on" style="height:80%"></i></div>
-    <div class="lg"><span>Vues</span><span class="on">Demandes de devis</span></div>
+  <div class="dark">
+   <div class="dk-g">
+    <div class="rv">
+     <span class="k">Notre différence</span>
+     <h2>On ne vous parle pas de vues. <span>On compte vos demandes de devis.</span></h2>
+     <p class="l">Chaque vidéo renvoie vers un contact. Chaque demande est comptée et vous est transmise. Chaque mois, vous savez exactement ce que vos vidéos vous ont rapporté.</p>
+     <div class="cmp">
+      <div class="a"><b>AGENCE VIDÉO CLASSIQUE</b>Des vues, des likes, et aucune idée de ce que ça rapporte.</div>
+      <div class="b"><b>PRODUCTIPRO</b>Le nombre de demandes de devis venues des vidéos, noir sur blanc.</div>
+     </div>
+    </div>
+    <div class="dash rv d1" aria-label="Exemple de bilan mensuel">
+     <div class="t"><b><svg class="mk"><use href="#logo"/></svg>Bilan du mois</b><span>EXEMPLE</span></div>
+     <div class="kpi"><div><small>Vidéos publiées</small><strong data-n="15">0</strong></div><div><small>Messages reçus</small><strong data-n="23">0</strong></div><div class="hi"><small>Demandes de devis</small><strong data-n="6">0</strong></div></div>
+     <div class="chart"><svg viewBox="0 0 400 96" preserveAspectRatio="none"><defs><linearGradient id="ar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0A5CFF" stop-opacity=".22"/><stop offset="1" stop-color="#0A5CFF" stop-opacity="0"/></linearGradient></defs><path d="M0 80 C40 76 60 70 90 66 S150 58 180 50 230 44 260 36 330 22 400 10 L400 96 L0 96Z" fill="url(#ar)"/><path d="M0 80 C40 76 60 70 90 66 S150 58 180 50 230 44 260 36 330 22 400 10" fill="none" stroke="#0A5CFF" stroke-width="2.5"/></svg></div>
+     <div class="rows">
+      <div class="rw"><span class="pf ig"><svg><use href="#i-ig"/></svg></span><b>Salle de bain</b><span>Vincennes</span><em>Demande de devis</em></div>
+      <div class="rw"><span class="pf tt"><svg><use href="#i-tt"/></svg></span><b>Terrasse bois</b><span>Saint-Maur</span><em>Demande de devis</em></div>
+      <div class="rw"><span class="pf fb"><svg><use href="#i-fb"/></svg></span><b>Toiture</b><span>Montreuil</span><em>Demande de devis</em></div>
+     </div>
+    </div>
    </div>
   </div>
  </div>
 </section>
 
 <!-- FORMULES -->
-<section id="formules">
+<section class="sec" id="formules">
  <div class="wrap">
-  <div class="sh c rv"><span class="tag">Formules</span><h2>Deux formules. <span class="g">Pas de surprise.</span></h2><p>Montage, sous-titres et publication sont toujours inclus. Les prix sont hors taxes.</p></div>
+  <div class="head rv"><span class="chip"><svg class="mk"><use href="#logo"/></svg>Formules</span><h2>Deux formules. <span class="g">Tout compris.</span></h2><p>Montage, sous-titres et publication toujours inclus. Prix hors taxes, chaque mois, toute l'année.</p></div>
   <div class="plans">
-   <div class="plan rv">
-    <h3>Présence</h3><p class="d">Pour être visible toute l'année sur les réseaux.</p>
-    <div class="price"><b>490 €</b><span>HT / mois</span></div>
+   <div class="pl rv">
+    <h3>Présence</h3><p class="d">Pour être visible toute l'année dans votre secteur.</p>
+    <div class="pr"><b>490€</b><span>HT / mois</span></div>
     <ul>
-     <li><svg viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>8 vidéos par mois</li>
-     <li><svg viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Instagram, TikTok, YouTube Shorts, Facebook</li>
-     <li><svg viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Montage, sous-titres, accroches, descriptions</li>
-     <li><svg viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Publication gérée pour vous</li>
-     <li><svg viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Bilan mensuel</li>
+     <li><svg style="color:#16A34A"><use href="#ck"/></svg>8 vidéos par mois</li>
+     <li><svg style="color:#16A34A"><use href="#ck"/></svg>Instagram, TikTok, YouTube Shorts, Facebook</li>
+     <li><svg style="color:#16A34A"><use href="#ck"/></svg>Montage, sous-titres, accroches</li>
+     <li><svg style="color:#16A34A"><use href="#ck"/></svg>Descriptions rédigées et publication</li>
+     <li><svg style="color:#16A34A"><use href="#ck"/></svg>Idées de tournage fournies</li>
+     <li><svg style="color:#16A34A"><use href="#ck"/></svg>Bilan mensuel</li>
     </ul>
-    <a href="#rdv" class="btn btn-dark">Choisir Présence</a>
+    <a href="#rdv" class="btn btn-dark">Réserver un appel <svg><use href="#arr"/></svg></a>
    </div>
-   <div class="plan pro rv">
-    <span class="badge">Recommandé</span>
-    <h3>Croissance</h3><p class="d">Pour transformer les vidéos en demandes de devis.</p>
-    <div class="price"><b>790 €</b><span>HT / mois</span></div>
+   <div class="pl pro rv d1">
+    <span class="tag">★ Recommandé</span>
+    <h3>Croissance</h3><p class="d">Pour transformer vos vidéos en demandes de devis.</p>
+    <div class="pr"><b>790€</b><span>HT / mois</span></div>
     <ul>
-     <li><svg viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>15 vidéos par mois</li>
-     <li><svg viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tout ce qui est dans Présence</li>
-     <li><svg viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Une page de contact dédiée pour vos demandes de devis</li>
-     <li><svg viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Suivi et comptage des demandes de devis</li>
-     <li><svg viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Bilan mensuel détaillé</li>
+     <li><svg style="color:#4ADE80"><use href="#ck"/></svg>15 vidéos par mois</li>
+     <li><svg style="color:#4ADE80"><use href="#ck"/></svg>Tout ce qui est dans Présence</li>
+     <li><svg style="color:#4ADE80"><use href="#ck"/></svg>Page de contact dédiée à vos demandes de devis</li>
+     <li><svg style="color:#4ADE80"><use href="#ck"/></svg>Suivi et comptage de chaque demande</li>
+     <li><svg style="color:#4ADE80"><use href="#ck"/></svg>Bilan mensuel détaillé</li>
     </ul>
-    <a href="#rdv" class="btn btn-dark">Choisir Croissance</a>
+    <a href="#rdv" class="btn btn-dark">Réserver un appel <svg><use href="#arr"/></svg></a>
    </div>
   </div>
-  <div class="extras">
-   <div class="ex rv"><span class="k">Lancement</span><b>290 € HT</b><p>Une fois, à la signature : appel de cadrage, configuration des comptes et guide de tournage.</p></div>
-   <div class="ex rv"><span class="k">Option lunettes</span><b>+90 € HT/mois</b><p>Pendant 6 mois, puis les lunettes sont à vous. Sur demande, selon disponibilité.</p></div>
-   <div class="ex rv"><span class="k">Engagement</span><b>3 mois</b><p>Le temps que les vidéos s'installent sur les réseaux. Ensuite, c'est sans engagement.</p></div>
+  <div class="opt rv">
+   <svg class="gl" viewBox="0 0 860 300"><use href="#glasses"/></svg>
+   <div><h4>Vous n'avez pas de lunettes ?</h4><p>On vous les fournit, configurées et prêtes à filmer. Après 6 mois, elles sont à vous. Sur demande, selon disponibilité.</p></div>
+   <div class="pp">+90€ <small>HT / mois pendant 6 mois</small></div>
   </div>
-  <p class="small rv">Les résultats dépendent de votre métier, de votre zone et de la régularité des tournages. Nous ne garantissons pas un nombre de demandes de devis : nous les comptons, et nous vous le disons.</p>
+  <div class="xt">
+   <div class="rv"><div><b>Frais de lancement</b><span>Appel de cadrage, configuration des comptes, guide.</span></div><strong>290€</strong></div>
+   <div class="rv d1"><div><b>Engagement</b><span>Le temps que les vidéos s'installent. Ensuite, sans engagement.</span></div><strong>3 mois</strong></div>
+  </div>
+  <p class="fine rv">Les résultats dépendent de votre métier, de votre zone et de la régularité des tournages. Nous ne garantissons pas un nombre de demandes de devis : nous les comptons et nous vous le montrons.</p>
  </div>
 </section>
 
 <!-- FAQ -->
-<section id="faq">
+<section class="sec" id="faq">
  <div class="wrap">
-  <div class="sh c rv"><span class="tag">FAQ</span><h2>Vos questions</h2></div>
-  <div class="faq">
-   <div class="qa rv"><button aria-expanded="false">Je ne suis pas à l'aise devant la caméra. C'est un problème ?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><div class="a"><div><p>Non. Avec les lunettes, on voit vos mains et votre travail, pas votre visage. Vous n'avez pas besoin de parler : on ajoute les textes, les sous-titres et la musique au montage.</p></div></div></div>
-   <div class="qa rv"><button aria-expanded="false">Combien de temps ça me prend chaque semaine ?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><div class="a"><div><p>Quelques minutes. Vous filmez quelques secondes pendant vos chantiers, et vous nous envoyez les vidéos en un clic. On s'occupe de tout le reste.</p></div></div></div>
-   <div class="qa rv"><button aria-expanded="false">Dois-je acheter des lunettes connectées ?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><div class="a"><div><p>Vous pouvez utiliser les vôtres, ou prendre l'option lunettes : 90 € HT par mois pendant 6 mois, puis elles vous appartiennent. Vous pouvez aussi commencer avec votre téléphone.</p></div></div></div>
-   <div class="qa rv"><button aria-expanded="false">Quand est-ce que je reçois mes premières demandes de devis ?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><div class="a"><div><p>Les comptes ont besoin de quelques semaines pour être vus régulièrement, c'est pour ça que l'engagement est de 3 mois. On ne promet pas de chiffre : on compte chaque demande et on vous le montre dans le bilan mensuel.</p></div></div></div>
-   <div class="qa rv"><button aria-expanded="false">Les comptes et les vidéos m'appartiennent ?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><div class="a"><div><p>Oui. Les comptes sont au nom de votre entreprise et les vidéos publiées restent à vous, même si vous arrêtez.</p></div></div></div>
-   <div class="qa rv"><button aria-expanded="false">Et mes clients chez qui je filme ?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><div class="a"><div><p>On vous donne un modèle d'accord simple à faire signer. Vous filmez le chantier, pas les personnes, et on floute visages, plaques et adresses avant publication.</p></div></div></div>
-   <div class="qa rv"><button aria-expanded="false">Vous travaillez où ?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><div class="a"><div><p>Avec des artisans d'Île-de-France. Tout se fait à distance : vous filmez, on s'occupe du reste.</p></div></div></div>
+  <div class="head rv"><span class="chip"><svg class="mk"><use href="#logo"/></svg>FAQ</span><h2>Vos questions</h2></div>
+  <div class="faqw rv">
+   <div class="qa open"><button aria-expanded="true">Je ne suis pas à l'aise devant la caméra. Ça peut marcher ?<i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></button><div class="a"><div><p>Oui. Avec les lunettes, on voit vos mains et votre travail, pas votre visage. Vous n'avez pas besoin de parler : on ajoute les textes, les sous-titres et la musique au montage.</p></div></div></div>
+   <div class="qa"><button aria-expanded="false">Combien de temps ça me prend par semaine ?<i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></button><div class="a"><div><p>Quelques minutes. Vous filmez quelques secondes pendant vos chantiers et vous nous envoyez les vidéos. On s'occupe de tout le reste.</p></div></div></div>
+   <div class="qa"><button aria-expanded="false">Je dois préparer les sujets ou écrire quelque chose ?<i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></button><div class="a"><div><p>Non. On vous donne une liste d'idées de tournage adaptée à votre métier, et on rédige toutes les accroches et descriptions.</p></div></div></div>
+   <div class="qa"><button aria-expanded="false">Quand est-ce que j'ai mes premières demandes de devis ?<i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></button><div class="a"><div><p>Les comptes ont besoin de quelques semaines pour être vus régulièrement, c'est pour ça que l'engagement est de 3 mois. On ne promet pas de chiffre : on compte chaque demande et on vous le montre dans le bilan mensuel.</p></div></div></div>
+   <div class="qa"><button aria-expanded="false">Et si je n'ai pas de lunettes ?<i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></button><div class="a"><div><p>Vous pouvez prendre l'option lunettes : 90 € HT par mois pendant 6 mois, puis elles sont à vous. Vous pouvez aussi commencer avec votre téléphone.</p></div></div></div>
+   <div class="qa"><button aria-expanded="false">Les comptes et les vidéos m'appartiennent ?<i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></button><div class="a"><div><p>Oui. Les comptes sont au nom de votre entreprise et les vidéos publiées restent à vous, même si vous arrêtez.</p></div></div></div>
+   <div class="qa"><button aria-expanded="false">Et mes clients chez qui je filme ?<i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></button><div class="a"><div><p>On vous fournit un modèle d'accord simple à leur faire signer. Vous filmez le chantier, pas les personnes, et on floute visages, plaques et adresses avant publication.</p></div></div></div>
   </div>
  </div>
 </section>
 
 <!-- RDV -->
-<section id="rdv">
+<section class="sec" id="rdv">
  <div class="wrap">
-  <div class="sh c rv"><span class="tag">Appel de 20 min</span><h2>Réservez un appel de 20 minutes</h2><p>On regarde votre métier et vos chantiers, et on vous dit ce qu'on filmerait pour vous. Choisissez directement votre créneau.</p></div>
+  <div class="head rv"><span class="chip"><svg class="mk"><use href="#logo"/></svg>Appel de 20 min</span><h2>Réservez votre appel</h2><p>On regarde votre métier et vos chantiers, et on vous dit ce qu'on filmerait pour vous. Choisissez directement votre créneau.</p></div>
   <div class="calwrap rv"><div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-30min"></div></div>
   <p class="alt">Vous préférez écrire ? <a href="https://wa.me/33767717586?text=Bonjour%20Productipro%2C%20je%20voudrais%20en%20savoir%20plus%20sur%20vos%20vid%C3%A9os%20de%20chantier." target="_blank" rel="noopener">Envoyez-nous un message WhatsApp</a></p>
  </div>
 </section>
 
 <!-- FINAL -->
-<div class="wrap">
- <div class="final rv" id="contact">
-  <span class="brand"><svg class="mk" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#fff"/><path d="M11.5 23.5V8.5h6a4.75 4.75 0 0 1 0 9.5h-6" fill="none" stroke="#0A0A0B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22.8" cy="22.8" r="2.3" fill="#0A5CFF"/></svg>Productipro</span>
-  <h2>Vos chantiers méritent d'être vus. <span>Et de vous ramener des clients.</span></h2>
-  <div class="cta"><a href="#rdv" class="btn btn-blue">Réserver un appel <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="#formules" class="btn btn-soft">Voir les formules</a></div>
+<section class="sec">
+ <div class="wrap">
+  <div class="fin rv">
+   <div class="txt">
+    <span class="chip"><svg class="mk"><use href="#logo"/></svg>Productipro</span>
+    <h2 style="margin-top:20px">Devenez l'artisan <span class="g">qu'on voit et qu'on appelle.</span></h2>
+    <ul>
+     <li><svg style="color:#16A34A"><use href="#ck"/></svg>Un forfait clair, tout compris</li>
+     <li><svg style="color:#16A34A"><use href="#ck"/></svg>8 à 15 vidéos par mois, toute l'année</li>
+     <li><svg style="color:#16A34A"><use href="#ck"/></svg>Les idées de tournage préparées pour vous</li>
+     <li><svg style="color:#16A34A"><use href="#ck"/></svg>Zéro montage, zéro publication de votre côté</li>
+     <li><svg style="color:#16A34A"><use href="#ck"/></svg>Vos demandes de devis comptées chaque mois</li>
+    </ul>
+    <a href="#rdv" class="btn btn-blue">Réserver un appel <svg><use href="#arr"/></svg></a>
+   </div>
+   <div class="ph" aria-hidden="true"><div class="scr"><div class="isl"></div>
+    <div class="slides">
+     <div class="s"><img src="assets/terrasse.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"><div class="ov"><span></span><div class="hook">POV : on pose <em>votre terrasse</em></div><div class="bot"><div class="dv">Demander un devis</div></div></div></div>
+     <div class="s"><img src="assets/couvreur.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"><div class="ov"><span></span><div class="hook">Une journée <em>sur le toit</em></div><div class="bot"><div class="dv">Demander un devis</div></div></div></div>
+     <div class="s"><img src="assets/cuisine.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"><div class="ov"><span></span><div class="hook">Le jour de <em>la livraison</em></div><div class="bot"><div class="dv">Demander un devis</div></div></div></div>
+     <div class="s"><img src="assets/piscine.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"><div class="ov"><span></span><div class="hook">Premier <em>remplissage</em></div><div class="bot"><div class="dv">Demander un devis</div></div></div></div>
+    </div>
+   </div></div>
+  </div>
  </div>
-</div>
+</section>
 </main>
 
 <footer>
  <div class="wrap">
-  <div class="foot">
-   <div><a href="#top" class="brand"><svg class="mk" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#0A0A0B"/><path d="M11.5 23.5V8.5h6a4.75 4.75 0 0 1 0 9.5h-6" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22.8" cy="22.8" r="2.3" fill="#0A5CFF"/></svg>productipro</a><p style="margin-top:12px;max-width:300px">Les vidéos de vos chantiers, transformées en demandes de devis.</p></div>
+  <div class="ft">
+   <div><a href="#top" class="brand"><svg class="mk"><use href="#logo"/></svg>productipro</a><p>Les vidéos de vos chantiers, filmées par vous, montées et publiées par nous. Et transformées en demandes de devis.</p></div>
    <div class="cols">
-    <div><b>Pages</b><a href="#comment">Comment ça marche</a><a href="#lunettes">Les lunettes</a><a href="#formules">Formules</a><a href="#faq">FAQ</a></div>
-    <div><b>Contact</b><a href="#rdv">Réserver un appel</a><a href="mailto:contact@productipro.fr">contact@productipro.fr</a><a href="confidentialite.html">Confidentialité</a></div>
+    <div><b>Pages</b><a href="#format">Le format</a><a href="#methode">Méthode</a><a href="#formules">Formules</a><a href="#faq">FAQ</a></div>
+    <div><b>Contact</b><a href="#rdv">Réserver un appel</a><a href="mailto:contact@productipro.fr">contact@productipro.fr</a><a href="https://wa.me/33767717586" target="_blank" rel="noopener">WhatsApp</a></div>
    </div>
   </div>
+  <div class="giant" aria-hidden="true">productipro.</div>
   <div class="legal"><span>© 2026 Productipro. Tous droits réservés.</span><span><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a></span></div>
  </div>
 </footer>
@@ -474,14 +698,13 @@ footer{padding:56px 0 40px;color:var(--mut);font-size:14px}
 
 <script>
 (function(){
- var nav=document.getElementById('nav');
- addEventListener('scroll',function(){nav.classList.toggle('sc',scrollY>8)},{passive:true});
- var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);
+  e.target.querySelectorAll&&e.target.querySelectorAll('[data-n]').forEach(function(n){var t=+n.dataset.n,s=null;function f(ts){if(!s)s=ts;var p=Math.min(1,(ts-s)/1400);n.textContent=Math.round(t*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)})}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
- document.querySelectorAll('.qa button').forEach(function(b){b.addEventListener('click',function(){var q=b.parentNode;var o=q.classList.toggle('open');b.setAttribute('aria-expanded',o)})});
+ document.querySelectorAll('.qa button').forEach(function(b){b.addEventListener('click',function(){var q=b.parentNode,o=q.classList.toggle('open');b.setAttribute('aria-expanded',o)})});
+ var w=document.getElementById('wave');if(w){var h='';for(var i=0;i<90;i++){var v=4+Math.abs(Math.sin(i*.55)*Math.cos(i*.17))*14+((i*7)%5);h+='<i style="height:'+v+'px"></i>'}w.innerHTML=h}
 })();
 </script>
-<!-- Cal inline embed code begins -->
 <script type="text/javascript">
   (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
   Cal("init", "30min", {origin:"https://app.cal.com"});
@@ -489,6 +712,5 @@ footer{padding:56px 0 40px;color:var(--mut);font-size:14px}
   Cal.ns["30min"]("inline", { elementOrSelector:"#my-cal-inline-30min", config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"}, calLink: "productipro/30min" });
   Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
 </script>
-<!-- Cal inline embed code ends -->
 </body>
 </html>
