@@ -101,11 +101,11 @@ h4{font-size:20px;letter-spacing:-.03em}
 .proof .l2{font-size:14px;color:var(--mut);font-weight:500}
 
 /* ---------- marquee of reels ---------- */
-.reel-wrap{margin-top:52px;overflow:hidden}
-.reel{display:flex;gap:22px;width:max-content;animation:mq 58s linear infinite}
-.reel-wrap:hover .reel{animation-play-state:paused}
+.reel-wrap{margin-top:52px;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.reel-wrap::-webkit-scrollbar{display:none}
+.reel{display:flex;gap:22px;width:max-content}
 @keyframes mq{to{transform:translateX(-50%)}}
-.rcard{position:relative;width:258px;aspect-ratio:9/15.2;border-radius:var(--r);overflow:hidden;background:#111;box-shadow:var(--sh)}
+.rcard{position:relative;flex:0 0 auto;width:258px;aspect-ratio:9/15.2;border-radius:var(--r);overflow:hidden;background:#111;box-shadow:var(--sh)}
 .rcard img,.rcard video{width:100%;height:100%;object-fit:cover;background:#111}
 .rcard .tag{position:absolute;left:0;right:0;bottom:0;padding:44px 14px 15px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.8));color:#fff;font-size:13.5px;font-weight:500;display:flex;align-items:center;gap:7px;white-space:nowrap;overflow:hidden}
 .rcard .tag b{font-weight:600}
@@ -451,16 +451,16 @@ footer{padding:70px 0 26px}
   .burger{display:flex}
   .nav.open .drawer{display:block}
   .nav.open{background:rgba(238,238,238,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
-  .hero{padding-top:140px}
-  .hero .acts{flex-direction:column;gap:12px;margin-top:34px}
-  .hero .sub{margin-top:22px}
-  .proof{margin-top:38px}
-  .hero .acts .btn{width:100%}
-  .rcard{width:208px;flex:0 0 auto;scroll-snap-align:center}
-  .rcard.dup{display:none}
-  .reel-wrap{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;scrollbar-width:none;-webkit-mask-image:none;mask-image:none;padding:0 16px}
-  .reel-wrap::-webkit-scrollbar{display:none}
-  .reel{animation:none;width:max-content;gap:12px}
+  .hero{padding-top:136px}
+  .hero h1{font-size:clamp(31px,9.5vw,64px);line-height:1.06;letter-spacing:-.045em;text-wrap:balance}
+  .hero h1 br{display:none}
+  .hero .sub{margin-top:20px;font-size:15.5px;line-height:1.52;max-width:33ch}
+  .hero .acts{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:30px}
+  .hero .acts .btn{width:auto;padding:14px 21px;font-size:15px}
+  .proof{margin-top:36px}
+  .rcard{width:208px}
+  .reel{gap:12px}
+  .reel-wrap{-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
   .fi{width:50px;height:50px;border-radius:14px}
   .fi svg{width:27px;height:27px}
   .row{grid-template-columns:minmax(0,1fr);gap:14px;padding:26px 0}
@@ -610,7 +610,7 @@ footer{padding:70px 0 26px}
 <!-- =============== HERO =============== -->
 <section class="hero">
   <div class="wrap">
-    <h1 class="rv in">Vos clients veulent voir<br><span class="acc">comment vous travaillez.</span></h1>
+    <h1 class="rv in">Vos clients veulent voir <br><span class="acc">comment vous travaillez.</span></h1>
     <p class="sub rv in d1">Vous enfilez les lunettes le matin, elles filment pendant que vous bossez. On monte, on sous-titre et on publie 8 à 15 vidéos par mois sur vos réseaux. Vous n'ouvrez aucun logiciel.</p>
     <div class="acts rv in d2">
       <a class="btn" href="#rdv"><svg><use href="#ph"/></svg> Réserver un appel</a>
@@ -777,15 +777,7 @@ footer{padding:70px 0 26px}
 <section class="sec tight">
   <div class="wrap">
     <div class="mission">
-      <div class="ph rv"><div class="mo m4"><div class="gd"></div>
-        <span class="lab t">Des vues</span>
-        <div class="dots" id="d4"></div>
-        <svg class="fun" viewBox="0 0 120 84"><path d="M7 7h106L73 50v27H47V50L7 7Z"/></svg>
-        <div class="chips">
-          <span style="--d:1.5s">Messages</span><span style="--d:1.75s">Appels</span><span style="--d:2s">Demandes de devis</span>
-        </div>
-        <span class="lab b">Des clients</span>
-      </div></div>
+      <div class="ph rv"><video class="pv" src="assets/v1.mp4" poster="assets/hero-c.webp" muted loop playsinline preload="none" aria-label="Vidéo filmée au travail avec des lunettes connectées"></video></div>
       <div class="rv d1">
         <span class="badge">Notre approche</span>
         <h2>On ne vend pas des vues. <span class="acc">On vend des clients.</span></h2>
@@ -1114,14 +1106,33 @@ document.getElementById('drawer').addEventListener('click',function(e){if(e.targ
     return '<div class="rcard"><video class="pv" src="assets/'+v[0]+'.mp4" poster="assets/'+v[0]+'.webp" muted loop playsinline preload="none" aria-label="Vidéo verticale — '+v[1]+'"></video>'+
       '<div class="tag"><b>'+v[1]+'</b> · '+v[2]+'<svg class="vb"><use href="#vb"/></svg></div></div>';
   }).join('');
-  document.getElementById('reel').innerHTML=r+r.replace(/class="rcard"/g,'class="rcard dup" aria-hidden="true"');
+  var reel=document.getElementById('reel');
+  reel.innerHTML=r+r.replace(/class="rcard"/g,'class="rcard dup" aria-hidden="true"');
+
+  /* defilement automatique, interrompu pendant que l'on fait glisser */
+  (function(){
+    var wrap=document.querySelector('.reel-wrap'), hold=0, last=0;
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    ['pointerdown','touchstart','wheel'].forEach(function(ev){
+      wrap.addEventListener(ev,function(){hold=Date.now()+2500;},{passive:true});
+    });
+    function tick(t){
+      if(!last)last=t;
+      var dt=Math.min(t-last,48); last=t;
+      var half=reel.scrollWidth/2;
+      if(half>0){
+        if(Date.now()>hold && document.visibilityState==='visible'){ wrap.scrollLeft+=dt*0.032; }
+        if(wrap.scrollLeft>=half) wrap.scrollLeft-=half;
+        else if(wrap.scrollLeft<0) wrap.scrollLeft+=half;
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  })();
 
   // remplissages g\u00e9n\u00e9r\u00e9s
   document.querySelectorAll('.m2 .wave').forEach(function(w){
     var h='';for(var i=0;i<26;i++)h+='<i style="animation-delay:'+(i*0.045).toFixed(2)+'s"></i>';w.innerHTML=h;
-  });
-  document.querySelectorAll('.m4 .dots').forEach(function(d){
-    var h='';for(var i=0;i<9;i++)h+='<i style="left:'+(4+i*11)+'%;animation-delay:'+(i*0.28).toFixed(2)+'s"></i>';d.innerHTML=h;
   });
 })();
 
