@@ -1111,19 +1111,22 @@ document.getElementById('drawer').addEventListener('click',function(e){if(e.targ
 
   /* defilement automatique, interrompu pendant que l'on fait glisser */
   (function(){
-    var wrap=document.querySelector('.reel-wrap'), hold=0, last=0;
+    var wrap=document.querySelector('.reel-wrap'), hold=0, last=0, pos=0;
     if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
     ['pointerdown','touchstart','wheel'].forEach(function(ev){
-      wrap.addEventListener(ev,function(){hold=Date.now()+2500;},{passive:true});
+      wrap.addEventListener(ev,function(){hold=Date.now()+2600;},{passive:true});
     });
     function tick(t){
       if(!last)last=t;
       var dt=Math.min(t-last,48); last=t;
       var half=reel.scrollWidth/2;
       if(half>0){
-        if(Date.now()>hold && document.visibilityState==='visible'){ wrap.scrollLeft+=dt*0.032; }
-        if(wrap.scrollLeft>=half) wrap.scrollLeft-=half;
-        else if(wrap.scrollLeft<0) wrap.scrollLeft+=half;
+        /* position accumulee en flottant : scrollLeft est arrondi par le navigateur */
+        if(Date.now()<=hold || document.visibilityState!=='visible'){ pos=wrap.scrollLeft; }
+        else { pos+=dt*0.030; }
+        if(pos>=half) pos-=half;
+        else if(pos<0) pos+=half;
+        wrap.scrollLeft=pos;
       }
       requestAnimationFrame(tick);
     }
