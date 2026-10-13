@@ -162,12 +162,12 @@ h4{font-size:20px;letter-spacing:-.03em}
 .svc.rev .tx{order:1}
 
 /* ---------- mission ---------- */
-.mission{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
+.mission{max-width:760px;margin:0 auto}
 .mission .ph{border-radius:var(--r);overflow:hidden;background:#111;aspect-ratio:3/3.6;box-shadow:var(--sh)}
 .mission .ph img,.mission .ph video{width:100%;height:100%;object-fit:cover;background:#111}
 .mission h2{margin-top:16px}
 .mission .sub{margin-top:16px;max-width:42ch}
-.boxes{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px}
+.boxes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:42px}
 .box{background:var(--card);border-radius:16px;padding:26px 20px;text-align:center;box-shadow:var(--sh-s)}
 .box .n{font-size:34px;font-weight:600;letter-spacing:-.04em;line-height:1}
 .box .l{margin-top:7px;font-size:14px;color:var(--mut)}
@@ -432,7 +432,7 @@ footer{padding:70px 0 26px}
 /* ---------- responsive ---------- */
 @media(max-width:1000px){
   .sec{padding:76px 0}
-  .mission,.proc,.faq,.final{grid-template-columns:minmax(0,1fr);gap:34px}
+  .proc,.faq,.final{grid-template-columns:minmax(0,1fr);gap:34px}
   .svc{grid-template-columns:minmax(0,1fr);gap:0}
   .svc.rev .media{order:0}.svc.rev .tx{order:0}
   .proj,.ideas{grid-template-columns:minmax(0,1fr)}
@@ -481,7 +481,7 @@ footer{padding:70px 0 26px}
 
   /* sections « flottantes » : logos et pastilles autour du titre, comme sur ordinateur */
   .float{padding:0!important;position:relative}
-  .float h2{max-width:none!important;padding:104px 10px!important}
+  .float h2{max-width:none!important;padding:88px 10px!important}
   .fi{width:46px;height:46px;border-radius:13px}
   .fi svg{width:46px;height:46px}
   .f1{left:1%;top:4%}
@@ -509,45 +509,42 @@ footer{padding:70px 0 26px}
   .toggle button{padding:10px 15px;font-size:13.5px}
 
   /* ---- respiration ---- */
-  .sec{padding:96px 0}
+  .sec{padding:112px 0}
   .sec.tight{padding-top:0}
   .sec-head .lead,.center .sub{margin-top:18px}
-  .rows{margin-top:44px}
-  .row{padding:32px 0;gap:18px}
-  .reel-wrap{margin-top:62px}
-  .trust{margin-top:64px}
-  .svc{padding:12px;margin-top:26px}
-  .svc .tx{padding:24px 12px 14px}
-  .svc .tx p.d{margin-top:14px}
-  .svc ul{margin-top:24px;gap:12px}
-  .svc .btn{margin-top:26px}
-  .mission{gap:40px}
-  .boxes{gap:14px;margin-top:34px}
-  .box{padding:24px 16px}
-  .steps{gap:20px}
-  .step .bd{padding:24px 20px 26px}
-  .proc{gap:40px}
-  .cmp{gap:18px}
-  .cmp .c,.cmp .c.me{padding:28px 24px}
-  .cmp ul{margin-top:22px;gap:14px}
-  .plans{gap:20px;margin-top:44px}
-  .plan{padding:28px 24px}
-  .plan ul{margin-top:26px;padding-top:24px;gap:13px}
-  .custom{padding:28px 24px;gap:22px;margin-top:24px}
-  .rg{gap:16px;margin-top:44px}
-  .rc{padding:24px 22px}
-  .rc p{margin-top:10px}
-  .faq{gap:34px}
-  .qs{gap:14px}
-  .q>button{padding:20px 18px;font-size:16px}
-  .q .a p{padding:0 18px 20px}
-  .ideas{gap:20px;margin-top:44px}
-  .idea .tx{padding:20px 12px 14px}
-  .final{gap:46px}
-  .cal{margin-top:40px}
-  footer{padding:80px 0 26px}
-  .fg{gap:36px}
-  .fbot{margin-top:40px;padding:18px 22px}
+  .rows{margin-top:52px}
+  .row{padding:38px 0;gap:20px}
+  .reel-wrap{margin-top:66px}
+  .trust{margin-top:72px}
+  .svc{padding:14px;margin-top:34px}
+  .svc .tx{padding:28px 12px 16px}
+  .svc .tx p.d{margin-top:15px}
+  .svc ul{margin-top:26px;gap:13px}
+  .svc .btn{margin-top:30px}
+  .boxes{grid-template-columns:minmax(0,1fr);gap:16px;margin-top:40px}
+  .box{padding:28px 18px}
+  .steps{gap:26px}
+  .step .bd{padding:26px 20px 28px}
+  .proc{gap:46px}
+  .cmp{gap:22px}
+  .cmp .c,.cmp .c.me{padding:30px 24px}
+  .cmp ul{margin-top:24px;gap:15px}
+  .plans{gap:26px;margin-top:50px}
+  .plan{padding:30px 24px}
+  .plan ul{margin-top:28px;padding-top:26px;gap:14px}
+  .custom{padding:30px 24px;gap:24px;margin-top:30px}
+  .rg{gap:20px;margin-top:50px}
+  .rc{padding:28px 24px}
+  .rc p{margin-top:11px}
+  .faq{gap:42px}
+  .qs{gap:16px}
+  .q>button{padding:22px 18px;font-size:16px}
+  .q .a p{padding:0 18px 22px}
+  .final{gap:52px}
+  .cal{margin-top:44px}
+  footer{padding:92px 0 26px}
+  .fg{gap:42px}
+  .fbot{margin-top:46px;padding:20px 22px}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1!important;transform:none!important}}
 </style>
@@ -652,16 +649,7 @@ footer{padding:70px 0 26px}
 <!-- =============== RESULTATS =============== -->
 <section class="sec tight">
   <div class="wrap">
-    <div class="float" style="padding-top:30px;padding-bottom:30px">
-      <span class="pill q1"><svg><use href="#eye"/></svg> Vues</span>
-      <span class="pill q2"><svg><use href="#users"/></svg> Abonnés</span>
-      <span class="pill q3"><svg><use href="#hrt"/></svg> Partages</span>
-      <span class="pill q4"><svg><use href="#msg"/></svg> Messages</span>
-      <span class="pill q5"><svg><use href="#lnk"/></svg> Appels reçus</span>
-      <h2 class="rv" style="max-width:19ch;padding:84px 0">Et on ne regarde qu'une chose : <span class="acc">les demandes que ça vous ramène.</span></h2>
-    </div>
-
-    <div class="center rv" style="margin-top:40px">
+    <div class="center rv">
       <span class="badge">Ce que comprend l'abonnement</span>
       <h2 style="margin-top:18px">Des chiffres clairs, <span class="acc">pas des promesses.</span></h2>
       <p class="sub" style="margin:16px auto 0;max-width:420px">Tout est compris dans le prix, chaque mois, toute l'année.</p>
@@ -678,7 +666,7 @@ footer{padding:70px 0 26px}
       </div>
       <div class="row rv">
         <div><div class="lab">Délai de livraison</div><div class="d">Entre le moment où vous envoyez vos rushes et celui où vous recevez les vidéos montées.</div></div>
-        <div class="big">72<i> h</i></div>
+        <div class="big">24<i> h</i></div>
       </div>
       <div class="row rv">
         <div><div class="lab">Journées de tournage</div><div class="d">Pas d'équipe qui débarque, pas de studio, pas d'agenda bloqué. Vous travaillez normalement.</div></div>
@@ -741,7 +729,7 @@ footer{padding:70px 0 26px}
         <ul>
           <li><svg><use href="#ck"/></svg> Montage vertical prêt pour les réseaux</li>
           <li><svg><use href="#ck"/></svg> Sous-titres et accroches rédigés</li>
-          <li><svg><use href="#ck"/></svg> Vidéos livrées sous 72 h, sans filigrane</li>
+          <li><svg><use href="#ck"/></svg> Vidéos livrées sous 24 h, sans filigrane</li>
         </ul>
         <a class="btn" href="#rdv">Réserver un appel</a>
       </div>
@@ -776,16 +764,14 @@ footer{padding:70px 0 26px}
 <!-- =============== MISSION =============== -->
 <section class="sec tight">
   <div class="wrap">
-    <div class="mission">
-      <div class="ph rv"><video class="pv" src="assets/v1.mp4" poster="assets/hero-c.webp" muted loop playsinline preload="none" aria-label="Vidéo filmée au travail avec des lunettes connectées"></video></div>
-      <div class="rv d1">
-        <span class="badge">Notre approche</span>
-        <h2>On ne vend pas des vues. <span class="acc">On vend des clients.</span></h2>
-        <p class="sub">Une vidéo qui fait 50 000 vues et zéro appel ne sert à rien. On filme ce que vos clients cherchent vraiment à voir avant de vous contacter : votre travail, vos gestes, votre sérieux. Et chaque mois, on compte ce que ça vous a ramené.</p>
-        <div class="boxes">
-          <div class="box"><div class="n">72 h</div><div class="l">de délai sur chaque livraison</div></div>
-          <div class="box"><div class="n">3 mois</div><div class="l">d'engagement, puis libre</div></div>
-        </div>
+    <div class="mission center rv">
+      <span class="badge">Notre approche</span>
+      <h2 style="margin-top:18px">On ne vend pas des vues. <span class="acc">On vend des clients.</span></h2>
+      <p class="sub" style="margin:18px auto 0;max-width:62ch">Une vidéo qui fait 50 000 vues et zéro appel ne sert à rien. On filme ce que vos clients cherchent vraiment à voir avant de vous contacter : votre travail, vos gestes, votre sérieux. Et chaque mois, on compte ce que ça vous a ramené.</p>
+      <div class="boxes">
+        <div class="box"><div class="n">24 h</div><div class="l">de délai sur chaque livraison</div></div>
+        <div class="box"><div class="n">3 mois</div><div class="l">d'engagement, puis libre</div></div>
+        <div class="box"><div class="n">4</div><div class="l">réseaux couverts</div></div>
       </div>
     </div>
   </div>
@@ -808,7 +794,7 @@ footer{padding:70px 0 26px}
         </div>
         <div class="step rv d1">
           <div class="hd"><span class="no">02</span><svg><use href="#cam"/></svg></div>
-          <div class="bd"><h4>Vous filmez, on produit</h4><p>Vous portez les lunettes pendant vos journées et vous nous envoyez les rushes quand vous voulez. On découpe, on sous-titre, on soigne l'accroche, et vous recevez des vidéos prêtes à sortir sous 72 h.</p></div>
+          <div class="bd"><h4>Vous filmez, on produit</h4><p>Vous portez les lunettes pendant vos journées et vous nous envoyez les rushes quand vous voulez. On découpe, on sous-titre, on soigne l'accroche, et vous recevez des vidéos prêtes à sortir sous 24 h.</p></div>
         </div>
         <div class="step rv d2">
           <div class="hd"><span class="no">03</span><svg><use href="#chart"/></svg></div>
@@ -926,7 +912,7 @@ footer{padding:70px 0 26px}
       <p class="sub" style="margin:16px auto 0;max-width:430px">Pas de petites lignes, pas de surprise en fin de mois.</p>
     </div>
     <div class="rg">
-      <div class="rc rv"><div class="i"><svg><use href="#cal"/></svg></div><h4>72 h, pas « bientôt »</h4><p>Vos vidéos montées arrivent sous 72 h après réception des rushes. Si on prend du retard, on vous prévient avant que vous ayez à demander.</p></div>
+      <div class="rc rv"><div class="i"><svg><use href="#cal"/></svg></div><h4>24 h, pas « bientôt »</h4><p>Vos vidéos montées arrivent sous 24 h après réception des rushes. Si on prend du retard, on vous prévient avant que vous ayez à demander.</p></div>
       <div class="rc rv d1"><div class="i"><svg><use href="#cut"/></svg></div><h4>Les fichiers sont à vous</h4><p>Vidéos livrées sans filigrane et sans condition. Vous pouvez les réutiliser où vous voulez, même si on arrête de travailler ensemble.</p></div>
       <div class="rc rv d2"><div class="i"><svg><use href="#wa"/></svg></div><h4>Un seul interlocuteur</h4><p>Pas de formulaire de support, pas de ticket. Une personne qui connaît votre dossier, joignable sur WhatsApp.</p></div>
       <div class="rc rv"><div class="i"><svg><use href="#pen"/></svg></div><h4>Les sujets préparés</h4><p>Vous recevez chaque mois une liste de sujets à filmer adaptée à votre activité. Vous n'avez jamais à chercher quoi tourner.</p></div>
@@ -974,38 +960,6 @@ footer{padding:70px 0 26px}
           <button><span>Qui publie sur mes comptes ?</span><span class="pm"></span></button>
           <div class="a"><div><p>Nous, depuis vos comptes, avec un accès que vous pouvez retirer à tout moment. Vous validez le planning si vous le souhaitez, sinon on publie et vous recevez le récapitulatif.</p></div></div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =============== IDEES =============== -->
-<section class="sec tight">
-  <div class="wrap">
-    <div class="center rv">
-      <span class="badge">Idées</span>
-      <h2 style="margin-top:18px">Ce qu'on filme <span class="acc">chez vous</span></h2>
-      <p class="sub" style="margin:16px auto 0;max-width:430px">Quelques exemples de sujets qui tournent bien, quel que soit le métier.</p>
-    </div>
-    <div class="ideas">
-      <div class="idea rv">
-        <div class="im"><div class="mo m9"><div class="gd"></div>
-        <div class="half"><span class="aft"></span></div>
-        <span class="barv"></span>
-        <span class="tg l">Avant</span><span class="tg r">Après</span>
-      </div><span class="cat">Avant / après</span><span class="ar"><svg><use href="#arr"/></svg></span></div>
-        <div class="tx"><h4>Le résultat, en dix secondes</h4><p>On filme l'état de départ, puis le résultat final. C'est le format le plus simple et celui qui déclenche le plus de messages, dans à peu près tous les secteurs.</p></div>
-      </div>
-      <div class="idea rv d1">
-        <div class="im"><div class="mo m10"><div class="gd"></div>
-        <svg class="art2" viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet">
-          <path d="M22 94h156"/><path d="M46 94V56a14 14 0 0 1 14-14h58a14 14 0 0 1 14 14v38"/>
-          <circle cx="76" cy="66" r="12"/><path d="M104 58h26M104 74h18"/>
-          <path d="M150 94V40a12 12 0 0 1 12-12h16"/>
-        </svg>
-        <span class="mag"></span>
-      </div><span class="cat">Le geste technique</span><span class="ar"><svg><use href="#arr"/></svg></span></div>
-        <div class="tx"><h4>Le détail que personne ne montre</h4><p>Le réglage, la finition, le tour de main qui fait la différence. C'est ce qui rassure un client avant de vous appeler et ce qui vous distingue d'un concurrent moins soigneux.</p></div>
       </div>
     </div>
   </div>
