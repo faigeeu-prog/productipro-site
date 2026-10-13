@@ -441,11 +441,14 @@ footer{padding:70px 0 26px}
   .burger{display:flex}
   .nav.open .drawer{display:block}
   .nav.open{background:rgba(238,238,238,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
-  .hero{padding-top:104px}
+  .hero{padding-top:132px}
   .hero .acts{flex-direction:column;gap:10px}
   .hero .acts .btn{width:100%}
-  .rcard{width:200px}
-  .reel{gap:14px}
+  .rcard{width:208px;flex:0 0 auto;scroll-snap-align:center}
+  .rcard.dup{display:none}
+  .reel-wrap{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;scrollbar-width:none;-webkit-mask-image:none;mask-image:none;padding:0 16px}
+  .reel-wrap::-webkit-scrollbar{display:none}
+  .reel{animation:none;width:max-content;gap:12px}
   .fi{width:50px;height:50px;border-radius:14px}
   .fi svg{width:27px;height:27px}
   .row{grid-template-columns:minmax(0,1fr);gap:14px;padding:26px 0}
@@ -1069,7 +1072,7 @@ document.getElementById('drawer').addEventListener('click',function(e){if(e.targ
     return '<div class="rcard"><video class="pv" src="assets/'+v[0]+'.mp4" poster="assets/'+v[0]+'.webp" muted loop playsinline preload="none" aria-label="Vidéo verticale — '+v[1]+'"></video>'+
       '<div class="tag"><b>'+v[1]+'</b> · '+v[2]+'<svg class="vb"><use href="#vb"/></svg></div></div>';
   }).join('');
-  document.getElementById('reel').innerHTML=r+r;
+  document.getElementById('reel').innerHTML=r+r.replace(/class="rcard"/g,'class="rcard dup" aria-hidden="true"');
 
   var SC=[
     ['L\u2019accroche','2 premi\u00e8res secondes','m5','<div class="k"><div class="ttl"><i style="--d:.3s"></i><i style="--d:.6s"></i></div><div class="pb"><i></i></div><div class="ft2"><span class="tm">0:02</span><span>on garde ou on zappe</span></div></div>'],
@@ -1137,11 +1140,25 @@ document.querySelectorAll('.q>button').forEach(function(b){
   var io=new IntersectionObserver(function(es){
     es.forEach(function(e){
       var v=e.target;
-      if(e.isIntersecting){ if(v.preload==='none')v.preload='auto'; var p=v.play(); if(p&&p.catch)p.catch(function(){}); }
+      if(e.isIntersecting){ v.muted=true; if(v.preload==='none')v.preload='auto'; var p=v.play(); if(p&&p.catch)p.catch(function(){}); }
       else { v.pause(); }
     });
   },{rootMargin:'120px',threshold:.15});
-  vs.forEach(function(v){io.observe(v)});
+  vs.forEach(function(v){
+    io.observe(v);
+    v.addEventListener('loadeddata',function(){ if(v.dataset.want==='1'){var p=v.play();if(p&&p.catch)p.catch(function(){});} });
+  });
+  function kick(){
+    var vh=innerHeight;
+    vs.forEach(function(v){
+      var r=v.getBoundingClientRect();
+      if(r.bottom>-80&&r.top<vh+80&&r.width>0){ v.muted=true; v.dataset.want='1'; if(v.preload==='none')v.preload='auto'; var p=v.play(); if(p&&p.catch)p.catch(function(){}); }
+    });
+  }
+  ['touchstart','pointerdown','scroll'].forEach(function(ev){
+    addEventListener(ev,function h(){ kick(); removeEventListener(ev,h); },{passive:true,once:true});
+  });
+  setTimeout(kick,700);
 })();
 
 /* reveal */
