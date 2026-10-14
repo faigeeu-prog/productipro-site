@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Productipro — Vos journées filmées, montées et publiées</title>
-<meta name="description" content="Vous portez les lunettes, elles filment pendant que vous travaillez. On monte, on sous-titre et on publie 8 à 15 vidéos par mois sur Instagram, TikTok, YouTube Shorts et Facebook. Tous secteurs, dès 490 € HT/mois.">
+<meta name="description" content="Vous portez les lunettes, elles filment pendant que vous travaillez. On monte, on sous-titre et on publie 8 à 24 vidéos par mois sur Instagram, TikTok, YouTube Shorts et Facebook. Tous secteurs, dès 490 € HT/mois.">
 <link rel="canonical" href="https://www.productipro.fr/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.productipro.fr/">
@@ -209,7 +209,7 @@ h4{font-size:20px;letter-spacing:-.03em}
 .toggle{display:inline-flex;background:var(--card);border-radius:100px;padding:5px;margin-top:30px;box-shadow:var(--sh-s)}
 .toggle button{padding:10px 22px;border-radius:100px;font-size:15px;font-weight:500;color:var(--mut)}
 .toggle button.on{background:var(--solid);color:#FDFDFD;box-shadow:0 2px 8px rgba(0,0,0,.22)}
-.plans{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;margin-top:40px;max-width:760px;margin-left:auto;margin-right:auto}
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:40px;max-width:1080px;margin-left:auto;margin-right:auto}
 .plan{background:var(--card);border-radius:var(--r);padding:26px 26px 28px;text-align:left;box-shadow:var(--sh-s)}
 .plan.hot{background:#E4E4E6;border:1.5px solid var(--solid)}
 .plan .pb{display:inline-block;background:#E3E3E5;border-radius:8px;padding:5px 11px;font-size:13px;font-weight:500}
@@ -223,6 +223,12 @@ h4{font-size:20px;letter-spacing:-.03em}
 .plan li{display:flex;gap:9px;align-items:center;font-size:14.5px;color:var(--mut)}
 .plan.hot li{color:var(--ink)}
 .plan li svg{width:15px;height:15px;flex:none;color:var(--acc)}
+.optbar{max-width:1080px;margin:20px auto 0;background:var(--card);border-radius:var(--r);padding:22px 28px;display:flex;justify-content:space-between;align-items:center;gap:24px;box-shadow:var(--sh-s);font-size:15px;color:var(--mut)}
+.optbar b{color:var(--ink);font-weight:600}
+.optbar .op{text-align:right;display:flex;flex-direction:column;gap:2px;flex:none}
+.optbar .op b{font-size:20px;letter-spacing:-.03em}
+.optbar .op span{font-size:13.5px}
+.custom{max-width:1080px;margin-left:auto;margin-right:auto}
 .custom{background:var(--card);border-radius:var(--r);margin-top:22px;padding:26px 28px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) auto;gap:28px;align-items:center;box-shadow:var(--sh-s)}
 .custom h4{font-size:19px}
 .custom p{margin-top:8px;color:var(--mut);font-size:14.5px;line-height:1.5}
@@ -470,6 +476,7 @@ footer{padding:70px 0 26px}
   .svc .media{aspect-ratio:16/11}
   .boxes{gap:12px}
   .plans{grid-template-columns:minmax(0,1fr);gap:16px}
+  .optbar{flex-direction:column;align-items:flex-start;gap:14px}.optbar .op{text-align:left}
   .plan.hot{order:-1}
   .custom .cl{grid-template-columns:1fr}
   .rg{grid-template-columns:minmax(0,1fr)}
@@ -607,8 +614,8 @@ footer{padding:70px 0 26px}
 <!-- =============== HERO =============== -->
 <section class="hero">
   <div class="wrap">
-    <h1 class="rv in">Vos clients veulent voir <br><span class="acc">comment vous travaillez.</span></h1>
-    <p class="sub rv in d1">Vous enfilez les lunettes le matin, elles filment pendant que vous bossez. On monte, on sous-titre et on publie 8 à 15 vidéos par mois sur vos réseaux. Vous n'ouvrez aucun logiciel.</p>
+    <h1 class="rv in">Vos vidéos pour les réseaux, <br><span class="acc">filmées avec des lunettes connectées.</span></h1>
+    <p class="sub rv in d1">Vous portez les lunettes pendant que vous travaillez. On s'occupe du montage, des sous-titres et de la publication sur Instagram, TikTok, YouTube et Facebook. Vous n'ouvrez aucun logiciel.</p>
     <div class="acts rv in d2">
       <a class="btn" href="#rdv"><svg><use href="#ph"/></svg> Réserver un appel</a>
       <a class="btn alt" href="#offres">Voir les offres</a>
@@ -658,7 +665,7 @@ footer{padding:70px 0 26px}
     <div class="rows">
       <div class="row rv">
         <div><div class="lab">Vidéos publiées</div><div class="d">Des vidéos verticales montées et sous-titrées, prêtes à sortir, livrées chaque semaine.</div></div>
-        <div class="big">8 à 15<i>/mois</i></div>
+        <div class="big">8 à 24<i>/mois</i></div>
       </div>
       <div class="row rv">
         <div><div class="lab">Plateformes couvertes</div><div class="d">Instagram, TikTok, YouTube Shorts et Facebook. On écrit les descriptions et on programme.</div></div>
@@ -828,7 +835,7 @@ footer{padding:70px 0 26px}
         <h4><span class="mark" style="width:24px;height:24px"><svg><use href="#logo"/></svg></span> Productipro</h4>
         <ul>
           <li><svg style="color:var(--ink)"><use href="#ck"/></svg> Vous ne bloquez aucune journée</li>
-          <li><svg style="color:var(--ink)"><use href="#ck"/></svg> 8 à 15 vidéos chaque mois, sans interruption</li>
+          <li><svg style="color:var(--ink)"><use href="#ck"/></svg> 8 à 24 vidéos chaque mois, sans interruption</li>
           <li><svg style="color:var(--ink)"><use href="#ck"/></svg> Votre vrai quotidien, filmé à votre hauteur</li>
           <li><svg style="color:var(--ink)"><use href="#ck"/></svg> Un abonnement clair, sans surprise</li>
           <li><svg style="color:var(--ink)"><use href="#ck"/></svg> Montage et publication entièrement gérés</li>
@@ -845,50 +852,71 @@ footer{padding:70px 0 26px}
       <span class="badge">Offres</span>
       <h2 style="margin-top:18px">Des tarifs <span class="acc">qui tiennent debout</span></h2>
       <p class="sub" style="margin:16px auto 0;max-width:430px">Moins cher qu'une seule journée de vidéaste. Chaque mois, toute l'année.</p>
-      <div class="toggle" id="toggle">
-        <button class="on" data-opt="0">Vous avez les lunettes</button>
-        <button data-opt="1">Lunettes fournies</button>
-      </div>
-      <p class="sub" id="optnote" style="margin:14px auto 0;max-width:430px;font-size:14px">Vous filmez avec vos propres lunettes connectées.</p>
     </div>
 
     <div class="plans">
-      <div class="plan hot rv">
-        <span class="pb">Le plus choisi</span>
-        <div class="for">Pour devenir l'entreprise <span>qu'on voit partout dans sa zone</span></div>
-        <div class="pr"><span data-p0="790 €" data-p1="880 €">790 €</span> <small>HT / mois</small></div>
-        <a class="btn wide" href="#rdv">Réserver un appel</a>
-        <ul>
-          <li><svg><use href="#ck"/></svg> 15 vidéos par mois</li>
-          <li><svg><use href="#ck"/></svg> Montage, accroches et sous-titres</li>
-          <li><svg><use href="#ck"/></svg> Descriptions rédigées pour vous</li>
-          <li><svg><use href="#ck"/></svg> Publication sur 4 plateformes</li>
-          <li><svg><use href="#ck"/></svg> Liste de sujets fournie chaque mois</li>
-          <li><svg><use href="#ck"/></svg> Interlocuteur dédié sur WhatsApp</li>
-          <li><svg><use href="#ck"/></svg> Bilan mensuel des demandes générées</li>
-        </ul>
-      </div>
-
-      <div class="plan rv d1">
+      <div class="plan rv ">
         <span class="pb">Pour commencer</span>
         <div class="for">Pour tester la vidéo <span>sans y passer de temps</span></div>
-        <div class="pr"><span data-p0="490 €" data-p1="580 €">490 €</span> <small>HT / mois</small></div>
+        <div class="pr">590 € <small>HT / mois</small></div>
         <a class="btn wide alt" href="#rdv">Réserver un appel</a>
         <ul>
           <li><svg><use href="#ck"/></svg> 8 vidéos par mois</li>
+          <li><svg><use href="#ck"/></svg> Publication sur 2 réseaux</li>
           <li><svg><use href="#ck"/></svg> Montage, accroches et sous-titres</li>
           <li><svg><use href="#ck"/></svg> Descriptions rédigées pour vous</li>
-          <li><svg><use href="#ck"/></svg> Publication sur 4 plateformes</li>
           <li><svg><use href="#ck"/></svg> Liste de sujets fournie chaque mois</li>
+          <li><svg><use href="#ck"/></svg> Livraison des vidéos sous 24 h</li>
           <li><svg><use href="#ck"/></svg> Interlocuteur dédié sur WhatsApp</li>
         </ul>
       </div>
+
+      <div class="plan hot rv d1">
+        <span class="pb">Le plus choisi</span>
+        <div class="for">Pour être l'entreprise <span>qu'on voit partout dans sa zone</span></div>
+        <div class="pr">890 € <small>HT / mois</small></div>
+        <a class="btn wide" href="#rdv">Réserver un appel</a>
+        <ul>
+          <li><svg><use href="#ck"/></svg> 16 vidéos par mois</li>
+          <li><svg><use href="#ck"/></svg> Publication sur 4 réseaux</li>
+          <li><svg><use href="#ck"/></svg> Montage, accroches et sous-titres</li>
+          <li><svg><use href="#ck"/></svg> Descriptions rédigées pour vous</li>
+          <li><svg><use href="#ck"/></svg> Liste de sujets fournie chaque mois</li>
+          <li><svg><use href="#ck"/></svg> Livraison des vidéos sous 24 h</li>
+          <li><svg><use href="#ck"/></svg> Suivi des demandes générées</li>
+          <li><svg><use href="#ck"/></svg> Bilan mensuel chiffré</li>
+        </ul>
+      </div>
+
+      <div class="plan rv d2">
+        <span class="pb">Pour dominer</span>
+        <div class="for">Pour écraser <span>la concurrence locale</span></div>
+        <div class="pr">1 490 € <small>HT / mois</small></div>
+        <a class="btn wide alt" href="#rdv">Réserver un appel</a>
+        <ul>
+          <li><svg><use href="#ck"/></svg> 24 vidéos par mois</li>
+          <li><svg><use href="#ck"/></svg> Publication sur 4 réseaux</li>
+          <li><svg><use href="#ck"/></svg> Montage, accroches et sous-titres</li>
+          <li><svg><use href="#ck"/></svg> Descriptions rédigées pour vous</li>
+          <li><svg><use href="#ck"/></svg> Liste de sujets fournie chaque mois</li>
+          <li><svg><use href="#ck"/></svg> Livraison des vidéos sous 24 h</li>
+          <li><svg><use href="#ck"/></svg> Créations publicitaires incluses</li>
+          <li><svg><use href="#ck"/></svg> Gestion des commentaires</li>
+          <li><svg><use href="#ck"/></svg> Suivi des demandes et bilan mensuel</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="optbar rv">
+      <div class="ot"><b>Pas encore de lunettes ?</b> On vous les fournit, configurées et prêtes à filmer.</div>
+      <div class="op"><b>+ 90 € HT / mois</b><span>en option, à vous après 6 mois</span></div>
     </div>
 
     <div class="custom rv">
       <div>
-        <h4>Plusieurs établissements ?</h4>
-        <p>Franchises, réseaux, plusieurs points de vente ou plusieurs équipes : on construit un dispositif adapté et un tarif à la hauteur du volume.</p>
+        <h4>Réseau · dès 2 400 € HT / mois</h4>
+        <p>Franchises, plusieurs points de vente ou plusieurs équipes : on construit un dispositif adapté, avec un tarif à la hauteur du volume.</p>
       </div>
       <div class="cl">
         <span><svg><use href="#ck"/></svg> Volume sur mesure</span>
@@ -899,7 +927,7 @@ footer{padding:70px 0 26px}
       <a class="btn" href="#rdv">Nous contacter</a>
     </div>
 
-    <p class="sub center" style="margin-top:24px;font-size:14px;color:var(--mut2)">Frais de lancement de 290 € HT la première fois (appel de cadrage, création des comptes, guide de tournage).<br>Engagement de 3 mois, puis sans engagement. Tarifs hors taxes.</p>
+    <p class="sub center" style="margin-top:24px;font-size:14px;color:var(--mut2)">Frais de lancement de 290 € HT la première fois (cadrage, création des comptes, guide de tournage), offerts pour un engagement de 12 mois.<br>Engagement de 3 mois, puis sans engagement. Tarifs hors taxes.</p>
   </div>
 </section>
 
@@ -1098,18 +1126,6 @@ document.getElementById('drawer').addEventListener('click',function(e){if(e.targ
   var s=['Bâtiment & rénovation','Restauration','Garages & carrosserie','Coiffure & barbier','Boulangerie','Paysagisme','Esthétique & ongles','Agriculture','Commerce de proximité','Tatouage','Immobilier','Plomberie & chauffage','Coaching sportif','Nettoyage & multiservices'];
   var h=s.map(function(x){return '<span>'+x+'</span>'}).join('');
   document.getElementById('strip').innerHTML=h+h;
-})();
-
-/* toggle lunettes */
-(function(){
-  var t=document.getElementById('toggle'),note=document.getElementById('optnote');
-  var txt=["Vous filmez avec vos propres lunettes connectées.","Lunettes fournies et configurées, +90 € HT/mois. Au bout de 6 mois, elles sont à vous."];
-  t.addEventListener('click',function(e){
-    var b=e.target.closest('button'); if(!b)return;
-    [].forEach.call(t.children,function(x){x.classList.remove('on')}); b.classList.add('on');
-    var k=b.dataset.opt; note.textContent=txt[k];
-    document.querySelectorAll('.pr span[data-p0]').forEach(function(s){s.textContent=s.dataset['p'+k]});
-  });
 })();
 
 /* faq */
