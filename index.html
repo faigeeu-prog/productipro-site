@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Productipro — Vos journées filmées, montées et publiées</title>
-<meta name="description" content="Vous portez les lunettes, elles filment pendant que vous travaillez. On monte, on sous-titre et on publie 8 à 24 vidéos par mois sur Instagram, TikTok, YouTube Shorts et Facebook. Tous secteurs, dès 490 € HT/mois.">
+<title>Productipro — Publicité Facebook &amp; Instagram pour le bâtiment</title>
+<meta name="description" content="Productipro crée, lance et pilote vos publicités Facebook et Instagram pour les artisans et entreprises du bâtiment. Des demandes de devis envoyées en temps réel sur votre téléphone. Dès 590 € HT/mois.">
 <link rel="canonical" href="https://www.productipro.fr/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.productipro.fr/">
-<meta property="og:title" content="Productipro — Vos clients veulent voir comment vous travaillez">
-<meta property="og:description" content="Vous filmez en travaillant avec des lunettes connectées. On monte, on publie, on compte les demandes que ça vous ramène.">
+<meta property="og:title" content="Productipro — Des demandes de chantier grâce à la pub Facebook et Instagram">
+<meta property="og:description" content="On crée, on lance et on pilote vos publicités Meta. Les demandes de devis arrivent directement sur votre téléphone.">
 <meta property="og:image" content="https://www.productipro.fr/assets/og.webp">
 <meta name="theme-color" content="#EEEEEE">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -314,6 +314,25 @@ footer{padding:70px 0 26px}
 @keyframes mGrow{to{transform:scaleX(1)}}
 @keyframes mBlink{50%{opacity:.25}}
 
+
+/* ---------- meta ads ---------- */
+.fi.dk{background:#1C1C1C;color:#FDFDFD}
+.fi.dk svg{width:52%!important;height:52%!important}
+.m1 .zone{position:absolute;inset:8% 14%}
+.m1 .rg{position:absolute;left:50%;top:50%;width:46%;aspect-ratio:1;border-radius:50%;border:1.6px solid rgba(28,28,28,.35);transform:translate(-50%,-50%) scale(.4);opacity:0;animation:mRing 3.6s ease-out infinite}
+.m1 .rg.r2{animation-delay:1.2s}.m1 .rg.r3{animation-delay:2.4s}
+.m1 .area{position:absolute;left:50%;top:50%;width:78%;aspect-ratio:1;max-height:100%;border-radius:50%;background:rgba(28,28,28,.06);border:1.6px dashed rgba(28,28,28,.4);transform:translate(-50%,-50%) scale(0);animation:mArea .9s .3s cubic-bezier(.2,1.2,.4,1) forwards}
+.m1 .pin{position:absolute;left:50%;top:50%;width:22px;height:22px;margin:-22px 0 0 -11px;background:#1C1C1C;border-radius:50% 50% 50% 0;transform:rotate(-45deg) scale(0);animation:mPin .5s .15s cubic-bezier(.2,1.5,.4,1) forwards;box-shadow:0 6px 14px rgba(0,0,0,.25)}
+.m1 .pin:after{content:"";position:absolute;inset:7px;border-radius:50%;background:#FDFDFD}
+.m1 .pt{position:absolute;left:var(--x);top:var(--y);width:11px;height:11px;border-radius:50%;background:#1C1C1C;border:2px solid #FDFDFD;box-shadow:0 2px 6px rgba(0,0,0,.2);opacity:0;transform:scale(.3);animation:mPop .45s var(--d) cubic-bezier(.2,1.6,.4,1) forwards}
+.m1 .km,.m1 .tg{position:absolute;font-size:10.5px;font-weight:600;border-radius:100px;padding:6px 11px;opacity:0;animation:mFade .4s 1s forwards;white-space:nowrap}
+.m1 .km{top:13px;left:13px;background:#1C1C1C;color:#FDFDFD}
+.m1 .tg{right:13px;bottom:13px;background:#FDFDFD;color:#1C1C1C;box-shadow:0 1px 4px rgba(0,0,0,.12);display:flex;align-items:center;gap:6px;animation-delay:2.6s}
+.m1 .tg i{width:6px;height:6px;border-radius:50%;background:#16A34A}
+@keyframes mRing{0%{opacity:.7;transform:translate(-50%,-50%) scale(.4)}100%{opacity:0;transform:translate(-50%,-50%) scale(2)}}
+@keyframes mArea{to{transform:translate(-50%,-50%) scale(1)}}
+@keyframes mPin{to{transform:rotate(-45deg) scale(1)}}
+
 /* 1 · tournage */
 .m1 .gl{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);width:66%;max-width:300px;overflow:visible}
 .m1 .gl .ln{fill:none;stroke:#1C1C1C;stroke-width:3.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:340;stroke-dashoffset:340;animation:mDraw 1.5s .25s cubic-bezier(.4,0,.2,1) forwards}
@@ -360,7 +379,7 @@ footer{padding:70px 0 26px}
 .m3 .rws{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
 .m3 .rw{display:flex;align-items:center;gap:7px;background:#FDFDFD;border-radius:9px;padding:7px 9px;font-size:10.5px;font-weight:500;box-shadow:0 1px 3px rgba(0,0,0,.08);opacity:0;transform:translateX(16px);animation:mPop .5s var(--d) cubic-bezier(.2,1,.3,1) forwards;white-space:nowrap;overflow:hidden}
 .m3 .rw svg{width:14px;height:14px;flex:none}
-.m3 .rw b{margin-left:auto;font-size:9.5px;font-weight:600;color:#16A34A;opacity:0;animation:mFade .3s calc(var(--d) + .5s) forwards}
+.m3 .rw b{margin-left:auto;padding-left:6px;font-size:9.5px;font-weight:600;color:#16A34A;opacity:0;animation:mFade .3s calc(var(--d) + .5s) forwards}
 .m3 .chart{display:flex;align-items:flex-end;gap:4px;height:26px;margin-top:3px}
 .m3 .chart i{flex:1;background:#1C1C1C;border-radius:2px 2px 0 0;height:12%;animation:mBar .9s var(--d) cubic-bezier(.2,1.1,.3,1) forwards}
 @keyframes mBar{to{height:var(--h)}}
@@ -591,7 +610,7 @@ footer{padding:70px 0 26px}
     <div class="nav-in">
       <a class="brand" href="#top"><span class="mark"><svg><use href="#logo"/></svg></span>productipro</a>
       <div class="links">
-        <a href="#format">Format</a>
+        <a href="#principe">Principe</a>
         <a href="#methode">Méthode</a>
         <a href="#offres">Offres</a>
         <a href="#faq">FAQ</a>
@@ -600,7 +619,7 @@ footer{padding:70px 0 26px}
       <button class="burger" id="burger" aria-label="Menu"><i></i><i></i><i></i></button>
     </div>
     <div class="drawer" id="drawer">
-      <a href="#format">Format</a>
+      <a href="#principe">Principe</a>
       <a href="#methode">Méthode</a>
       <a href="#offres">Offres</a>
       <a href="#faq">FAQ</a>
@@ -614,69 +633,67 @@ footer{padding:70px 0 26px}
 <!-- =============== HERO =============== -->
 <section class="hero">
   <div class="wrap">
-    <h1 class="rv in">Vos vidéos pour les réseaux, <br><span class="acc">filmées avec des lunettes connectées.</span></h1>
-    <p class="sub rv in d1">Vous portez les lunettes pendant que vous travaillez. On s'occupe du montage, des sous-titres et de la publication sur Instagram, TikTok, YouTube et Facebook. Vous n'ouvrez aucun logiciel.</p>
+    <h1 class="rv in">Plus de chantiers, <br><span class="acc">grâce à la pub Facebook et Instagram.</span></h1>
+    <p class="sub rv in d1">On crée, on lance et on pilote vos publicités Meta pour les artisans et entreprises du bâtiment. Les demandes de devis arrivent directement sur votre téléphone.</p>
     <div class="acts rv in d2">
       <a class="btn" href="#rdv"><svg><use href="#ph"/></svg> Réserver un appel</a>
       <a class="btn alt" href="#offres">Voir les offres</a>
     </div>
     <div class="proof rv in d3">
       <div class="ic">
-        <span><svg><use href="#ig"/></svg></span>
-        <span><svg><use href="#tk"/></svg></span>
-        <span><svg><use href="#yt"/></svg></span>
         <span><svg><use href="#fb"/></svg></span>
+        <span><svg><use href="#ig"/></svg></span>
       </div>
-      <div class="l1">4 plateformes, 1 seul abonnement</div>
-      <div class="l2">Instagram · TikTok · YouTube Shorts · Facebook</div>
+      <div class="l1">Publicité Facebook &amp; Instagram</div>
+      <div class="l2">Campagnes gérées de A à Z · Demandes reçues en temps réel</div>
     </div>
   </div>
 
   <div class="reel-wrap rv in"><div class="reel" id="reel"></div></div>
 
   <div class="wrap trust rv">
-    <div class="t">Ça marche dans tous les secteurs :</div>
+    <div class="t">Pour tous les métiers du bâtiment :</div>
     <div class="strip"><div class="t2" id="strip"></div></div>
   </div>
 </section>
 
-<!-- =============== PLATEFORMES =============== -->
-<section class="sec" id="format">
+<!-- =============== PRINCIPE =============== -->
+<section class="sec" id="principe">
   <div class="wrap">
     <div class="float" style="padding-bottom:40px">
-      <span class="fi f1"><svg><use href="#tk"/></svg></span>
+      <span class="fi f1"><svg><use href="#fb"/></svg></span>
       <span class="fi f2"><svg><use href="#ig"/></svg></span>
-      <span class="fi f3"><svg><use href="#yt"/></svg></span>
-      <span class="fi f4"><svg><use href="#fb"/></svg></span>
-      <h2 class="rv">On publie partout où <span class="acc">vos clients regardent.</span></h2>
+      <span class="fi f3 dk"><svg><use href="#ph"/></svg></span>
+      <span class="fi f4 dk"><svg><use href="#wa"/></svg></span>
+      <h2 class="rv">On vous montre aux gens <span class="acc">qui ont des travaux à faire près de chez vous.</span></h2>
     </div>
   </div>
 </section>
 
-<!-- =============== RESULTATS =============== -->
+<!-- =============== CHIFFRES =============== -->
 <section class="sec tight">
   <div class="wrap">
     <div class="center rv">
-      <span class="badge">Ce que comprend l'abonnement</span>
+      <span class="badge">Ce que comprend l'accompagnement</span>
       <h2 style="margin-top:18px">Des chiffres clairs, <span class="acc">pas des promesses.</span></h2>
-      <p class="sub" style="margin:16px auto 0;max-width:420px">Tout est compris dans le prix, chaque mois, toute l'année.</p>
+      <p class="sub" style="margin:16px auto 0;max-width:420px">Ce sur quoi on s'engage, chaque mois, noir sur blanc.</p>
     </div>
 
     <div class="rows">
       <div class="row rv">
-        <div><div class="lab">Vidéos publiées</div><div class="d">Des vidéos verticales montées et sous-titrées, prêtes à sortir, livrées chaque semaine.</div></div>
-        <div class="big">8 à 24<i>/mois</i></div>
+        <div><div class="lab">Mise en ligne des campagnes</div><div class="d">Entre l'appel de lancement et vos premières publicités diffusées : visuels, textes et formulaire compris.</div></div>
+        <div class="big">7<i> jours</i></div>
       </div>
       <div class="row rv">
-        <div><div class="lab">Plateformes couvertes</div><div class="d">Instagram, TikTok, YouTube Shorts et Facebook. On écrit les descriptions et on programme.</div></div>
-        <div class="big">4<i>+</i></div>
+        <div><div class="lab">Réception des demandes</div><div class="d">Chaque demande de devis vous est envoyée sur WhatsApp ou par e-mail dès qu'elle arrive, avec les coordonnées du client.</div></div>
+        <div class="big">&lt; 5<i> min</i></div>
       </div>
       <div class="row rv">
-        <div><div class="lab">Délai de livraison</div><div class="d">Entre le moment où vous envoyez vos rushes et celui où vous recevez les vidéos montées.</div></div>
-        <div class="big">24<i> h</i></div>
+        <div><div class="lab">Optimisation des campagnes</div><div class="d">On ajuste les audiences, les visuels et les budgets en continu, et on vous envoie un point chiffré chaque semaine.</div></div>
+        <div class="big">52<i>/an</i></div>
       </div>
       <div class="row rv">
-        <div><div class="lab">Journées de tournage</div><div class="d">Pas d'équipe qui débarque, pas de studio, pas d'agenda bloqué. Vous travaillez normalement.</div></div>
+        <div><div class="lab">Demandes partagées</div><div class="d">Les demandes sont à vous seul. On ne les revend pas, on ne les partage avec aucun autre artisan.</div></div>
         <div class="big">0<i></i></div>
       </div>
     </div>
@@ -690,30 +707,30 @@ footer{padding:70px 0 26px}
   <div class="wrap">
     <div class="center rv">
       <span class="badge">Ce qu'on fait</span>
-      <h2 style="margin-top:18px">Un service complet, <span class="acc">de la caméra à la publication</span></h2>
-      <p class="sub" style="margin:16px auto 0;max-width:420px">Vous filmez. Tout le reste est de notre côté.</p>
+      <h2 style="margin-top:18px">Un service complet, <span class="acc">de la pub au chantier signé</span></h2>
+      <p class="sub" style="margin:16px auto 0;max-width:420px">Vous répondez aux demandes. Tout le reste est de notre côté.</p>
     </div>
 
     <div class="svc rv">
       <div class="media"><div class="mo m1"><div class="gd"></div>
-        <svg class="gl" viewBox="0 0 240 86">
-          <rect class="ln" x="16" y="20" width="80" height="44" rx="15"/>
-          <rect class="ln b" x="144" y="20" width="80" height="44" rx="15"/>
-          <path class="ln c" d="M96 32c16-8 32-8 48 0M16 28L3 21M224 28l13-7"/>
-          <circle class="cam" cx="34" cy="26" r="4.4"/>
-          <circle class="ring" cx="34" cy="26" r="7"/>
-        </svg>
-        <span class="rec"><i></i>REC</span>
-        <span class="brk a"></span><span class="brk b"></span><span class="brk c"></span><span class="brk d"></span>
-        <div class="caps"><i style="--d:1.9s"></i><i style="--d:2.3s"></i><i style="--d:2.7s"></i></div>
+        <div class="zone">
+          <span class="rg r1"></span><span class="rg r2"></span><span class="rg r3"></span>
+          <span class="area"></span>
+          <span class="pin"></span>
+          <i class="pt" style="--x:22%;--y:30%;--d:1.2s"></i><i class="pt" style="--x:70%;--y:24%;--d:1.45s"></i>
+          <i class="pt" style="--x:30%;--y:72%;--d:1.7s"></i><i class="pt" style="--x:76%;--y:66%;--d:1.95s"></i>
+          <i class="pt" style="--x:58%;--y:82%;--d:2.2s"></i><i class="pt" style="--x:14%;--y:52%;--d:2.45s"></i>
+        </div>
+        <span class="km">Rayon 25 km</span>
+        <span class="tg"><i></i>Propriétaires · 30-65 ans</span>
       </div></div>
       <div class="tx">
-        <h3>Vous filmez en travaillant</h3>
-        <p class="d">Vous mettez les lunettes et vous faites votre journée. Un geste, une finition, un avant/après : quelques secondes suffisent. Les deux mains restent libres.</p>
+        <h3>On cible votre zone</h3>
+        <p class="d">On définit avec vous les chantiers les plus rentables et la zone où vous voulez travailler. Vos publicités ne sont montrées qu'aux personnes susceptibles de vous appeler.</p>
         <ul>
-          <li><svg><use href="#ck"/></svg> Aucun matériel à acheter ni à installer</li>
-          <li><svg><use href="#ck"/></svg> Liste de sujets fournie et mise à jour chaque mois</li>
-          <li><svg><use href="#ck"/></svg> Lunettes fournies en option si vous n'en avez pas</li>
+          <li><svg><use href="#ck"/></svg> Zone d'intervention au kilomètre près</li>
+          <li><svg><use href="#ck"/></svg> Ciblage par type de travaux et de logement</li>
+          <li><svg><use href="#ck"/></svg> Stratégie construite avec vous dès le premier appel</li>
         </ul>
         <a class="btn" href="#rdv">Réserver un appel</a>
       </div>
@@ -726,17 +743,17 @@ footer{padding:70px 0 26px}
           <span class="bar g" style="--d:.45s"></span>
           <div class="clips"><span style="--d:.7s"></span><span style="--d:.85s"></span><span style="--d:1s"></span></div>
           <div class="wave" id="w2"></div>
-          <div class="subs"><em style="--d:1.3s">on</em><em style="--d:1.5s">vous</em><em style="--d:1.7s">montre</em><em class="hl" style="--d:1.95s">la finition</em></div>
+          <div class="subs"><em style="--d:1.3s">rénovation</em><em style="--d:1.5s">complète</em><em style="--d:1.7s">devis</em><em class="hl" style="--d:1.95s">gratuit sous 48 h</em></div>
           <span class="play"></span>
         </div>
       </div></div>
       <div class="tx">
-        <h3>On monte et on sous-titre</h3>
-        <p class="d">Découpe, accroche dans les deux premières secondes, sous-titres lisibles, format vertical. Vous n'ouvrez aucun logiciel et vous ne montez rien.</p>
+        <h3>On crée vos publicités</h3>
+        <p class="d">Visuels, vidéos, accroches et textes, à partir de vos photos de chantiers et de vos avant/après. Un formulaire qui filtre les demandes : type de travaux, code postal, délai, budget.</p>
         <ul>
-          <li><svg><use href="#ck"/></svg> Montage vertical prêt pour les réseaux</li>
-          <li><svg><use href="#ck"/></svg> Sous-titres et accroches rédigés</li>
-          <li><svg><use href="#ck"/></svg> Vidéos livrées sous 24 h, sans filigrane</li>
+          <li><svg><use href="#ck"/></svg> Créations publicitaires incluses chaque mois</li>
+          <li><svg><use href="#ck"/></svg> Textes et accroches rédigés pour votre métier</li>
+          <li><svg><use href="#ck"/></svg> Formulaire de qualification des demandes</li>
         </ul>
         <a class="btn" href="#rdv">Réserver un appel</a>
       </div>
@@ -747,20 +764,20 @@ footer{padding:70px 0 26px}
         <div class="row">
           <div class="fone"><i></i></div>
           <div class="rws">
-            <div class="rw" style="--d:.3s"><svg><use href="#ig"/></svg> Instagram <b>publié</b></div>
-            <div class="rw" style="--d:.55s"><svg><use href="#tk"/></svg> TikTok <b>publié</b></div>
-            <div class="rw" style="--d:.8s"><svg><use href="#yt"/></svg> YouTube Shorts <b>publié</b></div>
-            <div class="rw" style="--d:1.05s"><svg><use href="#fb"/></svg> Facebook <b>publié</b></div>
+            <div class="rw" style="--d:.3s"><svg><use href="#fb"/></svg> Rénovation salle de bain <b>nouveau</b></div>
+            <div class="rw" style="--d:.55s"><svg><use href="#ig"/></svg> Réfection de toiture <b>nouveau</b></div>
+            <div class="rw" style="--d:.8s"><svg><use href="#fb"/></svg> Pompe à chaleur <b>nouveau</b></div>
+            <div class="rw" style="--d:1.05s"><svg><use href="#ig"/></svg> Extension maison <b>nouveau</b></div>
           </div>
         </div>
       </div></div>
       <div class="tx">
-        <h3>On publie et on suit</h3>
-        <p class="d">On publie depuis vos comptes sur les quatre plateformes, on écrit les descriptions, on programme, et on regarde ce qui déclenche réellement des demandes.</p>
+        <h3>Vous recevez les demandes</h3>
+        <p class="d">Chaque demande arrive sur votre téléphone avec le nom, le numéro et le projet du client. Vous rappelez, vous chiffrez. Nous, on optimise les campagnes chaque semaine pour faire baisser le coût par demande.</p>
         <ul>
-          <li><svg><use href="#ck"/></svg> Publication sur 4 plateformes</li>
-          <li><svg><use href="#ck"/></svg> Descriptions et programmation incluses</li>
-          <li><svg><use href="#ck"/></svg> Bilan mensuel des demandes générées</li>
+          <li><svg><use href="#ck"/></svg> Demandes envoyées en temps réel sur WhatsApp</li>
+          <li><svg><use href="#ck"/></svg> Optimisation continue des campagnes</li>
+          <li><svg><use href="#ck"/></svg> Suivi des devis signés et de votre rentabilité</li>
         </ul>
         <a class="btn" href="#rdv">Réserver un appel</a>
       </div>
@@ -773,12 +790,12 @@ footer{padding:70px 0 26px}
   <div class="wrap">
     <div class="mission center rv">
       <span class="badge">Notre approche</span>
-      <h2 style="margin-top:18px">On ne vend pas des vues. <span class="acc">On vend des clients.</span></h2>
-      <p class="sub" style="margin:18px auto 0;max-width:62ch">Une vidéo qui fait 50 000 vues et zéro appel ne sert à rien. On filme ce que vos clients cherchent vraiment à voir avant de vous contacter : votre travail, vos gestes, votre sérieux. Et chaque mois, on compte ce que ça vous a ramené.</p>
+      <h2 style="margin-top:18px">On ne vend pas des clics. <span class="acc">On vend des chantiers.</span></h2>
+      <p class="sub" style="margin:18px auto 0;max-width:62ch">Une publicité vue 100 000 fois qui ne fait sonner aucun téléphone ne sert à rien. On mesure ce qui compte pour vous : le nombre de demandes, ce que chacune vous coûte, et combien deviennent des devis signés.</p>
       <div class="boxes">
-        <div class="box"><div class="n">24 h</div><div class="l">de délai sur chaque livraison</div></div>
+        <div class="box"><div class="n">7 jours</div><div class="l">pour lancer vos campagnes</div></div>
         <div class="box"><div class="n">3 mois</div><div class="l">d'engagement, puis libre</div></div>
-        <div class="box"><div class="n">4</div><div class="l">réseaux couverts</div></div>
+        <div class="box"><div class="n">100 %</div><div class="l">du budget pub versé à Meta, sans marge</div></div>
       </div>
     </div>
   </div>
@@ -790,22 +807,22 @@ footer{padding:70px 0 26px}
     <div class="proc">
       <div class="rv">
         <span class="badge">Déroulé</span>
-        <h2 style="margin-top:16px">De l'appel à la publication, <span class="acc">sans vous déranger.</span></h2>
+        <h2 style="margin-top:16px">De l'appel aux premières demandes, <span class="acc">sans vous déranger.</span></h2>
         <p class="sub" style="margin-top:16px;max-width:38ch">Trois étapes, un seul interlocuteur, joignable sur WhatsApp.</p>
         <div style="margin-top:26px"><a class="btn" href="#rdv">Réserver un appel</a></div>
       </div>
       <div class="steps">
         <div class="step rv">
           <div class="hd"><span class="no">01</span><svg><use href="#users"/></svg></div>
-          <div class="bd"><h4>On cadre votre contenu</h4><p>Un appel de 20 minutes pour comprendre votre métier, à qui vous voulez parler et ce qu'il y a d'intéressant à filmer chez vous. Vous repartez avec une liste de sujets. Vous n'avez rien à inventer tout seul.</p></div>
+          <div class="bd"><h4>On construit votre stratégie</h4><p>Un appel de 30 minutes pour comprendre votre métier, vos chantiers les plus rentables, votre zone et le budget à prévoir. Vous repartez avec un plan clair, même si vous ne signez pas.</p></div>
         </div>
         <div class="step rv d1">
-          <div class="hd"><span class="no">02</span><svg><use href="#cam"/></svg></div>
-          <div class="bd"><h4>Vous filmez, on produit</h4><p>Vous portez les lunettes pendant vos journées et vous nous envoyez les rushes quand vous voulez. On découpe, on sous-titre, on soigne l'accroche, et vous recevez des vidéos prêtes à sortir sous 24 h.</p></div>
+          <div class="hd"><span class="no">02</span><svg><use href="#pen"/></svg></div>
+          <div class="bd"><h4>On crée et on lance</h4><p>Visuels, vidéos, textes, formulaire de demande et paramétrage de votre compte publicitaire. Vos campagnes sont en ligne en 7 jours, depuis votre propre compte Meta.</p></div>
         </div>
         <div class="step rv d2">
           <div class="hd"><span class="no">03</span><svg><use href="#chart"/></svg></div>
-          <div class="bd"><h4>On publie et on ajuste</h4><p>Publication sur vos quatre réseaux, descriptions rédigées, programmation gérée. Chaque mois, un bilan clair : ce qui a marché, ce qui n'a pas marché, et ce qu'on change pour le mois suivant.</p></div>
+          <div class="bd"><h4>On optimise chaque semaine</h4><p>Les demandes arrivent sur votre téléphone. On coupe ce qui ne marche pas, on pousse ce qui marche, et chaque semaine vous recevez un point clair : demandes, coût par demande, devis signés.</p></div>
         </div>
       </div>
     </div>
@@ -817,28 +834,28 @@ footer{padding:70px 0 26px}
   <div class="wrap">
     <div class="center rv">
       <span class="badge">Comparaison</span>
-      <h2 style="margin-top:18px">Pourquoi Productipro <span class="acc">plutôt qu'un vidéaste</span></h2>
-      <p class="sub" style="margin:16px auto 0;max-width:430px">La différence entre une journée de tournage par trimestre et des vidéos toutes les semaines.</p>
+      <h2 style="margin-top:18px">Pourquoi Productipro <span class="acc">plutôt qu'une plateforme de mise en relation</span></h2>
+      <p class="sub" style="margin:16px auto 0;max-width:430px">La différence entre acheter des contacts partagés et avoir vos propres clients.</p>
     </div>
     <div class="cmp">
       <div class="c rv">
-        <h4>Un vidéaste à la journée</h4>
+        <h4>Les plateformes de mise en relation</h4>
         <ul>
-          <li><svg><use href="#x"/></svg> Une journée bloquée dans votre agenda</li>
-          <li><svg><use href="#x"/></svg> Quelques vidéos, puis plus rien pendant des mois</li>
-          <li><svg><use href="#x"/></svg> Une mise en scène qui ne vous ressemble pas</li>
-          <li><svg><use href="#x"/></svg> Facturé à la prestation, souvent plus cher</li>
-          <li><svg><use href="#x"/></svg> La publication reste à votre charge</li>
+          <li><svg><use href="#x"/></svg> Demandes envoyées à plusieurs artisans en même temps</li>
+          <li><svg><use href="#x"/></svg> Payées à l'unité, même quand elles sont mauvaises</li>
+          <li><svg><use href="#x"/></svg> Aucune visibilité pour votre nom et votre travail</li>
+          <li><svg><use href="#x"/></svg> Peu de contrôle sur la zone et le type de chantier</li>
+          <li><svg><use href="#x"/></svg> Le jour où vous arrêtez, il ne vous reste rien</li>
         </ul>
       </div>
       <div class="c me rv d1">
         <h4><span class="mark" style="width:24px;height:24px"><svg><use href="#logo"/></svg></span> Productipro</h4>
         <ul>
-          <li><svg style="color:var(--ink)"><use href="#ck"/></svg> Vous ne bloquez aucune journée</li>
-          <li><svg style="color:var(--ink)"><use href="#ck"/></svg> 8 à 24 vidéos chaque mois, sans interruption</li>
-          <li><svg style="color:var(--ink)"><use href="#ck"/></svg> Votre vrai quotidien, filmé à votre hauteur</li>
-          <li><svg style="color:var(--ink)"><use href="#ck"/></svg> Un abonnement clair, sans surprise</li>
-          <li><svg style="color:var(--ink)"><use href="#ck"/></svg> Montage et publication entièrement gérés</li>
+          <li><svg style="color:var(--ink)"><use href="#ck"/></svg> Des demandes qui ne sont envoyées qu'à vous</li>
+          <li><svg style="color:var(--ink)"><use href="#ck"/></svg> Un coût par demande qu'on fait baisser chaque mois</li>
+          <li><svg style="color:var(--ink)"><use href="#ck"/></svg> Votre entreprise et vos réalisations mises en avant</li>
+          <li><svg style="color:var(--ink)"><use href="#ck"/></svg> Vous choisissez la zone et les chantiers</li>
+          <li><svg style="color:var(--ink)"><use href="#ck"/></svg> Le compte publicitaire et l'audience restent à vous</li>
         </ul>
       </div>
     </div>
@@ -851,87 +868,83 @@ footer{padding:70px 0 26px}
     <div class="center rv">
       <span class="badge">Offres</span>
       <h2 style="margin-top:18px">Des tarifs <span class="acc">qui tiennent debout</span></h2>
-      <p class="sub" style="margin:16px auto 0;max-width:430px">Moins cher qu'une seule journée de vidéaste. Chaque mois, toute l'année.</p>
+      <p class="sub" style="margin:16px auto 0;max-width:430px">Un chantier signé de plus par mois suffit, la plupart du temps, à rembourser l'accompagnement.</p>
     </div>
 
     <div class="plans">
-      <div class="plan rv ">
+      <div class="plan rv">
         <span class="pb">Pour commencer</span>
-        <div class="for">Pour tester la vidéo <span>sans y passer de temps</span></div>
+        <div class="for">Pour tester la pub <span>sur un type de chantier</span></div>
         <div class="pr">590 € <small>HT / mois</small></div>
         <a class="btn wide alt" href="#rdv">Réserver un appel</a>
         <ul>
-          <li><svg><use href="#ck"/></svg> 8 vidéos par mois</li>
-          <li><svg><use href="#ck"/></svg> Publication sur 2 réseaux</li>
-          <li><svg><use href="#ck"/></svg> Montage, accroches et sous-titres</li>
-          <li><svg><use href="#ck"/></svg> Descriptions rédigées pour vous</li>
-          <li><svg><use href="#ck"/></svg> Liste de sujets fournie chaque mois</li>
-          <li><svg><use href="#ck"/></svg> Livraison des vidéos sous 24 h</li>
+          <li><svg><use href="#ck"/></svg> 1 campagne, 1 type de chantier</li>
+          <li><svg><use href="#ck"/></svg> Facebook et Instagram</li>
+          <li><svg><use href="#ck"/></svg> 4 créations publicitaires par mois</li>
+          <li><svg><use href="#ck"/></svg> Formulaire de qualification</li>
+          <li><svg><use href="#ck"/></svg> Demandes envoyées en temps réel</li>
+          <li><svg><use href="#ck"/></svg> Bilan mensuel chiffré</li>
           <li><svg><use href="#ck"/></svg> Interlocuteur dédié sur WhatsApp</li>
         </ul>
       </div>
 
       <div class="plan hot rv d1">
         <span class="pb">Le plus choisi</span>
-        <div class="for">Pour être l'entreprise <span>qu'on voit partout dans sa zone</span></div>
-        <div class="pr">890 € <small>HT / mois</small></div>
+        <div class="for">Pour remplir votre planning <span>de chantiers rentables</span></div>
+        <div class="pr">990 € <small>HT / mois</small></div>
         <a class="btn wide" href="#rdv">Réserver un appel</a>
         <ul>
-          <li><svg><use href="#ck"/></svg> 16 vidéos par mois</li>
-          <li><svg><use href="#ck"/></svg> Publication sur 4 réseaux</li>
-          <li><svg><use href="#ck"/></svg> Montage, accroches et sous-titres</li>
-          <li><svg><use href="#ck"/></svg> Descriptions rédigées pour vous</li>
-          <li><svg><use href="#ck"/></svg> Liste de sujets fournie chaque mois</li>
-          <li><svg><use href="#ck"/></svg> Livraison des vidéos sous 24 h</li>
-          <li><svg><use href="#ck"/></svg> Suivi des demandes générées</li>
-          <li><svg><use href="#ck"/></svg> Bilan mensuel chiffré</li>
+          <li><svg><use href="#ck"/></svg> Jusqu'à 3 campagnes en parallèle</li>
+          <li><svg><use href="#ck"/></svg> Facebook, Instagram et Messenger</li>
+          <li><svg><use href="#ck"/></svg> 8 créations par mois, dont vidéos</li>
+          <li><svg><use href="#ck"/></svg> Reciblage des visiteurs et des contacts</li>
+          <li><svg><use href="#ck"/></svg> Demandes envoyées en temps réel</li>
+          <li><svg><use href="#ck"/></svg> Point chiffré chaque semaine</li>
+          <li><svg><use href="#ck"/></svg> Suivi des devis signés</li>
         </ul>
       </div>
 
       <div class="plan rv d2">
-        <span class="pb">Pour dominer</span>
-        <div class="for">Pour écraser <span>la concurrence locale</span></div>
-        <div class="pr">1 490 € <small>HT / mois</small></div>
+        <span class="pb">Pour accélérer</span>
+        <div class="for">Pour devenir la référence <span>de votre secteur</span></div>
+        <div class="pr">1 590 € <small>HT / mois</small></div>
         <a class="btn wide alt" href="#rdv">Réserver un appel</a>
         <ul>
-          <li><svg><use href="#ck"/></svg> 24 vidéos par mois</li>
-          <li><svg><use href="#ck"/></svg> Publication sur 4 réseaux</li>
-          <li><svg><use href="#ck"/></svg> Montage, accroches et sous-titres</li>
-          <li><svg><use href="#ck"/></svg> Descriptions rédigées pour vous</li>
-          <li><svg><use href="#ck"/></svg> Liste de sujets fournie chaque mois</li>
-          <li><svg><use href="#ck"/></svg> Livraison des vidéos sous 24 h</li>
-          <li><svg><use href="#ck"/></svg> Créations publicitaires incluses</li>
-          <li><svg><use href="#ck"/></svg> Gestion des commentaires</li>
-          <li><svg><use href="#ck"/></svg> Suivi des demandes et bilan mensuel</li>
+          <li><svg><use href="#ck"/></svg> Campagnes illimitées, plusieurs zones</li>
+          <li><svg><use href="#ck"/></svg> Facebook, Instagram et Messenger</li>
+          <li><svg><use href="#ck"/></svg> 12 créations par mois, dont vidéos</li>
+          <li><svg><use href="#ck"/></svg> Page de présentation dédiée</li>
+          <li><svg><use href="#ck"/></svg> Reciblage et campagnes de notoriété</li>
+          <li><svg><use href="#ck"/></svg> Point en visio chaque semaine</li>
+          <li><svg><use href="#ck"/></svg> Suivi du retour sur investissement</li>
         </ul>
       </div>
-
     </div>
 
     <div class="optbar rv">
-      <div class="ot"><b>Pas encore de lunettes ?</b> On vous les fournit, configurées et prêtes à filmer.</div>
-      <div class="op"><b>+ 90 € HT / mois</b><span>en option, à vous après 6 mois</span></div>
+      <div class="ot"><b>Budget publicitaire en plus,</b> payé directement à Meta depuis votre compte. On vous conseille le bon montant pendant l'appel.</div>
+      <div class="op"><b>dès 15 € / jour</b><span>conseillé pour démarrer</span></div>
     </div>
 
     <div class="custom rv">
       <div>
-        <h4>Réseau · dès 2 400 € HT / mois</h4>
-        <p>Franchises, plusieurs points de vente ou plusieurs équipes : on construit un dispositif adapté, avec un tarif à la hauteur du volume.</p>
+        <h4>Plusieurs agences · dès 2 400 € HT / mois</h4>
+        <p>Entreprises avec plusieurs agences, réseaux ou franchises du bâtiment : on construit un dispositif par zone, avec un tarif à la hauteur du volume.</p>
       </div>
       <div class="cl">
-        <span><svg><use href="#ck"/></svg> Volume sur mesure</span>
-        <span><svg><use href="#ck"/></svg> Plusieurs comptes gérés</span>
+        <span><svg><use href="#ck"/></svg> Campagnes par agence</span>
+        <span><svg><use href="#ck"/></svg> Répartition des demandes</span>
         <span><svg><use href="#ck"/></svg> Charte commune</span>
         <span><svg><use href="#ck"/></svg> Reporting consolidé</span>
       </div>
       <a class="btn" href="#rdv">Nous contacter</a>
     </div>
 
-    <p class="sub center" style="margin-top:24px;font-size:14px;color:var(--mut2)">Frais de lancement de 290 € HT la première fois (cadrage, création des comptes, guide de tournage), offerts pour un engagement de 12 mois.<br>Engagement de 3 mois, puis sans engagement. Tarifs hors taxes.</p>
+    <p class="sub center" style="margin-top:24px;font-size:14px;color:var(--mut2)">Frais de mise en place de 290 € HT la première fois (stratégie, compte publicitaire, formulaires, premières créations), offerts pour un engagement de 12 mois.<br>Engagement de 3 mois, puis sans engagement. Tarifs hors taxes, hors budget publicitaire.</p>
   </div>
 </section>
 
-<!-- =============== CE QUE VOUS RECEVEZ =============== -->
+<!-- =============== ENGAGEMENTS =============== -->
 <section class="sec tight">
   <div class="wrap">
     <div class="center rv">
@@ -940,12 +953,12 @@ footer{padding:70px 0 26px}
       <p class="sub" style="margin:16px auto 0;max-width:430px">Pas de petites lignes, pas de surprise en fin de mois.</p>
     </div>
     <div class="rg">
-      <div class="rc rv"><div class="i"><svg><use href="#cal"/></svg></div><h4>24 h, pas « bientôt »</h4><p>Vos vidéos montées arrivent sous 24 h après réception des rushes. Si on prend du retard, on vous prévient avant que vous ayez à demander.</p></div>
-      <div class="rc rv d1"><div class="i"><svg><use href="#cut"/></svg></div><h4>Les fichiers sont à vous</h4><p>Vidéos livrées sans filigrane et sans condition. Vous pouvez les réutiliser où vous voulez, même si on arrête de travailler ensemble.</p></div>
+      <div class="rc rv"><div class="i"><svg><use href="#cal"/></svg></div><h4>En ligne en 7 jours</h4><p>Vos campagnes sont diffusées dans les 7 jours qui suivent l'appel de lancement. Si on prend du retard, on vous prévient avant que vous ayez à demander.</p></div>
+      <div class="rc rv d1"><div class="i"><svg><use href="#lnk"/></svg></div><h4>Votre compte, vos données</h4><p>Les campagnes tournent sur votre propre compte publicitaire. Les audiences, l'historique et les créations restent à vous, même si on arrête de travailler ensemble.</p></div>
       <div class="rc rv d2"><div class="i"><svg><use href="#wa"/></svg></div><h4>Un seul interlocuteur</h4><p>Pas de formulaire de support, pas de ticket. Une personne qui connaît votre dossier, joignable sur WhatsApp.</p></div>
-      <div class="rc rv"><div class="i"><svg><use href="#pen"/></svg></div><h4>Les sujets préparés</h4><p>Vous recevez chaque mois une liste de sujets à filmer adaptée à votre activité. Vous n'avez jamais à chercher quoi tourner.</p></div>
-      <div class="rc rv d1"><div class="i"><svg><use href="#up"/></svg></div><h4>Publication gérée</h4><p>On publie depuis vos comptes avec un accès que vous pouvez retirer quand vous voulez. Descriptions et programmation comprises.</p></div>
-      <div class="rc rv d2"><div class="i"><svg><use href="#chart"/></svg></div><h4>Un bilan chiffré</h4><p>Vues, abonnés gagnés, messages et demandes reçues. Ce qui a marché, ce qui n'a pas marché, et ce qu'on change ensuite.</p></div>
+      <div class="rc rv"><div class="i"><svg><use href="#pen"/></svg></div><h4>Créations incluses</h4><p>Visuels, vidéos et textes publicitaires renouvelés chaque mois, sans supplément, pour que vos pubs ne s'essoufflent pas.</p></div>
+      <div class="rc rv d1"><div class="i"><svg><use href="#eye"/></svg></div><h4>Budget transparent</h4><p>Votre budget publicitaire est payé directement à Meta. Aucune marge cachée dessus : vous voyez chaque euro dépensé.</p></div>
+      <div class="rc rv d2"><div class="i"><svg><use href="#chart"/></svg></div><h4>Un bilan chiffré</h4><p>Demandes reçues, coût par demande, devis signés. Ce qui a marché, ce qui n'a pas marché, et ce qu'on change ensuite.</p></div>
     </div>
   </div>
 </section>
@@ -960,33 +973,33 @@ footer{padding:70px 0 26px}
         <p class="sub" style="margin-top:16px;max-width:36ch">Les questions qu'on nous pose le plus souvent avant de commencer.</p>
         <div class="acts">
           <a class="btn" href="#rdv">Réserver un appel</a>
-          <a class="btn alt" href="https://wa.me/33767717586?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20vos%20vid%C3%A9os.">WhatsApp</a>
+          <a class="btn alt" href="https://wa.me/33767717586?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20vos%20publicit%C3%A9s.">WhatsApp</a>
         </div>
       </div>
       <div class="qs">
         <div class="q open">
-          <button><span>Je suis mauvais face caméra, ça peut marcher pour moi ?</span><span class="pm"></span></button>
-          <div class="a"><div><p>Vous ne passez jamais devant l'objectif. Vous portez les lunettes et vous travaillez comme d'habitude : c'est votre point de vue qui est filmé. Ce sont vos gestes et votre métier qui intéressent les gens, pas un discours.</p></div></div>
+          <button><span>Quel budget publicitaire faut-il prévoir ?</span><span class="pm"></span></button>
+          <div class="a"><div><p>On conseille de démarrer à partir de 15 € par jour, soit environ 450 € par mois, payés directement à Meta. Le bon montant dépend de votre zone, de votre métier et du nombre de chantiers que vous pouvez absorber : on le fixe ensemble pendant l'appel.</p></div></div>
         </div>
         <div class="q">
-          <button><span>Ça me prend combien de temps par semaine ?</span><span class="pm"></span></button>
-          <div class="a"><div><p>Le temps de mettre les lunettes et d'appuyer sur un bouton quand il se passe quelque chose d'intéressant. En pratique, quelques minutes par jour, pendant que vous travaillez. L'envoi des rushes prend deux minutes le soir.</p></div></div>
+          <button><span>En combien de temps je reçois des demandes ?</span><span class="pm"></span></button>
+          <div class="a"><div><p>Les campagnes sont en ligne en 7 jours. Les premières demandes arrivent en général dans les jours qui suivent, puis les premières semaines servent à optimiser : on garde ce qui marche et on coupe le reste pour faire baisser le coût par demande.</p></div></div>
         </div>
         <div class="q">
-          <button><span>Est-ce que je dois préparer les sujets ?</span><span class="pm"></span></button>
-          <div class="a"><div><p>Non. Après l'appel de cadrage, vous recevez une liste de sujets adaptée à votre activité, mise à jour chaque mois selon ce qui a le mieux marché. Vous choisissez ceux qui tombent bien dans votre planning.</p></div></div>
+          <button><span>Les demandes sont-elles sérieuses ?</span><span class="pm"></span></button>
+          <div class="a"><div><p>Le formulaire pose les bonnes questions avant que la demande vous arrive : type de travaux, code postal, délai, budget. Ça filtre les curieux. Et chaque demande n'est envoyée qu'à vous, jamais à d'autres artisans.</p></div></div>
         </div>
         <div class="q">
-          <button><span>Ça marche pour mon secteur ?</span><span class="pm"></span></button>
-          <div class="a"><div><p>Le format fonctionne dès que votre travail se voit : bâtiment, restauration, automobile, coiffure et esthétique, commerce, agriculture, santé, services à domicile… Si on pense que ça ne marchera pas chez vous, on vous le dit pendant l'appel plutôt que de vous vendre un abonnement.</p></div></div>
+          <button><span>Ça marche pour mon métier ?</span><span class="pm"></span></button>
+          <div class="a"><div><p>Rénovation, toiture, isolation, plomberie, chauffage, électricité, menuiserie, paysagisme, piscine… Dès que vos clients sont des particuliers ou des entreprises de votre zone, la pub Facebook et Instagram fonctionne. Si on pense que ça ne marchera pas chez vous, on vous le dit pendant l'appel.</p></div></div>
         </div>
         <div class="q">
-          <button><span>Et si je n'ai pas de lunettes ?</span><span class="pm"></span></button>
-          <div class="a"><div><p>On vous les fournit, déjà configurées, pour 90 € HT de plus par mois. Au bout de 6 mois, elles vous appartiennent et l'option s'arrête.</p></div></div>
+          <button><span>Je dois fournir des photos ou des vidéos ?</span><span class="pm"></span></button>
+          <div class="a"><div><p>Vos photos de chantiers et vos avant/après sont ce qui marche le mieux, envoyez-les simplement sur WhatsApp. Si vous n'en avez pas encore, on démarre avec des créations conçues pour vous et on vous guide pour en prendre.</p></div></div>
         </div>
         <div class="q">
-          <button><span>Qui publie sur mes comptes ?</span><span class="pm"></span></button>
-          <div class="a"><div><p>Nous, depuis vos comptes, avec un accès que vous pouvez retirer à tout moment. Vous validez le planning si vous le souhaitez, sinon on publie et vous recevez le récapitulatif.</p></div></div>
+          <button><span>À qui appartient le compte publicitaire ?</span><span class="pm"></span></button>
+          <div class="a"><div><p>À vous. On travaille sur votre compte avec un accès que vous pouvez retirer à tout moment. Si on arrête, vous gardez les campagnes, les audiences et tout l'historique.</p></div></div>
         </div>
       </div>
     </div>
@@ -1000,13 +1013,13 @@ footer{padding:70px 0 26px}
       <div class="rv">
         <span class="badge">On commence ?</span>
         <h2>La prochaine étape, <span class="acc">c'est un appel.</span></h2>
-        <p class="sub">20 minutes pour regarder votre activité, ce qu'il y a à filmer chez vous et ce que ça peut donner. Sans engagement, et sans script de vente.</p>
+        <p class="sub">30 minutes pour regarder votre zone, vos chantiers les plus rentables et le budget à prévoir. Sans engagement, et sans script de vente.</p>
         <a class="btn" href="#rdv"><svg><use href="#ph"/></svg> Réserver un appel</a>
       </div>
       <div class="phone rv d1">
         <div class="s"><div class="nt"></div>
-          <video class="pv" src="assets/v6.mp4" poster="assets/final.webp" muted loop playsinline preload="none" aria-label="Vidéo verticale publiée pour un client"></video>
-          <div class="hd">productipro <svg width="14" height="14"><use href="#vb"/></svg></div>
+          <video class="pv" src="assets/v6.mp4" poster="assets/final.webp" muted loop playsinline preload="none" aria-label="Exemple de publicité vidéo verticale"></video>
+          <div class="hd">Sponsorisé</div>
         </div>
       </div>
     </div>
@@ -1027,13 +1040,14 @@ footer{padding:70px 0 26px}
 
 </main>
 
+
 <!-- =============== FOOTER =============== -->
 <footer>
   <div class="wrap">
     <div class="fg">
       <div>
         <a class="brand" href="#top"><span class="mark"><svg><use href="#logo"/></svg></span>productipro</a>
-        <p class="tag">Vos journées filmées aux lunettes connectées, montées et publiées chaque semaine.</p>
+        <p class="tag">Publicité Facebook et Instagram pour les artisans et entreprises du bâtiment.</p>
         <div class="soc">
           <a href="https://wa.me/33767717586" aria-label="WhatsApp"><svg><use href="#wa"/></svg></a>
           <a href="mailto:contact@productipro.fr" aria-label="E-mail"><svg><use href="#mail"/></svg></a>
@@ -1043,7 +1057,7 @@ footer{padding:70px 0 26px}
         <div class="fcols">
           <div>
             <h5>Navigation</h5>
-            <a href="#format">Format</a>
+            <a href="#principe">Principe</a>
             <a href="#methode">Méthode</a>
             <a href="#offres">Offres</a>
             <a href="#faq">FAQ</a>
@@ -1058,7 +1072,7 @@ footer{padding:70px 0 26px}
       <div class="f3">
         <div class="fbox">
           <p>Une question avant de réserver ?</p>
-          <a class="ln" href="https://wa.me/33767717586?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20vos%20vid%C3%A9os."><svg><use href="#wa"/></svg> Écrire sur WhatsApp</a>
+          <a class="ln" href="https://wa.me/33767717586?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20vos%20publicit%C3%A9s."><svg><use href="#wa"/></svg> Écrire sur WhatsApp</a>
           <a class="ln" href="mailto:contact@productipro.fr"><svg><use href="#mail"/></svg> contact@productipro.fr</a>
           <a class="btn wide" href="#rdv" style="margin-top:14px">Réserver un appel</a>
         </div>
@@ -1066,7 +1080,7 @@ footer{padding:70px 0 26px}
     </div>
     <div class="fbot">
       <span>© <span id="yr">2026</span> Productipro — Tous droits réservés.</span>
-      <span>Vidéo filmée aux lunettes connectées · France</span>
+      <span>Publicité Meta pour le bâtiment · France</span>
     </div>
   </div>
 </footer>
@@ -1082,10 +1096,10 @@ document.getElementById('drawer').addEventListener('click',function(e){if(e.targ
 
 /* reel + projets */
 (function(){
-  var V=[['v1','Agriculture','Journée au champ'],['v2','Automobile','Avant / après'],['v3','Terrain','Arrivée sur site'],
-         ['v4','Installation','Geste technique'],['v5','Automobile','Le détail soigné'],['v6','Dépannage','Le réglage qui compte']];
+  var V=[['v1','Pub vidéo','Sur le terrain'],['v2','Pub vidéo','Avant / après'],['v3','Pub vidéo','Arrivée sur chantier'],
+         ['v4','Pub vidéo','Geste technique'],['v5','Pub vidéo','Le détail soigné'],['v6','Pub vidéo','Le savoir-faire']];
   var r=V.map(function(v){
-    return '<div class="rcard"><video class="pv" src="assets/'+v[0]+'.mp4" poster="assets/'+v[0]+'.webp" muted loop playsinline preload="none" aria-label="Vidéo verticale — '+v[1]+'"></video>'+
+    return '<div class="rcard"><video class="pv" src="assets/'+v[0]+'.mp4" poster="assets/'+v[0]+'.webp" muted loop playsinline preload="none" aria-label="Exemple de publicité — '+v[1]+'"></video>'+
       '<div class="tag"><b>'+v[1]+'</b> · '+v[2]+'<svg class="vb"><use href="#vb"/></svg></div></div>';
   }).join('');
   var reel=document.getElementById('reel');
@@ -1123,7 +1137,7 @@ document.getElementById('drawer').addEventListener('click',function(e){if(e.targ
 
 /* secteurs */
 (function(){
-  var s=['Bâtiment & rénovation','Restauration','Garages & carrosserie','Coiffure & barbier','Boulangerie','Paysagisme','Esthétique & ongles','Agriculture','Commerce de proximité','Tatouage','Immobilier','Plomberie & chauffage','Coaching sportif','Nettoyage & multiservices'];
+  var s=['Rénovation','Maçonnerie','Couverture & toiture','Plomberie & chauffage','Électricité','Pompes à chaleur','Menuiserie & fenêtres','Isolation','Peinture & façade','Paysagisme','Piscines','Cuisine & salle de bain','Terrassement','Charpente'];
   var h=s.map(function(x){return '<span>'+x+'</span>'}).join('');
   document.getElementById('strip').innerHTML=h+h;
 })();
