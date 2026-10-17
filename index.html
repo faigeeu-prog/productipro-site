@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Productipro — Publicité Facebook &amp; Instagram pour le bâtiment</title>
-<meta name="description" content="Productipro crée, lance et pilote vos publicités Facebook et Instagram pour les artisans et entreprises du bâtiment. Les demandes de devis arrivent en temps réel sur votre téléphone.">
+<title>Productipro — Rendez-vous qualifiés via LinkedIn</title>
+<meta name="description" content="Productipro prospecte vos futurs clients sur LinkedIn, lance les discussions et les qualifie. Des rendez-vous qualifiés chaque semaine dans votre agenda, pour les entreprises B2B.">
 <link rel="canonical" href="https://www.productipro.fr/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.productipro.fr/">
-<meta property="og:title" content="Productipro — On transforme votre budget pub en chantiers signés">
-<meta property="og:description" content="Publicité Facebook et Instagram pour les artisans et entreprises du bâtiment. Les demandes de devis arrivent directement sur votre téléphone.">
+<meta property="og:title" content="Productipro — Des rendez-vous qualifiés chaque semaine grâce à LinkedIn">
+<meta property="og:description" content="On prospecte vos futurs clients sur LinkedIn et on pose des rendez-vous qualifiés dans votre agenda.">
 <meta property="og:image" content="https://www.productipro.fr/assets/og.webp">
 <meta name="theme-color" content="#F7F7F7">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -278,6 +278,35 @@ h1,h2,h3,h4{margin:0;font-weight:400}
 .cta .acts{display:flex;gap:10px;justify-content:center;margin-top:30px;flex-wrap:wrap}
 .cal{margin-top:24px;background:var(--card);border-radius:var(--r);padding:10px;min-height:700px;box-shadow:var(--sh);overflow:hidden}
 
+
+/* ---------- LinkedIn viz ---------- */
+.flt{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:4px}
+.flt span{font-size:11.5px;font-weight:500;background:var(--dark);color:#fff;border-radius:100px;padding:4px 10px}
+.prof{position:absolute;inset:18px 22px;background:#fff;border:1px solid #EDEDED;border-radius:16px;overflow:hidden}
+.prof .bn{height:34%;background:linear-gradient(120deg,#4C86FF,#1238D6)}
+.prof .pa{position:absolute;left:22px;top:calc(34% - 34px);width:68px;height:68px;border-radius:50%;background:#fff;padding:4px}
+.prof .pa svg{width:100%;height:100%;border-radius:50%}
+.prof .pl{height:10px;border-radius:6px;background:#E6E8EE;margin-left:22px;transform-origin:left;transform:scaleX(0);transition:transform .8s cubic-bezier(.2,.9,.3,1)}
+.prof .l1{margin-top:44px;width:42%;background:#1A1A1A;height:12px}.prof .l2{margin-top:9px;width:64%;transition-delay:.15s}.prof .l3{margin-top:7px;width:36%;transition-delay:.3s}
+.on .prof .pl{transform:scaleX(1)}
+.prof .pb{display:flex;gap:8px;margin:16px 22px 0}
+.prof .pb span{font-size:11.5px;font-weight:600;border-radius:100px;padding:6px 14px}
+.prof .b1{background:var(--blue);color:#fff}.prof .b2{border:1.5px solid var(--blue);color:var(--blue)}
+.prof .pk{position:absolute;right:16px;top:calc(34% + 14px);display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:500;background:#DCF5E5;color:#167A3A;border-radius:100px;padding:4px 10px;opacity:0;transform:translateY(8px);transition:opacity .6s .6s,transform .6s .6s}
+.prof .pk.p2{top:calc(34% + 46px);transition-delay:.85s}
+.prof .pk i{font-style:normal}
+.on .prof .pk{opacity:1;transform:none}
+.chat{position:absolute;inset:0;padding:20px;display:flex;flex-direction:column;justify-content:center;gap:8px;background:linear-gradient(180deg,#FAFAFA,#F1F3F9)}
+.bb{max-width:82%;font-size:13px;line-height:1.45;padding:9px 13px;border-radius:16px;letter-spacing:-.01em}
+.bb.me{align-self:flex-end;background:var(--blue);color:#fff;border-bottom-right-radius:5px}
+.bb.them{align-self:flex-start;background:#fff;border:1px solid #E6E6EA;color:#222;border-bottom-left-radius:5px}
+.chat .bb{opacity:0;transform:translateY(10px);transition:opacity .5s,transform .5s cubic-bezier(.2,1,.3,1)}
+.chat .bb:nth-child(2){transition-delay:.35s}.chat .bb:nth-child(3){transition-delay:.7s}.chat .bb:nth-child(4){transition-delay:1.05s}
+.on .chat .bb{opacity:1;transform:none}
+.bt-c{position:relative;background:var(--card);border-radius:var(--r);padding:52px 22px 24px;display:flex;flex-direction:column;gap:8px;box-shadow:var(--sh)}
+.bt-c .lb{position:absolute;left:18px;top:16px;font-size:12px;font-weight:500;background:var(--bg);border-radius:100px;padding:4px 11px;color:#555}
+.bt-c.tall{padding-top:56px}
+
 /* ---------- FOOTER ---------- */
 footer{padding:70px 0 50px}
 .fg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px;align-items:start}
@@ -358,6 +387,8 @@ footer{padding:70px 0 50px}
   .sc h3{margin:24px 16px 0;font-size:22px}
   .sc p{margin:10px 16px 0;font-size:16px}
   .leads{padding:12px;gap:7px}
+  .chat{padding:12px;gap:6px}
+  .chat .bb{font-size:11.5px;padding:7px 10px;max-width:88%}
   .lr{padding:7px 10px;gap:10px;border-radius:12px}
   .lr .av{width:28px;height:28px;font-size:11px}
   .lr .st{font-size:10.5px;padding:3px 8px}
@@ -425,6 +456,7 @@ footer{padding:70px 0 50px}
 <symbol id="vb" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#3897F0"/><path d="M8 12.3l2.6 2.6L16 9.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </svg>
 <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+<symbol id="li" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path fill="#fff" d="M7.1 9.6H4.6V19h2.5zM5.85 8.5a1.45 1.45 0 1 0 0-2.9 1.45 1.45 0 0 0 0 2.9zM19.4 13.8c0-2.5-1.35-3.7-3.15-3.7-1.45 0-2.1.8-2.45 1.35V9.6h-2.5V19h2.5v-4.65c0-1.25.25-2.45 1.8-2.45 1.5 0 1.55 1.4 1.55 2.5V19h2.5z"/></symbol>
 <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.8v2.4M12 18.8v2.4M21.2 12h-2.4M5.2 12H2.8M18.5 5.5l-1.7 1.7M7.2 16.8l-1.7 1.7M18.5 18.5l-1.7-1.7M7.2 7.2L5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
 <symbol id="i-circ" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
 <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.2 6.2L21 9.6l-5.3 4.1L17.6 21 12 17.1 6.4 21l1.9-7.3L3 9.6l6.8-.4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
@@ -459,7 +491,7 @@ footer{padding:70px 0 50px}
       <a href="#faq">FAQ</a>
     </div>
     <div class="nav-cta">
-      <a class="btn w sm" href="https://wa.me/33767717586?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20vos%20publicit%C3%A9s.">WhatsApp</a>
+      <a class="btn w sm" href="https://wa.me/33767717586?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20votre%20prospection%20LinkedIn.">WhatsApp</a>
       <a class="btn sm" href="#rdv">Réserver un appel</a>
       <button class="burger" id="burger" aria-label="Menu"><i></i><i></i><i></i></button>
     </div>
@@ -480,17 +512,17 @@ footer{padding:70px 0 50px}
 <section class="hero">
   <div class="wrap hero-g">
     <div>
-      <span class="tag rv in"><b>Facebook &amp; Instagram</b> pour le bâtiment</span>
-      <h1 class="h1 rv in d1">On transforme votre budget pub en <span class="sr b">chantiers signés</span></h1>
-      <p class="lead rv in d2">On crée, on lance et on pilote vos publicités Meta. Les demandes de devis arrivent directement sur votre téléphone, rien que pour vous.</p>
+      <span class="tag rv in"><b>LinkedIn</b> pour les entreprises B2B</span>
+      <h1 class="h1 rv in d1">Des rendez-vous qualifiés, <span class="sr b">chaque semaine</span></h1>
+      <p class="lead rv in d2">On prospecte vos futurs clients sur LinkedIn, on lance les discussions et on les qualifie. Les rendez-vous arrivent directement dans votre agenda.</p>
       <div class="acts rv in d3">
         <a class="btn w" href="#exemples">Voir des exemples</a>
         <a class="btn" href="#rdv">Réserver un appel</a>
       </div>
       <div class="rate rv in d3">
-        <span class="ic"><svg><use href="#fb"/></svg><svg><use href="#ig"/></svg></span>
+        <span class="ic"><svg><use href="#li"/></svg></span>
         <span class="sep"></span>
-        <span>Campagnes dédiées aux artisans du bâtiment</span>
+        <span>Prospection LinkedIn faite à la main, pour les décideurs</span>
       </div>
     </div>
 
@@ -498,22 +530,22 @@ footer{padding:70px 0 50px}
       <div class="phone">
         <div class="scr">
           <div class="isl"></div>
-          <div class="sb"><span>8:12</span><span>5G ▮</span></div>
+          <div class="sb"><span>9:41</span><span>5G ▮</span></div>
           <div class="dt" id="pdate">Mardi 14 octobre</div>
-          <div class="tm">8:12</div>
+          <div class="tm">9:41</div>
           <div class="notifs">
-            <div class="nt" style="animation-delay:.5s"><svg><use href="#logo"/></svg><div class="tx"><div class="t1">Nouvelle demande <span>7:48</span></div><div class="t2">Rénovation salle de bain · 12 km</div></div></div>
-            <div class="nt" style="animation-delay:.9s"><svg><use href="#logo"/></svg><div class="tx"><div class="t1">Nouvelle demande <span>7:55</span></div><div class="t2">Réfection de toiture · 8 km</div></div></div>
-            <div class="nt" style="animation-delay:1.3s"><svg><use href="#logo"/></svg><div class="tx"><div class="t1">Nouvelle demande <span>8:03</span></div><div class="t2">Isolation des combles · 19 km</div></div></div>
+            <div class="nt" style="animation-delay:.5s"><svg><use href="#li"/></svg><div class="tx"><div class="t1">Nouveau message <span>8:52</span></div><div class="t2">Directrice commerciale · « Oui, parlons-en »</div></div></div>
+            <div class="nt" style="animation-delay:.9s"><svg><use href="#li"/></svg><div class="tx"><div class="t1">Invitation acceptée <span>9:07</span></div><div class="t2">Dirigeant · société industrielle, 80 salariés</div></div></div>
+            <div class="nt" style="animation-delay:1.3s"><svg><use href="#li"/></svg><div class="tx"><div class="t1">Nouveau message <span>9:26</span></div><div class="t2">DAF · « Vous avez un créneau jeudi ? »</div></div></div>
           </div>
         </div>
       </div>
-      <div class="big-nt"><svg><use href="#logo"/></svg><div style="flex:1;min-width:0"><div class="t1">Nouvelle demande de devis <span>8:12</span></div><div class="t2">Pompe à chaleur · maison 110 m² · rappel souhaité ce matin</div></div></div>
+      <div class="big-nt"><svg><use href="#logo"/></svg><div style="flex:1;min-width:0"><div class="t1">Rendez-vous qualifié ajouté <span>9:41</span></div><div class="t2">Jeudi 10h · Dirigeant · besoin confirmé, décision ce trimestre</div></div></div>
     </div>
   </div>
 
   <div class="trust">
-    <div class="wrap"><h3 class="rv">Pour tous les métiers du bâtiment</h3></div>
+    <div class="wrap"><h3 class="rv">Pour les entreprises qui vendent à d'autres entreprises</h3></div>
     <div class="mq rv"><div class="t" id="mq"></div></div>
   </div>
 </section>
@@ -523,70 +555,67 @@ footer{padding:70px 0 50px}
   <div class="wrap">
     <div class="center rv">
       <span class="tag"><svg><use href="#i-gear"/></svg>Services</span>
-      <h2 class="h2" style="margin-top:26px">Tout ce qu'il faut pour remplir <span class="sr">votre planning</span></h2>
-      <p class="lead">De la stratégie au suivi des devis, on gère vos publicités et vos créations. Vous vous occupez des chantiers.</p>
+      <h2 class="h2" style="margin-top:26px">Tout ce qu'il faut pour remplir <span class="sr">votre agenda</span></h2>
+      <p class="lead">Du ciblage des décideurs à la prise de rendez-vous, on gère votre prospection LinkedIn. Vous vous occupez de vendre.</p>
     </div>
 
     <div class="svc-g">
       <div class="sc rv">
         <div class="viz">
-          <div class="dash">
-            <div class="l">Demandes de devis</div>
-            <div class="v"><span class="up"><i>↑</i>en hausse</span> chaque semaine</div>
-            <span class="lg"><svg><use href="#fb"/></svg></span>
-            <svg class="ch" viewBox="0 0 300 120" preserveAspectRatio="none"><defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1F5BFF" stop-opacity=".35"/><stop offset="1" stop-color="#1F5BFF" stop-opacity="0"/></linearGradient></defs><path class="ar" d="M0 112 L30 100 L52 100 L72 82 L100 78 L118 66 L142 66 L172 76 L192 66 L210 30 L236 22 L260 10 L260 120 L0 120Z" fill="url(#g1)"/><path class="ln" d="M0 112 L30 100 L52 100 L72 82 L100 78 L118 66 L142 66 L172 76 L192 66 L210 30 L236 22 L260 10" stroke="#1F5BFF"/></svg>
-          </div>
-          <div class="mini">
-            <div class="l">Coût par demande</div>
-            <div class="v"><span class="dn">↓ en baisse</span></div>
-            <svg class="ch" viewBox="0 0 200 100" preserveAspectRatio="none"><defs><linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A1A1A" stop-opacity=".18"/><stop offset="1" stop-color="#1A1A1A" stop-opacity="0"/></linearGradient></defs><path class="ar" d="M0 10 L20 22 L40 30 L60 28 L90 40 L110 36 L140 50 L160 56 L180 76 L190 100 L0 100Z" fill="url(#g2)"/><path class="ln" d="M0 10 L20 22 L40 30 L60 28 L90 40 L110 36 L140 50 L160 56 L180 76 L190 100" stroke="#1A1A1A"/></svg>
+          <div class="leads">
+            <div class="flt"><span>Dirigeant</span><span>DAF</span><span>50 – 250 salariés</span><span>Île-de-France</span></div>
+            <div class="lr"><span class="av">CM</span><div><div class="n">Claire M. · Directrice générale</div><div class="s">Industrie · 120 salariés</div></div><span class="st a">Ciblée</span></div>
+            <div class="lr"><span class="av">TB</span><div><div class="n">Thomas B. · Fondateur</div><div class="s">Éditeur logiciel · 60 salariés</div></div><span class="st a">Ciblé</span></div>
+            <div class="lr"><span class="av">NL</span><div><div class="n">Nadia L. · DAF</div><div class="s">Logistique · 210 salariés</div></div><span class="st a">Ciblée</span></div>
           </div>
         </div>
-        <h3>Publicité Facebook</h3>
-        <p>On crée et on optimise vos campagnes Facebook pour toucher les propriétaires de votre zone qui ont un projet de travaux.</p>
+        <h3>Ciblage des décideurs</h3>
+        <p>On construit avec vous la liste des entreprises et des personnes qui décident vraiment : poste, taille, secteur, zone. Pas de contacts au hasard.</p>
       </div>
 
       <div class="sc rv d1">
         <div class="viz">
-          <div class="dash">
-            <div class="l">Personnes touchées</div>
-            <div class="v"><span class="up"><i>↑</i>dans votre zone</span></div>
-            <span class="lg"><svg><use href="#ig"/></svg></span>
-            <svg class="ch" viewBox="0 0 300 120" preserveAspectRatio="none"><defs><linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A1A1A" stop-opacity=".22"/><stop offset="1" stop-color="#1A1A1A" stop-opacity="0"/></linearGradient></defs><path class="ar" d="M0 110 L26 104 L50 92 L74 96 L100 80 L126 72 L150 58 L170 62 L196 42 L222 36 L244 20 L260 14 L260 120 L0 120Z" fill="url(#g3)"/><path class="ln" d="M0 110 L26 104 L50 92 L74 96 L100 80 L126 72 L150 58 L170 62 L196 42 L222 36 L244 20 L260 14" stroke="#1A1A1A"/></svg>
-          </div>
-          <div class="mini">
-            <div class="l">Rappels clients</div>
-            <div class="v"><span class="dn">↑ en hausse</span></div>
-            <svg class="ch" viewBox="0 0 200 100" preserveAspectRatio="none"><defs><linearGradient id="g4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1F5BFF" stop-opacity=".3"/><stop offset="1" stop-color="#1F5BFF" stop-opacity="0"/></linearGradient></defs><path class="ar" d="M0 90 L24 84 L48 86 L70 70 L96 64 L120 50 L146 46 L170 26 L190 14 L190 100 L0 100Z" fill="url(#g4)"/><path class="ln" d="M0 90 L24 84 L48 86 L70 70 L96 64 L120 50 L146 46 L170 26 L190 14" stroke="#1F5BFF"/></svg>
+          <div class="prof">
+            <div class="bn"></div>
+            <div class="pa"><svg><use href="#logo"/></svg></div>
+            <div class="pl l1"></div><div class="pl l2"></div><div class="pl l3"></div>
+            <div class="pb"><span class="b1">Se connecter</span><span class="b2">Message</span></div>
+            <div class="pk"><i>✓</i> Titre réécrit</div><div class="pk p2"><i>✓</i> Bannière claire</div>
           </div>
         </div>
-        <h3>Publicité Instagram</h3>
-        <p>Vos chantiers mis en avant en Stories et en Reels, là où vos futurs clients passent leurs soirées à chercher des idées.</p>
+        <h3>Profil qui inspire confiance</h3>
+        <p>Titre, résumé, bannière, publications : on optimise le profil qui prospecte pour que le décideur ait envie de répondre en le visitant.</p>
       </div>
 
       <div class="sc rv">
         <div class="viz">
-          <div class="creas">
-            <div class="c"><img src="assets/v2.webp" alt="" loading="lazy"><span class="sp">Sponsorisé</span><span class="cta">Demander un devis</span></div>
-            <div class="c"><img src="assets/v4.webp" alt="" loading="lazy"><span class="sp">Sponsorisé</span><span class="cta">Demander un devis</span></div>
-            <div class="c"><img src="assets/v3.webp" alt="" loading="lazy"><span class="sp">Sponsorisé</span><span class="cta">Demander un devis</span></div>
+          <div class="chat">
+            <div class="bb me">Bonjour Claire, j'ai vu que vous ouvrez un deuxième site à Lyon. Comment gérez-vous le recrutement des équipes ?</div>
+            <div class="bb them">C'est justement notre gros sujet en ce moment.</div>
+            <div class="bb me">On aide des industriels dans votre cas. Un échange de 20 minutes jeudi ?</div>
+            <div class="bb them">Avec plaisir, jeudi 10h ça me va.</div>
           </div>
         </div>
-        <h3>Créations publicitaires</h3>
-        <p>Vidéos, visuels et textes faits à partir de vos vrais chantiers et de vos avant/après. Renouvelés chaque mois pour ne pas lasser.</p>
+        <h3>Messages personnalisés</h3>
+        <p>Chaque message part d'un vrai détail sur l'entreprise ou la personne. Des discussions naturelles, pas des copier-coller qui finissent ignorés.</p>
       </div>
 
       <div class="sc rv d1">
         <div class="viz">
-          <div class="leads">
-            <div class="lr"><span class="av">ML</span><div><div class="n">Rénovation salle de bain</div><div class="s">Il y a 4 min · 12 km</div></div><span class="st a">Nouveau</span></div>
-            <div class="lr"><span class="av">JD</span><div><div class="n">Réfection de toiture</div><div class="s">Hier · 8 km</div></div><span class="st b">Rappelé</span></div>
-            <div class="lr"><span class="av">SB</span><div><div class="n">Isolation des combles</div><div class="s">Lundi · 19 km</div></div><span class="st c">Devis envoyé</span></div>
-            <div class="lr"><span class="av">AK</span><div><div class="n">Extension maison</div><div class="s">Vendredi · 6 km</div></div><span class="st d">Signé</span></div>
+          <div class="dash">
+            <div class="l">Rendez-vous qualifiés</div>
+            <div class="v"><span class="up"><i>↑</i>en hausse</span> chaque semaine</div>
+            <span class="lg"><svg><use href="#li"/></svg></span>
+            <svg class="ch" viewBox="0 0 300 120" preserveAspectRatio="none"><defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1F5BFF" stop-opacity=".35"/><stop offset="1" stop-color="#1F5BFF" stop-opacity="0"/></linearGradient></defs><path class="ar" d="M0 112 L30 104 L52 100 L72 88 L100 84 L118 70 L142 66 L172 72 L192 56 L210 40 L236 28 L260 14 L260 120 L0 120Z" fill="url(#g1)"/><path class="ln" d="M0 112 L30 104 L52 100 L72 88 L100 84 L118 70 L142 66 L172 72 L192 56 L210 40 L236 28 L260 14" stroke="#1F5BFF"/></svg>
+          </div>
+          <div class="mini">
+            <div class="l">Taux de réponse</div>
+            <div class="v"><span class="dn">↑ en hausse</span></div>
+            <svg class="ch" viewBox="0 0 200 100" preserveAspectRatio="none"><defs><linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A1A1A" stop-opacity=".18"/><stop offset="1" stop-color="#1A1A1A" stop-opacity="0"/></linearGradient></defs><path class="ar" d="M0 90 L24 86 L48 80 L70 82 L96 66 L120 58 L146 50 L170 34 L190 22 L190 100 L0 100Z" fill="url(#g2)"/><path class="ln" d="M0 90 L24 86 L48 80 L70 82 L96 66 L120 58 L146 50 L170 34 L190 22" stroke="#1A1A1A"/></svg>
           </div>
         </div>
-        <h3>Demandes et suivi</h3>
-        <p>Un formulaire qui filtre les curieux, chaque demande envoyée en temps réel sur WhatsApp, et le suivi jusqu'au devis signé.</p>
+        <h3>Rendez-vous qualifiés</h3>
+        <p>On qualifie chaque discussion selon vos critères (besoin, poste, budget, timing) et on pose le rendez-vous directement dans votre agenda.</p>
       </div>
     </div>
   </div>
@@ -598,11 +627,11 @@ footer{padding:70px 0 50px}
     <div class="stats rv">
       <div class="in0">
         <h3>Nos engagements :</h3>
-        <p>Des délais clairs et des demandes rien que pour vous. Pas de promesses floues.</p>
+        <p>Des délais clairs, des rendez-vous qui correspondent à vos critères. Pas de promesses floues.</p>
       </div>
-      <div class="st-b"><div class="n">7 <i>jours</i></div><p>Pour mettre vos campagnes en ligne</p></div>
-      <div class="st-b"><div class="n">&lt; 5 <i>min</i></div><p>Pour recevoir chaque demande</p></div>
-      <div class="st-b"><div class="n">0</div><p>Demande partagée avec un concurrent</p></div>
+      <div class="st-b"><div class="n">7 <i>jours</i></div><p>Pour lancer votre prospection</p></div>
+      <div class="st-b"><div class="n">24 <i>h</i></div><p>Pour vous transmettre chaque discussion qualifiée</p></div>
+      <div class="st-b"><div class="n">0</div><p>Message générique copié-collé</p></div>
     </div>
   </div>
 </section>
@@ -612,7 +641,7 @@ footer{padding:70px 0 50px}
   <div class="wrap center rv">
     <span class="tag"><svg><use href="#i-circ"/></svg>Méthode</span>
     <h2 class="h2" style="margin-top:26px">Comment on <span class="sr">travaille</span></h2>
-    <p class="lead">Un process clair, pensé pour remplir votre planning de chantiers rentables, semaine après semaine.</p>
+    <p class="lead">Un process clair, pensé pour remplir votre agenda de rendez-vous utiles, semaine après semaine.</p>
   </div>
   <div class="wrap">
     <div class="flow">
@@ -620,11 +649,11 @@ footer{padding:70px 0 50px}
         <path d="M245 160 H330 Q390 160 390 220 V330"/><path d="M655 150 H570 Q510 150 510 210 V330"/>
         <path d="M245 600 H330 Q390 600 390 540 V430"/><path d="M655 600 H570 Q510 600 510 540 V430"/>
       </svg>
-      <div class="pc p1 rv"><h4><span class="no">1.</span> Analyse de votre activité</h4><p>Votre métier, vos chantiers les plus rentables, votre zone et vos concurrents : on construit la stratégie.</p></div>
-      <div class="pc p2 rv d1"><h4><span class="no">2.</span> Création des publicités</h4><p>Vidéos, visuels et textes à partir de vos chantiers, pensés pour arrêter le pouce et donner envie d'appeler.</p></div>
+      <div class="pc p1 rv"><h4><span class="no">1.</span> Votre cible et votre offre</h4><p>Qui achète chez vous, pourquoi, et ce qui compte comme un rendez-vous qualifié : on fixe tout ensemble dès le premier appel.</p></div>
+      <div class="pc p2 rv d1"><h4><span class="no">2.</span> Profil et messages</h4><p>On optimise le profil qui prospecte et on écrit les messages d'approche, adaptés à chaque type de décideur.</p></div>
       <div class="hub"><svg viewBox="0 0 48 48"><path fill="#fff" fill-rule="evenodd" d="M13 11.2a1.6 1.6 0 0 1 1.6-1.6h10.3c6.4 0 10.9 4.2 10.9 10.2s-4.5 10.2-10.9 10.2h-4.8v7.8a1.6 1.6 0 0 1-1.6 1.6h-3.9a1.6 1.6 0 0 1-1.6-1.6V11.2zm7.1 4.7v8.2h4.5c2.7 0 4.5-1.6 4.5-4.1s-1.8-4.1-4.5-4.1h-4.5z"/></svg></div>
-      <div class="pc p3 rv"><h4><span class="no">3.</span> Lancement des campagnes</h4><p>Compte publicitaire, ciblage, formulaire de demande : tout est en ligne en 7 jours, sur votre propre compte.</p></div>
-      <div class="pc p4 rv d1"><h4><span class="no">4.</span> Optimisation continue</h4><p>On suit les résultats chaque jour, on coupe ce qui ne marche pas et on pousse ce qui ramène des chantiers.</p></div>
+      <div class="pc p3 rv"><h4><span class="no">3.</span> Prospection chaque jour</h4><p>Invitations, messages et relances, tous les jours ouvrés, dans le respect des limites de LinkedIn pour protéger votre compte.</p></div>
+      <div class="pc p4 rv d1"><h4><span class="no">4.</span> Qualification et rendez-vous</h4><p>On mène la discussion, on vérifie le besoin et on pose le rendez-vous dans votre agenda, avec le contexte de l'échange.</p></div>
     </div>
   </div>
 </section>
@@ -638,12 +667,12 @@ footer{padding:70px 0 50px}
   </div>
   <div class="car rv" id="car">
     <div class="tr">
-      <div class="gc"><div class="dots"><svg><use href="#i-dot"/></svg></div><p>Vos campagnes sont en ligne dans les 7 jours qui suivent l'appel de lancement. Si on prend du retard, on vous prévient avant que vous ayez à demander.</p><div class="ft"><span class="i"><svg><use href="#i-clock"/></svg></span><div><b>Lancement rapide</b><span>En ligne en 7 jours</span></div></div></div>
-      <div class="gc"><div class="dots"><svg><use href="#i-dot"/></svg></div><p>Chaque demande est envoyée à vous seul. On ne la revend pas et on ne la partage avec aucun autre artisan, jamais.</p><div class="ft"><span class="i"><svg><use href="#i-lock"/></svg></span><div><b>Demandes exclusives</b><span>Rien que pour vous</span></div></div></div>
-      <div class="gc"><div class="dots"><svg><use href="#i-dot"/></svg></div><p>Les campagnes tournent sur votre propre compte publicitaire. Audiences, historique et créations restent à vous, même si on arrête.</p><div class="ft"><span class="i"><svg><use href="#i-key"/></svg></span><div><b>Votre compte</b><span>Vos données vous appartiennent</span></div></div></div>
-      <div class="gc"><div class="dots"><svg><use href="#i-dot"/></svg></div><p>Votre budget publicitaire est payé directement à Meta. Aucune marge cachée dessus : vous voyez chaque euro dépensé.</p><div class="ft"><span class="i"><svg><use href="#i-eye"/></svg></span><div><b>Budget transparent</b><span>Payé directement à Meta</span></div></div></div>
-      <div class="gc"><div class="dots"><svg><use href="#i-dot"/></svg></div><p>Vidéos, visuels et textes publicitaires renouvelés chaque mois, pour que vos publicités ne s'essoufflent pas.</p><div class="ft"><span class="i"><svg><use href="#i-pen"/></svg></span><div><b>Créations incluses</b><span>Renouvelées chaque mois</span></div></div></div>
-      <div class="gc"><div class="dots"><svg><use href="#i-dot"/></svg></div><p>Demandes reçues, coût par demande, devis signés. Ce qui a marché, ce qui n'a pas marché, et ce qu'on change ensuite.</p><div class="ft"><span class="i"><svg><use href="#i-chart"/></svg></span><div><b>Un bilan chiffré</b><span>Chaque semaine</span></div></div></div>
+      <div class="gc"><div class="dots"><svg><use href="#i-dot"/></svg></div><p>Votre prospection démarre dans les 7 jours qui suivent l'appel de lancement. Si on prend du retard, on vous prévient avant que vous ayez à demander.</p><div class="ft"><span class="i"><svg><use href="#i-clock"/></svg></span><div><b>Lancement rapide</b><span>En route en 7 jours</span></div></div></div>
+      <div class="gc"><div class="dots"><svg><use href="#i-dot"/></svg></div><p>Un rendez-vous qualifié, c'est selon vos critères : le bon poste, un vrai besoin, un projet dans les bons délais. On les fixe ensemble avant de commencer.</p><div class="ft"><span class="i"><svg><use href="#i-target"/></svg></span><div><b>Vos critères</b><span>Définis avec vous</span></div></div></div>
+      <div class="gc"><div class="dots"><svg><use href="#i-dot"/></svg></div><p>Les contacts, les conversations et le réseau construits pendant la mission restent à vous, même si on arrête de travailler ensemble.</p><div class="ft"><span class="i"><svg><use href="#i-key"/></svg></span><div><b>Votre réseau</b><span>Il vous appartient</span></div></div></div>
+      <div class="gc"><div class="dots"><svg><use href="#i-dot"/></svg></div><p>Vous voyez les messages envoyés et les réponses reçues. Rien n'est caché, vous savez exactement ce qui est dit en votre nom.</p><div class="ft"><span class="i"><svg><use href="#i-eye"/></svg></span><div><b>Transparence totale</b><span>Accès aux conversations</span></div></div></div>
+      <div class="gc"><div class="dots"><svg><use href="#i-dot"/></svg></div><p>On respecte les limites de LinkedIn et on écrit chaque message pour une vraie personne. Votre image et votre compte sont protégés.</p><div class="ft"><span class="i"><svg><use href="#i-lock"/></svg></span><div><b>Compte protégé</b><span>Pas de spam, pas de robot</span></div></div></div>
+      <div class="gc"><div class="dots"><svg><use href="#i-dot"/></svg></div><p>Invitations envoyées, taux de réponse, discussions en cours, rendez-vous posés. Ce qui a marché, ce qui n'a pas marché, et ce qu'on change ensuite.</p><div class="ft"><span class="i"><svg><use href="#i-chart"/></svg></span><div><b>Un bilan chiffré</b><span>Chaque semaine</span></div></div></div>
       <div class="gc"><div class="dots"><svg><use href="#i-dot"/></svg></div><p>Pas de formulaire de support, pas de ticket. Une personne qui connaît votre dossier, joignable directement sur WhatsApp.</p><div class="ft"><span class="i"><svg><use href="#wa"/></svg></span><div><b>Un seul interlocuteur</b><span>Joignable sur WhatsApp</span></div></div></div>
     </div>
   </div>
@@ -655,33 +684,33 @@ footer{padding:70px 0 50px}
   <div class="wrap">
     <div class="center rv">
       <span class="tag"><svg><use href="#i-card"/></svg>Comparaison</span>
-      <h2 class="h2" style="margin-top:26px">Vos propres clients, <span class="sr">pas des contacts partagés</span></h2>
-      <p class="lead">La différence entre acheter des demandes sur une plateforme et avoir votre propre machine à chantiers.</p>
+      <h2 class="h2" style="margin-top:26px">Une équipe de prospection, <span class="sr">sans recruter</span></h2>
+      <p class="lead">La différence entre embaucher un commercial pour prospecter et confier la prospection à des spécialistes.</p>
     </div>
     <div class="cmp">
       <div class="cc rv">
-        <div class="top"><div class="k">Plateformes de mise en relation</div><div class="bg">Demandes partagées <small>entre plusieurs artisans</small></div></div>
-        <p class="sub">Vous payez pour être en concurrence avant même d'avoir décroché.</p>
-        <div class="bt"><a class="btn bl full" href="#rdv">Passer à vos propres demandes</a></div>
+        <div class="top"><div class="k">Recruter un commercial</div><div class="bg">Des mois avant le premier rendez-vous <small>recrutement, formation, rodage</small></div></div>
+        <p class="sub">Un salaire chaque mois, que les rendez-vous arrivent ou non.</p>
+        <div class="bt"><a class="btn bl full" href="#rdv">Passer à la prospection clé en main</a></div>
         <ul>
-          <li><svg><use href="#i-x"/></svg> Demandes envoyées à plusieurs artisans en même temps</li>
-          <li><svg><use href="#i-x"/></svg> Payées à l'unité, même quand elles sont mauvaises</li>
-          <li><svg><use href="#i-x"/></svg> Aucune visibilité pour votre nom et votre travail</li>
-          <li><svg><use href="#i-x"/></svg> Peu de contrôle sur la zone et le type de chantier</li>
-          <li><svg><use href="#i-x"/></svg> Le jour où vous arrêtez, il ne vous reste rien</li>
+          <li><svg><use href="#i-x"/></svg> Plusieurs mois de recrutement et de formation</li>
+          <li><svg><use href="#i-x"/></svg> Salaire et charges, même sans résultat</li>
+          <li><svg><use href="#i-x"/></svg> Tout repose sur une seule personne</li>
+          <li><svg><use href="#i-x"/></svg> Un départ, et tout repart de zéro</li>
+          <li><svg><use href="#i-x"/></svg> La prospection passe après les ventes en cours</li>
         </ul>
       </div>
       <div class="cc me rv d1">
-        <div class="top"><div class="k">Productipro</div><div class="bg">Demandes exclusives <small>rien que pour vous</small></div></div>
-        <p class="sub">Une machine à chantiers qui tourne pour votre entreprise, et qui vous appartient.</p>
+        <div class="top"><div class="k">Productipro</div><div class="bg">Prospection lancée en 7 jours <small>par une équipe déjà formée</small></div></div>
+        <p class="sub">Des rendez-vous qualifiés chaque semaine, sans gérer personne.</p>
         <div class="bt"><a class="btn w full" href="#rdv">Réserver un appel</a></div>
         <ul>
-          <li><svg><use href="#i-cks"/></svg> Des demandes qui ne sont envoyées qu'à vous</li>
-          <li><svg><use href="#i-cks"/></svg> Un coût par demande qu'on fait baisser chaque mois</li>
-          <li><svg><use href="#i-cks"/></svg> Votre entreprise et vos réalisations mises en avant</li>
-          <li><svg><use href="#i-cks"/></svg> Vous choisissez la zone et les chantiers</li>
-          <li><svg><use href="#i-cks"/></svg> Créations publicitaires renouvelées chaque mois</li>
-          <li><svg><use href="#i-cks"/></svg> Le compte publicitaire et l'audience restent à vous</li>
+          <li><svg><use href="#i-cks"/></svg> Démarrage en 7 jours, sans recrutement</li>
+          <li><svg><use href="#i-cks"/></svg> Une méthode déjà rodée, ajustée chaque semaine</li>
+          <li><svg><use href="#i-cks"/></svg> La prospection tourne tous les jours, sans pause</li>
+          <li><svg><use href="#i-cks"/></svg> Des rendez-vous qualifiés selon vos critères</li>
+          <li><svg><use href="#i-cks"/></svg> Votre équipe se concentre sur la vente</li>
+          <li><svg><use href="#i-cks"/></svg> Les contacts et le réseau restent à vous</li>
         </ul>
       </div>
     </div>
@@ -692,22 +721,22 @@ footer{padding:70px 0 50px}
 <section class="sec bento-s" id="exemples">
   <div class="wrap">
     <div class="center rv">
-      <span class="tag"><svg><use href="#i-vid"/></svg>Exemples</span>
-      <h2 class="h2" style="margin-top:26px">Des pubs filmées sur <span class="sr">de vrais chantiers</span></h2>
-      <p class="lead">Pas de banque d'images. Vos gestes, vos chantiers, vos résultats : c'est ce qui donne envie d'appeler.</p>
+      <span class="tag"><svg><use href="#i-doc"/></svg>Exemples</span>
+      <h2 class="h2" style="margin-top:26px">Des discussions, <span class="sr">pas du spam</span></h2>
+      <p class="lead">Chaque message part de la personne en face. C'est ce qui donne envie de répondre, puis d'accepter un rendez-vous.</p>
     </div>
     <div class="bento">
       <div class="col">
-        <div class="bt-t rv"><h4>Avant / après</h4><p>Montrer le résultat fini, tel quel. Rien ne rassure plus un futur client qu'un chantier propre et terminé.</p><div class="k">Format vidéo<span>Facebook · Instagram</span></div></div>
-        <div class="bt-v rv"><video class="pv" src="assets/v2.mp4" poster="assets/v2.webp" muted loop playsinline preload="none"></video><span class="lb">Avant / après</span></div>
+        <div class="bt-t rv"><h4>L'approche</h4><p>Un détail précis sur l'entreprise ou la personne, une question simple. Pas de présentation commerciale dès le premier message.</p><div class="k">Message d'ouverture<span>Invitation + premier message</span></div></div>
+        <div class="bt-c rv"><span class="lb">Exemple</span><div class="bb me">Bonjour Thomas, bravo pour la levée de fonds. Vous recrutez beaucoup de commerciaux en ce moment ?</div><div class="bb them">Merci ! Oui, 6 d'ici la fin de l'année.</div></div>
       </div>
       <div class="col">
-        <div class="bt-v tall rv d1"><video class="pv" src="assets/v4.mp4" poster="assets/v4.webp" muted loop playsinline preload="none"></video><span class="lb">Geste technique</span></div>
-        <div class="bt-t rv d1"><h4>Le savoir-faire</h4><p>Un geste précis, une finition soignée. Le client voit à qui il confie sa maison avant même de vous appeler.</p><div class="k">Format Reels<span>Instagram · Facebook</span></div></div>
+        <div class="bt-c tall rv d1"><span class="lb">Exemple</span><div class="bb me">Bonjour Nadia, je vois que vous êtes passés à 3 entrepôts cette année.</div><div class="bb them">Oui, et ce n'est pas simple à piloter.</div><div class="bb me">C'est souvent la clôture mensuelle qui devient lourde. C'est votre cas ?</div><div class="bb them">Complètement. On y passe 10 jours.</div><div class="bb me">On a aidé deux logisticiens à diviser ce temps. 20 minutes mardi pour voir si c'est applicable chez vous ?</div><div class="bb them">Mardi 14h, parfait.</div></div>
+        <div class="bt-t rv d1"><h4>La qualification</h4><p>On vérifie le besoin, le poste et le timing avant de proposer un rendez-vous. Vous ne rencontrez que des gens concernés.</p><div class="k">Discussion qualifiée<span>Besoin · décideur · timing</span></div></div>
       </div>
       <div class="col">
-        <div class="bt-d rv d2"><p>Vos publicités tournent en continu, sur votre compte, dans votre zone.</p><div class="n">7<i>j</i></div><span>pour lancer vos premières campagnes</span></div>
-        <div class="bt-v rv d2"><video class="pv" src="assets/v3.mp4" poster="assets/v3.webp" muted loop playsinline preload="none"></video><span class="lb">Arrivée sur chantier</span></div>
+        <div class="bt-d rv d2"><p>Chaque rendez-vous vous est transmis avec le résumé de la discussion.</p><div class="n">24<i>h</i></div><span>pour recevoir chaque discussion qualifiée</span></div>
+        <div class="bt-c rv d2"><span class="lb">Exemple</span><div class="bb me">Bonjour Claire, vous ouvrez un deuxième site à Lyon ?</div><div class="bb them">Oui, en janvier.</div><div class="bb me">Un échange de 20 minutes jeudi pour en parler ?</div><div class="bb them">Avec plaisir, jeudi 10h.</div></div>
       </div>
     </div>
   </div>
@@ -718,13 +747,13 @@ footer{padding:70px 0 50px}
   <div class="wrap">
     <div class="center rv">
       <span class="tag"><svg><use href="#i-circ"/></svg>Pourquoi nous</span>
-      <h2 class="h2" style="margin-top:26px">Une seule agence,<br><span class="sr">des chantiers en continu.</span></h2>
-      <p class="lead">Ciblage, créations, campagnes et suivi des demandes : tout est géré au même endroit, par la même équipe.</p>
+      <h2 class="h2" style="margin-top:26px">Une seule agence,<br><span class="sr">un agenda qui se remplit.</span></h2>
+      <p class="lead">Ciblage, profil, messages, relances et prise de rendez-vous : tout est géré au même endroit, par la même équipe.</p>
     </div>
     <div class="ft3">
-      <div class="rv"><svg><use href="#i-target"/></svg><h4>Ciblage précis</h4><p>Les propriétaires de votre zone qui ont un projet, au kilomètre près.</p></div>
-      <div class="rv d1"><svg><use href="#i-vid"/></svg><h4>Créations qui convertissent</h4><p>Des vidéos et visuels faits pour donner envie de demander un devis.</p></div>
-      <div class="rv d2"><svg><use href="#i-board"/></svg><h4>Suivi en temps réel</h4><p>Chaque demande sur votre téléphone, et un point chiffré chaque semaine.</p></div>
+      <div class="rv"><svg><use href="#i-target"/></svg><h4>Ciblage précis</h4><p>Les décideurs qui achètent ce que vous vendez, filtrés par poste, taille et secteur.</p></div>
+      <div class="rv d1"><svg><use href="#i-pen"/></svg><h4>Messages qui obtiennent des réponses</h4><p>Des approches écrites pour chaque cible, testées et ajustées chaque semaine.</p></div>
+      <div class="rv d2"><svg><use href="#i-board"/></svg><h4>Suivi en temps réel</h4><p>Chaque rendez-vous dans votre agenda, et un point chiffré chaque semaine.</p></div>
     </div>
     <div class="ft-cta rv"><a class="btn bl" href="#rdv">Réserver un appel</a></div>
   </div>
@@ -739,12 +768,12 @@ footer{padding:70px 0 50px}
       <p class="lead">Tout ce qu'on nous demande avant de commencer.</p>
     </div>
     <div class="faq rv">
-      <div class="q open"><button><span>En combien de temps je reçois des demandes ?</span><span class="pm"></span></button><div class="a"><div><p>Les campagnes sont en ligne en 7 jours. Les premières demandes arrivent en général dans les jours qui suivent, puis les premières semaines servent à optimiser : on garde ce qui marche et on coupe le reste pour faire baisser le coût par demande.</p></div></div></div>
-      <div class="q"><button><span>Quel budget publicitaire prévoir ?</span><span class="pm"></span></button><div class="a"><div><p>Il dépend de votre zone, de votre métier et du nombre de chantiers que vous pouvez absorber. On le définit ensemble pendant l'appel. Il est payé directement à Meta depuis votre compte, sans marge de notre part.</p></div></div></div>
-      <div class="q"><button><span>Les demandes sont-elles sérieuses ?</span><span class="pm"></span></button><div class="a"><div><p>Le formulaire pose les bonnes questions avant que la demande vous arrive : type de travaux, code postal, délai, budget. Ça filtre les curieux. Et chaque demande n'est envoyée qu'à vous, jamais à d'autres artisans.</p></div></div></div>
-      <div class="q"><button><span>Ça marche pour mon métier ?</span><span class="pm"></span></button><div class="a"><div><p>Rénovation, toiture, isolation, plomberie, chauffage, électricité, menuiserie, paysagisme, piscine… Dès que vos clients sont des particuliers ou des entreprises de votre zone, la pub Facebook et Instagram fonctionne. Si on pense que ça ne marchera pas chez vous, on vous le dit pendant l'appel.</p></div></div></div>
-      <div class="q"><button><span>Je dois fournir des photos ou des vidéos ?</span><span class="pm"></span></button><div class="a"><div><p>Vos photos de chantiers et vos avant/après sont ce qui marche le mieux : envoyez-les simplement sur WhatsApp. Si vous n'en avez pas encore, on démarre avec des créations conçues pour vous et on vous guide pour en prendre.</p></div></div></div>
-      <div class="q"><button><span>À qui appartient le compte publicitaire ?</span><span class="pm"></span></button><div class="a"><div><p>À vous. On travaille sur votre compte avec un accès que vous pouvez retirer à tout moment. Si on arrête, vous gardez les campagnes, les audiences et tout l'historique.</p></div></div></div>
+      <div class="q open"><button><span>Qu'est-ce qu'un rendez-vous qualifié ?</span><span class="pm"></span></button><div class="a"><div><p>Un rendez-vous avec une personne qui correspond à votre cible (poste, taille d'entreprise, secteur), qui a exprimé un vrai besoin et qui a un projet dans les bons délais. Les critères exacts, on les fixe ensemble avant de commencer.</p></div></div></div>
+      <div class="q"><button><span>Depuis quel profil LinkedIn prospectez-vous ?</span><span class="pm"></span></button><div class="a"><div><p>En général depuis votre profil ou celui d'un membre de votre équipe : les décideurs répondent plus volontiers au dirigeant ou à un expert de l'entreprise. On l'optimise avant de démarrer, et vous voyez toutes les conversations.</p></div></div></div>
+      <div class="q"><button><span>En combien de temps j'ai mes premiers rendez-vous ?</span><span class="pm"></span></button><div class="a"><div><p>La prospection démarre en 7 jours. Les premières discussions arrivent en général dans les jours qui suivent, puis les premières semaines servent à ajuster la cible et les messages pour trouver le meilleur rythme.</p></div></div></div>
+      <div class="q"><button><span>Est-ce que mon compte risque d'être bloqué ?</span><span class="pm"></span></button><div class="a"><div><p>On respecte les limites d'invitations et de messages de LinkedIn, et chaque message est écrit pour une vraie personne. Pas de robot qui envoie des centaines de messages identiques.</p></div></div></div>
+      <div class="q"><button><span>Ça marche pour mon activité ?</span><span class="pm"></span></button><div class="a"><div><p>Dès que vous vendez à d'autres entreprises et que vos clients sont sur LinkedIn : conseil, logiciel, services, industrie, formation, recrutement… Si on pense que ça ne marchera pas chez vous, on vous le dit pendant l'appel.</p></div></div></div>
+      <div class="q"><button><span>Et si un rendez-vous n'est pas qualifié ?</span><span class="pm"></span></button><div class="a"><div><p>Vous nous le dites, on regarde ensemble pourquoi et on ajuste la qualification. Les critères sont écrits dès le départ, donc on sait toujours de quoi on parle.</p></div></div></div>
     </div>
   </div>
 </section>
@@ -753,10 +782,10 @@ footer{padding:70px 0 50px}
 <section class="sec" id="rdv" style="padding-top:0">
   <div class="wrap">
     <div class="cta rv">
-      <h2 class="h2">Prêt à remplir <span class="sr">votre planning ?</span></h2>
-      <p class="lead">30 minutes pour regarder votre zone, vos chantiers les plus rentables et ce que la pub peut vous ramener.</p>
+      <h2 class="h2">Prêt à remplir <span class="sr">votre agenda ?</span></h2>
+      <p class="lead">30 minutes pour regarder votre cible, votre offre et ce que la prospection LinkedIn peut vous ramener.</p>
       <div class="acts">
-        <a class="btn w" href="https://wa.me/33767717586?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20vos%20publicit%C3%A9s."><svg><use href="#wa"/></svg> WhatsApp</a>
+        <a class="btn w" href="https://wa.me/33767717586?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20votre%20prospection%20LinkedIn."><svg><use href="#wa"/></svg> WhatsApp</a>
         <a class="btn bl" href="#cal"><svg><use href="#ph"/></svg> Choisir un créneau</a>
       </div>
     </div>
@@ -766,13 +795,14 @@ footer{padding:70px 0 50px}
 
 </main>
 
+
 <footer>
   <div class="wrap fg">
     <div>
       <h5>Une question avant de réserver ?</h5>
       <p class="fp">On vous répond dans la journée.</p>
       <div class="fl">
-        <a href="https://wa.me/33767717586?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20vos%20publicit%C3%A9s."><svg><use href="#wa"/></svg> Écrire sur WhatsApp</a>
+        <a href="https://wa.me/33767717586?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20votre%20prospection%20LinkedIn."><svg><use href="#wa"/></svg> Écrire sur WhatsApp</a>
         <a href="mailto:contact@productipro.fr"><svg><use href="#mail"/></svg> contact@productipro.fr</a>
       </div>
     </div>
@@ -799,7 +829,7 @@ document.getElementById('drawer').addEventListener('click',function(e){if(e.targ
 
 /* métiers */
 (function(){
-  var s=['Rénovation','Maçonnerie','Couverture & toiture','Plomberie & chauffage','Électricité','Pompes à chaleur','Menuiserie & fenêtres','Isolation','Peinture & façade','Paysagisme','Piscines','Cuisine & salle de bain','Terrassement','Charpente'];
+  var s=['Cabinets de conseil','Éditeurs de logiciels','ESN','Agences marketing','Organismes de formation','Cabinets de recrutement','Industrie','Expertise comptable','Assurance & courtage','Transport & logistique','Immobilier d\'entreprise','Énergie & RSE'];
   var h=s.map(function(x){return '<span>'+x.replace('&','&amp;')+'</span>'}).join('');
   document.getElementById('mq').innerHTML=h+h;
 })();
