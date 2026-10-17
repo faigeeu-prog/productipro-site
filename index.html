@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Productipro — Le moteur d'acquisition des entreprises du bâtiment</title>
-<meta name="description" content="Productipro crée, lance et pilote vos publicités Facebook et Instagram. Des demandes de devis exclusives, envoyées en temps réel sur votre téléphone. Pour les artisans et entreprises du bâtiment.">
+<meta name="description" content="Productipro crée, lance et pilote vos campagnes Google Ads. Apparaissez en tête quand vos futurs clients cherchent un artisan, et recevez des demandes exclusives en temps réel. Pour les entreprises du bâtiment.">
 <link rel="canonical" href="https://www.productipro.fr/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.productipro.fr/">
 <meta property="og:title" content="Productipro — Le moteur d'acquisition des entreprises du bâtiment">
-<meta property="og:description" content="Publicité Facebook et Instagram pour le bâtiment. Des demandes de devis exclusives, en temps réel, sur votre téléphone.">
+<meta property="og:description" content="Google Ads pour le bâtiment. Apparaissez en tête de Google et recevez des demandes de devis exclusives, en temps réel.">
 <meta property="og:image" content="https://www.productipro.fr/assets/og.webp">
 <meta name="theme-color" content="#050608">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -139,6 +139,7 @@ p{margin:0}h1,h2,h3,h4{margin:0;font-weight:500}
 .fi.new{border-color:rgba(61,109,255,.5);background:rgba(61,109,255,.08)}
 @keyframes fin{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
 .fi .av{width:30px;height:30px;border-radius:50%;flex:none;display:grid;place-items:center;font-size:11px;font-weight:600;background:#1A2340;color:var(--blue2)}
+.fi .s{font-style:normal}
 .fi .n{font-size:12.5px;font-weight:500;letter-spacing:-.01em}
 .fi .s{font-size:11.5px;color:var(--mut);margin-top:1px}
 .fi .tm{margin-left:auto;font-size:11px;color:var(--mut2);white-space:nowrap}
@@ -288,6 +289,31 @@ p{margin:0}h1,h2,h3,h4{margin:0;font-weight:500}
 .ph .bt{position:absolute;left:10px;right:10px;bottom:10px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.95);color:#111;border-radius:10px;padding:8px 12px;font-size:11.5px;font-weight:600}
 .ph .lb{position:absolute;left:12px;bottom:56px;font-size:12px;font-weight:500;text-shadow:0 1px 8px rgba(0,0,0,.6)}
 
+
+/* annonces Google */
+.serp{position:absolute;inset:22px 22px 0;border-radius:18px 18px 0 0;border:1px solid var(--line2);border-bottom:0;background:#0F1218;padding:16px;overflow:hidden}
+.serp .sb,.gad .q{display:flex;align-items:center;gap:10px;border:1px solid var(--line2);border-radius:100px;padding:8px 14px;font-size:13px;color:#DDE2EA;background:#151922}
+.serp .sb svg,.gad .q svg{width:18px;height:18px;flex:none}
+.serp .sb span,.gad .q span{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.serp .sb .mg,.gad .q .mg{width:16px;height:16px;color:var(--blue2)}
+.serp .ad{margin-top:16px;opacity:0;transform:translateY(10px);transition:opacity .7s .2s,transform .7s .2s cubic-bezier(.2,1,.3,1)}
+.on .serp .ad{opacity:1;transform:none}
+.serp .sp,.gad .sp{font-size:11.5px;font-weight:600;color:#DDE2EA}
+.serp .dm,.gad .dm{display:flex;align-items:center;gap:9px;margin-top:8px}
+.serp .fav,.gad .fav{width:26px;height:26px;border-radius:50%;background:#1C2230;display:grid;place-items:center;flex:none}
+.serp .fav svg,.gad .fav svg{width:18px;height:18px;border-radius:5px}
+.serp .dm b,.gad .dm b{display:block;font-size:12.5px;font-weight:500}
+.serp .dm small,.gad .dm small{display:block;font-size:11px;color:var(--mut)}
+.serp .ti,.gad .ti{margin-top:8px;font-size:16px;line-height:1.3;color:#8AB4F8;letter-spacing:-.01em}
+.serp .ds,.gad .ds{margin-top:5px;font-size:12.5px;line-height:1.5;color:#BDC1C6}
+.serp .ex,.gad .ex{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.serp .ex span,.gad .ex span{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;color:#8AB4F8;border:1px solid var(--line2);border-radius:100px;padding:4px 10px}
+.serp .ex svg,.gad .ex svg{width:12px;height:12px}
+.serp .org{margin-top:18px;display:flex;flex-direction:column;gap:7px;opacity:.5}
+.serp .org i{display:block;height:8px;border-radius:4px;background:#1E232D}
+.serp .org i:nth-child(1){width:40%}.serp .org i:nth-child(2){width:85%}.serp .org i:nth-child(3){width:70%}
+.gad{width:360px;flex:none;border-radius:var(--r);border:1px solid var(--line);background:linear-gradient(180deg,#0F1218,#0A0C10);padding:20px 20px 22px}
+.gad .sp{margin-top:18px}
 /* ---------- FAQ ---------- */
 .faq{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:70px;align-items:start}
 .faq .sh{position:sticky;top:120px}
@@ -390,6 +416,8 @@ footer{padding:110px 0 0;overflow:hidden}
   .bx .tx{padding:0 22px 24px}
   .bx h3{font-size:21px}
   .map .r2{width:260px;height:260px}
+  .map .pm1{top:14%!important;right:6%!important}.map .pm2{bottom:30%!important;right:4%!important}
+  .map .pin{font-size:10.5px}
   .rep{grid-template-columns:minmax(0,1fr)}
   .rep .cb:last-child{display:none}
   .steps{grid-template-columns:minmax(0,1fr);margin-top:50px;row-gap:40px}
@@ -403,6 +431,7 @@ footer{padding:110px 0 0;overflow:hidden}
   .reel{margin-top:46px}
   .reel .tr{padding:0 20px 10px;gap:12px}
   .ph{width:72vw;max-width:260px}
+  .gad{width:84vw;max-width:340px;padding:18px}
   .q button{font-size:17px;padding:22px 0}
   .q .a p{padding-right:10px;font-size:15.5px}
   .cta{padding:80px 22px;border-radius:28px}
@@ -442,6 +471,10 @@ footer{padding:110px 0 0;overflow:hidden}
 <symbol id="vb" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#3897F0"/><path d="M8 12.3l2.6 2.6L16 9.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </svg>
 <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+<symbol id="gg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#fff"/><g transform="translate(4.2 4.2) scale(.65)"><path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.54-.19-2.27H12v4.51h6.47c-.29 1.48-1.14 2.73-2.4 3.58v3h3.86c2.26-2.09 3.56-5.17 3.56-8.82z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.29v3.09C3.26 21.3 7.31 24 12 24z"/><path fill="#FBBC05" d="M5.27 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.98-3.09z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.98 3.09C6.22 6.86 8.87 4.75 12 4.75z"/></g></symbol>
+<symbol id="gads" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#fff"/><g transform="translate(3 3.4) scale(.75)"><line x1="5.4" y1="18.4" x2="12" y2="5.6" stroke="#FBBC04" stroke-width="6.4" stroke-linecap="round"/><line x1="12" y1="5.6" x2="18.6" y2="18.4" stroke="#4285F4" stroke-width="6.4" stroke-linecap="round"/><circle cx="5.4" cy="18.4" r="3.2" fill="#34A853"/></g></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3.5c.7 0 1.3.4 1.6 1l1 2.2c.3.6.1 1.3-.4 1.7l-1 .8c.8 1.7 2.2 3.1 3.9 3.9l.8-1c.4-.5 1.1-.7 1.7-.4l2.2 1c.6.3 1 .9 1 1.6v2.1c0 1-.8 1.8-1.8 1.7C9.1 18.6 5.4 14.9 4.8 5.3c-.1-1 .7-1.8 1.7-1.8h.1z" fill="currentColor"/></symbol>
 <symbol id="i-arr" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 <symbol id="i-ok" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5" fill="currentColor" opacity=".16"/><path d="M7.5 12.3l3 3 6-6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 <symbol id="i-no" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M9 9l6 6M15 9l-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
@@ -458,7 +491,7 @@ footer{padding:110px 0 0;overflow:hidden}
     <div class="links">
       <a href="#services">Services</a>
       <a href="#methode">Méthode</a>
-      <a href="#realisations">Réalisations</a>
+      <a href="#realisations">Exemples</a>
       <a href="#faq">FAQ</a>
     </div>
     <div class="nav-r">
@@ -470,7 +503,7 @@ footer{padding:110px 0 0;overflow:hidden}
   <div class="drawer" id="drawer">
     <a href="#services">Services</a>
     <a href="#methode">Méthode</a>
-    <a href="#realisations">Réalisations</a>
+    <a href="#realisations">Exemples</a>
     <a href="#faq">FAQ</a>
     <a class="btn pri" href="#rdv">Réserver un appel</a>
   </div>
@@ -483,12 +516,12 @@ footer{padding:110px 0 0;overflow:hidden}
   <div class="gridbg"></div><div class="aura"></div>
   <div class="wrap">
     <div class="hero-c">
-      <a class="pill rv in" href="#services"><span class="ic"><svg><use href="#fb"/></svg><svg><use href="#ig"/></svg></span><span><b>Facebook &amp; Instagram Ads</b> pour le bâtiment</span><span class="go">Découvrir <svg width="12" height="12"><use href="#i-arr"/></svg></span></a>
+      <a class="pill rv in" href="#services"><span class="ic"><svg><use href="#gg"/></svg><svg><use href="#gads"/></svg></span><span><b>Google Ads</b> pour le bâtiment</span><span class="go">Découvrir <svg width="12" height="12"><use href="#i-arr"/></svg></span></a>
       <h1 class="h1 rv in d1">Le moteur d'acquisition des <span class="serif grad">entreprises du bâtiment.</span></h1>
-      <p class="lead rv in d2">On crée, on lance et on pilote vos publicités Meta. Des demandes de devis exclusives arrivent sur votre téléphone, chaque semaine.</p>
+      <p class="lead rv in d2">Quand un propriétaire cherche un artisan sur Google, c'est vous qu'il trouve en premier. On crée, on lance et on pilote vos campagnes Google Ads.</p>
       <div class="acts rv in d3">
         <a class="btn blu" href="#rdv">Réserver un appel <svg class="ar"><use href="#i-arr"/></svg></a>
-        <a class="btn gh" href="#realisations">Voir nos créations</a>
+        <a class="btn gh" href="#realisations">Voir des exemples</a>
       </div>
       <div class="trustline rv in d4">
         <span><svg><use href="#i-bolt"/></svg>En ligne en 7 jours</span>
@@ -506,13 +539,13 @@ footer{padding:110px 0 0;overflow:hidden}
             <div class="c-main">
               <div class="c-h"><b>Rénovation · Lyon et 30 km</b><span>30 derniers jours</span></div>
               <div class="kpis">
-                <div class="kpi"><div class="l">Demandes reçues</div><div class="v" data-to="38">38</div><div class="dl">↑ en hausse</div></div>
+                <div class="kpi"><div class="l">Appels et demandes</div><div class="v" data-to="38">38</div><div class="dl">↑ en hausse</div></div>
                 <div class="kpi"><div class="l">Coût par demande</div><div class="v"><span data-to="31">31</span> €</div><div class="dl b">↓ en baisse</div></div>
                 <div class="kpi"><div class="l">Rendez-vous</div><div class="v" data-to="14">14</div><div class="dl">↑ en hausse</div></div>
                 <div class="kpi"><div class="l">Devis signés</div><div class="v" data-to="4">4</div><div class="dl">↑ en hausse</div></div>
               </div>
               <div class="chartbox">
-                <div class="lg"><span><i></i>Demandes par jour</span><span><i class="g"></i>Mois précédent</span></div>
+                <div class="lg"><span><i></i>Appels et demandes par jour</span><span><i class="g"></i>Mois précédent</span></div>
                 <svg viewBox="0 0 700 190" preserveAspectRatio="none">
                   <defs><linearGradient id="ga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D6DFF" stop-opacity=".45"/><stop offset="1" stop-color="#3D6DFF" stop-opacity="0"/></linearGradient></defs>
                   <g stroke="rgba(255,255,255,.05)"><line x1="0" y1="47" x2="700" y2="47"/><line x1="0" y1="95" x2="700" y2="95"/><line x1="0" y1="143" x2="700" y2="143"/></g>
@@ -524,7 +557,7 @@ footer{padding:110px 0 0;overflow:hidden}
               </div>
             </div>
             <div class="c-feed">
-              <div class="hd">Demandes en direct <span><i></i>En ligne</span></div>
+              <div class="hd">En direct depuis Google <span><i></i>En ligne</span></div>
               <div class="feed" id="feed"></div>
             </div>
           </div>
@@ -544,7 +577,7 @@ footer{padding:110px 0 0;overflow:hidden}
 <section class="mani">
   <div class="wrap">
     <span class="eyebrow rv"><i></i>Notre conviction</span>
-    <p id="mani" style="margin-top:28px">Les meilleures entreprises du bâtiment ne devraient pas dépendre du bouche-à-oreille ni payer des contacts partagés avec cinq concurrents. Elles méritent un flux régulier de clients, qui ne parlent qu'à elles.</p>
+    <p id="mani" style="margin-top:28px">Chaque jour, des propriétaires de votre zone tapent « couvreur », « salle de bain » ou « extension » sur Google. Ils ont un projet et un budget. Ils devraient vous trouver en premier, et vous appeler vous, pas un concurrent.</p>
     <div class="sig rv"><svg><use href="#logo"/></svg>L'équipe Productipro</div>
   </div>
 </section>
@@ -555,7 +588,7 @@ footer{padding:110px 0 0;overflow:hidden}
     <div class="sh rv">
       <span class="eyebrow"><i></i>Services</span>
       <h2 class="h2">Tout le système d'acquisition, <span class="serif grad">géré pour vous.</span></h2>
-      <p class="lead">Du ciblage au devis signé, chaque pièce est construite et optimisée par notre équipe. Vous, vous répondez au téléphone.</p>
+      <p class="lead">Mots-clés, annonces, page de demande, suivi des appels : chaque pièce est construite et optimisée par notre équipe. Vous, vous répondez au téléphone.</p>
     </div>
 
     <div class="bento">
@@ -564,22 +597,28 @@ footer{padding:110px 0 0;overflow:hidden}
           <svg class="roads" viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice"><g fill="none" stroke="rgba(255,255,255,.07)" stroke-width="1.2"><path d="M0 220 C150 200 260 240 400 150 S650 60 800 90"/><path d="M80 0 C120 90 220 140 260 300"/><path d="M520 0 C500 100 560 200 640 300"/><path d="M0 80 C200 110 300 60 470 120 S700 240 800 230"/><path d="M330 0 L380 300"/></g></svg>
           <span class="ring r2"></span><span class="ring r1"></span><span class="ring r3"></span>
           <span class="core"><svg><use href="#logo"/></svg></span>
-          <span class="chip">Rayon 30 km · propriétaires</span>
-          <span class="pin" style="left:16%;top:30%"><i></i>Salle de bain · 8 km</span>
-          <span class="pin" style="right:12%;top:22%"><i></i>Toiture · 14 km</span>
-          <span class="pin" style="left:22%;bottom:16%"><i></i>Fenêtres · 21 km</span>
-          <span class="pin" style="right:16%;bottom:24%"><i></i>Extension · 11 km</span>
+          <span class="chip">Rayon 30 km · recherches locales</span>
+          <span class="pin" style="left:14%;top:30%"><i></i>« salle de bain » · 8 km</span>
+          <span class="pin pm1" style="right:10%;top:22%"><i></i>« couvreur » · 14 km</span>
+          <span class="pin" style="left:20%;bottom:16%"><i></i>« fenêtres pvc » · 21 km</span>
+          <span class="pin pm2" style="right:14%;bottom:24%"><i></i>« extension » · 11 km</span>
         </div></div>
-        <div class="tx"><div class="k">01 · Ciblage</div><h3>Seulement les bons clients, dans votre zone.</h3><p>Propriétaires, type de logement, rayon au kilomètre près. Vos pubs ne touchent que ceux qui peuvent vraiment vous appeler.</p></div>
+        <div class="tx"><div class="k">01 · Mots-clés et zone</div><h3>Les bonnes recherches, dans votre zone.</h3><p>Les mots que tapent vos futurs clients, dans votre rayon d'intervention. Les recherches inutiles (« emploi », « gratuit », « tuto ») sont exclues.</p></div>
       </div>
 
       <div class="bx w2 rv d1">
-        <div class="vz"><div class="creas">
-          <div class="c"><img src="assets/v2.webp" alt="" loading="lazy"><span class="sp">Sponsorisé</span><span class="cta">Demander un devis</span></div>
-          <div class="c"><img src="assets/v4.webp" alt="" loading="lazy"><span class="sp">Sponsorisé</span><span class="cta">Demander un devis</span></div>
-          <div class="c"><img src="assets/v3.webp" alt="" loading="lazy"><span class="sp">Sponsorisé</span><span class="cta">Demander un devis</span></div>
+        <div class="vz"><div class="serp">
+          <div class="sb"><svg><use href="#gg"/></svg><span>rénovation salle de bain lyon</span><svg class="mg"><use href="#i-search"/></svg></div>
+          <div class="ad">
+            <div class="sp">Sponsorisé · exemple</div>
+            <div class="dm"><span class="fav"><svg><use href="#logo"/></svg></span><div><b>Votre entreprise</b><small>www.votre-entreprise.fr</small></div></div>
+            <div class="ti">Rénovation salle de bain clé en main | Devis gratuit sous 48 h</div>
+            <div class="ds">Artisan certifié à Lyon. Douche à l'italienne, carrelage, plomberie.</div>
+            <div class="ex"><span><svg><use href="#i-phone"/></svg>Appeler</span><span>Demander un devis</span><span>Nos réalisations</span></div>
+          </div>
+          <div class="org"><i></i><i></i><i></i></div>
         </div></div>
-        <div class="tx"><div class="k">02 · Créations</div><h3>Des pubs qui arrêtent le pouce.</h3><p>Vidéos et visuels tirés de vos vrais chantiers, renouvelés chaque mois.</p></div>
+        <div class="tx"><div class="k">02 · Annonces</div><h3>En tête de Google, au bon moment.</h3><p>Annonces écrites pour votre métier, avec bouton d'appel direct.</p></div>
       </div>
 
       <div class="bx w2 rv">
@@ -588,31 +627,31 @@ footer{padding:110px 0 0;overflow:hidden}
           <div class="q">Votre projet</div><div class="opts"><span>Cuisine</span><span class="s" style="--d:.6s">Salle de bain</span><span>Toiture</span></div>
           <div class="q">Budget prévu</div><div class="opts"><span>&lt; 5 k€</span><span class="s" style="--d:.9s">10 – 20 k€</span><span>20 k€ +</span></div>
         </div></div>
-        <div class="tx"><div class="k">03 · Qualification</div><h3>Les curieux restent dehors.</h3><p>Un formulaire qui filtre projet, budget et délai avant que la demande ne vous arrive.</p></div>
+        <div class="tx"><div class="k">03 · Page de demande</div><h3>Une page faite pour convertir.</h3><p>Une page dédiée et un formulaire qui filtre projet, budget et délai avant que la demande ne vous arrive.</p></div>
       </div>
 
       <div class="bx w2 rv d1">
         <div class="vz"><div class="wa">
           <div class="wh"><svg><use href="#logo"/></svg><div>Productipro<small>Demandes de devis</small></div></div>
           <div class="msgs">
-            <div class="m"><b>Nouvelle demande</b>Salle de bain · maison 120 m² · budget 10 – 20 k€ · rappel souhaité ce matin<small>08:12</small></div>
-            <div class="m"><b>Nouvelle demande</b>Réfection de toiture · 14 km · devis sous 15 jours<small>08:47</small></div>
+            <div class="m"><b>Appel depuis Google</b>3 min 12 · recherche « couvreur villeurbanne » · numéro enregistré<small>08:12</small></div>
+            <div class="m"><b>Nouvelle demande</b>Salle de bain · maison 120 m² · budget 10 – 20 k€ · rappel souhaité ce matin<small>08:47</small></div>
           </div>
         </div></div>
-        <div class="tx"><div class="k">04 · Temps réel</div><h3>Chaque demande, en direct.</h3><p>Nom, numéro et projet envoyés sur votre WhatsApp en quelques secondes.</p></div>
+        <div class="tx"><div class="k">04 · Temps réel</div><h3>Chaque demande, en direct.</h3><p>Chaque appel et chaque demande suivis, et envoyés sur votre WhatsApp en quelques secondes.</p></div>
       </div>
 
       <div class="bx w2 rv d2">
         <div class="vz"><div class="own"><span class="orb o2"></span><span class="orb"></span><div class="lk"><svg><use href="#i-key"/></svg></div></div></div>
-        <div class="tx"><div class="k">05 · Propriété</div><h3>Tout reste à vous.</h3><p>Compte publicitaire, audiences et créations vous appartiennent, même si on s'arrête.</p></div>
+        <div class="tx"><div class="k">05 · Propriété</div><h3>Tout reste à vous.</h3><p>Compte Google Ads, historique et mots-clés vous appartiennent, même si on s'arrête.</p></div>
       </div>
 
       <div class="bx w6 rv">
         <div class="vz"><div class="rep">
           <div class="cb"><div class="l">Demandes par semaine · exemple</div><div class="bars"><i style="--h:22%"></i><i style="--h:30%"></i><i style="--h:28%"></i><i style="--h:44%"></i><i style="--h:52%"></i><i style="--h:61%"></i><i style="--h:74%"></i><i style="--h:88%"></i></div></div>
-          <div class="cb"><div class="l">Bilan de la semaine</div><div class="rows"><div><span>Demandes</span><b>+12</b></div><div><span>Coût par demande</span><b class="down">↓</b></div><div><span>Rendez-vous</span><b>5</b></div><div><span>Devis signés</span><b>2</b></div></div></div>
+          <div class="cb"><div class="l">Bilan de la semaine</div><div class="rows"><div><span>Demandes</span><b>+12</b></div><div><span>Coût par demande</span><b class="down">↓</b></div><div><span>Recherches inutiles exclues</span><b>+18</b></div><div><span>Devis signés</span><b>2</b></div></div></div>
         </div></div>
-        <div class="tx"><div class="k">06 · Pilotage</div><h3>Optimisé chaque semaine, chiffres à l'appui.</h3><p>On coupe ce qui ne marche pas, on pousse ce qui marche, et vous recevez un bilan clair : demandes, coût par demande, devis signés.</p></div>
+        <div class="tx"><div class="k">06 · Pilotage</div><h3>Optimisé chaque semaine, chiffres à l'appui.</h3><p>Enchères, mots-clés, annonces : on coupe ce qui ne marche pas, on pousse ce qui marche, et vous recevez un bilan clair : appels, demandes, coût par demande, devis signés.</p></div>
       </div>
     </div>
   </div>
@@ -628,16 +667,16 @@ footer{padding:110px 0 0;overflow:hidden}
     <div class="steps" id="steps">
       <div class="track"><i></i></div>
       <div class="st rv"><div class="no">01</div><div class="tm">Jour 1</div><h4>Stratégie</h4><p>Vos chantiers les plus rentables, votre zone, votre capacité. On construit le plan avec vous.</p></div>
-      <div class="st rv d1"><div class="no">02</div><div class="tm">Jours 2 à 5</div><h4>Création</h4><p>Vidéos, visuels, textes et formulaire, à partir de vos chantiers et de vos avant/après.</p></div>
-      <div class="st rv d2"><div class="no">03</div><div class="tm">Jour 7</div><h4>Lancement</h4><p>Campagnes en ligne sur votre propre compte Meta. Les premières demandes arrivent.</p></div>
-      <div class="st rv d3"><div class="no">04</div><div class="tm">Chaque semaine</div><h4>Optimisation</h4><p>Audiences, créations, budgets : on ajuste en continu pour faire baisser le coût par demande.</p></div>
+      <div class="st rv d1"><div class="no">02</div><div class="tm">Jours 2 à 5</div><h4>Création</h4><p>Mots-clés, annonces, extensions d'appel, page de demande et suivi des conversions.</p></div>
+      <div class="st rv d2"><div class="no">03</div><div class="tm">Jour 7</div><h4>Lancement</h4><p>Campagnes en ligne sur votre propre compte Google Ads. Les premiers appels arrivent.</p></div>
+      <div class="st rv d3"><div class="no">04</div><div class="tm">Chaque semaine</div><h4>Optimisation</h4><p>Termes de recherche, enchères, annonces : on ajuste en continu pour faire baisser le coût par demande.</p></div>
     </div>
 
     <div class="nums">
       <div class="rv"><div class="n"><span data-to="7">7</span><small>jours</small></div><p>Pour mettre vos campagnes en ligne.</p></div>
       <div class="rv d1"><div class="n">&lt;<span data-to="5">5</span><small>min</small></div><p>Pour recevoir chaque demande sur votre téléphone.</p></div>
       <div class="rv d2"><div class="n"><span data-to="0">0</span></div><p>Demande partagée avec un concurrent.</p></div>
-      <div class="rv d3"><div class="n"><span data-to="100">100</span><small>%</small></div><p>Du budget pub versé à Meta, sans marge cachée.</p></div>
+      <div class="rv d3"><div class="n"><span data-to="100">100</span><small>%</small></div><p>Du budget pub versé à Google, sans marge cachée.</p></div>
     </div>
   </div>
 </section>
@@ -654,7 +693,7 @@ footer{padding:110px 0 0;overflow:hidden}
       <div class="rw"><div class="lab">Exclusivité des demandes</div><div class="us yes"><svg><use href="#i-ok"/></svg>Rien que pour vous</div><div class="no"><svg><use href="#i-no"/></svg>Partagées entre artisans</div></div>
       <div class="rw"><div class="lab">Zone et type de chantier</div><div class="us yes"><svg><use href="#i-ok"/></svg>Vous choisissez</div><div class="no"><svg><use href="#i-no"/></svg>Peu de contrôle</div></div>
       <div class="rw"><div class="lab">Visibilité de votre marque</div><div class="us yes"><svg><use href="#i-ok"/></svg>Votre nom, vos chantiers</div><div class="no"><svg><use href="#i-no"/></svg>Celle de la plateforme</div></div>
-      <div class="rw"><div class="lab">Qualification</div><div class="us yes"><svg><use href="#i-ok"/></svg>Projet, budget, délai</div><div class="no"><svg><use href="#i-no"/></svg>Variable</div></div>
+      <div class="rw"><div class="lab">Intention du client</div><div class="us yes"><svg><use href="#i-ok"/></svg>Il vous cherche déjà</div><div class="no"><svg><use href="#i-no"/></svg>Il remplit un formulaire générique</div></div>
       <div class="rw"><div class="lab">Si vous arrêtez</div><div class="us yes"><svg><use href="#i-ok"/></svg>Compte et audiences à vous</div><div class="no"><svg><use href="#i-no"/></svg>Il ne reste rien</div></div>
     </div>
   </div>
@@ -664,9 +703,9 @@ footer{padding:110px 0 0;overflow:hidden}
 <section class="sec" id="realisations" style="padding-top:40px">
   <div class="wrap">
     <div class="sh rv">
-      <span class="eyebrow"><i></i>Créations</span>
-      <h2 class="h2">Filmé sur de vrais chantiers. <span class="serif grad">Pas en studio.</span></h2>
-      <p class="lead">Des formats verticaux pensés pour Facebook et Instagram, faits pour donner envie de demander un devis.</p>
+      <span class="eyebrow"><i></i>Exemples</span>
+      <h2 class="h2">Une annonce par métier, <span class="serif grad">une par recherche.</span></h2>
+      <p class="lead">Chaque recherche importante a son annonce, écrite pour ce que le client veut lire à ce moment-là.</p>
     </div>
   </div>
   <div class="reel rv" id="reel"><div class="tr" id="reelTr"></div></div>
@@ -682,11 +721,12 @@ footer{padding:110px 0 0;overflow:hidden}
     </div>
     <div class="qs rv d1">
       <div class="q open"><button><span>En combien de temps je reçois des demandes ?</span><span class="pm"></span></button><div class="a"><div><p>Les campagnes sont en ligne en 7 jours. Les premières demandes arrivent en général dans les jours qui suivent, puis les premières semaines servent à optimiser pour faire baisser le coût par demande.</p></div></div></div>
-      <div class="q"><button><span>Quel budget publicitaire prévoir ?</span><span class="pm"></span></button><div class="a"><div><p>Il dépend de votre zone, de votre métier et du nombre de chantiers que vous pouvez absorber. On le définit ensemble pendant l'appel. Il est payé directement à Meta depuis votre compte, sans marge de notre part.</p></div></div></div>
-      <div class="q"><button><span>Les demandes sont-elles sérieuses ?</span><span class="pm"></span></button><div class="a"><div><p>Le formulaire filtre avant que la demande ne vous arrive : propriétaire ou non, type de travaux, budget, délai. Et chaque demande n'est envoyée qu'à vous, jamais à d'autres artisans.</p></div></div></div>
+      <div class="q"><button><span>Quel budget publicitaire prévoir ?</span><span class="pm"></span></button><div class="a"><div><p>Il dépend de votre zone, de votre métier et du nombre de chantiers que vous pouvez absorber. On le définit ensemble pendant l'appel. Il est payé directement à Google depuis votre compte, sans marge de notre part.</p></div></div></div>
+      <div class="q"><button><span>Pourquoi Google plutôt que Facebook ?</span><span class="pm"></span></button><div class="a"><div><p>Sur Google, vous touchez des gens qui cherchent déjà un artisan, au moment où ils en ont besoin. Les demandes sont plus mûres et se transforment mieux en chantiers. On écarte les recherches inutiles pour ne payer que les bons clics.</p></div></div></div>
+      <div class="q"><button><span>Les demandes sont-elles sérieuses ?</span><span class="pm"></span></button><div class="a"><div><p>Les personnes qui cliquent cherchent déjà un artisan pour leur projet. La page de demande filtre ensuite type de travaux, budget et délai. Et chaque demande n'est envoyée qu'à vous, jamais à d'autres artisans.</p></div></div></div>
       <div class="q"><button><span>Ça marche pour mon métier ?</span><span class="pm"></span></button><div class="a"><div><p>Rénovation, salle de bain, cuisine, menuiseries, toiture, extension, paysagisme, piscine… Dès que vos chantiers ont un bon panier et que vos clients sont des particuliers de votre zone. Si on pense que ça ne marchera pas chez vous, on vous le dit pendant l'appel.</p></div></div></div>
-      <div class="q"><button><span>Je dois fournir des photos ou des vidéos ?</span><span class="pm"></span></button><div class="a"><div><p>Vos photos de chantiers et vos avant/après sont ce qui marche le mieux : envoyez-les simplement sur WhatsApp. Si vous n'en avez pas encore, on démarre avec des créations conçues pour vous et on vous guide pour en prendre.</p></div></div></div>
-      <div class="q"><button><span>À qui appartient le compte publicitaire ?</span><span class="pm"></span></button><div class="a"><div><p>À vous. On travaille sur votre compte avec un accès que vous pouvez retirer à tout moment. Si on arrête, vous gardez les campagnes, les audiences et tout l'historique.</p></div></div></div>
+      <div class="q"><button><span>J'ai besoin d'un site internet ?</span><span class="pm"></span></button><div class="a"><div><p>Non. Si votre site n'est pas fait pour convertir, on crée une page de demande dédiée à vos campagnes, avec vos réalisations, vos avis et un formulaire simple.</p></div></div></div>
+      <div class="q"><button><span>À qui appartient le compte publicitaire ?</span><span class="pm"></span></button><div class="a"><div><p>À vous. On travaille sur votre compte Google Ads avec un accès que vous pouvez retirer à tout moment. Si on arrête, vous gardez les campagnes, les mots-clés et tout l'historique.</p></div></div></div>
     </div>
   </div>
 </section>
@@ -697,7 +737,7 @@ footer{padding:110px 0 0;overflow:hidden}
     <div class="cta rv">
       <span class="eyebrow"><i></i>Appel de 30 minutes · sans engagement</span>
       <h2 class="h2" style="margin-top:22px">Prêt à remplir <span class="serif grad">votre planning ?</span></h2>
-      <p class="lead">30 minutes pour regarder votre zone, vos chantiers les plus rentables et ce que la publicité peut vous ramener.</p>
+      <p class="lead">30 minutes pour regarder votre zone, ce que vos clients cherchent sur Google et ce que ça peut vous ramener.</p>
       <div class="acts">
         <a class="btn pri" href="#cal">Choisir un créneau <svg class="ar"><use href="#i-arr"/></svg></a>
         <a class="btn gh" href="https://wa.me/33767717586?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20vos%20publicit%C3%A9s."><svg><use href="#wa"/></svg>WhatsApp</a>
@@ -712,8 +752,8 @@ footer{padding:110px 0 0;overflow:hidden}
 <footer>
   <div class="wrap">
     <div class="fg">
-      <div><a class="brand" href="#top"><svg><use href="#logo"/></svg>Productipro</a><p class="tg">Le moteur d'acquisition des artisans et entreprises du bâtiment. Publicité Facebook et Instagram, France.</p></div>
-      <div><h5>Agence</h5><ul><li><a href="#services">Services</a></li><li><a href="#methode">Méthode</a></li><li><a href="#realisations">Créations</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><a class="brand" href="#top"><svg><use href="#logo"/></svg>Productipro</a><p class="tg">Le moteur d'acquisition des artisans et entreprises du bâtiment. Publicité Google Ads, France.</p></div>
+      <div><h5>Agence</h5><ul><li><a href="#services">Services</a></li><li><a href="#methode">Méthode</a></li><li><a href="#realisations">Exemples</a></li><li><a href="#faq">FAQ</a></li></ul></div>
       <div><h5>Contact</h5><ul><li><a href="https://wa.me/33767717586"><svg><use href="#wa"/></svg>WhatsApp</a></li><li><a href="mailto:contact@productipro.fr"><svg><use href="#mail"/></svg>contact@productipro.fr</a></li><li><a href="#rdv">Réserver un appel</a></li></ul></div>
       <div><h5>Légal</h5><ul><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="confidentialite.html">Confidentialité</a></li></ul></div>
     </div>
@@ -738,7 +778,7 @@ document.getElementById('drawer').addEventListener('click',function(e){if(e.targ
 
 /* manifeste : mots qui s'allument au défilement */
 (function(){
-  var p=document.getElementById('mani'),keys=['flux','régulier','clients,','qu\'à','elles.'];
+  var p=document.getElementById('mani'),keys=['premier,','vous,','projet','budget.'];
   p.innerHTML=p.textContent.trim().split(/\s+/).map(function(w){return '<span class="w'+(keys.indexOf(w)>-1?' k':'')+'">'+w+'</span>'}).join(' ');
   var ws=[].slice.call(p.querySelectorAll('.w'));
   function up(){
@@ -752,7 +792,7 @@ document.getElementById('drawer').addEventListener('click',function(e){if(e.targ
 
 /* fil de demandes */
 (function(){
-  var D=[['ML','Rénovation salle de bain','Maison · 12 km · 10–20 k€'],['JD','Réfection de toiture','8 km · devis sous 15 jours'],['SB','Isolation des combles','19 km · propriétaire'],['AK','Extension 25 m²','6 km · projet au printemps'],['CR','Cuisine sur mesure','15 km · 15–25 k€'],['PL','Fenêtres PVC × 8','10 km · avant l\'hiver'],['NT','Salle de bain PMR','4 km · rappel ce matin']];
+  var D=[['☎','Appel entrant · 3 min 12','« couvreur villeurbanne »'],['ML','Demande de devis','« rénovation salle de bain lyon »'],['☎','Appel entrant · 5 min 40','« fuite toiture urgence »'],['AK','Demande de devis','« extension maison prix »'],['CR','Demande de devis','« cuisiniste lyon 3 »'],['☎','Appel entrant · 2 min 05','« changer fenêtres pvc »'],['NT','Demande de devis','« douche à l\'italienne senior »']];
   var f=document.getElementById('feed'),i=0;
   function item(d,nw){return '<div class="fi'+(nw?' new':'')+'"><span class="av">'+d[0]+'</span><div><div class="n">'+d[1]+'</div><div class="s">'+d[2]+'</div></div><span class="tm">'+(nw?'à l\'instant':'il y a '+(2+Math.floor(Math.random()*40))+' min')+'</span></div>';}
   f.innerHTML=D.slice(0,4).map(function(d){return item(d,false)}).join('');i=4;
@@ -785,18 +825,19 @@ function count(el){
   document.querySelectorAll('.bx').forEach(function(b){b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.setProperty('--mx',(e.clientX-r.left)+'px');b.style.setProperty('--my',(e.clientY-r.top)+'px')})});
 })();
 
-/* créations vidéo */
+/* exemples d'annonces */
 (function(){
-  var V=[['v2','Avant / après'],['v4','Geste technique'],['v3','Arrivée sur chantier'],['v1','Sur le terrain'],['v5','Le détail soigné'],['v6','Le savoir-faire']];
-  document.getElementById('reelTr').innerHTML=V.map(function(v){
-    return '<div class="ph"><div class="sc"><video class="pv" src="assets/'+v[0]+'.mp4" poster="assets/'+v[0]+'.webp" muted loop playsinline preload="none" aria-label="Exemple de publicité vidéo — '+v[1]+'"></video>'+
-    '<div class="tp"><svg><use href="#logo"/></svg><div>Votre entreprise<small>Sponsorisé</small></div></div><div class="lb">'+v[1]+'</div><div class="bt">Demander un devis<svg width="14" height="14"><use href="#i-arr"/></svg></div></div></div>';
+  var A=[['couvreur villeurbanne','Couvreur à Villeurbanne | Intervention sous 48 h','Réfection, fuite, isolation de toiture. Artisan certifié, devis gratuit et garantie décennale.'],
+         ['rénovation salle de bain lyon','Rénovation salle de bain clé en main','Douche à l\'italienne, carrelage, plomberie. Un seul interlocuteur du devis à la livraison.'],
+         ['changer fenêtres pvc','Fenêtres PVC et alu sur mesure','Pose par nos équipes, isolation garantie. Devis gratuit à domicile sous 72 h.'],
+         ['extension maison prix','Extension de maison | Étude gratuite','Agrandissement, surélévation, véranda. Plans, démarches et travaux pris en charge.'],
+         ['cuisiniste lyon','Cuisine sur mesure à Lyon','Conception 3D offerte, fabrication et pose. Visitez notre showroom ou demandez un devis.'],
+         ['pisciniste rhône','Piscine sur mesure dans le Rhône','Béton, coque ou bois. Réservez maintenant pour une baignade dès l\'été prochain.']];
+  document.getElementById('reelTr').innerHTML=A.map(function(a){
+    return '<div class="gad"><div class="q"><svg><use href="#gg"/></svg><span>'+a[0]+'</span><svg class="mg"><use href="#i-search"/></svg></div>'+
+    '<div class="sp">Sponsorisé · exemple</div><div class="dm"><span class="fav"><svg><use href="#logo"/></svg></span><div><b>Votre entreprise</b><small>www.votre-entreprise.fr</small></div></div>'+
+    '<div class="ti">'+a[1]+'</div><div class="ds">'+a[2]+'</div><div class="ex"><span><svg><use href="#i-phone"/></svg>Appeler</span><span>Demander un devis</span></div></div>';
   }).join('');
-  var vs=[].slice.call(document.querySelectorAll('video.pv'));
-  vs.forEach(function(v){v.muted=true;v.setAttribute('muted','')});
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){if(v.preload==='none')v.preload='auto';var p=v.play();if(p&&p.catch)p.catch(function(){})}else v.pause()})},{rootMargin:'100px',threshold:.2});
-  vs.forEach(function(v){io.observe(v)});
-  ['touchstart','pointerdown','scroll'].forEach(function(ev){addEventListener(ev,function h(){vs.forEach(function(v){var r=v.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight&&r.right>0&&r.left<innerWidth){var p=v.play();if(p&&p.catch)p.catch(function(){})}});removeEventListener(ev,h)},{passive:true,once:true})});
 })();
 
 /* faq */
