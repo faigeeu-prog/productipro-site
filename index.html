@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Productipro — Agence Google Ads</title>
-<meta name="description" content="Productipro crée et gère vos campagnes Google Ads. Vous apparaissez en premier quand vos futurs clients vous cherchent. Pour les entreprises de services et les commerces locaux.">
+<title>Productipro — Agence Meta Ads</title>
+<meta name="description" content="Productipro crée et gère vos publicités Facebook et Instagram. Vous recevez des demandes de clients de votre zone, directement sur votre téléphone. Pour les entreprises de services et les commerces locaux.">
 <link rel="canonical" href="https://www.productipro.fr/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.productipro.fr/">
-<meta property="og:title" content="Productipro — Agence Google Ads">
-<meta property="og:description" content="Apparaissez en premier quand vos futurs clients vous cherchent sur Google.">
+<meta property="og:title" content="Productipro — Agence Meta Ads">
+<meta property="og:description" content="Des clients chaque semaine grâce à Facebook et Instagram.">
 <meta property="og:image" content="https://www.productipro.fr/assets/og.webp">
 <meta name="theme-color" content="#ffffff">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -127,6 +127,54 @@ footer{padding:56px 0 40px;border-top:1px solid var(--line);margin-top:110px}
 .fg nav a:hover{color:var(--ink)}
 .fb{margin-top:28px;font-size:14px;color:var(--mut2);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
+
+
+/* post Meta */
+.post{border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 20px 40px -24px rgba(0,0,0,.2);overflow:hidden}
+.pt{display:flex;align-items:center;gap:10px;padding:14px 16px}
+.pt .av{width:38px;height:38px;border-radius:50%;background:var(--soft);display:grid;place-items:center;flex:none}
+.pt .av svg{width:24px;height:24px}
+.pt b{display:block;font-size:14.5px;font-weight:600}
+.pt small{display:flex;align-items:center;gap:4px;font-size:12.5px;color:#65676B}
+.pt small svg{width:13px;height:13px}
+.pt .dt{margin-left:auto;color:#65676B;letter-spacing:1px;font-size:12px}
+.pt-x{padding:0 16px 12px;font-size:14.5px;line-height:1.5;color:#1C1E21;min-height:66px}
+.pim{height:230px;display:flex;align-items:flex-end;padding:20px;color:#fff;font-size:22px;font-weight:600;letter-spacing:-.02em;line-height:1.2;transition:background .6s ease}
+.pim span{max-width:80%}
+.pcta{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;background:#F0F2F5}
+.pcta small{display:block;font-size:12px;color:#65676B;text-transform:uppercase}
+.pcta b{display:block;font-size:15px;font-weight:600;color:#1C1E21}
+.pcta>span{flex:none;background:#E4E6EB;border-radius:6px;padding:8px 12px;font-size:13.5px;font-weight:600;color:#1C1E21;transition:background .2s}
+.pac{display:flex;justify-content:space-around;padding:10px 16px;font-size:13.5px;color:#65676B;border-top:1px solid #E4E6EB}
+/* scènes Meta */
+.m-feed{width:240px;height:300px;border-radius:26px;background:#fff;border:1px solid var(--line);overflow:hidden;box-shadow:0 20px 40px -22px rgba(0,0,0,.25);padding:12px}
+.fd-in{display:flex;flex-direction:column;gap:12px}
+.mo[data-s="1"] .fd-in{animation:fd 2.6s cubic-bezier(.45,0,.3,1) both}
+@keyframes fd{from{transform:translateY(0)}to{transform:translateY(-330px)}}
+.fp{display:flex;flex-direction:column;gap:7px}
+.fp .h{display:block;height:10px;width:55%;border-radius:5px;background:#EDEDED}
+.fp .b{display:block;height:110px;border-radius:10px;background:#E9ECF2}
+.fp .c2{background:#F2EDE6}.fp .c3{background:#E8F1EC}
+.m-post{position:relative;width:min(380px,86%);border:1px solid var(--line);border-radius:16px;background:#fff;overflow:hidden;box-shadow:0 20px 40px -22px rgba(0,0,0,.25)}
+.mo[data-s="2"] .m-post{animation:up .6s ease both}
+.pim.sm{height:150px;font-size:18px;padding:16px;background:linear-gradient(135deg,#1E3A8A,#3B82F6)}
+.m-post .pcta>span.call{background:#0866FF;color:#fff}
+.mo[data-s="2"] .m-post .call{animation:press2 .3s 1.55s both}
+@keyframes press2{to{background:#0652C4}}
+.m-post .cur{left:auto;right:30%;top:110%}
+.mo[data-s="2"] .m-post .cur{animation:mv2 1.3s .4s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes mv2{0%{opacity:0;right:10%;top:115%}20%{opacity:1}100%{opacity:1;right:60px;top:calc(100% - 38px)}}
+.m-post .rip{left:auto;right:64px;bottom:20px}
+.m-form{width:min(340px,86%);background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 20px 40px -22px rgba(0,0,0,.25);display:flex;flex-direction:column;gap:12px}
+.m-form>b{font-size:17px}
+.m-form label{display:flex;flex-direction:column;gap:5px;font-size:12.5px;color:var(--mut)}
+.m-form label span{height:38px;border:1px solid #DDD;border-radius:8px;display:flex;align-items:center;padding:0 12px;color:var(--ink);font-size:14.5px;overflow:hidden}
+.m-form em{font-style:normal;white-space:nowrap;clip-path:inset(0 100% 0 0)}
+.mo[data-s="3"] .m-form em{animation:tp .6s var(--d) steps(18) forwards}
+@keyframes tp{to{clip-path:inset(0 0 0 0)}}
+.m-form .go{height:40px;border-radius:8px;background:#0866FF;color:#fff;display:grid;place-items:center;font-weight:600;font-size:14.5px}
+.mo[data-s="3"] .m-form .go{animation:press2 .3s 2.1s both}
+@media(max-width:720px){.pim{height:190px;font-size:19px}.m-feed{transform:scale(.88)}.m-form{padding:18px;gap:10px}}
 
 /* motion */
 .head.c{margin:0 auto;text-align:center}
@@ -249,6 +297,7 @@ footer{padding:56px 0 40px;border-top:1px solid var(--line);margin-top:110px}
 </head>
 <body>
 <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+<defs><linearGradient id="igG" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FFD521"/><stop offset=".18" stop-color="#F9CE34"/><stop offset=".4" stop-color="#EE2A7B"/><stop offset=".62" stop-color="#D62976"/><stop offset=".8" stop-color="#962FBF"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient><radialGradient id="igR" cx="28%" cy="104%" r="128%"><stop offset="0" stop-color="#FFDD55"/><stop offset=".22" stop-color="#FFB400"/><stop offset=".45" stop-color="#F50000" stop-opacity=".9"/><stop offset=".75" stop-color="#B900B4" stop-opacity=".85"/><stop offset="1" stop-color="#7638FA" stop-opacity=".9"/></radialGradient></defs><symbol id="ig" viewBox="0 0 24 24"><rect width="24" height="24" rx="6.4" fill="url(#igG)"/><rect width="24" height="24" rx="6.4" fill="url(#igR)"/><g transform="translate(3.95 3.95) scale(.671)"><path fill="#fff" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></g></symbol><symbol id="fb" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#0866FF"/><g transform="translate(1.68 2.55) scale(.862)"><path fill="#fff" d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></g></symbol>
 <symbol id="logo" viewBox="0 0 48 48"><rect width="48" height="48" rx="12" fill="#111"/><path fill="#fff" fill-rule="evenodd" d="M13 11.2a1.6 1.6 0 0 1 1.6-1.6h10.3c6.4 0 10.9 4.2 10.9 10.2s-4.5 10.2-10.9 10.2h-4.8v7.8a1.6 1.6 0 0 1-1.6 1.6h-3.9a1.6 1.6 0 0 1-1.6-1.6V11.2zm7.1 4.7v8.2h4.5c2.7 0 4.5-1.6 4.5-4.1s-1.8-4.1-4.5-4.1h-4.5z"/></symbol>
 <symbol id="gg" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.54-.19-2.27H12v4.51h6.47c-.29 1.48-1.14 2.73-2.4 3.58v3h3.86c2.26-2.09 3.56-5.17 3.56-8.82z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.29v3.09C3.26 21.3 7.31 24 12 24z"/><path fill="#FBBC05" d="M5.27 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.98-3.09z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.98 3.09C6.22 6.86 8.87 4.75 12 4.75z"/></symbol>
 <symbol id="srch" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="#1A73E8" stroke-width="2"/><path d="M16 16l4.5 4.5" stroke="#1A73E8" stroke-width="2" stroke-linecap="round"/></symbol>
@@ -271,76 +320,76 @@ footer{padding:56px 0 40px;border-top:1px solid var(--line);margin-top:110px}
 <section class="hero">
   <div class="wrap g">
     <div class="rv in">
-      <p class="k">Agence Google Ads</p>
-      <h1 style="margin-top:14px">Apparaissez en premier quand vos clients vous cherchent.</h1>
-      <p class="l">On crée et on gère vos campagnes Google Ads. Vous recevez des appels et des demandes de clients qui cherchent déjà ce que vous faites.</p>
+      <p class="k">Agence Meta Ads · Facebook et Instagram</p>
+      <h1 style="margin-top:14px">Des nouveaux clients chaque semaine grâce à Facebook et Instagram.</h1>
+      <p class="l">On crée et on gère vos publicités Meta. Vous recevez les demandes de clients de votre zone, directement sur votre téléphone.</p>
       <div class="acts"><a class="btn dk" href="#rdv">Réserver un appel gratuit</a><a class="btn lt" href="#methode">Comment ça marche</a></div>
       <ul>
         <li><svg><use href="#ck"/></svg>Campagnes en ligne en 7 jours</li>
-        <li><svg><use href="#ck"/></svg>Le compte Google Ads reste à vous</li>
-        <li><svg><use href="#ck"/></svg>Budget publicitaire versé à Google, sans marge</li>
+        <li><svg><use href="#ck"/></svg>Le compte publicitaire reste à vous</li>
+        <li><svg><use href="#ck"/></svg>Budget publicitaire versé à Meta, sans marge</li>
       </ul>
     </div>
     <div class="rv in">
-      <div class="gcard">
-        <div class="sb"><svg><use href="#gg"/></svg><span id="q">installation pompe à chaleur</span><svg><use href="#srch"/></svg></div>
-        <div class="ad">
-          <div class="s">Sponsorisé</div>
-          <div class="d"><span class="f"><svg><use href="#logo"/></svg></span><div><b>Votre entreprise</b><small>www.votre-site.fr</small></div></div>
-          <div class="t" id="t">Installation pompe à chaleur · Devis gratuit sous 48 h</div>
-          <div class="x" id="x">Installateur certifié RGE. Étude et devis gratuits, pose par nos équipes.</div>
-          <div class="e"><span>Appeler</span><span>Demander un devis</span></div>
-        </div>
-        <div class="org"><i></i><i></i><i></i></div>
+      <div class="post">
+        <div class="pt"><span class="av"><svg><use href="#logo"/></svg></span><div><b>Votre entreprise</b><small>Sponsorisé · <svg><use href="#fb"/></svg><svg><use href="#ig"/></svg></small></div><span class="dt">•••</span></div>
+        <p class="pt-x" id="t">Votre facture de chauffage a doublé ? Passez à la pompe à chaleur. Étude et devis gratuits près de chez vous.</p>
+        <div class="pim" id="im"><span id="il">Pompe à chaleur installée en 1 journée</span></div>
+        <div class="pcta"><div><small>votre-site.fr</small><b id="cb">Devis gratuit sous 48 h</b></div><span>En savoir plus</span></div>
+        <div class="pac"><span>J'aime</span><span>Commenter</span><span>Partager</span></div>
       </div>
-      <p class="cap">Exemple d'annonce</p>
+      <p class="cap">Exemple de publicité</p>
     </div>
   </div>
 </section>
 
 <section class="sec" id="methode" style="padding-top:72px">
   <div class="wrap">
-    <div class="head c rv"><p class="k">Comment ça marche</p><h2 style="margin-top:12px">De la recherche Google à votre téléphone</h2></div>
+    <div class="head c rv"><p class="k">Comment ça marche</p><h2 style="margin-top:12px">Du fil Instagram à votre téléphone</h2></div>
     <div class="mo rv" id="mo" data-s="1">
       <div class="stage">
         <div class="scn s1">
-          <div class="m-sb"><svg><use href="#gg"/></svg><span id="mq"></span><svg><use href="#srch"/></svg></div>
+          <div class="m-feed"><div class="fd-in">
+            <div class="fp"><i class="h"></i><i class="b"></i></div><div class="fp"><i class="h"></i><i class="b c2"></i></div><div class="fp"><i class="h"></i><i class="b c3"></i></div>
+            <div class="fp"><i class="h"></i><i class="b"></i></div><div class="fp"><i class="h"></i><i class="b c2"></i></div><div class="fp"><i class="h"></i><i class="b c3"></i></div>
+          </div></div>
         </div>
         <div class="scn s2">
-          <div class="m-ad">
-            <div class="s">Sponsorisé</div>
-            <div class="d"><span class="f"><svg><use href="#logo"/></svg></span><div><b>Votre entreprise</b><small>www.votre-site.fr</small></div></div>
-            <div class="t">Installation pompe à chaleur · Devis gratuit sous 48 h</div>
-            <div class="e"><span class="call">Appeler</span><span>Demander un devis</span></div>
+          <div class="m-post">
+            <div class="pt"><span class="av"><svg><use href="#logo"/></svg></span><div><b>Votre entreprise</b><small>Sponsorisé</small></div></div>
+            <div class="pim sm"><span>Pompe à chaleur installée en 1 journée</span></div>
+            <div class="pcta"><div><small>votre-site.fr</small><b>Devis gratuit sous 48 h</b></div><span class="call">Demander un devis</span></div>
             <svg class="cur" viewBox="0 0 24 24"><path d="M5 3l14 8-6 1.5L10 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg>
             <span class="rip"></span>
           </div>
         </div>
         <div class="scn s3">
-          <div class="m-ph">
-            <span class="ring r1"></span><span class="ring r2"></span>
-            <div class="scr"><small>Appel entrant</small><b>06 12 •• •• 48</b><span class="via">via Google Ads</span>
-              <div class="bts"><i class="no"></i><i class="ok"><svg><use href="#tel"/></svg></i></div></div>
+          <div class="m-form">
+            <b>Demander un devis</b>
+            <label>Nom<span><em style="--d:.3s">Julien Martin</em></span></label>
+            <label>Téléphone<span><em style="--d:.9s">06 12 34 •• ••</em></span></label>
+            <label>Votre projet<span><em style="--d:1.5s">Pompe à chaleur, maison 110 m²</em></span></label>
+            <div class="go">Envoyer</div>
           </div>
         </div>
         <div class="scn s4">
           <div class="m-ok">
             <span class="ck"><svg><use href="#ck"/></svg></span>
-            <b>Nouveau client</b>
-            <small>Rendez-vous fixé jeudi à 9 h</small>
+            <b>Nouvelle demande reçue</b>
+            <small>Julien Martin · Pompe à chaleur · 12 km</small>
           </div>
         </div>
       </div>
       <div class="bar">
-        <div data-i="1"><i><em></em></i><span>Un client cherche</span></div>
-        <div data-i="2"><i><em></em></i><span>Il voit votre annonce</span></div>
-        <div data-i="3"><i><em></em></i><span>Il vous appelle</span></div>
-        <div data-i="4"><i><em></em></i><span>Vous gagnez un client</span></div>
+        <div data-i="1"><i><em></em></i><span>Il fait défiler Instagram</span></div>
+        <div data-i="2"><i><em></em></i><span>Il voit votre publicité</span></div>
+        <div data-i="3"><i><em></em></i><span>Il laisse ses coordonnées</span></div>
+        <div data-i="4"><i><em></em></i><span>Vous recevez la demande</span></div>
       </div>
     </div>
     <div class="days rv">
-      <div><span>Jour 1</span><b>Appel de lancement</b><p>Votre activité, votre zone, vos concurrents.</p></div>
-      <div><span>Jours 2 à 5</span><b>Préparation</b><p>Mots-clés, annonces, suivi des appels.</p></div>
+      <div><span>Jour 1</span><b>Appel de lancement</b><p>Votre activité, votre zone, vos clients.</p></div>
+      <div><span>Jours 2 à 5</span><b>Préparation</b><p>Ciblage, visuels, textes et formulaire.</p></div>
       <div><span>Jour 7</span><b>Lancement</b><p>Les campagnes tournent sur votre compte.</p></div>
       <div><span>Ensuite</span><b>Suivi hebdo</b><p>On optimise et on vous fait un bilan.</p></div>
     </div>
@@ -349,12 +398,12 @@ footer{padding:56px 0 40px;border-top:1px solid var(--line);margin-top:110px}
 
 <section class="sec bt" id="services">
   <div class="wrap sv">
-    <div class="sv-h rv"><p class="k">Services</p><h2 style="margin-top:12px">Ce qu'on fait pour vous</h2><p class="mut" style="margin-top:14px">Tout ce qu'il faut pour que Google vous amène des clients. Vous n'avez rien à gérer.</p><a class="btn dk" href="#rdv" style="margin-top:28px">Réserver un appel</a></div>
+    <div class="sv-h rv"><p class="k">Services</p><h2 style="margin-top:12px">Ce qu'on fait pour vous</h2><p class="mut" style="margin-top:14px">Tout ce qu'il faut pour que Facebook et Instagram vous amènent des clients. Vous n'avez rien à gérer.</p><a class="btn dk" href="#rdv" style="margin-top:28px">Réserver un appel</a></div>
     <div class="sv-l">
-      <div class="rv"><span>01</span><div><h3>Mots-clés</h3><p>On cible ce que vos clients tapent vraiment, dans votre zone, et on exclut les recherches qui ne rapportent rien.</p></div></div>
-      <div class="rv"><span>02</span><div><h3>Annonces</h3><p>Des annonces claires, écrites pour votre métier, avec un bouton pour vous appeler directement.</p></div></div>
-      <div class="rv"><span>03</span><div><h3>Page de contact</h3><p>Si besoin, une page simple et rapide qui transforme le clic en appel ou en demande.</p></div></div>
-      <div class="rv"><span>04</span><div><h3>Suivi des appels</h3><p>Chaque appel et chaque formulaire est compté, pour savoir ce que la pub vous rapporte.</p></div></div>
+      <div class="rv"><span>01</span><div><h3>Ciblage</h3><p>Vos publicités ne sont montrées qu'aux personnes qui peuvent devenir vos clients : dans votre zone, avec le bon profil.</p></div></div>
+      <div class="rv"><span>02</span><div><h3>Visuels et vidéos</h3><p>Des publicités qui arrêtent le défilement, faites à partir de votre travail et renouvelées chaque mois.</p></div></div>
+      <div class="rv"><span>03</span><div><h3>Formulaire de demande</h3><p>Le client laisse ses coordonnées sans quitter Facebook ou Instagram. Les questions filtrent les curieux.</p></div></div>
+      <div class="rv"><span>04</span><div><h3>Demandes en direct</h3><p>Chaque demande vous arrive tout de suite sur votre téléphone, pour rappeler pendant que le client est chaud.</p></div></div>
       <div class="rv"><span>05</span><div><h3>Optimisation et bilan</h3><p>Chaque semaine, on ajuste et on vous envoie un point simple, sans jargon.</p></div></div>
     </div>
   </div>
@@ -362,8 +411,8 @@ footer{padding:56px 0 40px;border-top:1px solid var(--line);margin-top:110px}
 
 <section class="sec bt">
   <div class="wrap">
-    <div class="head rv"><h2>Pour toutes les entreprises que l'on cherche sur Google</h2><p>La méthode est la même pour tous. Seuls les mots-clés changent.</p></div>
-    <div class="tags rv"><span>Artisans et dépannage</span><span>Santé</span><span>Avocats et conseil</span><span>Expertise comptable</span><span>Immobilier</span><span>Garages</span><span>Beauté et bien-être</span><span>Restauration</span><span>Auto-écoles et formation</span><span>Sport et coaching</span><span>Vétérinaires</span><span>Commerces de proximité</span><span>Services aux entreprises</span></div>
+    <div class="head rv"><h2>Pour toutes les entreprises qui ont des clients près de chez elles</h2><p>La méthode est la même pour tous. Seuls le ciblage et les visuels changent.</p></div>
+    <div class="tags rv"><span>Artisans et rénovation</span><span>Santé</span><span>Avocats et conseil</span><span>Expertise comptable</span><span>Immobilier</span><span>Garages</span><span>Beauté et bien-être</span><span>Restauration</span><span>Auto-écoles et formation</span><span>Sport et coaching</span><span>Vétérinaires</span><span>Commerces de proximité</span><span>Services aux entreprises</span></div>
   </div>
 </section>
 
@@ -371,11 +420,11 @@ footer{padding:56px 0 40px;border-top:1px solid var(--line);margin-top:110px}
   <div class="wrap faq">
     <div class="rv"><h2>Questions fréquentes</h2><p class="mut" style="margin-top:14px">Une autre question ? <a href="https://wa.me/33767717586" style="color:var(--ink);text-decoration:underline">Écrivez-nous sur WhatsApp</a>.</p></div>
     <div class="qs rv">
-      <div class="q open"><button><span>En combien de temps j'ai des résultats ?</span><span class="pm">+</span></button><div class="a"><div><p>Les campagnes sont en ligne en 7 jours. Les premiers appels arrivent en général dans les jours qui suivent, puis on optimise pour baisser le coût de chaque client.</p></div></div></div>
-      <div class="q"><button><span>Quel budget publicitaire prévoir ?</span><span class="pm">+</span></button><div class="a"><div><p>Ça dépend de votre secteur et de votre zone. On le fixe ensemble pendant l'appel. Il est payé directement à Google depuis votre compte, sans marge de notre part.</p></div></div></div>
-      <div class="q"><button><span>Ça marche pour mon activité ?</span><span class="pm">+</span></button><div class="a"><div><p>Si vos clients vous cherchent sur Google, oui. Si on pense que ce n'est pas adapté à votre cas, on vous le dit pendant l'appel.</p></div></div></div>
-      <div class="q"><button><span>J'ai besoin d'un site internet ?</span><span class="pm">+</span></button><div class="a"><div><p>Non. Si besoin, on crée une page simple dédiée à vos campagnes.</p></div></div></div>
-      <div class="q"><button><span>À qui appartient le compte Google Ads ?</span><span class="pm">+</span></button><div class="a"><div><p>À vous. Si on arrête de travailler ensemble, vous gardez tout : campagnes, mots-clés et historique.</p></div></div></div>
+      <div class="q open"><button><span>En combien de temps j'ai des résultats ?</span><span class="pm">+</span></button><div class="a"><div><p>Les campagnes sont en ligne en 7 jours. Les premières demandes arrivent en général dans les jours qui suivent, puis on optimise pour baisser le coût de chaque demande.</p></div></div></div>
+      <div class="q"><button><span>Quel budget publicitaire prévoir ?</span><span class="pm">+</span></button><div class="a"><div><p>Ça dépend de votre secteur et de votre zone. On le fixe ensemble pendant l'appel. Il est payé directement à Meta depuis votre compte, sans marge de notre part.</p></div></div></div>
+      <div class="q"><button><span>Ça marche pour mon activité ?</span><span class="pm">+</span></button><div class="a"><div><p>Si vos clients sont des particuliers ou des entreprises de votre zone, oui. Si on pense que ce n'est pas adapté à votre cas, on vous le dit pendant l'appel.</p></div></div></div>
+      <div class="q"><button><span>J'ai besoin d'un site internet ?</span><span class="pm">+</span></button><div class="a"><div><p>Non. Le formulaire de demande s'ouvre directement dans Facebook et Instagram.</p></div></div></div>
+      <div class="q"><button><span>À qui appartient le compte publicitaire ?</span><span class="pm">+</span></button><div class="a"><div><p>À vous. Si on arrête de travailler ensemble, vous gardez tout : campagnes, audiences, visuels et historique.</p></div></div></div>
     </div>
   </div>
 </section>
@@ -384,8 +433,8 @@ footer{padding:56px 0 40px;border-top:1px solid var(--line);margin-top:110px}
   <div class="wrap">
     <div class="cta rv">
       <h2>Parlons de votre activité</h2>
-      <p>30 minutes pour voir ce que vos clients cherchent sur Google et ce que ça peut vous rapporter. Gratuit et sans engagement.</p>
-      <div class="acts"><a class="btn dk" href="#cal">Choisir un créneau</a><a class="btn lt" href="https://wa.me/33767717586?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20Google%20Ads.">WhatsApp</a></div>
+      <p>30 minutes pour voir comment toucher vos futurs clients sur Facebook et Instagram, et ce que ça peut vous rapporter. Gratuit et sans engagement.</p>
+      <div class="acts"><a class="btn dk" href="#cal">Choisir un créneau</a><a class="btn lt" href="https://wa.me/33767717586?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20Meta%20Ads.">WhatsApp</a></div>
     </div>
     <div class="cal rv" id="cal"><div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-30min"></div></div>
   </div>
@@ -409,10 +458,14 @@ document.getElementById('burger').addEventListener('click',function(){nav.classL
 document.getElementById('drawer').addEventListener('click',function(e){if(e.target.closest('a'))nav.classList.remove('open')});
 (function(){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -6% 0px'});document.querySelectorAll('.rv:not(.in)').forEach(function(e){io.observe(e)})})();
 (function(){
-  var S=[['installation pompe à chaleur','Installation pompe à chaleur · Devis gratuit sous 48 h','Installateur certifié RGE. Étude et devis gratuits, pose par nos équipes.'],['dentiste lyon','Cabinet dentaire à Lyon · Rendez-vous rapide','Soins, urgences et implants. Prise de rendez-vous en ligne.'],['avocat divorce marseille','Avocat en divorce à Marseille','Premier échange confidentiel. Divorce amiable ou contentieux.'],['expert-comptable nantes','Expert-comptable à Nantes','Création, bilan, paie. Réponse sous 24 h.']];
-  var i=0,q=document.getElementById('q'),t=document.getElementById('t'),x=document.getElementById('x');
+  var S=[['Votre facture de chauffage a doublé ? Passez à la pompe à chaleur. Étude et devis gratuits près de chez vous.','Pompe à chaleur installée en 1 journée','Devis gratuit sous 48 h','linear-gradient(135deg,#1E3A8A,#3B82F6)'],
+         ['Un sourire dont vous êtes fier. Nouveau cabinet dentaire à Lyon, rendez-vous sous 48 h.','Blanchiment, implants, soins','Prendre rendez-vous','linear-gradient(135deg,#0F766E,#2DD4BF)'],
+         ['Reprenez le sport sans pression. Coaching inclus le premier mois, ouvert de 6 h à 23 h.','Votre séance d\'essai offerte','Réserver ma séance','linear-gradient(135deg,#111827,#4B5563)'],
+         ['Créateurs d\'entreprise : votre comptabilité gérée de A à Z, réponse sous 24 h.','Premier rendez-vous offert','Être rappelé','linear-gradient(135deg,#3730A3,#818CF8)']];
+  var i=0,t=document.getElementById('t'),im=document.getElementById('im'),il=document.getElementById('il'),cb=document.getElementById('cb');
+  im.style.background=S[0][3];
   if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  setInterval(function(){i=(i+1)%S.length;q.textContent=S[i][0];t.textContent=S[i][1];x.textContent=S[i][2]},3500);
+  setInterval(function(){i=(i+1)%S.length;t.textContent=S[i][0];il.textContent=S[i][1];cb.textContent=S[i][2];im.style.background=S[i][3]},3800);
 })();
 
 /* animation : recherche -> annonce -> appel -> client */
@@ -425,7 +478,7 @@ document.getElementById('drawer').addEventListener('click',function(e){if(e.targ
     k=n;mo.dataset.s=n;
     bars.forEach(function(b,i){b.classList.remove('on');b.classList.toggle('done',i<n-1);b.style.setProperty('--d',D[i]+'ms')});
     void mo.offsetWidth;bars[n-1].classList.add('on');
-    if(n===1)typeQ();
+    
     timer=setTimeout(function(){if(!run)return;go(n===4?1:n+1)},D[n-1]);
   }
   if(matchMedia('(prefers-reduced-motion: reduce)').matches){mo.dataset.s=2;return}
