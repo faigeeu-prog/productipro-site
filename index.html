@@ -69,6 +69,10 @@ h2 .g,.big .g{color:var(--mut2)}
 .pill .ic svg{width:15px;height:15px}
 h1{margin:28px auto 0;max-width:1000px;font-size:clamp(46px,7.6vw,112px);line-height:.95;letter-spacing:-.058em;font-weight:500}
 h1 .g{color:var(--mut2)}
+.rot{display:inline-grid;vertical-align:bottom;overflow:hidden;padding:0 .04em .14em;margin:0 -.04em -.14em;transition:width .6s var(--ease)}
+.rot>span{grid-area:1/1;justify-self:start;white-space:nowrap;transform:translateY(105%);opacity:0;transition:transform .7s var(--ease),opacity .5s var(--ease)}
+.rot>span.on{transform:none;opacity:1}
+.rot>span.out{transform:translateY(-105%);opacity:0}
 .hero .lead{margin:30px auto 0;max-width:560px}
 .hero .acts{display:flex;gap:10px;justify-content:center;margin-top:38px;flex-wrap:wrap}
 .trust{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:30px;font-size:14.5px;color:var(--mut)}
@@ -471,7 +475,7 @@ footer{padding:120px 0 0;overflow:hidden}
 <section class="hero">
   <div class="wrap">
     <div class="rv in"><span class="pill"><span class="ic"><svg><use href="#fb"/></svg><svg><use href="#ig"/></svg></span>Agence Meta Ads pour entreprises locales</span></div>
-    <h1 class="rv in" style="--i:1">Vos prochains clients font défiler <span class="g">Instagram.</span></h1>
+    <h1 class="rv in" style="--i:1">Vos prochains clients font défiler <span class="rot" id="rot" aria-label="Instagram et Facebook"><span class="g on">Instagram.</span><span class="g">Facebook.</span></span></h1>
     <p class="lead rv in" style="--i:2">On crée et on gère vos publicités Facebook et Instagram. Vous recevez les demandes de clients de votre zone, directement sur votre téléphone.</p>
     <div class="acts rv in" style="--i:3"><a class="btn dk" href="#rdv">Réserver un appel gratuit<svg class="ar"><use href="#arr"/></svg></a><a class="btn lt" href="#methode">Voir la méthode</a></div>
     <div class="trust rv in" style="--i:4"><span><svg><use href="#ck"/></svg>En ligne en 7 jours</span><span><svg><use href="#ck"/></svg>Le compte publicitaire reste à vous</span><span><svg><use href="#ck"/></svg>Aucune marge sur votre budget</span></div>
@@ -642,6 +646,12 @@ footer{padding:120px 0 0;overflow:hidden}
 
 <script>
 document.getElementById('yr').textContent=new Date().getFullYear();
+(function(){var r=document.getElementById('rot');if(!r)return;var w=[].slice.call(r.children),i=0;
+ function fit(){var a=w[i];r.style.width=Math.ceil(a.getBoundingClientRect().width)+'px'}
+ if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);fit();addEventListener('resize',function(){r.style.width='';w.forEach(function(x){x.style.position=''});fit()});
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ setInterval(function(){var o=w[i];i=(i+1)%w.length;var n=w[i];o.classList.remove('on');o.classList.add('out');n.classList.remove('out');n.classList.add('on');r.style.width=Math.ceil(n.getBoundingClientRect().width)+'px';setTimeout(function(){o.classList.remove('out')},700)},2600);
+})();
 var nav=document.getElementById('nav');
 addEventListener('scroll',function(){nav.classList.toggle('stuck',scrollY>8)},{passive:true});
 document.getElementById('burger').addEventListener('click',function(){nav.classList.toggle('open')});
