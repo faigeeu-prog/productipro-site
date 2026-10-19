@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Productipro — Agence Meta Ads</title>
-<meta name="description" content="Productipro crée et gère vos publicités Facebook et Instagram. Vous recevez des demandes de clients de votre zone, directement sur votre téléphone.">
+<meta name="description" content="Productipro crée et gère vos publicités Facebook et Instagram. Pas d'abonnement : on est payés uniquement sur les clients que vous signez.">
 <link rel="canonical" href="https://www.productipro.fr/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.productipro.fr/">
@@ -312,6 +312,21 @@ h1 .g{color:var(--mut2)}
 .prom b small{font-size:.45em;letter-spacing:-.02em;margin-left:4px;color:var(--mut)}
 .prom p{margin-top:16px;font-size:15.5px;color:var(--mut);max-width:220px}
 
+/* rémunération */
+.pay{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:center;border-radius:32px;background:var(--soft);padding:64px}
+.pay .lead{margin-top:22px;max-width:480px}
+.pnote{display:flex;gap:10px;align-items:flex-start;margin-top:26px;font-size:15px;color:var(--ink2);max-width:460px}
+.pnote svg{flex:none;width:18px;height:18px;margin-top:3px}
+.pst{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.pst li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:14px;padding:20px 22px;border-radius:20px;background:#fff;border:1px solid var(--line)}
+.pst li span{width:36px;height:36px;border-radius:50%;border:1px solid var(--line2);display:grid;place-items:center;font-size:14px;font-weight:600}
+.pst li b{display:block;font-size:17px;font-weight:500;letter-spacing:-.015em}
+.pst li p{margin-top:3px;font-size:14.5px;line-height:1.5;color:var(--mut)}
+.pst li.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.pst li.on span{border-color:rgba(255,255,255,.25)}
+.pst li.on p{color:#A3A3A3}
+@media(max-width:960px){.pay{grid-template-columns:minmax(0,1fr);gap:36px;padding:44px 32px}}
+@media(max-width:720px){.pay{padding:32px 20px;border-radius:24px}}
 /* secteurs */
 .sct{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:start}
 .sct .l{position:sticky;top:130px}
@@ -463,11 +478,11 @@ footer{padding:120px 0 0;overflow:hidden}
 <header class="nav" id="nav">
   <div class="bar">
     <a class="brand" href="#top"><svg><use href="#logo"/></svg>Productipro</a>
-    <nav class="links"><a href="#methode">Méthode</a><a href="#services">Services</a><a href="#secteurs">Secteurs</a><a href="#faq">FAQ</a></nav>
+    <nav class="links"><a href="#methode">Méthode</a><a href="#services">Services</a><a href="#remuneration">Rémunération</a><a href="#faq">FAQ</a></nav>
     <a class="btn dk sm" href="#rdv">Réserver un appel</a>
     <button class="burger" id="burger" aria-label="Menu"><i></i><i></i></button>
   </div>
-  <div class="drawer" id="drawer"><a href="#methode">Méthode</a><a href="#services">Services</a><a href="#secteurs">Secteurs</a><a href="#faq">FAQ</a><a class="btn dk" href="#rdv">Réserver un appel</a></div>
+  <div class="drawer" id="drawer"><a href="#methode">Méthode</a><a href="#services">Services</a><a href="#remuneration">Rémunération</a><a href="#secteurs">Secteurs</a><a href="#faq">FAQ</a><a class="btn dk" href="#rdv">Réserver un appel</a></div>
 </header>
 
 <main id="top">
@@ -478,7 +493,7 @@ footer{padding:120px 0 0;overflow:hidden}
     <h1 class="rv in" style="--i:1">Vos prochains clients font défiler <span class="rot" id="rot" aria-label="Instagram et Facebook"><span class="g on">Instagram.</span><span class="g">Facebook.</span></span></h1>
     <p class="lead rv in" style="--i:2">On crée et on gère vos publicités Facebook et Instagram. Vous recevez les demandes de clients de votre zone, directement sur votre téléphone.</p>
     <div class="acts rv in" style="--i:3"><a class="btn dk" href="#rdv">Réserver un appel gratuit<svg class="ar"><use href="#arr"/></svg></a><a class="btn lt" href="#methode">Voir la méthode</a></div>
-    <div class="trust rv in" style="--i:4"><span><svg><use href="#ck"/></svg>En ligne en 7 jours</span><span><svg><use href="#ck"/></svg>Le compte publicitaire reste à vous</span><span><svg><use href="#ck"/></svg>Aucune marge sur votre budget</span></div>
+    <div class="trust rv in" style="--i:4"><span><svg><use href="#ck"/></svg>Aucun abonnement fixe</span><span><svg><use href="#ck"/></svg>Payé uniquement sur vos clients signés</span><span><svg><use href="#ck"/></svg>Le compte publicitaire reste à vous</span></div>
   </div>
 
   <div class="scene rv in" style="--i:5" aria-hidden="true">
@@ -575,13 +590,31 @@ footer{padding:120px 0 0;overflow:hidden}
   </div>
 </section>
 
-<section style="padding:40px 0 0">
+<section class="sec" id="remuneration" style="padding-top:40px;padding-bottom:110px">
+  <div class="wrap">
+    <div class="pay">
+      <div class="pl">
+        <p class="eb rv">Rémunération</p>
+        <h2 class="rv" style="--i:1;margin-top:22px">Pas d'abonnement. <span class="g">On est payés quand vous signez.</span></h2>
+        <p class="lead rv" style="--i:2">On prend un pourcentage de chaque client que vous signez grâce à nos campagnes. Aucun forfait mensuel. On est sûrs de notre méthode, alors on prend le risque avec vous.</p>
+        <p class="pnote rv" style="--i:3"><svg><use href="#ck"/></svg>Seul le budget publicitaire reste à votre charge, payé directement à Meta depuis votre compte.</p>
+      </div>
+      <ol class="pst">
+        <li class="rv" style="--i:1"><span>1</span><div><b>Vous payez la publicité à Meta</b><p>Le budget part de votre carte vers Meta. On ne prend rien dessus.</p></div></li>
+        <li class="rv" style="--i:2"><span>2</span><div><b>Vous recevez les demandes</b><p>Vous rappelez et vous faites vos devis, comme d'habitude.</p></div></li>
+        <li class="rv on" style="--i:3"><span>3</span><div><b>Vous signez, on est payés</b><p>Un pourcentage du montant signé, fixé ensemble avant le lancement. Pas de client signé, pas de commission.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section style="padding:0">
   <div class="wrap">
     <div class="prom">
       <div class="rv"><b>7<small>jours</small></b><p>pour que vos campagnes soient en ligne.</p></div>
       <div class="rv" style="--i:1"><b>100<small>%</small></b><p>du compte publicitaire vous appartient. Vous gardez tout.</p></div>
       <div class="rv" style="--i:2"><b>0<small>%</small></b><p>de marge sur votre budget publicitaire, payé directement à Meta.</p></div>
-      <div class="rv" style="--i:3"><b>1<small>contact</small></b><p>dédié, joignable sur WhatsApp.</p></div>
+      <div class="rv" style="--i:3"><b>0<small>€</small></b><p>d'abonnement fixe. On est payés sur vos clients signés.</p></div>
     </div>
   </div>
 </section>
@@ -606,7 +639,9 @@ footer{padding:120px 0 0;overflow:hidden}
   <div class="wrap faq">
     <div><p class="eb rv">FAQ</p><h2 class="rv" style="--i:1;margin-top:22px">Questions <span class="g">fréquentes.</span></h2><p class="lead rv" style="--i:2">Une autre question ? <a href="https://wa.me/33767717586">Écrivez-nous sur WhatsApp</a>.</p></div>
     <div class="qs rv" style="--i:1">
-      <div class="q open"><button><span>En combien de temps j'ai des résultats ?</span><span class="pm"></span></button><div class="a"><div><p>Les campagnes sont en ligne en 7 jours. Les premières demandes arrivent en général dans les jours qui suivent, puis on optimise pour baisser le coût de chaque demande.</p></div></div></div>
+      <div class="q open"><button><span>Combien ça coûte ?</span><span class="pm"></span></button><div class="a"><div><p>Pas d'abonnement fixe. On prend un pourcentage de chaque client que vous signez grâce à nos campagnes, fixé ensemble avant le lancement selon votre métier et votre panier moyen. Le budget publicitaire est payé directement à Meta, depuis votre compte.</p></div></div></div>
+      <div class="q"><button><span>Comment on sait quels clients viennent des publicités ?</span><span class="pm"></span></button><div class="a"><div><p>Chaque demande arrive avec le nom et le téléphone du client. On tient avec vous un suivi simple : les demandes reçues, les devis faits et ceux qui sont signés.</p></div></div></div>
+      <div class="q"><button><span>En combien de temps j'ai des résultats ?</span><span class="pm"></span></button><div class="a"><div><p>Les campagnes sont en ligne en 7 jours. Les premières demandes arrivent en général dans les jours qui suivent, puis on optimise pour baisser le coût de chaque demande.</p></div></div></div>
       <div class="q"><button><span>Quel budget publicitaire prévoir ?</span><span class="pm"></span></button><div class="a"><div><p>Ça dépend de votre secteur et de votre zone. On le fixe ensemble pendant l'appel. Il est payé directement à Meta depuis votre compte, sans marge de notre part.</p></div></div></div>
       <div class="q"><button><span>Ça marche pour mon activité ?</span><span class="pm"></span></button><div class="a"><div><p>Si vos clients sont des particuliers ou des entreprises de votre zone, oui. Si on pense que ce n'est pas adapté à votre cas, on vous le dit pendant l'appel.</p></div></div></div>
       <div class="q"><button><span>J'ai besoin d'un site internet ?</span><span class="pm"></span></button><div class="a"><div><p>Non. Le formulaire de demande s'ouvre directement dans Facebook et Instagram.</p></div></div></div>
@@ -635,7 +670,7 @@ footer{padding:120px 0 0;overflow:hidden}
   <div class="wrap">
     <div class="fg">
       <div><a class="brand" href="#top"><svg><use href="#logo"/></svg>Productipro</a><p class="d">Agence Meta Ads. Des demandes de clients chaque semaine grâce à Facebook et Instagram.</p></div>
-      <div><h4>Agence</h4><ul><li><a href="#methode">Méthode</a></li><li><a href="#services">Services</a></li><li><a href="#secteurs">Secteurs</a></li></ul></div>
+      <div><h4>Agence</h4><ul><li><a href="#methode">Méthode</a></li><li><a href="#services">Services</a></li><li><a href="#remuneration">Rémunération</a></li><li><a href="#secteurs">Secteurs</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="#rdv">Réserver un appel</a></li><li><a href="https://wa.me/33767717586">WhatsApp</a></li><li><a href="mailto:contact@productipro.fr">contact@productipro.fr</a></li></ul></div>
       <div><h4>Légal</h4><ul><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="confidentialite.html">Confidentialité</a></li></ul></div>
     </div>
