@@ -433,3 +433,17 @@ p,.lead,li,summary{text-wrap:pretty}
 @media(max-width:860px){.nav.open{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--bg2);box-shadow:0 1px 0 var(--line)}}
 @media(max-width:700px){.reass{display:grid;justify-content:center;justify-items:start;gap:7px}}
 @media(max-width:700px){.stat{align-items:center}.stat b{line-height:1;padding-bottom:2px}}
+
+/* mini tableau de bord */
+.dash{width:min(340px,100%);padding:14px;display:grid;gap:12px}
+.dash .dh{display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:600;font-size:.86rem}
+.dash .dh>span{display:flex;align-items:center;gap:8px}
+.dash .dh em{font-style:normal;color:var(--mut);font-size:.74rem;font-weight:400}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.kpi{background:var(--bg2);border-radius:11px;padding:9px 10px;display:grid;gap:4px;align-content:space-between}
+.kpi small{font-size:.66rem;color:var(--mut);line-height:1.2;letter-spacing:-.01em}
+.kpi b{font-family:var(--serif);font-weight:400;font-size:1.3rem;letter-spacing:-.05em;line-height:1;white-space:nowrap}
+.bars{display:flex;align-items:flex-end;gap:6px;height:66px;padding:0 2px}
+.bars i{flex:1;border-radius:5px 5px 2px 2px;background:linear-gradient(180deg,#4A3526,#2B180A);opacity:.85}
+.bars i:last-child{background:linear-gradient(180deg,#FF9A4D,#E5532D);opacity:1}
+@media(max-width:700px){.dash{padding:12px}.kpi b{font-size:1.15rem}}

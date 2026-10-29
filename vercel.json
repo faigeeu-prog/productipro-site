@@ -1,1 +1,26 @@
-{"cleanUrls":true,"trailingSlash":false}
+{
+ "cleanUrls": true,
+ "trailingSlash": false,
+ "redirects": [
+  {
+   "source": "/publicite",
+   "destination": "/contenu",
+   "permanent": true
+  },
+  {
+   "source": "/automatisation",
+   "destination": "/systemes",
+   "permanent": true
+  },
+  {
+   "source": "/automatisation-agences",
+   "destination": "/agences",
+   "permanent": true
+  },
+  {
+   "source": "/automatisation-infopreneurs",
+   "destination": "/coachs",
+   "permanent": true
+  }
+ ]
+}
