@@ -464,3 +464,57 @@ p,.lead,li,summary{text-wrap:pretty}
 .logo .mk{width:30px;height:30px;flex:none;transition:transform .5s var(--ease)}
 .logo:hover .mk{transform:rotate(-6deg)}
 @media(max-width:700px){.logo{font-size:1.2rem;gap:8px}.logo .mk{width:28px;height:28px}}
+
+/* ===== hero illustré ===== */
+.hx-wrap{padding:10px 0 0;background:var(--bg2);text-align:center}
+.hx{position:relative;isolation:isolate;overflow:hidden;margin:0 10px;border-radius:24px;min-height:min(86vh,780px);display:grid;place-items:center;padding:clamp(90px,11vw,130px) 20px clamp(120px,13vw,160px);color:#fff;background:#C98352}
+.hx-bg{position:absolute;inset:0;z-index:-2}
+.hx-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 70%;transform:scale(1.04);animation:hxzoom 14s var(--ease) forwards}
+@keyframes hxzoom{to{transform:scale(1)}}
+.hx::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(58% 52% at 50% 46%,rgba(38,16,6,.42),rgba(38,16,6,0) 72%),linear-gradient(180deg,rgba(25,10,4,.22) 0%,rgba(25,10,4,0) 35%,rgba(25,10,4,.12) 70%,rgba(25,10,4,.45) 100%)}
+.hx::after{content:"";position:absolute;inset:0;z-index:-1;background-image:var(--noise);mix-blend-mode:overlay;opacity:.35;pointer-events:none}
+.hx-in{display:grid;justify-items:center;gap:22px;max-width:880px}
+.hx h1{color:#fff;font-size:clamp(2.8rem,6.6vw,5.4rem);line-height:.98;letter-spacing:-.065em;text-shadow:0 2px 40px rgba(50,18,4,.35)}
+.hx h1 .rot{color:#FFE2C2}
+.hx .lead{color:rgba(255,255,255,.93);max-width:44ch;text-shadow:0 1px 16px rgba(50,18,4,.4)}
+.chip.glass{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.hx .reass{color:rgba(255,255,255,.9)}
+.hx .reass svg{color:#fff}
+.btn-x{background:#15100C;color:#fff;height:56px;padding:0 22px 0 8px;gap:12px;border-radius:13px;box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 14px 30px -14px rgba(0,0,0,.6)}
+.btn-x .sq{width:40px;height:40px;border-radius:9px;background:#F0832B;color:#15100C;display:grid;place-items:center;flex:none;transition:transform .4s var(--ease)}
+.btn-x .sq svg{width:18px;height:18px}
+.btn-x:hover .sq{transform:translateX(2px)}
+.btn-glass{height:56px;border-radius:13px;background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.btn-glass:hover{background:rgba(255,255,255,.22)}
+.hx-card{position:absolute;bottom:clamp(20px,3vw,34px);z-index:2;animation:float 6s ease-in-out infinite}
+.hx-card .notif{width:300px;background:rgba(255,255,255,.88)}
+.hx-l{left:clamp(20px,3vw,34px)}
+.hx-r{right:clamp(20px,3vw,34px);animation-delay:-3s}
+@keyframes float{50%{transform:translateY(-6px)}}
+.trust{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:clamp(28px,4vw,44px) 0 clamp(36px,5vw,56px)}
+.trust>div{display:grid;gap:4px;justify-items:center;padding:0 12px;border-left:1px solid var(--line)}
+.trust>div:first-child{border-left:0}
+.trust b{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,3.6vw,2.8rem);letter-spacing:-.06em;line-height:1}
+.trust span{font-size:.9rem;color:var(--mut)}
+.chip .num{font-weight:600;color:var(--ink);padding-right:8px;margin-right:2px;border-right:1px solid rgba(43,24,10,.15)}
+.final .btn-x{background:#15100C}
+::selection{background:#F0832B;color:#fff}
+.progress{position:fixed;top:0;left:0;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,#F0832B,#E5532D);z-index:70}
+@media(max-width:1000px){.hx-card{display:none}}
+@media(max-width:700px){
+  .hx-wrap{padding:6px 0 0}
+  .hx{margin:0 8px;border-radius:20px;min-height:0;padding:56px 18px 64px}
+  .hx-bg img{object-position:38% 100%}
+  .hx::before{background:linear-gradient(180deg,rgba(25,10,4,.35) 0%,rgba(25,10,4,.25) 45%,rgba(25,10,4,.5) 100%)}
+  .hx-in{gap:16px}
+  .hx h1{font-size:clamp(2.4rem,11vw,3rem);line-height:1.02}
+  .hx .lead{font-size:1rem}
+  .btn-x,.btn-glass{height:54px}
+  .btn-x{justify-content:flex-start}
+  .hx .cta-row .btn-x{justify-content:center}
+  .trust{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:22px;padding:30px 0 40px}
+  .trust>div:nth-child(3){border-left:0}
+  .trust b{font-size:2rem}
+  .trust span{font-size:.84rem;text-align:center}
+}
+.hx-card .notif{width:340px}

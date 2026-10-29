@@ -5,6 +5,9 @@
   $$('.drawer a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');document.body.classList.remove('lock')})});
   var mbar=null;
   function onScroll(){var y=scrollY;nav&&nav.classList.toggle('stuck',y>8);if(mbar)mbar.classList.toggle('on',y>520)}
+  var pg=document.createElement('div');pg.className='progress';document.body.appendChild(pg);
+  function onProg(){var h=document.documentElement.scrollHeight-innerHeight;pg.style.transform='scaleX('+(h>0?scrollY/h:0)+')'}
+  addEventListener('scroll',onProg,{passive:true});onProg();
   addEventListener('scroll',onScroll,{passive:true});onScroll();
 
   /* apparition au scroll */
