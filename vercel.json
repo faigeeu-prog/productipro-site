@@ -3,24 +3,44 @@
  "trailingSlash": false,
  "redirects": [
   {
+   "source": "/contenu",
+   "destination": "/",
+   "permanent": false
+  },
+  {
+   "source": "/systemes",
+   "destination": "/",
+   "permanent": false
+  },
+  {
+   "source": "/coachs",
+   "destination": "/",
+   "permanent": false
+  },
+  {
+   "source": "/agences",
+   "destination": "/",
+   "permanent": false
+  },
+  {
    "source": "/publicite",
-   "destination": "/contenu",
-   "permanent": true
+   "destination": "/",
+   "permanent": false
   },
   {
    "source": "/automatisation",
-   "destination": "/systemes",
-   "permanent": true
+   "destination": "/",
+   "permanent": false
   },
   {
    "source": "/automatisation-agences",
-   "destination": "/agences",
-   "permanent": true
+   "destination": "/",
+   "permanent": false
   },
   {
    "source": "/automatisation-infopreneurs",
-   "destination": "/coachs",
-   "permanent": true
+   "destination": "/",
+   "permanent": false
   }
  ]
 }

@@ -15,9 +15,7 @@
 
   /* bouton WhatsApp flottant */
   var w=document.querySelector('.wa');
-  if(w){setTimeout(function(){w.classList.add('on')},700);
-    var seen=false;try{seen=sessionStorage.getItem('waPeek')}catch(e){}
-    if(!seen)setTimeout(function(){w.classList.add('peek');try{sessionStorage.setItem('waPeek','1')}catch(e){}setTimeout(function(){w.classList.remove('peek')},4500)},3500);}
+  if(w){setTimeout(function(){w.classList.add('on')},700)}
 
   /* mot qui tourne */
   $$('.rot').forEach(function(r){var s=$$('span',r),i=0;if(s.length<2)return;setInterval(function(){var o=s[i];o.classList.remove('on');o.classList.add('out');setTimeout(function(){o.classList.remove('out')},600);i=(i+1)%s.length;s[i].classList.add('on')},2600)});

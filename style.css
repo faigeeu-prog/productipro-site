@@ -447,3 +447,13 @@ p,.lead,li,summary{text-wrap:pretty}
 .bars i{flex:1;border-radius:5px 5px 2px 2px;background:linear-gradient(180deg,#4A3526,#2B180A);opacity:.85}
 .bars i:last-child{background:linear-gradient(180deg,#FF9A4D,#E5532D);opacity:1}
 @media(max-width:700px){.dash{padding:12px}.kpi b{font-size:1.15rem}}
+
+/* ===== bouton WhatsApp v2 : sobre, noir, angles doux ===== */
+.wa{display:inline-flex;align-items:center;gap:10px;height:50px;padding:0 18px 0 8px;border-radius:14px;background:#0B0B0B;color:#fff;border:1px solid rgba(255,255,255,.07);font:500 .95rem/1 var(--sans);letter-spacing:-.025em;box-shadow:inset 0 1px 0 rgba(255,255,255,.09),0 12px 26px -12px rgba(0,0,0,.5),0 2px 5px rgba(0,0,0,.14);transition:opacity .6s var(--ease),transform .5s var(--ease),box-shadow .4s var(--ease)}
+.wa-i{width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.1);display:grid;place-items:center;flex:none;transition:background .3s}
+.wa-i svg{width:19px;height:19px}
+.wa-t{white-space:nowrap}
+@media(hover:hover){.wa.on:hover{transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.09),0 18px 32px -14px rgba(0,0,0,.55),0 2px 5px rgba(0,0,0,.14)}.wa:hover .wa-i{background:rgba(255,255,255,.17)}}
+.wa.on:active{transform:scale(.97)}
+@media(max-width:700px){.wa{height:48px;padding:0 16px 0 7px;border-radius:13px;font-size:.92rem}.wa-i{width:33px;height:33px;border-radius:9px}}
+.notif{width:min(350px,100%)}
