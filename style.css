@@ -85,8 +85,10 @@ p{color:var(--mut)}
 .stars svg{width:15px;height:15px}
 .kicker{font-size:.92rem;font-weight:500;color:var(--ink2)}
 .hero h1 .rot{display:inline-grid;vertical-align:bottom;color:var(--mut)}
-.hero h1 .rot span{grid-area:1/1;transition:opacity .6s var(--ease),transform .6s var(--ease)}
-.hero h1 .rot span:not(.on){opacity:0;transform:translateY(.25em)}
+.hero h1 .rot{overflow:hidden;padding-bottom:.08em}
+.hero h1 .rot span{grid-area:1/1;opacity:0;transform:translateY(.5em);transition:opacity .3s ease,transform .55s var(--ease)}
+.hero h1 .rot span.on{opacity:1;transform:none;transition-delay:.22s}
+.hero h1 .rot span.out{opacity:0;transform:translateY(-.5em);transition:opacity .25s ease,transform .4s var(--ease)}
 .cta-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
 .cta-row.s{justify-content:flex-start}
 .reass{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;font-size:.9rem;color:var(--mut)}

@@ -14,7 +14,7 @@
   }else $$('.rv').forEach(function(el){el.classList.add('in')});
 
   /* mot qui tourne */
-  $$('.rot').forEach(function(r){var s=$$('span',r),i=0;if(s.length<2)return;setInterval(function(){s[i].classList.remove('on');i=(i+1)%s.length;s[i].classList.add('on')},2400)});
+  $$('.rot').forEach(function(r){var s=$$('span',r),i=0;if(s.length<2)return;setInterval(function(){var o=s[i];o.classList.remove('on');o.classList.add('out');setTimeout(function(){o.classList.remove('out')},600);i=(i+1)%s.length;s[i].classList.add('on')},2600)});
 
   /* onglets services */
   $$('.svc').forEach(function(w){
