@@ -457,3 +457,10 @@ p,.lead,li,summary{text-wrap:pretty}
 .wa.on:active{transform:scale(.97)}
 @media(max-width:700px){.wa{height:48px;padding:0 16px 0 7px;border-radius:13px;font-size:.92rem}.wa-i{width:33px;height:33px;border-radius:9px}}
 .notif{width:min(350px,100%)}
+
+/* ===== logo ===== */
+.logo{font-family:var(--sans);font-weight:600;font-size:1.28rem;letter-spacing:-.055em;gap:9px;color:var(--ink)}
+.logo i{display:none}
+.logo .mk{width:30px;height:30px;flex:none;transition:transform .5s var(--ease)}
+.logo:hover .mk{transform:rotate(-6deg)}
+@media(max-width:700px){.logo{font-size:1.2rem;gap:8px}.logo .mk{width:28px;height:28px}}
