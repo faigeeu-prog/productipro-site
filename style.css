@@ -538,3 +538,4 @@ p,.lead,li,summary{text-wrap:pretty}
   .hx::before{background:linear-gradient(180deg,rgba(25,10,4,.62) 0%,rgba(25,10,4,.42) 34%,rgba(25,10,4,0) 55%,rgba(25,10,4,0) 75%,rgba(25,10,4,.35) 100%)}
 }
 @media(max-width:700px){.trust>div{align-content:start}}
+.hx::before{background:radial-gradient(60% 55% at 50% 46%,rgba(46,20,8,.5),rgba(46,20,8,0) 74%),linear-gradient(180deg,rgba(30,12,5,.25) 0%,rgba(30,12,5,.08) 35%,rgba(30,12,5,.15) 70%,rgba(30,12,5,.5) 100%)}
