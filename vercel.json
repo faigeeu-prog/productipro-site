@@ -3,6 +3,31 @@
  "trailingSlash": false,
  "redirects": [
   {
+   "source": "/agence-skool",
+   "destination": "/",
+   "permanent": false
+  },
+  {
+   "source": "/agence-gestion-communaute",
+   "destination": "/",
+   "permanent": false
+  },
+  {
+   "source": "/creer-communaute-skool",
+   "destination": "/",
+   "permanent": false
+  },
+  {
+   "source": "/monetiser-son-audience",
+   "destination": "/",
+   "permanent": false
+  },
+  {
+   "source": "/membra",
+   "destination": "/",
+   "permanent": false
+  },
+  {
    "source": "/contenu",
    "destination": "/",
    "permanent": false

@@ -53,21 +53,21 @@
   addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);onScroll();
 
   /* calculateur */
-  var A=$('#c-a'),R=$('#c-r'),P=$('#c-p'),U=$('#c-u'),H=$('#c-h');
+  var A=$('#c-a'),R=$('#c-r'),U=$('#c-u'),H=$('#c-h');
   function fmt(n){return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,' ')}
   function pc(v){return (+v).toFixed(1).replace('.0','').replace('.',',')+' %'}
+  function dec(v){return (Math.round(v*10)/10).toString().replace('.',',')}
   var shown=0,anim=null;
   function tween(el,from,to){var t0=null;cancelAnimationFrame(anim);(function f(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/700),e=1-Math.pow(1-k,3);el.textContent=fmt(from+(to-from)*e);if(k<1)anim=requestAnimationFrame(f)})(performance.now())}
   function fill(i){i.style.setProperty('--p',((i.value-i.min)/(i.max-i.min)*100)+'%')}
   function calc(first){
-    if(!A)return;[A,R,P,U,H].forEach(fill);
-    var a=+A.value,r=+R.value,pr=+P.value,u=+U.value,h=+H.value,m=Math.round(a*r/100),subs=m*pr,prem=m*u/100*h,t=subs+prem;
-    $('#o-a').textContent=fmt(a);$('#o-r').textContent=pc(r);$('#o-p').textContent=pr+' €';$('#o-u').textContent=pc(u);$('#o-h').textContent=fmt(h)+' €';
-    $('#o-m').textContent=fmt(m);$('#o-s').textContent=fmt(subs)+' €';$('#o-v').textContent=fmt(prem)+' €';
-    $('#o-y').textContent=fmt(subs*.5+prem*.8)+' €';$('#o-l').textContent=fmt(6*pr+6*u/100*h)+' €';$('#o-l0').textContent=fmt(6*pr);
+    if(!A)return;[A,R,U,H].forEach(fill);
+    var a=+A.value,r=+R.value,u=+U.value,h=+H.value,rdv=a*r/100,cl=rdv*u/100,t=cl*h;
+    $('#o-a').textContent=fmt(a);$('#o-r').textContent=pc(r);$('#o-u').textContent=Math.round(u)+' %';$('#o-h').textContent=fmt(h)+' €';
+    $('#o-m').textContent=fmt(rdv);$('#o-s').textContent=dec(cl);$('#o-y').textContent=fmt(t*12)+' €';$('#o-l').textContent=dec(rdv/4.33);
     var big=$('#o-t');if(first||reduce)big.textContent=fmt(t);else tween(big,shown,t);shown=t;
   }
-  [A,R,P,U,H].forEach(function(i){if(i)i.addEventListener('input',function(){calc()})});calc(true);
+  [A,R,U,H].forEach(function(i){if(i)i.addEventListener('input',function(){calc()})});calc(true);
 
   /* FAQ */
   $$('.qa .it').forEach(function(it){var b=$('button',it);b.addEventListener('click',function(){var o=!it.classList.contains('open');$$('.qa .it.open').forEach(function(x){if(x!==it){x.classList.remove('open');$('button',x).setAttribute('aria-expanded','false')}});it.classList.toggle('open',o);b.setAttribute('aria-expanded',o)})});
