@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Indépendante en ligne · Faceless Club</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap">
+<style>
+/* Mise en page : colonne centrée 1280px, sections aérées, gros titres en deux tons, panneaux de démonstration sur fond « projecteur + grille de points ». */
+:root{
+  --bg:#0E0F11; --bg-2:#141519; --card:#18191D; --card-2:#1F2025; --ink:#F2F0EA; --ink-2:#B8BBC2; --mute:#7D828B; --mute-2:#5A5E66;
+  --line:rgba(242,240,234,.08); --line-2:rgba(242,240,234,.15); --amber:#E89A3C; --amber-2:rgba(232,154,60,.14); --paper:#F2F0EA; --paper-ink:#111318;
+  --f:"Inter Tight",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; --max:1280px; --r:20px; --e:cubic-bezier(.19,1,.22,1);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--f);letter-spacing:-.006em;-webkit-font-smoothing:antialiased;padding-left:max(0px,env(safe-area-inset-left,0px));padding-right:max(0px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-weight:500;margin:0;text-wrap:balance}
+h1{font-size:clamp(44px,6.9vw,92px);line-height:.94;letter-spacing:-.055em}
+h2{font-size:clamp(36px,4.6vw,60px);line-height:1;letter-spacing:-.045em}
+h3{font-size:clamp(26px,3vw,38px);line-height:1.03;letter-spacing:-.045em}
+.g{color:var(--mute-2)}
+p{color:var(--ink-2);margin:0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:13px;color:var(--ink-2)}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 10px var(--amber)}
+.btn{display:inline-flex;align-items:center;gap:14px;height:48px;padding:0 6px 0 20px;border-radius:999px;background:var(--paper);color:var(--paper-ink);font-weight:500;font-size:15px;transition:transform .5s var(--e)}
+.btn .arr{width:36px;height:36px;border-radius:50%;background:var(--paper-ink);color:var(--paper);display:grid;place-items:center;font-size:16px;transition:transform .5s var(--e)}
+.btn:hover .arr{transform:translateX(3px)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line-2);padding:0 20px}
+.btn:focus-visible,.navpill a:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+
+/* en-tête */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50}
+.hbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:600;font-size:16px;letter-spacing:-.02em}
+.logo i{width:22px;height:22px;border-radius:7px;background:var(--card-2);border:1px solid var(--line-2);display:grid;place-items:center}
+.logo i::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 8px var(--amber)}
+.navpill{display:flex;gap:4px;padding:5px;border-radius:999px;background:rgba(24,25,29,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line)}
+.navpill a{padding:7px 14px;border-radius:999px;font-size:14px;color:var(--ink-2)}
+.navpill a:hover{color:var(--ink);background:var(--card-2)}
+.hbar .btn{height:42px;font-size:14px}.hbar .btn .arr{width:32px;height:32px}
+@media (max-width:900px){.navpill{display:none}}
+@media (max-width:480px){.hbar .btn span.t{display:none}.hbar .btn{padding:0 5px}}
+
+/* héros : projecteur + grille de points */
+.hero{position:relative;overflow:hidden;margin-top:-70px;padding-block:150px 90px;text-align:center}
+.stage{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at 1px 1px,rgba(242,240,234,.13) 1.2px,transparent 1.6px) 0 0/34px 34px;
+  -webkit-mask-image:radial-gradient(ellipse 70% 70% at 50% 40%,#000 30%,transparent 80%);mask-image:radial-gradient(ellipse 70% 70% at 50% 40%,#000 30%,transparent 80%)}
+.beam{position:absolute;left:50%;top:-40px;width:560px;height:760px;transform:translateX(-50%);pointer-events:none;
+  background:conic-gradient(from 180deg at 50% 0,transparent 165deg,rgba(242,240,234,.10) 173deg,rgba(242,240,234,.16) 180deg,rgba(242,240,234,.10) 187deg,transparent 195deg);filter:blur(14px);
+  -webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent)}
+.horizon{position:absolute;left:50%;bottom:-260px;width:1300px;height:420px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(232,154,60,.22),rgba(232,154,60,.05) 60%,transparent);pointer-events:none}
+.hero .wrap{position:relative;display:flex;flex-direction:column;align-items:center;gap:26px}
+.hero h1{max-width:13ch}
+.hero .sub{max-width:52ch;font-size:17px}
+.ctas{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.badges{display:flex;gap:22px;flex-wrap:wrap;justify-content:center;list-style:none;padding:0;margin:8px 0 0;font-size:14px;color:var(--ink-2)}
+.badges li{display:flex;align-items:center;gap:8px}
+.tick{width:16px;height:16px;border-radius:50%;background:var(--amber-2);position:relative}
+.tick::after{content:"";position:absolute;left:5px;top:3.5px;width:4px;height:7px;border:solid var(--amber);border-width:0 1.6px 1.6px 0;transform:rotate(45deg)}
+.audiences{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+.audiences a{font-size:12px;padding:5px 11px;border-radius:999px;border:1px solid var(--line);color:var(--mute)}
+.audiences a.on{color:var(--ink);border-color:var(--line-2);background:var(--card)}
+
+section{padding-block:clamp(80px,11vw,140px)}
+.head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px;margin-bottom:56px}
+.head p{max-width:54ch}
+
+/* constat */
+.constat p{font-size:clamp(28px,3.6vw,46px);line-height:1.12;letter-spacing:-.04em;color:var(--ink);text-align:center;max-width:24ch;margin:0 auto;font-weight:500}
+.constat .w{color:var(--mute-2);transition:color .35s}
+.constat .w.lit{color:var(--ink)}
+.constat .w.hl.lit{color:var(--amber)}
+
+/* modèle */
+.steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.s3{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.num{font-size:13px;color:var(--mute);font-variant-numeric:tabular-nums}
+.s3 h4{margin:0;font-size:22px;font-weight:500;letter-spacing:-.03em;color:var(--ink)}
+.result{margin-top:28px;text-align:center;color:var(--ink);font-size:17px}
+.result b{font-weight:500;color:var(--amber)}
+@media (max-width:860px){.steps3{grid-template-columns:1fr}}
+
+/* calcul */
+.calc{display:grid;grid-template-columns:1fr 1.15fr;gap:16px}
+.ctrl{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:22px;min-width:0}
+.ctrl .row1{display:flex;justify-content:space-between;color:var(--mute);font-size:14px}
+.field{display:flex;flex-direction:column;gap:10px}
+.field label{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:15px;color:var(--ink-2)}
+.field output{font-size:22px;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:4px;background:linear-gradient(var(--amber),var(--amber)) 0/var(--v,50%) 100% no-repeat,var(--line-2);outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--paper);border:4px solid var(--amber);cursor:pointer}
+input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--paper);border:4px solid var(--amber);cursor:pointer}
+.out{position:relative;overflow:hidden;border-radius:var(--r);padding:32px;background:#0A0B0D;border:1px solid var(--line);display:flex;flex-direction:column;gap:22px;min-width:0}
+.out::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(closest-side,rgba(232,154,60,.28),transparent);pointer-events:none}
+.out .lab{color:var(--ink-2);font-size:15px;position:relative}
+.big{font-size:clamp(56px,7.5vw,104px);line-height:.9;letter-spacing:-.06em;font-weight:500;font-variant-numeric:tabular-nums;position:relative}
+.big small{font-size:.4em;color:var(--mute);letter-spacing:-.02em;margin-left:6px}
+.split{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;position:relative}
+.split div{background:rgba(242,240,234,.04);border:1px solid var(--line);border-radius:14px;padding:14px;min-width:0}
+.split span{display:block;font-size:12px;color:var(--mute)}
+.split b{font-weight:500;font-size:22px;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.disc{font-size:13px;color:var(--mute);position:relative}
+@media (max-width:860px){.calc{grid-template-columns:1fr}.split{grid-template-columns:1fr 1fr}}
+
+/* méthode */
+.method{display:flex;flex-direction:column;gap:22px}
+.mstep{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center;padding-block:28px;border-top:1px solid var(--line)}
+.mstep .txt{display:flex;flex-direction:column;gap:16px;min-width:0}
+.mstep .k{display:flex;align-items:center;gap:10px;color:var(--mute);font-size:14px}
+.mstep .k b{width:26px;height:26px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;font-weight:500;color:var(--ink);font-size:13px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips span{font-size:13px;padding:7px 12px;border-radius:999px;border:1px solid var(--line-2);color:var(--ink-2)}
+.scene{position:relative;border-radius:24px;overflow:hidden;min-height:360px;display:grid;place-items:center;padding:34px;background:#0A0B0D;border:1px solid var(--line)}
+.scene::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 1px 1px,rgba(242,240,234,.12) 1.2px,transparent 1.6px) 0 0/30px 30px}
+.scene::after{content:"";position:absolute;left:50%;top:-30px;width:420px;height:520px;transform:translateX(-50%);background:conic-gradient(from 180deg at 50% 0,transparent 166deg,rgba(242,240,234,.09) 175deg,rgba(242,240,234,.13) 180deg,rgba(242,240,234,.09) 185deg,transparent 194deg);filter:blur(12px);pointer-events:none}
+.panel{position:relative;z-index:1;width:min(440px,100%);background:rgba(24,25,29,.92);border:1px solid var(--line-2);border-radius:18px;padding:18px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);display:flex;flex-direction:column;gap:14px}
+.ph{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--mute)}
+.ph .who{display:flex;align-items:center;gap:8px;color:var(--ink)}
+.ph .who i{width:18px;height:18px;border-radius:6px;background:var(--card-2);border:1px solid var(--line-2);display:grid;place-items:center}
+.ph .who i::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--amber)}
+.tagx{font-size:11px;padding:3px 8px;border-radius:999px;background:var(--amber-2);color:var(--amber)}
+.tagx.ok{background:rgba(120,200,150,.12);color:#86CFA0}
+.ex{font-size:11px;color:var(--mute-2);text-align:right}
+.inner{background:var(--card-2);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:10px}
+.pipe{display:flex;flex-direction:column;gap:8px}
+.pipe div{display:flex;align-items:center;justify-content:space-between;background:var(--card-2);border-radius:10px;padding:10px 12px;font-size:14px}
+.pipe div span{color:var(--mute);font-size:12px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.kpis div{background:var(--card-2);border-radius:10px;padding:10px;min-width:0}
+.kpis span{display:block;font-size:11px;color:var(--mute)}
+.kpis b{font-weight:500;font-size:20px;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.bars{display:flex;align-items:flex-end;gap:6px;height:90px}
+.bars i{flex:1;border-radius:4px 4px 0 0;background:linear-gradient(var(--amber),rgba(232,154,60,.25))}
+.rowp{display:flex;align-items:center;gap:10px;background:var(--card-2);border-radius:10px;padding:10px 12px;font-size:14px}
+.rowp .av{width:28px;height:28px;border-radius:50%;background:var(--bg);border:1px solid var(--line-2);display:grid;place-items:center;font-size:12px;color:var(--ink-2);flex:none}
+.rowp .grow{flex:1;min-width:0}.rowp .grow span{display:block;font-size:12px;color:var(--mute)}
+.mini{font-size:12px;color:var(--mute)}
+@media (max-width:860px){.mstep{grid-template-columns:1fr;gap:22px}.scene{min-height:300px;padding:20px}}
+
+/* programme */
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.mod{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.mod .num{color:var(--amber)}
+.mod h4{margin:0;font-size:19px;font-weight:500;letter-spacing:-.03em}
+.mod p{font-size:15px}
+@media (max-width:1000px){.grid4{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.grid4{grid-template-columns:1fr}}
+
+/* démarrage */
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line-2)}
+.tl{padding:22px 20px 0 0;position:relative;display:flex;flex-direction:column;gap:8px;min-width:0}
+.tl::before{content:"";position:absolute;top:-5px;left:0;width:9px;height:9px;border-radius:50%;background:var(--amber);box-shadow:0 0 10px var(--amber)}
+.tl .when{font-size:13px;color:var(--mute)}
+.tl h4{margin:0;font-size:20px;font-weight:500;letter-spacing:-.03em}
+@media (max-width:860px){.timeline{grid-template-columns:1fr 1fr;row-gap:30px}}
+@media (max-width:480px){.timeline{grid-template-columns:1fr}}
+
+/* tarif */
+.price{display:grid;grid-template-columns:.85fr 1.15fr;gap:16px}
+.pmain{background:var(--paper);color:var(--paper-ink);border-radius:24px;padding:34px;display:flex;flex-direction:column;gap:18px;min-width:0}
+.pmain .k{font-size:14px;color:#5b5f68;display:flex;align-items:center;gap:8px}
+.pmain .k::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber)}
+.pmain .amount{font-size:clamp(80px,10vw,132px);line-height:.85;letter-spacing:-.07em;font-weight:500}
+.pmain .amount sup{font-size:.32em;vertical-align:top;margin-left:4px;color:#5b5f68;letter-spacing:0}
+.pmain p{color:#3c414b}
+.pmain .btn{background:var(--paper-ink);color:var(--paper);align-self:flex-start}.pmain .btn .arr{background:var(--paper);color:var(--paper-ink)}
+.plist{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:10px 30px;display:flex;flex-direction:column;min-width:0}
+.pl{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-block:22px;border-bottom:1px solid var(--line)}
+.pl:last-child{border-bottom:0}
+.pl h4{margin:0 0 4px;font-size:18px;font-weight:500;letter-spacing:-.02em}
+.pl p{font-size:14px}
+.pl .v{font-size:clamp(32px,4vw,46px);letter-spacing:-.05em;font-weight:500;white-space:nowrap}
+.pl .v small{font-size:.4em;color:var(--mute);letter-spacing:0}
+@media (max-width:860px){.price{grid-template-columns:1fr}}
+
+/* questions */
+.faq{display:grid;grid-template-columns:1.3fr .7fr;gap:16px;align-items:start}
+.qa{border-bottom:1px solid var(--line)}
+.qa summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding-block:22px;font-size:19px;letter-spacing:-.02em;color:var(--ink)}
+.qa summary::-webkit-details-marker{display:none}
+.plus{width:26px;height:26px;border-radius:50%;border:1px solid var(--line-2);position:relative;flex:none}
+.plus::before,.plus::after{content:"";position:absolute;left:50%;top:50%;width:10px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%);transition:transform .4s var(--e)}
+.plus::after{transform:translate(-50%,-50%) rotate(90deg)}
+.qa[open] .plus::after{transform:translate(-50%,-50%) rotate(0)}
+.qa p{padding-bottom:22px;max-width:60ch}
+.fit{display:flex;flex-direction:column;gap:14px;min-width:0}
+.fitbox{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.fitbox h4{margin:0 0 12px;font-size:15px;font-weight:500;color:var(--ink)}
+.fitbox ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;font-size:15px;color:var(--ink-2)}
+.fitbox li{display:flex;gap:10px}
+.fitbox.yes li::before{content:"";width:6px;height:6px;margin-top:9px;border-radius:50%;background:var(--amber);flex:none}
+.fitbox.no li::before{content:"";width:8px;height:1.5px;margin-top:11px;background:var(--mute);flex:none}
+@media (max-width:860px){.faq{grid-template-columns:1fr}}
+
+/* fin */
+.final{position:relative;overflow:hidden;border-radius:28px;background:#0A0B0D;border:1px solid var(--line);padding:clamp(48px,8vw,100px) 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:24px}
+.final .beam{height:600px}
+.final>*{position:relative}.final>.beam{position:absolute}
+footer{padding-block:50px 40px;color:var(--mute);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style></head>
+<body>
+<header><div class="wrap hbar">
+  <a class="logo" href="#top"><i></i>Faceless Club</a>
+  <nav class="navpill" aria-label="Sections"><a href="#constat">Le constat</a><a href="#calcul">Le calcul</a><a href="#methode">La méthode</a><a href="#tarif">Tarif</a><a href="#questions">Questions</a></nav>
+  <a class="btn" href="https://www.skool.com/" target="_blank" rel="noopener"><span class="t">Rejoindre gratuitement</span><span class="arr" aria-hidden="true">→</span></a>
+</div></header>
+
+<main id="top">
+<section class="hero">
+  <div class="stage"></div><div class="beam"></div><div class="horizon"></div>
+  <div class="wrap">
+    <span class="eyebrow">Pour les femmes qui veulent leur indépendance financière</span>
+    <h1>Ton activité en ligne, <span class="g">à ton rythme, sans t'exposer.</span></h1>
+    <p class="sub">Une page TikTok faceless, produite avec l'IA, qui attire une audience et la transforme en revenu. Tu gardes ta vie privée et tu avances avec d'autres femmes qui font pareil.</p>
+    <div class="ctas"><a class="btn" href="https://www.skool.com/" target="_blank" rel="noopener">Rejoindre le Skool gratuit<span class="arr" aria-hidden="true">→</span></a><a class="btn ghost" href="#calcul">Calculer mon potentiel</a></div>
+    <ul class="badges"><li><span class="tick" aria-hidden="true"></span>Sans montrer ton visage</li><li><span class="tick" aria-hidden="true"></span>Compatible avec une vie bien remplie</li><li><span class="tick" aria-hidden="true"></span>Communauté bienveillante</li></ul>
+  </div>
+</section>
+
+<section class="constat" id="constat"><div class="wrap"><p id="cst"><span class="w">Beaucoup</span> <span class="w">de</span> <span class="w">femmes</span> <span class="w">ont</span> <span class="w">l&#x27;idée,</span> <span class="w">les</span> <span class="w">compétences</span> <span class="w">et</span> <span class="w">l&#x27;envie.</span> <span class="w">Ce</span> <span class="w">qui</span> <span class="w">bloque,</span> <span class="w">c&#x27;est</span> <span class="w">souvent</span> <span class="w">la</span> <span class="w">peur</span> <span class="w">de</span> <span class="w">s&#x27;exposer</span> <span class="w">et</span> <span class="w">le</span> <span class="w">manque</span> <span class="w">de</span> <span class="w">temps.</span> <span class="w">Une</span> <span class="w">page</span> <span class="w">faceless</span> <span class="w">règle</span> <span class="w">les</span> <span class="w">deux</span> <span class="w">:</span> <span class="w hl">tu</span> <span class="w hl">construis</span> <span class="w hl">une</span> <span class="w hl">audience</span> <span class="w hl">sans</span> <span class="w hl">montrer</span> <span class="w hl">ton</span> <span class="w hl">visage,</span> <span class="w hl">quelques</span> <span class="w hl">heures</span> <span class="w hl">par</span> <span class="w hl">semaine.</span></p></div></section>
+
+<section id="modele"><div class="wrap">
+  <div class="head"><span class="eyebrow">Le modèle</span><h2>Trois étapes. <span class="g">Aucune caméra.</span></h2></div>
+  <div class="steps3">
+    <div class="s3"><span class="num">01</span><h4>Tu choisis ton angle</h4><p>Un sujet, une cible, un format récurrent. C'est ce qui fait qu'on reconnaît ta page dès la première seconde.</p></div>
+    <div class="s3"><span class="num">02</span><h4>L'IA produit tes vidéos</h4><p>Script, voix off, animation, sous-titres. Tu pilotes la chaîne, l'IA fait le travail répétitif.</p></div>
+    <div class="s3"><span class="num">03</span><h4>Ton audience devient un revenu</h4><p>La rémunération TikTok quand tu y es éligible, et un lien en bio vers ton offre pour vendre à ceux qui veulent aller plus loin.</p></div>
+  </div>
+  <p class="result"><b>→</b> Résultat : une activité qui t'appartient, qui avance même quand tu as d'autres priorités.</p>
+</div></section>
+
+<section id="calcul" style="background:var(--bg-2)"><div class="wrap">
+  <div class="head"><span class="eyebrow">Le calcul</span><h2>Ce qu'une page faceless <span class="g">peut te rapporter.</span></h2><p>Règle les curseurs avec tes propres hypothèses. C'est une estimation, pas une promesse : beaucoup de comptes n'atteignent pas ces chiffres, d'autres les dépassent.</p></div>
+  <div class="calc">
+    <div class="ctrl">
+      <div class="row1"><span>Tes hypothèses</span><span>Par mois</span></div>
+      <div class="field"><label for="v">Vidéos publiées par semaine <output id="vo">5</output></label><input id="v" type="range" min="1" max="14" value="5"></div>
+      <div class="field"><label for="vu">Vues moyennes par vidéo <output id="vuo">8 000</output></label><input id="vu" type="range" min="500" max="100000" step="500" value="8000"></div>
+      <div class="field"><label for="rpm">Rémunération TikTok pour 1 000 vues <output id="rpmo">0,40 €</output></label><input id="rpm" type="range" min="0" max="1.2" step="0.05" value="0.4"></div>
+      <div class="field"><label for="ctr">Visiteurs du lien en bio pour 1 000 vues <output id="ctro">2</output></label><input id="ctr" type="range" min="0" max="10" step="0.5" value="2"></div>
+      <div class="field"><label for="cv">Visiteurs qui achètent ton offre <output id="cvo">3 %</output></label><input id="cv" type="range" min="0" max="10" step="0.5" value="3"></div>
+    </div>
+    <div class="out">
+      <span class="lab">Revenu estimé, chaque mois</span>
+      <div class="big"><span id="tot">0</span><small>€ / mois</small></div>
+      <div class="split">
+        <div><span>Vues par mois</span><b id="views">0</b></div>
+        <div><span>Rémunération TikTok</span><b id="tk">0 €</b></div>
+        <div><span>Ventes à 37 €</span><b id="sales">0</b></div>
+      </div>
+      <p class="disc">Calcul : vidéos × 4,3 semaines × vues. La rémunération TikTok ne s'applique que si ton compte et tes vidéos remplissent les conditions du programme.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="methode"><div class="wrap">
+  <div class="head"><span class="eyebrow">La méthode</span><h2>De zéro à ta première vente, <span class="g">étape par étape.</span></h2></div>
+  <div class="method">
+    <div class="mstep"><div class="txt"><span class="k"><b>1</b>Positionner</span><h3>Une page qu'on reconnaît en une seconde.</h3><p>Tu choisis ta cible, ton sujet et un format qui revient à chaque vidéo. On te donne les angles qui retiennent l'attention et ceux à éviter.</p><div class="chips"><span>Choix de la cible</span><span>Formats récurrents</span><span>Nom et bio</span></div></div>
+      <div class="scene"><div class="panel"><div class="ph"><span class="who"><i></i>Ta page</span><span class="tagx">Exemple</span></div>
+        <div class="inner"><div class="mini">Cible</div><div style="font-size:17px;letter-spacing:-.02em">Femmes entrepreneures</div><div class="mini">Format récurrent</div><div style="font-size:15px">« Élève A vs élève B »</div></div>
+        <div class="chips"><span>Mindset</span><span>Argent</span><span>Habitudes</span></div></div></div></div>
+    <div class="mstep"><div class="txt"><span class="k"><b>2</b>Produire</span><h3>L'IA fait le travail répétitif.</h3><p>Une chaîne de production simple : script, voix off, animation, montage. Tu sors une vidéo de 60 secondes en une fraction du temps habituel.</p><div class="chips"><span>Modèles de scripts</span><span>Voix IA</span><span>Animation</span></div></div>
+      <div class="scene"><div class="panel"><div class="ph"><span class="who"><i></i>Production</span><span class="tagx ok">Vidéo prête</span></div>
+        <div class="pipe"><div>Script<span>✓ 140 mots</span></div><div>Voix off<span>✓ 62 s</span></div><div>Animation<span>✓ 17 scènes</span></div><div>Export 9:16<span>✓ prêt à publier</span></div></div><div class="ex">Exemple</div></div></div></div>
+    <div class="mstep"><div class="txt"><span class="k"><b>3</b>Publier et analyser</span><h3>Chaque vidéo t'apprend quelque chose.</h3><p>Tu publies régulièrement, tu regardes les bons chiffres (rétention, partages, clics) et tu gardes ce qui marche. Les vidéos ratées servent autant que les autres.</p><div class="chips"><span>Rythme de publication</span><span>Lecture des statistiques</span><span>Tests d'accroche</span></div></div>
+      <div class="scene"><div class="panel"><div class="ph"><span class="who"><i></i>Statistiques</span><span>7 derniers jours</span></div>
+        <div class="kpis"><div><span>Vues</span><b>48,2 k</b></div><div><span>Rétention</span><b>61 %</b></div><div><span>Clics bio</span><b>214</b></div></div>
+        <div class="bars"><i style="height:30%"></i><i style="height:45%"></i><i style="height:38%"></i><i style="height:62%"></i><i style="height:55%"></i><i style="height:84%"></i><i style="height:100%"></i></div><div class="ex">Chiffres d'exemple</div></div></div></div>
+    <div class="mstep"><div class="txt"><span class="k"><b>4</b>Monétiser</span><h3>Ton audience rejoint ta communauté.</h3><p>Un lien en bio, une communauté Skool gratuite pour accueillir les gens, et une offre pour ceux qui veulent aller plus loin. Tu ne dépends pas que des vues.</p><div class="chips"><span>Lien en bio</span><span>Communauté Skool</span><span>Offre à petit prix</span></div></div>
+      <div class="scene"><div class="panel"><div class="ph"><span class="who"><i></i>Communauté</span><span class="tagx">Aujourd'hui</span></div>
+        <div class="rowp"><span class="av">L</span><span class="grow">Nouveau membre<span>via TikTok · lien en bio</span></span><span class="tagx ok">Rejoint</span></div>
+        <div class="rowp"><span class="av">S</span><span class="grow">Nouveau membre<span>via TikTok · commentaire épinglé</span></span><span class="tagx ok">Rejoint</span></div>
+        <div class="rowp"><span class="av">M</span><span class="grow">Méthode complète<span>paiement unique</span></span><span style="font-variant-numeric:tabular-nums">37 €</span></div><div class="ex">Exemple</div></div></div></div>
+  </div>
+</div></section>
+
+<section id="programme" style="background:var(--bg-2)"><div class="wrap">
+  <div class="head"><span class="eyebrow">Ce que tu reçois</span><h2>Tout pour lancer ta page. <span class="g">Rien de superflu.</span></h2></div>
+  <div class="grid4">
+    <div class="mod"><span class="num">Module 1</span><h4>Trouver ton angle</h4><p>Cible, sujet, format récurrent, nom de page et bio qui donnent envie de s'abonner.</p></div>
+    <div class="mod"><span class="num">Module 2</span><h4>Écrire des scripts qui retiennent</h4><p>Structure en 60 secondes, accroches, rythme. Avec des modèles prêts à remplir.</p></div>
+    <div class="mod"><span class="num">Module 3</span><h4>Produire avec l'IA</h4><p>Voix off, animation, sous-titres et export. La chaîne complète, outil par outil.</p></div>
+    <div class="mod"><span class="num">Module 4</span><h4>Publier et monétiser</h4><p>Rythme, statistiques, conditions de rémunération TikTok, lien en bio et première offre.</p></div>
+  </div>
+</div></section>
+
+<section id="demarrage"><div class="wrap">
+  <div class="head"><span class="eyebrow">Le démarrage</span><h2>Ton premier mois, <span class="g">semaine par semaine.</span></h2></div>
+  <div class="timeline">
+    <div class="tl"><span class="when">Semaine 1</span><h4>Ta page est prête</h4><p>Angle choisi, compte configuré, cinq premiers scripts écrits.</p></div>
+    <div class="tl"><span class="when">Semaine 2</span><h4>Tes premières vidéos</h4><p>Ta chaîne de production tourne et tu publies tes premières vidéos.</p></div>
+    <div class="tl"><span class="when">Semaine 3</span><h4>Tu lis tes chiffres</h4><p>Tu repères ce qui retient l'attention et tu ajustes tes accroches.</p></div>
+    <div class="tl"><span class="when">Semaine 4</span><h4>Ton lien en bio vit</h4><p>Ta communauté est en place et ton offre est prête à être proposée.</p></div>
+  </div>
+</div></section>
+
+<section id="tarif" style="background:var(--bg-2)"><div class="wrap">
+  <div class="head"><span class="eyebrow">Tarif</span><h2>Commence gratuitement. <span class="g">Va plus loin si tu veux.</span></h2></div>
+  <div class="price">
+    <div class="pmain"><span class="k">Méthode complète</span><div class="amount">37<sup>€</sup></div><p>Paiement unique. Les quatre modules, les modèles de scripts et l'accès à vie aux mises à jour.</p><a class="btn" href="https://www.skool.com/" target="_blank" rel="noopener">Commencer par le Skool gratuit<span class="arr" aria-hidden="true">→</span></a></div>
+    <div class="plist">
+      <div class="pl"><div><h4>Communauté Skool</h4><p>Le module de démarrage et l'entraide entre membres.</p></div><span class="v">0<small> €</small></span></div>
+      <div class="pl"><div><h4>Abonnement obligatoire</h4><p>Aucun. Tu paies la méthode une fois, c'est tout.</p></div><span class="v">0<small> €</small></span></div>
+      <div class="pl"><div><h4>Temps à prévoir</h4><p>Pour publier régulièrement, une fois la production en place.</p></div><span class="v">5<small> h/sem</small></span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="questions"><div class="wrap">
+  <div class="head"><span class="eyebrow">Questions</span><h2>Avant de <span class="g">te lancer.</span></h2></div>
+  <div class="faq"><div><details class="qa"><summary>Je n&#x27;ai aucune compétence technique, c&#x27;est un problème ?<span class="plus" aria-hidden="true"></span></summary><p>Non. Les outils sont présentés pas à pas, avec des modèles prêts à remplir. Si tu sais utiliser un téléphone, tu sais suivre la méthode.</p></details><details class="qa"><summary>Je dois montrer mon visage ?<span class="plus" aria-hidden="true"></span></summary><p>Non. Toute la méthode repose sur des vidéos animées faites avec l&#x27;IA : voix off, animation, sous-titres. Personne ne voit qui tu es.</p></details><details class="qa"><summary>Combien de temps ça prend par semaine ?<span class="plus" aria-hidden="true"></span></summary><p>Compte 4 à 6 heures pour sortir 5 à 7 vidéos une fois que ta chaîne de production est en place. Les deux premières semaines demandent un peu plus, le temps de prendre les outils en main.</p></details><details class="qa"><summary>Combien je vais gagner ?<span class="plus" aria-hidden="true"></span></summary><p>On ne promet aucun montant. Tes résultats dépendent de ta régularité, de ton sujet et du temps que tu y mets. Le calculateur donne un ordre d&#x27;idée à partir de tes propres hypothèses, pas une garantie.</p></details><details class="qa"><summary>La rémunération TikTok est automatique ?<span class="plus" aria-hidden="true"></span></summary><p>Non. TikTok fixe des conditions pour son programme de rémunération (âge, nombre d&#x27;abonnés, vues, durée des vidéos) et elles évoluent. On te montre où les vérifier et comment construire des vidéos qui y sont éligibles.</p></details><details class="qa"><summary>Je peux commencer gratuitement ?<span class="plus" aria-hidden="true"></span></summary><p>Oui. La communauté Skool est gratuite. Tu y trouves le module de démarrage et tu décides ensuite si la méthode complète t&#x27;intéresse.</p></details></div>
+    <div class="fit"><div class="fitbox yes"><h4>C'est pour toi si</h4><ul><li>Tu veux un revenu qui ne dépend que de toi</li><li>Tu ne veux pas montrer ton visage en ligne</li><li>Tu as quelques heures par semaine à y consacrer</li><li>Tu veux avancer entourée, pas seule</li></ul></div><div class="fitbox no"><h4>Ce n'est pas pour toi si</h4><ul><li>Tu cherches un résultat garanti en un mois</li><li>Tu ne veux pas publier régulièrement</li><li>Tu n&#x27;as aucun temps à y consacrer</li></ul></div></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap"><div class="final"><div class="beam"></div><span class="eyebrow">Gratuit pour commencer</span><h2>Ton indépendance commence par une première vidéo.</h2><p>Rejoins la communauté, récupère le module de démarrage et publie ta première vidéo cette semaine.</p><a class="btn" href="https://www.skool.com/" target="_blank" rel="noopener">Rejoindre le Skool gratuit<span class="arr" aria-hidden="true">→</span></a></div></div></section>
+</main>
+
+<footer><div class="wrap"><span>© Faceless Club · Aucun résultat n'est garanti.</span><nav class="audiences" aria-label="Autres profils"><a href="jeunes.html" class="">18–25 ans</a><a href="femmes.html" class="on">Femmes entrepreneures</a><a href="salaries.html" class="">Salariés</a><a href="reconversion.html" class="">Reconversion</a><a href="sansdiplome.html" class="">Sans diplôme</a></nav></div></footer>
+
+<script>
+const $=id=>document.getElementById(id),fmt=n=>Math.round(n).toLocaleString('fr-FR').replace(/ | /g,' '),PRICE=37;
+function calc(){
+  const v=+$('v').value,vu=+$('vu').value,rpm=+$('rpm').value,ctr=+$('ctr').value,cv=+$('cv').value;
+  const views=v*4.3*vu,tk=views/1000*rpm,sales=views/1000*ctr*cv/100,tot=tk+sales*PRICE;
+  $('vo').textContent=v;$('vuo').textContent=fmt(vu);$('rpmo').textContent=rpm.toFixed(2).replace('.',',')+' €';$('ctro').textContent=String(ctr).replace('.',',');$('cvo').textContent=String(cv).replace('.',',')+' %';
+  $('views').textContent=fmt(views);$('tk').textContent=fmt(tk)+' €';$('sales').textContent=fmt(sales);$('tot').textContent=fmt(tot);
+  document.querySelectorAll('input[type=range]').forEach(r=>r.style.setProperty('--v',((r.value-r.min)/(r.max-r.min)*100)+'%'));
+}
+document.querySelectorAll('input[type=range]').forEach(r=>r.addEventListener('input',calc));calc();
+// le constat s'éclaire mot à mot au défilement
+const words=[...document.querySelectorAll('#cst .w')];
+function reveal(){const r=$('cst').getBoundingClientRect(),h=innerHeight;const k=Math.min(1,Math.max(0,(h*.85-r.top)/(r.height+h*.35)));const n=Math.round(k*words.length);words.forEach((w,i)=>w.classList.toggle('lit',i<n));}
+addEventListener('scroll',reveal,{passive:true});reveal();
+</script>
+</body></html>
