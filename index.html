@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>LA DSA — Tes premiers euros en ligne en 60 jours</title>
-<meta name="description" content="La méthode pour lancer une page qui génère des revenus en ligne. Remboursé si tu ne gagnes rien en 60 jours.">
+<title>Vizion LAB — L'IA n'a jamais été aussi puissante</title>
+<meta name="description" content="Vizion LAB repère les tendances qui marchent aux États-Unis avant qu'elles arrivent en France, et t'explique comment les appliquer avec l'IA.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap">
 <style>
@@ -47,7 +47,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50}
 .horizon{position:absolute;left:50%;bottom:-270px;width:1300px;height:440px;transform:translateX(-50%);border-radius:50%;
   background:radial-gradient(closest-side,rgba(232,154,60,.20),rgba(232,154,60,.05) 60%,transparent);pointer-events:none}
 .hero .wrap{position:relative;display:flex;flex-direction:column;align-items:center;gap:26px}
-.hero h1{max-width:18ch}
+.hero h1{max-width:20ch}
 .hero .sub{max-width:52ch;font-size:17px}
 
 /* VSL + verrou */
@@ -135,6 +135,7 @@ section{padding-block:clamp(76px,10vw,120px)}
 .meta{display:flex;flex-direction:column;gap:3px;padding:0 2px}
 .meta b{font-size:15px;font-weight:500;letter-spacing:-.02em}
 .meta span{font-size:13.5px;color:var(--mute)}
+.vnote{margin:-6px 0 22px;font-size:12.5px;color:var(--mute-2)}
 .note{margin-top:34px;text-align:center;font-size:13px;color:var(--mute-2)}
 
 footer{padding-block:40px;border-top:1px solid var(--line)}
@@ -146,21 +147,21 @@ footer{padding-block:40px;border-top:1px solid var(--line)}
 <body>
 
 <header><div class="wrap"><nav class="hbar">
-  <a href="/" class="logo"><i></i>LA DSA</a>
+  <a href="/" class="logo"><i></i>Vizion LAB</a>
   <a href="https://whop.com/" class="btn">Rejoindre<span class="arr">→</span></a>
 </nav></div></header>
 
 <section class="hero">
   <div class="stage"></div><div class="beam"></div><div class="horizon"></div>
   <div class="wrap">
-    <span class="eyebrow">LA DSA</span>
-    <h1>Tes premiers euros en ligne en 60 jours, <span class="g">ou on te rembourse.</span></h1>
-    <p class="sub">Regarde ce qu'en disent les membres.</p>
+    <span class="eyebrow">Vizion LAB</span>
+    <h1>L'IA n'a jamais été aussi puissante. <span class="g">Les premiers à s'en servir prennent la place.</span></h1>
+    <p class="sub">Dans Vizion LAB, on repère les opportunités qui marchent déjà aux US avant qu'elles arrivent en France, et grâce à nos contacts sur place, on t'explique chaque nouvelle tendance dès qu'elle sort.</p>
 
     <div class="vsl" id="vsl">
       <video id="v" poster="videos/temoignages-poster.jpg" preload="none" playsinline src="videos/temoignages.mp4"></video>
       <div class="ov" id="ov"><i></i></div>
-      <div class="lbl">Ils témoignent · 2 min</div>
+      <div class="lbl">Ils témoignent · 1 min 50</div>
 
       <div class="gate" id="gate">
         <button type="button" class="close" id="gclose" aria-label="Fermer">×</button>
@@ -174,12 +175,13 @@ footer{padding-block:40px;border-top:1px solid var(--line)}
           <input id="email" name="email" type="email" placeholder="Ton adresse email" autocomplete="email" required>
           <p class="err" id="err" role="alert"></p>
           <button type="submit" class="btn" id="go">Lancer la vidéo<span class="arr">→</span></button>
-          <p class="rgpd">Ton nom et ton email servent à t'envoyer cette vidéo et des informations sur LA DSA. Tu peux te désinscrire à tout moment, et demander la suppression de tes données à l'adresse indiquée dans les <a href="mentions-legales.html">mentions légales</a>.</p>
+          <p class="rgpd">Ton nom et ton email servent à t'envoyer cette vidéo et des informations sur Vizion LAB. Tu peux te désinscrire à tout moment, et demander la suppression de tes données à l'adresse indiquée dans les <a href="mentions-legales.html">mentions légales</a>.</p>
         </form>
       </div>
     </div>
+    <p class="vnote">Témoignages de membres, visages floutés à leur demande. Résultats individuels, non garantis.</p>
 
-    <a href="https://whop.com/" class="btn" style="height:56px;font-size:17px">Rejoindre LA DSA<span class="arr">→</span></a>
+    <a href="https://whop.com/" class="btn" style="height:56px;font-size:17px">Rejoindre Vizion LAB<span class="arr">→</span></a>
     <div class="guar">
       <span class="seal" aria-hidden="true"></span>
       <div><b>Pas un euro gagné en 60 jours ? Remboursé.</b><span>Intégralement, sur simple demande.</span></div>
@@ -192,19 +194,9 @@ footer{padding-block:40px;border-top:1px solid var(--line)}
   </div>
 </section>
 
-<section class="tem">
-  <div class="wrap">
-    <div class="head">
-      <span class="eyebrow">Avis et témoignages</span>
-      <h2>Les membres <span class="g">en parlent.</span></h2>
-    </div>
-    <div class="grid" id="grid"></div>
-    <p class="note">Témoignages de membres. Les résultats dépendent du travail fourni et ne sont pas garantis.</p>
-  </div>
-</section>
 
 <footer><div class="wrap"><div class="foot">
-  <a href="/" class="logo"><i></i>LA DSA</a>
+  <a href="/" class="logo"><i></i>Vizion LAB</a>
   <nav>
     <a href="cgv.html">CGV</a>
     <a href="mentions-legales.html">Mentions légales</a>
@@ -275,55 +267,5 @@ footer{padding-block:40px;border-top:1px solid var(--line)}
   });
 })();
 
-/* ─────────────────────────────────────────────────────────────
-   TES TÉMOIGNAGES — c'est la seule chose à modifier ici.
-   Dépose tes vidéos dans le dossier /videos à la racine du site,
-   puis remplis une ligne par témoignage :
-
-     src      : chemin de la vidéo (format vertical 9:16, .mp4)
-     poster   : image d'aperçu affichée avant lecture (.jpg), facultatif
-     nom      : qui parle
-     resultat : une ligne, son résultat concret
-
-   Laisse src vide ("") pour garder un emplacement en attente.
-   Tu peux mettre autant de lignes que tu veux, la grille s'adapte.
-   ───────────────────────────────────────────────────────────── */
-const TEMOIGNAGES = [
-  { src:"", poster:"", nom:"", resultat:"" },
-  { src:"", poster:"", nom:"", resultat:"" },
-  { src:"", poster:"", nom:"", resultat:"" },
-  { src:"", poster:"", nom:"", resultat:"" }
-];
-
-const grid=document.getElementById('grid');
-TEMOIGNAGES.forEach((t,i)=>{
-  const card=document.createElement('div'); card.className='vc';
-  if(!t.src){
-    card.innerHTML='<div class="vbox empty"><div class="ph"><div class="sq"></div>'
-      +'Emplacement vidéo '+(i+1)+'</div></div>'
-      +'<div class="meta"><b style="color:var(--mute-2)">Nom du membre</b>'
-      +'<span>Son résultat en une ligne</span></div>';
-  } else {
-    const b=document.createElement('div'); b.className='vbox';
-    const vv=document.createElement('video');
-    vv.src=t.src; vv.playsInline=true; vv.preload='metadata';
-    if(t.poster) vv.poster=t.poster;
-    const ov2=document.createElement('div'); ov2.className='play'; ov2.innerHTML='<i></i>';
-    b.append(vv,ov2);
-    b.addEventListener('click',()=>{
-      document.querySelectorAll('.vbox.playing').forEach(o=>{
-        if(o!==b){o.classList.remove('playing');o.querySelector('video').pause();}
-      });
-      if(vv.paused){b.classList.add('playing');vv.controls=true;vv.play();}
-      else{b.classList.remove('playing');vv.pause();}
-    });
-    vv.addEventListener('ended',()=>{b.classList.remove('playing');vv.controls=false;});
-    const m=document.createElement('div'); m.className='meta'; m.innerHTML='<b></b><span></span>';
-    m.querySelector('b').textContent=t.nom||'';
-    m.querySelector('span').textContent=t.resultat||'';
-    card.append(b,m);
-  }
-  grid.append(card);
-});
 </script>
 </body></html>

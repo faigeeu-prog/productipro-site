@@ -4,7 +4,7 @@
 //   RESEND_API_KEY   ta clé Resend (commence par re_)
 //   LEAD_TO          l'adresse qui reçoit les inscriptions
 //   LEAD_FROM        l'expéditeur, sur un domaine vérifié dans Resend
-//                    ex. LA DSA <contact@productipro.fr>
+//                    ex. Vizion LAB <contact@productipro.fr>
 //
 // La clé reste chez Vercel : elle n'est jamais dans le dépôt.
 
