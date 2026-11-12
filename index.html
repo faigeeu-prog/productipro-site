@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ProducTiPro — Crée une page TikTok qui travaille pour toi</title>
-<meta name="description" content="Prompts, scripts et méthode pour lancer une page TikTok rentable. 59 €/mois, sans engagement.">
+<title>LA DSA — Tes premiers euros en ligne en 60 jours</title>
+<meta name="description" content="La méthode pour lancer une page qui génère des revenus en ligne. 89 €/mois, sans engagement, remboursé si tu ne gagnes rien en 60 jours.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap">
 <style>
@@ -18,7 +18,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 max(20px,env(safe-area-inset-left,0px))}
 h1,h2{font-weight:500;margin:0;text-wrap:balance}
-h1{font-size:clamp(44px,7vw,94px);line-height:.94;letter-spacing:-.055em}
+h1{font-size:clamp(38px,5.6vw,74px);line-height:.96;letter-spacing:-.05em}
 h2{font-size:clamp(34px,4.6vw,58px);line-height:1;letter-spacing:-.045em}
 .g{color:var(--mute-2)}
 p{color:var(--ink-2);margin:0}
@@ -31,43 +31,57 @@ p{color:var(--ink-2);margin:0}
 
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50}
 .hbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:16px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:600;font-size:17px;letter-spacing:-.02em}
+.logo{display:flex;align-items:center;gap:10px;font-weight:600;font-size:17px;letter-spacing:.01em}
 .logo i{width:22px;height:22px;border-radius:7px;background:var(--card-2);border:1px solid var(--line-2);display:grid;place-items:center}
 .logo i::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 8px var(--amber)}
 .hbar .btn{height:44px;font-size:14px;padding-left:18px}.hbar .btn .arr{width:34px;height:34px;font-size:15px}
 
-.hero{position:relative;overflow:hidden;margin-top:-76px;padding-block:172px 108px;text-align:center}
+.hero{position:relative;overflow:hidden;margin-top:-76px;padding-block:150px 96px;text-align:center}
 .stage{position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(circle at 1px 1px,rgba(242,240,234,.13) 1.2px,transparent 1.6px) 0 0/34px 34px;
-  -webkit-mask-image:radial-gradient(ellipse 70% 70% at 50% 40%,#000 30%,transparent 80%);mask-image:radial-gradient(ellipse 70% 70% at 50% 40%,#000 30%,transparent 80%)}
-.beam{position:absolute;left:50%;top:-40px;width:560px;height:780px;transform:translateX(-50%);pointer-events:none;
+  -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 32%,#000 28%,transparent 78%);mask-image:radial-gradient(ellipse 70% 60% at 50% 32%,#000 28%,transparent 78%)}
+.beam{position:absolute;left:50%;top:-40px;width:560px;height:700px;transform:translateX(-50%);pointer-events:none;
   background:conic-gradient(from 180deg at 50% 0,transparent 165deg,rgba(242,240,234,.10) 173deg,rgba(242,240,234,.16) 180deg,rgba(242,240,234,.10) 187deg,transparent 195deg);filter:blur(14px);
   -webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent)}
 .horizon{position:absolute;left:50%;bottom:-270px;width:1300px;height:440px;transform:translateX(-50%);border-radius:50%;
-  background:radial-gradient(closest-side,rgba(232,154,60,.22),rgba(232,154,60,.05) 60%,transparent);pointer-events:none}
-.hero .wrap{position:relative;display:flex;flex-direction:column;align-items:center;gap:30px}
-.hero h1{max-width:17ch}
-.hero .sub{max-width:50ch;font-size:17.5px}
+  background:radial-gradient(closest-side,rgba(232,154,60,.20),rgba(232,154,60,.05) 60%,transparent);pointer-events:none}
+.hero .wrap{position:relative;display:flex;flex-direction:column;align-items:center;gap:26px}
+.hero h1{max-width:18ch}
+.hero .sub{max-width:52ch;font-size:17px}
+
+/* VSL */
+.vsl{position:relative;width:100%;max-width:880px;aspect-ratio:1152/644;border-radius:var(--r);overflow:hidden;
+  background:#000;border:1px solid var(--line-2);cursor:pointer;margin-top:4px;
+  box-shadow:0 30px 90px rgba(0,0,0,.6),0 0 0 1px rgba(232,154,60,.10)}
+.vsl video{width:100%;height:100%;object-fit:cover;display:block}
+.vsl .ov{position:absolute;inset:0;display:grid;place-items:center;background:rgba(14,15,17,.42);transition:opacity .35s}
+.vsl .ov i{width:84px;height:84px;border-radius:50%;background:rgba(242,240,234,.96);display:grid;place-items:center;
+  box-shadow:0 10px 44px rgba(0,0,0,.5);transition:transform .45s var(--e)}
+.vsl .ov i::after{content:"";width:0;height:0;border-left:26px solid #111318;border-top:16px solid transparent;border-bottom:16px solid transparent;margin-left:7px}
+.vsl:hover .ov i{transform:scale(1.07)}
+.vsl .lbl{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);white-space:nowrap;
+  font-size:13.5px;color:var(--ink);background:rgba(14,15,17,.72);backdrop-filter:blur(8px);
+  padding:7px 15px;border-radius:999px;border:1px solid var(--line-2)}
+.vsl.on .ov,.vsl.on .lbl{opacity:0;pointer-events:none}
+@media(max-width:560px){.vsl .ov i{width:64px;height:64px}.vsl .ov i::after{border-left-width:20px;border-top-width:12px;border-bottom-width:12px}}
+
 .guar{display:flex;align-items:center;gap:14px;padding:14px 22px 14px 16px;border-radius:16px;
   background:linear-gradient(180deg,rgba(232,154,60,.10),rgba(232,154,60,.04));
   border:1px solid rgba(232,154,60,.28);text-align:left;max-width:100%}
 .guar>div{display:flex;flex-direction:column;gap:1px}
 .guar b{font-size:15px;font-weight:500;letter-spacing:-.02em;color:var(--ink)}
 .guar span{font-size:13.5px;color:var(--ink-2)}
-.seal{width:38px;height:38px;flex-shrink:0;border-radius:50%;background:var(--amber-2);
-  border:1px solid rgba(232,154,60,.35);position:relative}
-.seal::after{content:"";position:absolute;left:13px;top:10px;width:8px;height:15px;
-  border:solid var(--amber);border-width:0 2.2px 2.2px 0;transform:rotate(45deg)}
+.seal{width:38px;height:38px;flex-shrink:0;border-radius:50%;background:var(--amber-2);border:1px solid rgba(232,154,60,.35);position:relative}
+.seal::after{content:"";position:absolute;left:13px;top:10px;width:8px;height:15px;border:solid var(--amber);border-width:0 2.2px 2.2px 0;transform:rotate(45deg)}
 @media(max-width:480px){.guar{gap:12px;padding:13px 16px 13px 13px}.guar span{font-size:12.5px}}
-.badges{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;list-style:none;padding:0;margin:2px 0 0;font-size:14px;color:var(--ink-2)}
+.badges{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;list-style:none;padding:0;margin:0;font-size:14px;color:var(--ink-2)}
 .badges li{display:flex;align-items:center;gap:8px}
 .tick{width:16px;height:16px;border-radius:50%;background:var(--amber-2);position:relative;flex-shrink:0}
 .tick::after{content:"";position:absolute;left:5px;top:3.5px;width:4px;height:7px;border:solid var(--amber);border-width:0 1.6px 1.6px 0;transform:rotate(45deg)}
 
-section{padding-block:clamp(76px,10vw,124px)}
+section{padding-block:clamp(76px,10vw,120px)}
 .head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;margin-bottom:52px}
 
-/* TÉMOIGNAGES */
 .tem{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 @media(max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
@@ -75,14 +89,12 @@ section{padding-block:clamp(76px,10vw,124px)}
 .vc{display:flex;flex-direction:column;gap:14px}
 .vbox{position:relative;aspect-ratio:9/16;border-radius:var(--r);overflow:hidden;background:var(--card);border:1px solid var(--line);cursor:pointer}
 .vbox video{width:100%;height:100%;object-fit:cover;display:block}
-.vbox.empty{cursor:default;display:grid;place-items:center;
-  background:linear-gradient(170deg,#1C1D22,#131417);border-style:dashed;border-color:var(--line-2)}
+.vbox.empty{cursor:default;display:grid;place-items:center;background:linear-gradient(170deg,#1C1D22,#131417);border-style:dashed;border-color:var(--line-2)}
 .ph{display:flex;flex-direction:column;align-items:center;gap:12px;color:var(--mute-2);font-size:13px;text-align:center;padding:0 18px}
 .ph .sq{width:46px;height:46px;border-radius:14px;border:1px solid var(--line-2);display:grid;place-items:center}
 .ph .sq::after{content:"";width:0;height:0;border-left:13px solid var(--mute-2);border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px}
 .play{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(to top,rgba(14,15,17,.55),transparent 55%);transition:opacity .3s}
-.play i{width:62px;height:62px;border-radius:50%;background:rgba(242,240,234,.94);display:grid;place-items:center;
-  box-shadow:0 8px 30px rgba(0,0,0,.4);transition:transform .4s var(--e)}
+.play i{width:62px;height:62px;border-radius:50%;background:rgba(242,240,234,.94);display:grid;place-items:center;box-shadow:0 8px 30px rgba(0,0,0,.4);transition:transform .4s var(--e)}
 .play i::after{content:"";width:0;height:0;border-left:19px solid #111318;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
 .vbox:hover .play i{transform:scale(1.07)}
 .vbox.playing .play{opacity:0;pointer-events:none}
@@ -91,9 +103,8 @@ section{padding-block:clamp(76px,10vw,124px)}
 .meta span{font-size:13.5px;color:var(--mute)}
 .note{margin-top:34px;text-align:center;font-size:13px;color:var(--mute-2)}
 
-/* CTA FINAL */
 .final{position:relative;overflow:hidden;text-align:center}
-.final .wrap{position:relative;display:flex;flex-direction:column;align-items:center;gap:28px}
+.final .wrap{position:relative;display:flex;flex-direction:column;align-items:center;gap:26px}
 .final h2{max-width:17ch}
 .price{display:flex;align-items:baseline;gap:10px;font-size:clamp(46px,7vw,76px);font-weight:500;letter-spacing:-.055em;line-height:1}
 .price small{font-size:.26em;font-weight:400;letter-spacing:-.01em;color:var(--mute)}
@@ -107,17 +118,24 @@ footer{padding-block:40px;border-top:1px solid var(--line)}
 <body>
 
 <header><div class="wrap"><nav class="hbar">
-  <a href="/" class="logo"><i></i>ProducTiPro</a>
-  <a href="https://www.skool.com/" class="btn">Rejoindre<span class="arr">→</span></a>
+  <a href="/" class="logo"><i></i>LA DSA</a>
+  <a href="https://whop.com/" class="btn">Rejoindre<span class="arr">→</span></a>
 </nav></div></header>
 
 <section class="hero">
   <div class="stage"></div><div class="beam"></div><div class="horizon"></div>
   <div class="wrap">
-    <span class="eyebrow">Méthode TikTok · 59 €/mois</span>
+    <span class="eyebrow">LA DSA · 89 €/mois</span>
     <h1>Tes premiers euros en ligne en 60 jours, <span class="g">ou on te rembourse.</span></h1>
-    <p class="sub">Tu suis la méthode à la lettre : les prompts, les scripts, le rythme de publication et les quatre façons de monétiser. Si tu n'as pas gagné un euro au bout de 60 jours, tu récupères tout ce que tu as payé.</p>
-    <a href="https://www.skool.com/" class="btn" style="height:56px;font-size:17px">Rejoindre pour 59 €/mois<span class="arr">→</span></a>
+    <p class="sub">Regarde la vidéo. Elle explique la méthode complète, ce que tu reçois, et comment les membres la monétisent.</p>
+
+    <div class="vsl" id="vsl">
+      <video id="v" poster="videos/vsl-poster.jpg" preload="none" playsinline src="videos/vsl.mp4"></video>
+      <div class="ov"><i></i></div>
+      <div class="lbl">Présentation de la méthode · 11 min</div>
+    </div>
+
+    <a href="https://whop.com/" class="btn" style="height:56px;font-size:17px">Rejoindre pour 89 €/mois<span class="arr">→</span></a>
     <div class="guar">
       <span class="seal" aria-hidden="true"></span>
       <div><b>Pas un euro gagné en 60 jours ? Remboursé.</b><span>Intégralement, sur simple demande.</span></div>
@@ -146,20 +164,15 @@ footer{padding-block:40px;border-top:1px solid var(--line)}
   <div class="wrap">
     <span class="eyebrow">Garantie 60 jours</span>
     <h2>Tu gagnes, <span class="g">ou tu es remboursé.</span></h2>
-    <div class="price">59 €<small>/ mois</small></div>
-    <a href="https://www.skool.com/" class="btn" style="height:56px;font-size:17px">Rejoindre la communauté<span class="arr">→</span></a>
+    <div class="price">89 €<small>/ mois</small></div>
+    <a href="https://whop.com/" class="btn" style="height:56px;font-size:17px">Rejoindre LA DSA<span class="arr">→</span></a>
     <p style="font-size:13.5px;color:var(--mute);max-width:48ch">Combien tu gagnes dépend de ton travail et de ta régularité, et personne ne peut te promettre un montant. Ce qu'on te garantit : si tu suis la méthode et que tu n'as pas gagné un seul euro au bout de 60 jours, tu es remboursé intégralement.</p>
   </div>
 </section>
 
 <footer><div class="wrap"><div class="foot">
-  <a href="/" class="logo"><i></i>ProducTiPro</a>
+  <a href="/" class="logo"><i></i>LA DSA</a>
   <nav>
-    <a href="jeunes.html">18–25 ans</a>
-    <a href="femmes.html">Femmes</a>
-    <a href="salaries.html">Salariés</a>
-    <a href="reconversion.html">Reconversion</a>
-    <a href="sansdiplome.html">Sans diplôme</a>
     <a href="cgv.html">CGV</a>
     <a href="mentions-legales.html">Mentions légales</a>
     <a href="mailto:contact@productipro.fr">Contact</a>
@@ -167,14 +180,26 @@ footer{padding-block:40px;border-top:1px solid var(--line)}
 </div></div></footer>
 
 <script>
+/* ── VSL ─────────────────────────────────────────────── */
+(function(){
+  const box=document.getElementById('vsl'), v=document.getElementById('v');
+  if(!box) return;
+  box.addEventListener('click',()=>{
+    if(v.paused){ box.classList.add('on'); v.controls=true; v.play(); }
+    else { v.pause(); }
+  });
+  v.addEventListener('pause',()=>{ if(v.currentTime>0 && !v.ended) return; box.classList.remove('on'); });
+  v.addEventListener('ended',()=>{ box.classList.remove('on'); v.controls=false; });
+})();
+
 /* ─────────────────────────────────────────────────────────────
    TES TÉMOIGNAGES — c'est la seule chose à modifier ici.
-   Dépose tes vidéos dans un dossier /videos à la racine du site,
+   Dépose tes vidéos dans le dossier /videos à la racine du site,
    puis remplis une ligne par témoignage :
 
-     src    : chemin de la vidéo (format vertical 9:16, .mp4)
-     poster : image d'aperçu affichée avant lecture (.jpg), facultatif
-     nom    : qui parle
+     src      : chemin de la vidéo (format vertical 9:16, .mp4)
+     poster   : image d'aperçu affichée avant lecture (.jpg), facultatif
+     nom      : qui parle
      resultat : une ligne, son résultat concret
 
    Laisse src vide ("") pour garder un emplacement en attente.
@@ -187,39 +212,33 @@ const TEMOIGNAGES = [
   { src:"", poster:"", nom:"", resultat:"" }
 ];
 
-const grid = document.getElementById('grid');
-TEMOIGNAGES.forEach((t, i) => {
-  const card = document.createElement('div');
-  card.className = 'vc';
-  if (!t.src) {
-    card.innerHTML =
-      '<div class="vbox empty"><div class="ph"><div class="sq"></div>'
-      + 'Emplacement vidéo ' + (i + 1) + '</div></div>'
-      + '<div class="meta"><b style="color:var(--mute-2)">Nom du membre</b>'
-      + '<span>Son résultat en une ligne</span></div>';
+const grid=document.getElementById('grid');
+TEMOIGNAGES.forEach((t,i)=>{
+  const card=document.createElement('div'); card.className='vc';
+  if(!t.src){
+    card.innerHTML='<div class="vbox empty"><div class="ph"><div class="sq"></div>'
+      +'Emplacement vidéo '+(i+1)+'</div></div>'
+      +'<div class="meta"><b style="color:var(--mute-2)">Nom du membre</b>'
+      +'<span>Son résultat en une ligne</span></div>';
   } else {
-    const box = document.createElement('div');
-    box.className = 'vbox';
-    const v = document.createElement('video');
-    v.src = t.src; v.playsInline = true; v.preload = 'metadata';
-    if (t.poster) v.poster = t.poster;
-    const ov = document.createElement('div');
-    ov.className = 'play'; ov.innerHTML = '<i></i>';
-    box.append(v, ov);
-    box.addEventListener('click', () => {
-      document.querySelectorAll('.vbox.playing').forEach(o => {
-        if (o !== box) { o.classList.remove('playing'); o.querySelector('video').pause(); }
+    const b=document.createElement('div'); b.className='vbox';
+    const vv=document.createElement('video');
+    vv.src=t.src; vv.playsInline=true; vv.preload='metadata';
+    if(t.poster) vv.poster=t.poster;
+    const ov=document.createElement('div'); ov.className='play'; ov.innerHTML='<i></i>';
+    b.append(vv,ov);
+    b.addEventListener('click',()=>{
+      document.querySelectorAll('.vbox.playing').forEach(o=>{
+        if(o!==b){o.classList.remove('playing');o.querySelector('video').pause();}
       });
-      if (v.paused) { box.classList.add('playing'); v.controls = true; v.play(); }
-      else { box.classList.remove('playing'); v.pause(); }
+      if(vv.paused){b.classList.add('playing');vv.controls=true;vv.play();}
+      else{b.classList.remove('playing');vv.pause();}
     });
-    v.addEventListener('ended', () => { box.classList.remove('playing'); v.controls = false; });
-    const meta = document.createElement('div');
-    meta.className = 'meta';
-    meta.innerHTML = '<b></b><span></span>';
-    meta.querySelector('b').textContent = t.nom || '';
-    meta.querySelector('span').textContent = t.resultat || '';
-    card.append(box, meta);
+    vv.addEventListener('ended',()=>{b.classList.remove('playing');vv.controls=false;});
+    const m=document.createElement('div'); m.className='meta'; m.innerHTML='<b></b><span></span>';
+    m.querySelector('b').textContent=t.nom||'';
+    m.querySelector('span').textContent=t.resultat||'';
+    card.append(b,m);
   }
   grid.append(card);
 });
