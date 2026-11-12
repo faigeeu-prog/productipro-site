@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ProducTiPro — Crée une page TikTok qui travaille pour toi</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Prompts, scripts et méthode pour lancer une page TikTok rentable. 59 €/mois, sans engagement.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap">
 <style>
 :root{
   --bg:#0E0F11;--bg-2:#141519;--card:#18191D;--card-2:#1F2025;--ink:#F2F0EA;--ink-2:#B8BBC2;--mute:#7D828B;--mute-2:#5A5E66;
-  --line:rgba(242,240,234,.08);--line-2:rgba(242,240,234,.15);--amber:#E89A3C;--amber-2:rgba(232,154,60,.14);--paper:#F2F0EA;--paper-ink:#111318;
-  --f:"Inter Tight",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--max:1280px;--r:20px;--e:cubic-bezier(.19,1,.22,1);
-  color-scheme:dark;
+  --line:rgba(242,240,234,.08);--line-2:rgba(242,240,234,.15);--amber:#E89A3C;--amber-2:rgba(232,154,60,.14);
+  --paper:#F2F0EA;--paper-ink:#111318;--f:"Inter Tight",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --max:1240px;--r:20px;--e:cubic-bezier(.19,1,.22,1);color-scheme:dark;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -17,505 +17,193 @@ body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--f);
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 max(20px,env(safe-area-inset-left,0px))}
-h1,h2,h3{font-weight:500;margin:0;text-wrap:balance}
-h1{font-size:clamp(44px,6.9vw,92px);line-height:.94;letter-spacing:-.055em}
-h2{font-size:clamp(36px,4.6vw,60px);line-height:1;letter-spacing:-.045em}
-h3{font-size:clamp(26px,3vw,38px);line-height:1.03;letter-spacing:-.045em}
+h1,h2{font-weight:500;margin:0;text-wrap:balance}
+h1{font-size:clamp(44px,7vw,94px);line-height:.94;letter-spacing:-.055em}
+h2{font-size:clamp(34px,4.6vw,58px);line-height:1;letter-spacing:-.045em}
 .g{color:var(--mute-2)}
 p{color:var(--ink-2);margin:0}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:13px;color:var(--ink-2)}
 .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 10px var(--amber)}
-.btn{display:inline-flex;align-items:center;gap:14px;height:48px;padding:0 6px 0 20px;border-radius:999px;background:var(--paper);color:var(--paper-ink);font-weight:500;font-size:15px;transition:transform .5s var(--e),opacity .3s}
-.btn .arr{width:36px;height:36px;border-radius:50%;background:var(--paper-ink);color:var(--paper);display:grid;place-items:center;font-size:16px;transition:transform .5s var(--e)}
+.btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 22px;border-radius:999px;background:var(--paper);color:var(--paper-ink);font-weight:500;font-size:16px;transition:transform .5s var(--e)}
+.btn .arr{width:40px;height:40px;border-radius:50%;background:var(--paper-ink);color:var(--paper);display:grid;place-items:center;font-size:17px;transition:transform .5s var(--e)}
 .btn:hover .arr{transform:translateX(3px)}
-.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line-2);padding:0 20px}
 .btn:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
 
-/* NAV */
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50}
-.hbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:600;font-size:16px;letter-spacing:-.02em}
+.hbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:16px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:600;font-size:17px;letter-spacing:-.02em}
 .logo i{width:22px;height:22px;border-radius:7px;background:var(--card-2);border:1px solid var(--line-2);display:grid;place-items:center}
 .logo i::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 8px var(--amber)}
-.navpill{display:flex;gap:4px;padding:5px;border-radius:999px;background:rgba(24,25,29,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line)}
-.navpill a{padding:7px 14px;border-radius:999px;font-size:14px;color:var(--ink-2);transition:color .2s,background .2s}
-.navpill a:hover,.navpill a.on{color:var(--ink);background:var(--card-2)}
-.hbar .btn{height:42px;font-size:14px}.hbar .btn .arr{width:32px;height:32px}
-@media(max-width:900px){.navpill{display:none}}
-@media(max-width:480px){.hbar .btn span.t{display:none}.hbar .btn{padding:0 5px}}
+.hbar .btn{height:44px;font-size:14px;padding-left:18px}.hbar .btn .arr{width:34px;height:34px;font-size:15px}
 
-/* HERO */
-.hero{position:relative;overflow:hidden;margin-top:-70px;padding-block:160px 100px;text-align:center}
+.hero{position:relative;overflow:hidden;margin-top:-76px;padding-block:172px 108px;text-align:center}
 .stage{position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(circle at 1px 1px,rgba(242,240,234,.13) 1.2px,transparent 1.6px) 0 0/34px 34px;
   -webkit-mask-image:radial-gradient(ellipse 70% 70% at 50% 40%,#000 30%,transparent 80%);mask-image:radial-gradient(ellipse 70% 70% at 50% 40%,#000 30%,transparent 80%)}
-.beam{position:absolute;left:50%;top:-40px;width:560px;height:760px;transform:translateX(-50%);pointer-events:none;
+.beam{position:absolute;left:50%;top:-40px;width:560px;height:780px;transform:translateX(-50%);pointer-events:none;
   background:conic-gradient(from 180deg at 50% 0,transparent 165deg,rgba(242,240,234,.10) 173deg,rgba(242,240,234,.16) 180deg,rgba(242,240,234,.10) 187deg,transparent 195deg);filter:blur(14px);
   -webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent)}
-.horizon{position:absolute;left:50%;bottom:-260px;width:1300px;height:420px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(232,154,60,.22),rgba(232,154,60,.05) 60%,transparent);pointer-events:none}
-.hero .wrap{position:relative;display:flex;flex-direction:column;align-items:center;gap:28px}
+.horizon{position:absolute;left:50%;bottom:-270px;width:1300px;height:440px;transform:translateX(-50%);border-radius:50%;
+  background:radial-gradient(closest-side,rgba(232,154,60,.22),rgba(232,154,60,.05) 60%,transparent);pointer-events:none}
+.hero .wrap{position:relative;display:flex;flex-direction:column;align-items:center;gap:30px}
 .hero h1{max-width:14ch}
-.hero .sub{max-width:52ch;font-size:17px}
-.ctas{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-.badges{display:flex;gap:22px;flex-wrap:wrap;justify-content:center;list-style:none;padding:0;margin:4px 0 0;font-size:14px;color:var(--ink-2)}
+.hero .sub{max-width:50ch;font-size:17.5px}
+.badges{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;list-style:none;padding:0;margin:2px 0 0;font-size:14px;color:var(--ink-2)}
 .badges li{display:flex;align-items:center;gap:8px}
 .tick{width:16px;height:16px;border-radius:50%;background:var(--amber-2);position:relative;flex-shrink:0}
 .tick::after{content:"";position:absolute;left:5px;top:3.5px;width:4px;height:7px;border:solid var(--amber);border-width:0 1.6px 1.6px 0;transform:rotate(45deg)}
 
-section{padding-block:clamp(80px,11vw,140px)}
-.head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px;margin-bottom:56px}
-.head p{max-width:54ch}
+section{padding-block:clamp(76px,10vw,124px)}
+.head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;margin-bottom:52px}
 
-/* CONSTAT */
-.constat{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.constat .wrap{display:flex;flex-direction:column;align-items:center}
-.constat p{font-size:clamp(28px,3.6vw,48px);line-height:1.12;letter-spacing:-.04em;color:var(--ink);text-align:center;max-width:24ch;font-weight:500}
-.w{color:var(--mute-2);transition:color .35s}
-.w.lit{color:var(--ink)}
-.w.hl.lit{color:var(--amber)}
+/* TÉMOIGNAGES */
+.tem{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.grid{grid-template-columns:1fr;max-width:330px;margin:0 auto}}
+.vc{display:flex;flex-direction:column;gap:14px}
+.vbox{position:relative;aspect-ratio:9/16;border-radius:var(--r);overflow:hidden;background:var(--card);border:1px solid var(--line);cursor:pointer}
+.vbox video{width:100%;height:100%;object-fit:cover;display:block}
+.vbox.empty{cursor:default;display:grid;place-items:center;
+  background:linear-gradient(170deg,#1C1D22,#131417);border-style:dashed;border-color:var(--line-2)}
+.ph{display:flex;flex-direction:column;align-items:center;gap:12px;color:var(--mute-2);font-size:13px;text-align:center;padding:0 18px}
+.ph .sq{width:46px;height:46px;border-radius:14px;border:1px solid var(--line-2);display:grid;place-items:center}
+.ph .sq::after{content:"";width:0;height:0;border-left:13px solid var(--mute-2);border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px}
+.play{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(to top,rgba(14,15,17,.55),transparent 55%);transition:opacity .3s}
+.play i{width:62px;height:62px;border-radius:50%;background:rgba(242,240,234,.94);display:grid;place-items:center;
+  box-shadow:0 8px 30px rgba(0,0,0,.4);transition:transform .4s var(--e)}
+.play i::after{content:"";width:0;height:0;border-left:19px solid #111318;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
+.vbox:hover .play i{transform:scale(1.07)}
+.vbox.playing .play{opacity:0;pointer-events:none}
+.meta{display:flex;flex-direction:column;gap:3px;padding:0 2px}
+.meta b{font-size:15px;font-weight:500;letter-spacing:-.02em}
+.meta span{font-size:13.5px;color:var(--mute)}
+.note{margin-top:34px;text-align:center;font-size:13px;color:var(--mute-2)}
 
-/* CHIFFRES */
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
-.stat{background:var(--card);padding:36px 32px;display:flex;flex-direction:column;gap:8px}
-.stat strong{font-size:clamp(38px,5vw,64px);font-weight:500;letter-spacing:-.045em;color:var(--ink)}
-.stat span{font-size:14px;color:var(--mute)}
-@media(max-width:680px){.stats{grid-template-columns:1fr;gap:1px}}
-
-/* CIBLES */
-.targets{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.tcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px 24px;display:flex;flex-direction:column;gap:14px;transition:border-color .3s,transform .4s var(--e)}
-.tcard:hover{border-color:var(--line-2);transform:translateY(-3px)}
-.tcard .tag{font-size:12px;color:var(--amber);font-weight:500;letter-spacing:.04em;text-transform:uppercase}
-.tcard h3{font-size:clamp(20px,2.2vw,26px)}
-.tcard p{font-size:14px;color:var(--mute)}
-.tcard .arrow{margin-top:auto;padding-top:16px;font-size:13px;color:var(--ink-2);display:flex;align-items:center;gap:6px}
-.tcard .arrow::after{content:"→";transition:transform .3s var(--e)}
-.tcard:hover .arrow::after{transform:translateX(4px)}
-@media(max-width:900px){.targets{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.targets{grid-template-columns:1fr}}
-
-/* METHODE */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:step}
-.step{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px 24px;display:flex;flex-direction:column;gap:12px;position:relative;counter-increment:step}
-.step::before{content:counter(step,"0");font-size:48px;font-weight:500;letter-spacing:-.05em;color:var(--mute-2);line-height:1}
-.step h3{font-size:20px}
-@media(max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:480px){.steps{grid-template-columns:1fr}}
-
-/* MOCK — phone */
-.phone-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:48px}
-.phone{width:200px;height:360px;background:var(--card-2);border:1.5px solid var(--line-2);border-radius:28px;overflow:hidden;position:relative;flex-shrink:0}
-.phone .screen{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:16px}
-.phone .screen::before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(14,15,17,.85) 40%,transparent)}
-.phone .phd{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:60px;height:5px;border-radius:3px;background:var(--line-2)}
-.phone .vtag{font-size:11px;color:var(--amber);font-weight:500;letter-spacing:.05em;text-transform:uppercase;position:relative;z-index:1}
-.phone .vtitle{font-size:14px;font-weight:500;line-height:1.3;position:relative;z-index:1;margin-top:4px}
-.phone .vbar{display:flex;align-items:center;gap:6px;margin-top:8px;position:relative;z-index:1}
-.phone .vbar .dot{width:20px;height:20px;border-radius:50%;background:var(--mute-2)}
-.phone .vbar span{font-size:12px;color:var(--ink-2)}
-.phone .prog{height:2px;background:var(--line-2);border-radius:1px;position:relative;z-index:1;margin-top:12px}
-.phone .prog::after{content:"";position:absolute;inset:0;width:40%;background:var(--amber);border-radius:1px}
-.phone .bg-noise{position:absolute;inset:0;background:linear-gradient(135deg,rgba(232,154,60,.06) 0%,transparent 50%,rgba(242,240,234,.03) 100%)}
-
-/* ENGAGEMENTS */
-.engages{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.engage{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px 24px;display:flex;gap:16px;align-items:flex-start}
-.engage .ico{width:40px;height:40px;border-radius:12px;background:var(--amber-2);border:1px solid rgba(232,154,60,.25);display:grid;place-items:center;flex-shrink:0;font-size:18px}
-.engage h3{font-size:17px;margin-bottom:6px}
-@media(max-width:680px){.engages{grid-template-columns:1fr}}
-
-/* TIMELINE */
-.tl{display:flex;flex-direction:column;gap:0}
-.tli{display:flex;gap:24px;padding-block:28px;border-bottom:1px solid var(--line);position:relative}
-.tli:last-child{border-bottom:none}
-.tli .num{width:40px;height:40px;border-radius:50%;background:var(--card);border:1px solid var(--line-2);display:grid;place-items:center;font-size:14px;font-weight:500;color:var(--amber);flex-shrink:0}
-.tli h3{font-size:18px;margin-bottom:4px}
-
-/* PRICING */
-.pbox{background:var(--card);border:1px solid var(--line-2);border-radius:24px;padding:48px 40px;max-width:600px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center;gap:24px}
-.pbox .price{font-size:clamp(52px,8vw,92px);font-weight:500;letter-spacing:-.06em;line-height:1}
-.pbox .price sub{font-size:.38em;vertical-align:middle;letter-spacing:-.01em;color:var(--mute)}
-.pbox ul{list-style:none;padding:0;margin:0;text-align:left;display:flex;flex-direction:column;gap:12px;width:100%}
-.pbox ul li{display:flex;gap:12px;align-items:flex-start;font-size:15px}
-
-/* FAQ */
-.faqs{max-width:720px;margin:0 auto}
-details.qa{border-bottom:1px solid var(--line)}
-details.qa:first-child{border-top:1px solid var(--line)}
-details.qa summary{display:flex;align-items:center;justify-content:space-between;padding:20px 0;cursor:pointer;font-size:17px;font-weight:500;list-style:none;gap:16px;user-select:none}
-details.qa summary::-webkit-details-marker{display:none}
-.plus{width:24px;height:24px;border-radius:50%;background:var(--card);border:1px solid var(--line-2);position:relative;flex-shrink:0}
-.plus::before,.plus::after{content:"";position:absolute;background:var(--ink-2);border-radius:1px;left:50%;top:50%}
-.plus::before{width:10px;height:1.5px;transform:translate(-50%,-50%)}
-.plus::after{width:1.5px;height:10px;transform:translate(-50%,-50%);transition:transform .3s}
-details[open] .plus::after{transform:translate(-50%,-50%) rotate(90deg)}
-details.qa p{padding:0 0 20px;color:var(--ink-2);font-size:15px}
-
-/* FINAL CTA */
+/* CTA FINAL */
 .final{position:relative;overflow:hidden;text-align:center}
-.final .beam{position:absolute;left:50%;top:-40px;width:560px;height:760px;transform:translateX(-50%);pointer-events:none;
-  background:conic-gradient(from 180deg at 50% 0,transparent 165deg,rgba(242,240,234,.10) 173deg,rgba(242,240,234,.16) 180deg,rgba(242,240,234,.10) 187deg,transparent 195deg);filter:blur(14px);
-  -webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent)}
-.final .stage{position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(circle at 1px 1px,rgba(242,240,234,.10) 1.2px,transparent 1.6px) 0 0/34px 34px;
-  -webkit-mask-image:radial-gradient(ellipse 60% 80% at 50% 50%,#000 20%,transparent 80%);mask-image:radial-gradient(ellipse 60% 80% at 50% 50%,#000 20%,transparent 80%)}
 .final .wrap{position:relative;display:flex;flex-direction:column;align-items:center;gap:28px}
-.final h2{max-width:18ch}
+.final h2{max-width:17ch}
+.price{display:flex;align-items:baseline;gap:10px;font-size:clamp(46px,7vw,76px);font-weight:500;letter-spacing:-.055em;line-height:1}
+.price small{font-size:.26em;font-weight:400;letter-spacing:-.01em;color:var(--mute)}
 
-/* FOOTER */
-footer{padding-block:48px;border-top:1px solid var(--line)}
-.foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-.foot-links{display:flex;gap:20px;font-size:13px;color:var(--mute)}
-.foot-links a:hover{color:var(--ink)}
+footer{padding-block:40px;border-top:1px solid var(--line)}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.foot nav{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--mute)}
+.foot nav a:hover{color:var(--ink)}
 </style>
 </head>
 <body>
 
-<header>
-<div class="wrap">
-<nav class="hbar">
+<header><div class="wrap"><nav class="hbar">
   <a href="/" class="logo"><i></i>ProducTiPro</a>
-  <div class="navpill">
-    <a href="#methode">Méthode</a>
-    <a href="#cibles">Pour qui</a>
-    <a href="#tarif">Tarif</a>
-    <a href="#faq">FAQ</a>
-  </div>
-  <a href="https://www.skool.com/" class="btn"><span class="t">Commencer</span><span class="arr">→</span></a>
-</nav>
-</div>
-</header>
+  <a href="https://www.skool.com/" class="btn">Rejoindre<span class="arr">→</span></a>
+</nav></div></header>
 
 <section class="hero">
-  <div class="stage"></div>
-  <div class="beam"></div>
-  <div class="horizon"></div>
+  <div class="stage"></div><div class="beam"></div><div class="horizon"></div>
   <div class="wrap">
-    <span class="eyebrow">Méthode TikTok Faceless · IA</span>
+    <span class="eyebrow">Méthode TikTok · 59 €/mois</span>
     <h1>Crée une page TikTok <span class="g">qui travaille pour toi.</span></h1>
-    <p class="sub">Vidéos animées produites avec l'IA, audience ciblée selon ta cible, revenu TikTok + un produit digital. Sans montrer ton visage. Sans budget de départ.</p>
-    <div class="ctas">
-      <a href="https://www.skool.com/" class="btn"><span class="t">Rejoindre la communauté</span><span class="arr">→</span></a>
-      <a href="#methode" class="btn ghost">Voir la méthode</a>
-    </div>
+    <p class="sub">Les prompts pour produire en faceless, les scripts si tu montres ton visage, et les quatre façons d'en vivre. Sans engagement.</p>
+    <a href="https://www.skool.com/" class="btn" style="height:56px;font-size:17px">Rejoindre pour 59 €/mois<span class="arr">→</span></a>
     <ul class="badges">
       <li><span class="tick" aria-hidden="true"></span>Sans montrer ton visage</li>
-      <li><span class="tick" aria-hidden="true"></span>Sans engagement, annulable en 1 clic</li>
-      <li><span class="tick" aria-hidden="true"></span>Méthode en 4 étapes</li>
+      <li><span class="tick" aria-hidden="true"></span>5 h par semaine</li>
+      <li><span class="tick" aria-hidden="true"></span>Annulable en 1 clic</li>
     </ul>
   </div>
 </section>
 
-<section class="constat">
-  <div class="wrap">
-    <p id="cst">
-      <span class="w">Tu</span> <span class="w">passes</span> <span class="w">des</span> <span class="w">heures</span> <span class="w">sur</span> <span class="w">TikTok.</span>
-      <span class="w">Tu</span> <span class="w">regardes</span> <span class="w">les</span> <span class="w">autres</span> <span class="w">construire</span> <span class="w">quelque</span> <span class="w">chose.</span>
-      <span class="w hl">La</span> <span class="w hl">différence,</span> <span class="w hl">c'est</span> <span class="w hl">qu'eux</span> <span class="w hl">publient.</span>
-      <span class="w hl">Toi,</span> <span class="w hl">pas</span> <span class="w hl">encore.</span>
-    </p>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="stats">
-      <div class="stat">
-        <strong>×4</strong>
-        <span>vues en plus avec des sous-titres animés vs une vidéo statique</span>
-      </div>
-      <div class="stat">
-        <strong>5h</strong>
-        <span>par semaine suffisent pour produire 5 à 7 vidéos en lot avec l'IA</span>
-      </div>
-      <div class="stat">
-        <strong>0 €</strong>
-        <span>de budget de départ nécessaire pour ouvrir et commencer à publier</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="methode">
+<section class="tem">
   <div class="wrap">
     <div class="head">
-      <span class="eyebrow">La méthode</span>
-      <h2>4 étapes, <span class="g">une chaîne de production.</span></h2>
-      <p>De zéro à une page qui publie régulièrement et se monétise automatiquement.</p>
+      <span class="eyebrow">Ils l'ont fait</span>
+      <h2>Les membres <span class="g">en parlent.</span></h2>
     </div>
-    <div class="steps">
-      <div class="step">
-        <h3>Choisir ta cible</h3>
-        <p>On choisit le profil le plus adapté à ta situation parmi 5 audiences mindset &amp; make-money, pour que chaque vidéo parle directement à quelqu'un.</p>
-      </div>
-      <div class="step">
-        <h3>Produire avec l'IA</h3>
-        <p>Script, voix off, animation, sous-titres : chaque vidéo est générée en moins d'une heure avec des outils IA gratuits ou quasi-gratuits.</p>
-      </div>
-      <div class="step">
-        <h3>Publier en lot</h3>
-        <p>Une session de 3 à 4 heures le week-end produit toute la semaine. L'algorithme TikTok recompense la régularité, pas le volume.</p>
-      </div>
-      <div class="step">
-        <h3>Monétiser</h3>
-        <p>Rémunération TikTok dès l'éligibilité + un lien en bio vers ton produit digital. Deux flux, une seule page.</p>
-      </div>
-    </div>
-
-    <div class="phone-row">
-      <div class="phone">
-        <div class="bg-noise"></div>
-        <div class="phd"></div>
-        <div class="screen">
-          <span class="vtag">Mindset</span>
-          <div class="vtitle">Ce que l'école ne t'a jamais appris sur l'argent</div>
-          <div class="vbar"><div class="dot"></div><span>@productipro</span></div>
-          <div class="prog"></div>
-        </div>
-      </div>
-      <div class="phone">
-        <div class="bg-noise"></div>
-        <div class="phd"></div>
-        <div class="screen">
-          <span class="vtag">Business</span>
-          <div class="vtitle">3 erreurs que font 95 % des créateurs TikTok</div>
-          <div class="vbar"><div class="dot"></div><span>@productipro</span></div>
-          <div class="prog" style="--w:60%"><style>.phone:nth-child(2) .prog::after{width:60%}</style></div>
-        </div>
-      </div>
-      <div class="phone">
-        <div class="bg-noise"></div>
-        <div class="phd"></div>
-        <div class="screen">
-          <span class="vtag">Revenu</span>
-          <div class="vtitle">Combien rapporte vraiment 1 M de vues sur TikTok</div>
-          <div class="vbar"><div class="dot"></div><span>@productipro</span></div>
-          <div class="prog"><style>.phone:nth-child(3) .prog::after{width:75%}</style></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="cibles" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-  <div class="wrap">
-    <div class="head">
-      <span class="eyebrow">Pour qui</span>
-      <h2>5 audiences, <span class="g">une méthode commune.</span></h2>
-      <p>Chaque page parle à une cible précise. Choisis celle qui te correspond.</p>
-    </div>
-    <div class="targets">
-      <a href="jeunes.html" class="tcard">
-        <span class="tag">18–25 ans</span>
-        <h3>Premier revenu en ligne</h3>
-        <p>Pas de diplôme requis, pas de budget, juste un téléphone et 5 heures par semaine.</p>
-        <span class="arrow">Voir la page</span>
-      </a>
-      <a href="femmes.html" class="tcard">
-        <span class="tag">Femmes entrepreneures</span>
-        <h3>Indépendante en ligne</h3>
-        <p>Construire une activité sans s'exposer, compatible avec une vie bien remplie.</p>
-        <span class="arrow">Voir la page</span>
-      </a>
-      <a href="salaries.html" class="tcard">
-        <span class="tag">Salariés</span>
-        <h3>Revenu à côté</h3>
-        <p>Un deuxième revenu construit le soir et le week-end, sans quitter son CDI.</p>
-        <span class="arrow">Voir la page</span>
-      </a>
-      <a href="reconversion.html" class="tcard">
-        <span class="tag">Reconversion</span>
-        <h3>Repartir de zéro</h3>
-        <p>Transformer son parcours en contenu, à tout âge, sans tout recommencer de zéro.</p>
-        <span class="arrow">Voir la page</span>
-      </a>
-      <a href="sansdiplome.html" class="tcard">
-        <span class="tag">Sans diplôme</span>
-        <h3>Prouver avec les chiffres</h3>
-        <p>Sur TikTok, personne ne regarde ton CV. L'algorithme, lui, regarde tes vues.</p>
-        <span class="arrow">Voir la page</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="head">
-      <span class="eyebrow">Nos engagements</span>
-      <h2>Ce qu'on <span class="g">garantit.</span></h2>
-    </div>
-    <div class="engages">
-      <div class="engage">
-        <div class="ico">🎭</div>
-        <div>
-          <h3>Zéro visage requis</h3>
-          <p>Toute la méthode repose sur des animations IA. Tu n'apparais jamais à l'écran. Ni au lancement, ni ensuite.</p>
-        </div>
-      </div>
-      <div class="engage">
-        <div class="ico">🤖</div>
-        <div>
-          <h3>IA de bout en bout</h3>
-          <p>Script, voix, animation, sous-titres. Les outils font le travail technique. Toi, tu pilotes la stratégie.</p>
-        </div>
-      </div>
-      <div class="engage">
-        <div class="ico">🎯</div>
-        <div>
-          <h3>Audience ciblée</h3>
-          <p>Une page = une cible. Pas de contenu généraliste qui parle à personne. L'algorithme récompense la clarté.</p>
-        </div>
-      </div>
-      <div class="engage">
-        <div class="ico">💸</div>
-        <div>
-          <h3>Quatre voies de revenu</h3>
-          <p>Rémunération TikTok, ton propre produit digital, des prestations pour des clients, ou 50 % de commission sur les membres que tu amènes. Tu choisis.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-  <div class="wrap">
-    <div class="head">
-      <span class="eyebrow">Le démarrage</span>
-      <h2>Semaine 1 à 4.</h2>
-    </div>
-    <div class="tl">
-      <div class="tli">
-        <div class="num">1</div>
-        <div>
-          <h3>Choisir ta cible et créer ton compte</h3>
-          <p>Tu identifies le profil qui correspond le mieux à ta situation. On crée le compte TikTok, le nom, la bio et le lien Skool.</p>
-        </div>
-      </div>
-      <div class="tli">
-        <div class="num">2</div>
-        <div>
-          <h3>Produire les 10 premières vidéos</h3>
-          <p>Script structuré, voix off IA, animation canvas, sous-titres. Tu sors 10 vidéos en une session de 2 jours pour alimenter le lancement.</p>
-        </div>
-      </div>
-      <div class="tli">
-        <div class="num">3</div>
-        <div>
-          <h3>Publier en rythme et lire les signaux</h3>
-          <p>Calendrier de publication, lecture des analytics TikTok, ajustement des sujets selon les vues et le taux de rétention.</p>
-        </div>
-      </div>
-      <div class="tli">
-        <div class="num">4</div>
-        <div>
-          <h3>Activer la monétisation</h3>
-          <p>Atteindre les conditions du Creativity Program, ouvrir le produit digital sur Skool, ajuster le lien en bio. Le flux tourne.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="tarif">
-  <div class="wrap">
-    <div class="head">
-      <span class="eyebrow">Tarif</span>
-      <h2>Simple. <span class="g">Transparent.</span></h2>
-    </div>
-    <div class="pbox">
-      <div class="price"><sub>€</sub>59 <sub style="font-size:.25em;color:var(--mute);vertical-align:middle">par mois</sub></div>
-      <p style="color:var(--ink-2);max-width:38ch;text-align:center">La méthode complète : prompts pour le contenu faceless, scripts face caméra, templates de pages et la communauté.</p>
-      <ul>
-        <li><span class="tick" style="display:inline-block;flex-shrink:0"></span>Prompts IA pour produire en faceless</li>
-        <li><span class="tick" style="display:inline-block;flex-shrink:0"></span>Scripts prêts à tourner si tu montres ton visage</li>
-        <li><span class="tick" style="display:inline-block;flex-shrink:0"></span>Les 4 voies de monétisation, détaillées</li>
-        <li><span class="tick" style="display:inline-block;flex-shrink:0"></span>Templates de landing page prêts à publier</li>
-        <li><span class="tick" style="display:inline-block;flex-shrink:0"></span>Communauté active pour poser tes questions</li>
-        <li><span class="tick" style="display:inline-block;flex-shrink:0"></span>Programme d'affiliation : 50 % récurrent tant que la communauté existe</li>
-      </ul>
-      <a href="https://www.skool.com/" class="btn" style="font-size:17px;height:54px"><span class="t">Rejoindre pour 59 €/mois</span><span class="arr">→</span></a>
-      <p style="font-size:13px;color:var(--mute)">Sans engagement. Tu annules quand tu veux, la facturation s'arrête immédiatement.</p>
-    </div>
-  </div>
-</section>
-
-<section id="faq" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-  <div class="wrap">
-    <div class="head">
-      <span class="eyebrow">Questions fréquentes</span>
-      <h2>Ce qu'on <span class="g">te demande souvent.</span></h2>
-    </div>
-    <div class="faqs">
-      <details class="qa">
-        <summary>Faut-il montrer son visage ?<span class="plus" aria-hidden="true"></span></summary>
-        <p>Non. La méthode est entièrement basée sur des vidéos animées : voix off IA, animation canvas, sous-titres générés automatiquement. Personne ne verra jamais ton visage.</p>
-      </details>
-      <details class="qa">
-        <summary>Combien de temps ça prend par semaine ?<span class="plus" aria-hidden="true"></span></summary>
-        <p>Environ 4 à 6 heures une fois la chaîne de production en place. Les deux premières semaines demandent un peu plus, le temps de maîtriser les outils.</p>
-      </details>
-      <details class="qa">
-        <summary>Je vais gagner combien ?<span class="plus" aria-hidden="true"></span></summary>
-        <p>On ne promet aucun montant. Tes résultats dépendent de ta régularité, de ton sujet et du temps que tu y consacres. Personne ne peut te garantir un revenu.</p>
-      </details>
-      <details class="qa">
-        <summary>La rémunération TikTok est automatique ?<span class="plus" aria-hidden="true"></span></summary>
-        <p>Non. TikTok fixe des conditions d'éligibilité (âge, abonnés, vues, durée des vidéos) et elles évoluent régulièrement. On t'explique où les vérifier et comment construire des vidéos qui y correspondent.</p>
-      </details>
-      <details class="qa">
-        <summary>Je peux arrêter quand je veux ?<span class="plus" aria-hidden="true"></span></summary>
-        <p>Oui. L'abonnement est sans engagement : tu annules en un clic depuis ton compte et la facturation s'arrête immédiatement. Tu gardes l'accès jusqu'à la fin du mois déjà payé.</p>
-      </details>
-      <details class="qa">
-        <summary>Pour qui est-ce que c'est fait ?<span class="plus" aria-hidden="true"></span></summary>
-        <p>Pour n'importe qui qui veut construire un revenu en ligne sans s'exposer. On a développé des angles spécifiques pour les 18–25 ans, les femmes entrepreneures, les salariés, les personnes en reconversion et ceux qui n'ont pas de diplôme.</p>
-      </details>
-    </div>
+    <div class="grid" id="grid"></div>
+    <p class="note">Témoignages de membres. Les résultats dépendent du travail fourni et ne sont pas garantis.</p>
   </div>
 </section>
 
 <section class="final">
-  <div class="stage"></div>
-  <div class="beam"></div>
+  <div class="stage"></div><div class="beam"></div>
   <div class="wrap">
-    <span class="eyebrow">Prêt à commencer ?</span>
+    <span class="eyebrow">Sans engagement</span>
     <h2>Ta première vidéo <span class="g">ce week-end.</span></h2>
-    <p style="max-width:44ch;font-size:17px;text-align:center">Accède à la méthode, choisis ta cible et produis tes 10 premières vidéos. 59 € par mois, sans engagement.</p>
-    <div class="ctas">
-      <a href="https://www.skool.com/" class="btn" style="font-size:17px;height:54px"><span class="t">Rejoindre la communauté</span><span class="arr">→</span></a>
-    </div>
+    <div class="price">59 €<small>/ mois</small></div>
+    <a href="https://www.skool.com/" class="btn" style="height:56px;font-size:17px">Rejoindre la communauté<span class="arr">→</span></a>
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <div class="foot">
-      <a href="/" class="logo"><i></i>ProducTiPro</a>
-      <div class="foot-links">
-        <a href="#">Mentions légales</a>
-        <a href="#">CGV</a>
-        <a href="mailto:contact@productipro.fr">Contact</a>
-      </div>
-    </div>
-  </div>
-</footer>
+<footer><div class="wrap"><div class="foot">
+  <a href="/" class="logo"><i></i>ProducTiPro</a>
+  <nav>
+    <a href="jeunes.html">18–25 ans</a>
+    <a href="femmes.html">Femmes</a>
+    <a href="salaries.html">Salariés</a>
+    <a href="reconversion.html">Reconversion</a>
+    <a href="sansdiplome.html">Sans diplôme</a>
+    <a href="mailto:contact@productipro.fr">Contact</a>
+  </nav>
+</div></div></footer>
 
 <script>
-// Scroll word-reveal pour le constat
-(function(){
-  const p=document.getElementById('cst');if(!p)return;
-  const ws=Array.from(p.querySelectorAll('.w'));
-  const obs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        let i=0;const t=setInterval(()=>{if(i<ws.length){ws[i].classList.add('lit');i++}else clearInterval(t)},55);
-        obs.unobserve(e.target);
-      }
+/* ─────────────────────────────────────────────────────────────
+   TES TÉMOIGNAGES — c'est la seule chose à modifier ici.
+   Dépose tes vidéos dans un dossier /videos à la racine du site,
+   puis remplis une ligne par témoignage :
+
+     src    : chemin de la vidéo (format vertical 9:16, .mp4)
+     poster : image d'aperçu affichée avant lecture (.jpg), facultatif
+     nom    : qui parle
+     resultat : une ligne, son résultat concret
+
+   Laisse src vide ("") pour garder un emplacement en attente.
+   Tu peux mettre autant de lignes que tu veux, la grille s'adapte.
+   ───────────────────────────────────────────────────────────── */
+const TEMOIGNAGES = [
+  { src:"", poster:"", nom:"", resultat:"" },
+  { src:"", poster:"", nom:"", resultat:"" },
+  { src:"", poster:"", nom:"", resultat:"" },
+  { src:"", poster:"", nom:"", resultat:"" }
+];
+
+const grid = document.getElementById('grid');
+TEMOIGNAGES.forEach((t, i) => {
+  const card = document.createElement('div');
+  card.className = 'vc';
+  if (!t.src) {
+    card.innerHTML =
+      '<div class="vbox empty"><div class="ph"><div class="sq"></div>'
+      + 'Emplacement vidéo ' + (i + 1) + '</div></div>'
+      + '<div class="meta"><b style="color:var(--mute-2)">Nom du membre</b>'
+      + '<span>Son résultat en une ligne</span></div>';
+  } else {
+    const box = document.createElement('div');
+    box.className = 'vbox';
+    const v = document.createElement('video');
+    v.src = t.src; v.playsInline = true; v.preload = 'metadata';
+    if (t.poster) v.poster = t.poster;
+    const ov = document.createElement('div');
+    ov.className = 'play'; ov.innerHTML = '<i></i>';
+    box.append(v, ov);
+    box.addEventListener('click', () => {
+      document.querySelectorAll('.vbox.playing').forEach(o => {
+        if (o !== box) { o.classList.remove('playing'); o.querySelector('video').pause(); }
+      });
+      if (v.paused) { box.classList.add('playing'); v.controls = true; v.play(); }
+      else { box.classList.remove('playing'); v.pause(); }
     });
-  },{threshold:.3});
-  obs.observe(p);
-})();
+    v.addEventListener('ended', () => { box.classList.remove('playing'); v.controls = false; });
+    const meta = document.createElement('div');
+    meta.className = 'meta';
+    meta.innerHTML = '<b></b><span></span>';
+    meta.querySelector('b').textContent = t.nom || '';
+    meta.querySelector('span').textContent = t.resultat || '';
+    card.append(box, meta);
+  }
+  grid.append(card);
+});
 </script>
-</body>
-</html>
+</body></html>
