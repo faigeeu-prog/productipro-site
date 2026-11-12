@@ -46,8 +46,19 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50}
 .horizon{position:absolute;left:50%;bottom:-270px;width:1300px;height:440px;transform:translateX(-50%);border-radius:50%;
   background:radial-gradient(closest-side,rgba(232,154,60,.22),rgba(232,154,60,.05) 60%,transparent);pointer-events:none}
 .hero .wrap{position:relative;display:flex;flex-direction:column;align-items:center;gap:30px}
-.hero h1{max-width:14ch}
+.hero h1{max-width:17ch}
 .hero .sub{max-width:50ch;font-size:17.5px}
+.guar{display:flex;align-items:center;gap:14px;padding:14px 22px 14px 16px;border-radius:16px;
+  background:linear-gradient(180deg,rgba(232,154,60,.10),rgba(232,154,60,.04));
+  border:1px solid rgba(232,154,60,.28);text-align:left;max-width:100%}
+.guar>div{display:flex;flex-direction:column;gap:1px}
+.guar b{font-size:15px;font-weight:500;letter-spacing:-.02em;color:var(--ink)}
+.guar span{font-size:13.5px;color:var(--ink-2)}
+.seal{width:38px;height:38px;flex-shrink:0;border-radius:50%;background:var(--amber-2);
+  border:1px solid rgba(232,154,60,.35);position:relative}
+.seal::after{content:"";position:absolute;left:13px;top:10px;width:8px;height:15px;
+  border:solid var(--amber);border-width:0 2.2px 2.2px 0;transform:rotate(45deg)}
+@media(max-width:480px){.guar{gap:12px;padding:13px 16px 13px 13px}.guar span{font-size:12.5px}}
 .badges{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;list-style:none;padding:0;margin:2px 0 0;font-size:14px;color:var(--ink-2)}
 .badges li{display:flex;align-items:center;gap:8px}
 .tick{width:16px;height:16px;border-radius:50%;background:var(--amber-2);position:relative;flex-shrink:0}
@@ -104,9 +115,13 @@ footer{padding-block:40px;border-top:1px solid var(--line)}
   <div class="stage"></div><div class="beam"></div><div class="horizon"></div>
   <div class="wrap">
     <span class="eyebrow">Méthode TikTok · 59 €/mois</span>
-    <h1>Crée une page TikTok <span class="g">qui travaille pour toi.</span></h1>
-    <p class="sub">Les prompts pour produire en faceless, les scripts si tu montres ton visage, et les quatre façons d'en vivre. Sans engagement.</p>
+    <h1>Ta page TikTok lancée en 30 jours, <span class="g">ou on te rembourse.</span></h1>
+    <p class="sub">Les prompts pour produire en faceless, les scripts si tu montres ton visage, et les quatre façons d'en vivre. Tu suis la méthode, tu publies. Sinon tu récupères ton argent.</p>
     <a href="https://www.skool.com/" class="btn" style="height:56px;font-size:17px">Rejoindre pour 59 €/mois<span class="arr">→</span></a>
+    <div class="guar">
+      <span class="seal" aria-hidden="true"></span>
+      <div><b>Garantie 30 jours</b><span>Remboursé intégralement, sans justification à donner.</span></div>
+    </div>
     <ul class="badges">
       <li><span class="tick" aria-hidden="true"></span>Sans montrer ton visage</li>
       <li><span class="tick" aria-hidden="true"></span>5 h par semaine</li>
@@ -129,10 +144,11 @@ footer{padding-block:40px;border-top:1px solid var(--line)}
 <section class="final">
   <div class="stage"></div><div class="beam"></div>
   <div class="wrap">
-    <span class="eyebrow">Sans engagement</span>
-    <h2>Ta première vidéo <span class="g">ce week-end.</span></h2>
+    <span class="eyebrow">Garantie 30 jours</span>
+    <h2>Tu publies, <span class="g">ou tu es remboursé.</span></h2>
     <div class="price">59 €<small>/ mois</small></div>
     <a href="https://www.skool.com/" class="btn" style="height:56px;font-size:17px">Rejoindre la communauté<span class="arr">→</span></a>
+    <p style="font-size:13.5px;color:var(--mute);max-width:46ch">Si au bout de 30 jours tu as suivi la méthode sans avoir lancé ta page, tu demandes le remboursement et tu es remboursé. Sans justification.</p>
   </div>
 </section>
 
