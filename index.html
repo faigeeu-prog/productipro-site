@@ -24,10 +24,11 @@ h2{font-size:clamp(34px,4.6vw,58px);line-height:1;letter-spacing:-.045em}
 p{color:var(--ink-2);margin:0}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:13px;color:var(--ink-2)}
 .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 10px var(--amber)}
-.btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 22px;border-radius:999px;background:var(--paper);color:var(--paper-ink);font-weight:500;font-size:16px;transition:transform .5s var(--e)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;height:52px;padding:0 6px 0 22px;border-radius:999px;background:var(--paper);color:var(--paper-ink);font-weight:500;font-size:16px;border:none;cursor:pointer;font-family:var(--f);transition:transform .5s var(--e)}
 .btn .arr{width:40px;height:40px;border-radius:50%;background:var(--paper-ink);color:var(--paper);display:grid;place-items:center;font-size:17px;transition:transform .5s var(--e)}
 .btn:hover .arr{transform:translateX(3px)}
 .btn:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.btn[disabled]{opacity:.55;cursor:default}
 
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50}
 .hbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:16px}
@@ -36,7 +37,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50}
 .logo i::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 8px var(--amber)}
 .hbar .btn{height:44px;font-size:14px;padding-left:18px}.hbar .btn .arr{width:34px;height:34px;font-size:15px}
 
-.hero{position:relative;overflow:hidden;margin-top:-76px;padding-block:150px 96px;text-align:center}
+.hero{position:relative;overflow:hidden;margin-top:-76px;padding-block:150px 104px;text-align:center}
 .stage{position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(circle at 1px 1px,rgba(242,240,234,.13) 1.2px,transparent 1.6px) 0 0/34px 34px;
   -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 32%,#000 28%,transparent 78%);mask-image:radial-gradient(ellipse 70% 60% at 50% 32%,#000 28%,transparent 78%)}
@@ -49,21 +50,40 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50}
 .hero h1{max-width:18ch}
 .hero .sub{max-width:52ch;font-size:17px}
 
-/* VSL */
+/* VSL + verrou */
 .vsl{position:relative;width:100%;max-width:880px;aspect-ratio:1152/644;border-radius:var(--r);overflow:hidden;
-  background:#000;border:1px solid var(--line-2);cursor:pointer;margin-top:4px;
+  background:#000;border:1px solid var(--line-2);margin-top:4px;
   box-shadow:0 30px 90px rgba(0,0,0,.6),0 0 0 1px rgba(232,154,60,.10)}
 .vsl video{width:100%;height:100%;object-fit:cover;display:block}
-.vsl .ov{position:absolute;inset:0;display:grid;place-items:center;background:rgba(14,15,17,.42);transition:opacity .35s}
+.vsl .ov{position:absolute;inset:0;display:grid;place-items:center;background:rgba(14,15,17,.45);cursor:pointer;transition:opacity .35s}
 .vsl .ov i{width:84px;height:84px;border-radius:50%;background:rgba(242,240,234,.96);display:grid;place-items:center;
   box-shadow:0 10px 44px rgba(0,0,0,.5);transition:transform .45s var(--e)}
 .vsl .ov i::after{content:"";width:0;height:0;border-left:26px solid #111318;border-top:16px solid transparent;border-bottom:16px solid transparent;margin-left:7px}
-.vsl:hover .ov i{transform:scale(1.07)}
+.vsl .ov:hover i{transform:scale(1.07)}
 .vsl .lbl{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);white-space:nowrap;
   font-size:13.5px;color:var(--ink);background:rgba(14,15,17,.72);backdrop-filter:blur(8px);
-  padding:7px 15px;border-radius:999px;border:1px solid var(--line-2)}
+  padding:7px 15px;border-radius:999px;border:1px solid var(--line-2);pointer-events:none}
 .vsl.on .ov,.vsl.on .lbl{opacity:0;pointer-events:none}
 @media(max-width:560px){.vsl .ov i{width:64px;height:64px}.vsl .ov i::after{border-left-width:20px;border-top-width:12px;border-bottom-width:12px}}
+
+/* formulaire devant la vidéo */
+.gate{position:absolute;inset:0;z-index:5;display:none;place-items:center;padding:20px;
+  background:rgba(10,11,13,.90);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.gate.on{display:grid}
+.gate form{width:100%;max-width:400px;display:flex;flex-direction:column;gap:11px;text-align:left}
+.gate h3{margin:0 0 3px;font-size:clamp(20px,3.4vw,26px);font-weight:500;letter-spacing:-.035em;text-align:center}
+.gate .int{font-size:13.5px;color:var(--mute);text-align:center;margin:0 0 9px}
+.gate .duo{display:flex;gap:11px}
+.gate .duo input{flex:1;min-width:0}
+.gate input{width:100%;height:46px;padding:0 15px;border-radius:12px;background:var(--card);
+  border:1px solid var(--line-2);color:var(--ink);font:400 15px var(--f);letter-spacing:-.006em}
+.gate input::placeholder{color:var(--mute-2)}
+.gate input:focus{outline:none;border-color:var(--amber);background:var(--card-2)}
+.gate .btn{width:100%;margin-top:3px;padding-left:22px}
+.gate .rgpd{font-size:11.5px;color:var(--mute-2);line-height:1.45;text-align:center;margin:4px 0 0}
+.gate .rgpd a{text-decoration:underline;text-underline-offset:2px}
+.gate .err{font-size:13px;color:#E8786A;text-align:center;min-height:0;margin:0}
+@media(max-width:520px){.gate .duo{flex-direction:column}.gate form{gap:9px}}
 
 .guar{display:flex;align-items:center;gap:14px;padding:14px 22px 14px 16px;border-radius:16px;
   background:linear-gradient(180deg,rgba(232,154,60,.10),rgba(232,154,60,.04));
@@ -82,7 +102,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50}
 section{padding-block:clamp(76px,10vw,120px)}
 .head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;margin-bottom:52px}
 
-.tem{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tem{background:var(--bg-2);border-top:1px solid var(--line)}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 @media(max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.grid{grid-template-columns:1fr;max-width:330px;margin:0 auto}}
@@ -102,12 +122,6 @@ section{padding-block:clamp(76px,10vw,120px)}
 .meta b{font-size:15px;font-weight:500;letter-spacing:-.02em}
 .meta span{font-size:13.5px;color:var(--mute)}
 .note{margin-top:34px;text-align:center;font-size:13px;color:var(--mute-2)}
-
-.final{position:relative;overflow:hidden;text-align:center}
-.final .wrap{position:relative;display:flex;flex-direction:column;align-items:center;gap:26px}
-.final h2{max-width:17ch}
-.price{display:flex;align-items:baseline;gap:10px;font-size:clamp(46px,7vw,76px);font-weight:500;letter-spacing:-.055em;line-height:1}
-.price small{font-size:.26em;font-weight:400;letter-spacing:-.01em;color:var(--mute)}
 
 footer{padding-block:40px;border-top:1px solid var(--line)}
 .foot{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
@@ -131,8 +145,23 @@ footer{padding-block:40px;border-top:1px solid var(--line)}
 
     <div class="vsl" id="vsl">
       <video id="v" poster="videos/vsl-poster.jpg" preload="none" playsinline src="videos/vsl.mp4"></video>
-      <div class="ov"><i></i></div>
+      <div class="ov" id="ov"><i></i></div>
       <div class="lbl">Présentation de la méthode · 11 min</div>
+
+      <div class="gate" id="gate">
+        <form id="lead" novalidate>
+          <h3>Où on t'envoie la suite ?</h3>
+          <p class="int">La vidéo démarre juste après.</p>
+          <div class="duo">
+            <input id="prenom" name="prenom" type="text" placeholder="Prénom" autocomplete="given-name" required>
+            <input id="nom" name="nom" type="text" placeholder="Nom" autocomplete="family-name" required>
+          </div>
+          <input id="email" name="email" type="email" placeholder="Ton adresse email" autocomplete="email" required>
+          <p class="err" id="err" role="alert"></p>
+          <button type="submit" class="btn" id="go">Lancer la vidéo<span class="arr">→</span></button>
+          <p class="rgpd">Ton nom et ton email servent à t'envoyer cette vidéo et des informations sur LA DSA. Tu peux te désinscrire à tout moment, et demander la suppression de tes données à l'adresse indiquée dans les <a href="mentions-legales.html">mentions légales</a>.</p>
+        </form>
+      </div>
     </div>
 
     <a href="https://whop.com/" class="btn" style="height:56px;font-size:17px">Rejoindre pour 59 €/mois<span class="arr">→</span></a>
@@ -151,22 +180,11 @@ footer{padding-block:40px;border-top:1px solid var(--line)}
 <section class="tem">
   <div class="wrap">
     <div class="head">
-      <span class="eyebrow">Ils l'ont fait</span>
+      <span class="eyebrow">Avis et témoignages</span>
       <h2>Les membres <span class="g">en parlent.</span></h2>
     </div>
     <div class="grid" id="grid"></div>
     <p class="note">Témoignages de membres. Les résultats dépendent du travail fourni et ne sont pas garantis.</p>
-  </div>
-</section>
-
-<section class="final">
-  <div class="stage"></div><div class="beam"></div>
-  <div class="wrap">
-    <span class="eyebrow">Garantie 60 jours</span>
-    <h2>Tu gagnes, <span class="g">ou tu es remboursé.</span></h2>
-    <div class="price">59 €<small>/ mois</small></div>
-    <a href="https://whop.com/" class="btn" style="height:56px;font-size:17px">Rejoindre LA DSA<span class="arr">→</span></a>
-    <p style="font-size:13.5px;color:var(--mute);max-width:48ch">Combien tu gagnes dépend de ton travail et de ta régularité, et personne ne peut te promettre un montant. Ce qu'on te garantit : si tu suis la méthode et que tu n'as pas gagné un seul euro au bout de 60 jours, tu es remboursé intégralement.</p>
   </div>
 </section>
 
@@ -180,16 +198,57 @@ footer{padding-block:40px;border-top:1px solid var(--line)}
 </div></div></footer>
 
 <script>
-/* ── VSL ─────────────────────────────────────────────── */
+/* ── VSL verrouillée par le formulaire ──────────────────────── */
 (function(){
-  const box=document.getElementById('vsl'), v=document.getElementById('v');
-  if(!box) return;
-  box.addEventListener('click',()=>{
-    if(v.paused){ box.classList.add('on'); v.controls=true; v.play(); }
-    else { v.pause(); }
+  const box=document.getElementById('vsl'), v=document.getElementById('v'),
+        ov=document.getElementById('ov'), gate=document.getElementById('gate'),
+        form=document.getElementById('lead'), err=document.getElementById('err'),
+        go=document.getElementById('go');
+  const KEY='dsa_lead_ok';
+
+  // Le visiteur déjà inscrit ne refait pas le formulaire.
+  let done=false;
+  try{ done = localStorage.getItem(KEY)==='1'; }catch(e){}
+
+  function play(){
+    gate.classList.remove('on');
+    box.classList.add('on');
+    v.controls=true;
+    v.play().catch(()=>{ v.controls=true; });
+  }
+
+  ov.addEventListener('click',()=>{
+    if(done){ play(); return; }
+    gate.classList.add('on');
+    setTimeout(()=>document.getElementById('prenom').focus(),60);
   });
-  v.addEventListener('pause',()=>{ if(v.currentTime>0 && !v.ended) return; box.classList.remove('on'); });
+
   v.addEventListener('ended',()=>{ box.classList.remove('on'); v.controls=false; });
+
+  form.addEventListener('submit', async (ev)=>{
+    ev.preventDefault();
+    err.textContent='';
+    const prenom=document.getElementById('prenom').value.trim(),
+          nom=document.getElementById('nom').value.trim(),
+          email=document.getElementById('email').value.trim();
+
+    if(!prenom || !nom){ err.textContent='Indique ton prénom et ton nom.'; return; }
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ err.textContent='Cette adresse email ne semble pas valide.'; return; }
+
+    go.disabled=true; go.firstChild.textContent='Un instant…';
+    try{
+      await fetch('/api/lead',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({prenom,nom,email})
+      });
+    }catch(e){ /* une panne réseau ne doit pas bloquer le visiteur */ }
+
+    try{ localStorage.setItem(KEY,'1'); }catch(e){}
+    done=true;
+    go.disabled=false; go.firstChild.textContent='Lancer la vidéo';
+    play();
+  });
 })();
 
 /* ─────────────────────────────────────────────────────────────
@@ -225,8 +284,8 @@ TEMOIGNAGES.forEach((t,i)=>{
     const vv=document.createElement('video');
     vv.src=t.src; vv.playsInline=true; vv.preload='metadata';
     if(t.poster) vv.poster=t.poster;
-    const ov=document.createElement('div'); ov.className='play'; ov.innerHTML='<i></i>';
-    b.append(vv,ov);
+    const ov2=document.createElement('div'); ov2.className='play'; ov2.innerHTML='<i></i>';
+    b.append(vv,ov2);
     b.addEventListener('click',()=>{
       document.querySelectorAll('.vbox.playing').forEach(o=>{
         if(o!==b){o.classList.remove('playing');o.querySelector('video').pause();}
