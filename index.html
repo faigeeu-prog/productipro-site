@@ -83,7 +83,21 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50}
 .gate .rgpd{font-size:11.5px;color:var(--mute-2);line-height:1.45;text-align:center;margin:4px 0 0}
 .gate .rgpd a{text-decoration:underline;text-underline-offset:2px}
 .gate .err{font-size:13px;color:#E8786A;text-align:center;min-height:0;margin:0}
+.gate .close{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;
+  background:var(--card);border:1px solid var(--line-2);color:var(--ink-2);cursor:pointer;
+  font:400 20px/1 var(--f);display:grid;place-items:center;padding:0}
+.gate .close:hover{background:var(--card-2);color:var(--ink)}
+
+/* Sous 700 px la vidéo fait moins de 400 px de haut : le formulaire
+   ne peut pas tenir dedans, il passe donc en plein écran. */
+@media(max-width:700px){
+  .gate.on{position:fixed;inset:0;z-index:100;padding:24px 20px;
+    background:rgba(10,11,13,.97);overflow-y:auto;place-items:center}
+  .gate form{max-width:360px}
+  .gate .close{position:fixed;top:max(14px,env(safe-area-inset-top,0px));right:14px}
+}
 @media(max-width:520px){.gate .duo{flex-direction:column}.gate form{gap:9px}}
+body.locked{overflow:hidden}
 
 .guar{display:flex;align-items:center;gap:14px;padding:14px 22px 14px 16px;border-radius:16px;
   background:linear-gradient(180deg,rgba(232,154,60,.10),rgba(232,154,60,.04));
@@ -149,6 +163,7 @@ footer{padding-block:40px;border-top:1px solid var(--line)}
       <div class="lbl">Présentation de la méthode · 11 min</div>
 
       <div class="gate" id="gate">
+        <button type="button" class="close" id="gclose" aria-label="Fermer">×</button>
         <form id="lead" novalidate>
           <h3>Où on t'envoie la suite ?</h3>
           <p class="int">La vidéo démarre juste après.</p>
@@ -210,8 +225,13 @@ footer{padding-block:40px;border-top:1px solid var(--line)}
   let done=false;
   try{ done = localStorage.getItem(KEY)==='1'; }catch(e){}
 
-  function play(){
+  function closeGate(){
     gate.classList.remove('on');
+    document.body.classList.remove('locked');
+  }
+
+  function play(){
+    closeGate();
     box.classList.add('on');
     v.controls=true;
     v.play().catch(()=>{ v.controls=true; });
@@ -220,8 +240,12 @@ footer{padding-block:40px;border-top:1px solid var(--line)}
   ov.addEventListener('click',()=>{
     if(done){ play(); return; }
     gate.classList.add('on');
+    document.body.classList.add('locked');
     setTimeout(()=>document.getElementById('prenom').focus(),60);
   });
+
+  document.getElementById('gclose').addEventListener('click',closeGate);
+  addEventListener('keydown',e=>{ if(e.key==='Escape') closeGate(); });
 
   v.addEventListener('ended',()=>{ box.classList.remove('on'); v.controls=false; });
 
