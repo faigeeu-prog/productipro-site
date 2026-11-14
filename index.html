@@ -1,7 +1,11 @@
 <!doctype html>
 <html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Vizion LAB — L'IA n'a jamais été aussi puissante</title>
-<meta name="description" content="Vizion LAB repère les tendances qui marchent aux États-Unis avant qu'elles arrivent en France, et t'explique comment les appliquer avec l'IA.">
+<title>Vidéos « fond noir » avec Claude + ElevenLabs — le guide</title>
+<meta name="description" content="Envoie une vidéo de référence à Claude, colle un prompt, et récupère une vidéo motion design « fond noir » finie, voix off ElevenLabs comprise. Guide + prompt, 27 €.">
+<meta property="og:title" content="Vidéos « fond noir » avec Claude + ElevenLabs">
+<meta property="og:description" content="Un prompt, une vidéo de référence, et Claude te rend la vidéo finie avec la voix off.">
+<meta property="og:image" content="https://www.productipro.fr/videos/demo-fond-noir-poster.jpg">
+<link rel="icon" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap">
 <style>
@@ -13,13 +17,13 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--f);letter-spacing:-.006em;-webkit-font-smoothing:antialiased}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--f);letter-spacing:-.006em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 max(20px,env(safe-area-inset-left,0px))}
-h1,h2{font-weight:500;margin:0;text-wrap:balance}
-h1{font-size:clamp(38px,5.6vw,74px);line-height:.96;letter-spacing:-.05em}
-h2{font-size:clamp(34px,4.6vw,58px);line-height:1;letter-spacing:-.045em}
+h1,h2,h3{font-weight:500;margin:0;text-wrap:balance}
+h1{font-size:clamp(36px,5.4vw,72px);line-height:.98;letter-spacing:-.05em}
+h2{font-size:clamp(30px,4.2vw,52px);line-height:1.02;letter-spacing:-.045em}
+h3{font-size:19px;letter-spacing:-.03em}
 .g{color:var(--mute-2)}
 p{color:var(--ink-2);margin:0}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:13px;color:var(--ink-2)}
@@ -28,16 +32,17 @@ p{color:var(--ink-2);margin:0}
 .btn .arr{width:40px;height:40px;border-radius:50%;background:var(--paper-ink);color:var(--paper);display:grid;place-items:center;font-size:17px;transition:transform .5s var(--e)}
 .btn:hover .arr{transform:translateX(3px)}
 .btn:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
-.btn[disabled]{opacity:.55;cursor:default}
+.btn.big{height:58px;font-size:17px;padding-left:26px}
+.btn.big .arr{width:46px;height:46px}
 
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50}
+header{position:sticky;top:0;z-index:50;background:linear-gradient(var(--bg),rgba(14,15,17,.85) 70%,transparent)}
 .hbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:16px}
 .logo{display:flex;align-items:center;gap:10px;font-weight:600;font-size:17px;letter-spacing:.01em}
 .logo i{width:22px;height:22px;border-radius:7px;background:var(--card-2);border:1px solid var(--line-2);display:grid;place-items:center}
 .logo i::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 8px var(--amber)}
 .hbar .btn{height:44px;font-size:14px;padding-left:18px}.hbar .btn .arr{width:34px;height:34px;font-size:15px}
 
-.hero{position:relative;overflow:hidden;margin-top:-76px;padding-block:150px 104px;text-align:center}
+.hero{position:relative;overflow:hidden;margin-top:-76px;padding-block:140px 96px;text-align:center}
 .stage{position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(circle at 1px 1px,rgba(242,240,234,.13) 1.2px,transparent 1.6px) 0 0/34px 34px;
   -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 32%,#000 28%,transparent 78%);mask-image:radial-gradient(ellipse 70% 60% at 50% 32%,#000 28%,transparent 78%)}
@@ -47,96 +52,72 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50}
 .horizon{position:absolute;left:50%;bottom:-270px;width:1300px;height:440px;transform:translateX(-50%);border-radius:50%;
   background:radial-gradient(closest-side,rgba(232,154,60,.20),rgba(232,154,60,.05) 60%,transparent);pointer-events:none}
 .hero .wrap{position:relative;display:flex;flex-direction:column;align-items:center;gap:26px}
-.hero h1{max-width:20ch}
-.hero .sub{max-width:52ch;font-size:17px}
+.hero h1{max-width:19ch}
+.hero .sub{max-width:54ch;font-size:17px}
 
-/* VSL + verrou */
-.vsl{position:relative;width:100%;max-width:880px;aspect-ratio:1152/644;border-radius:var(--r);overflow:hidden;
-  background:#000;border:1px solid var(--line-2);margin-top:4px;
-  box-shadow:0 30px 90px rgba(0,0,0,.6),0 0 0 1px rgba(232,154,60,.10)}
+.vsl{position:relative;width:100%;max-width:880px;aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;
+  background:#000;border:1px solid var(--line-2);margin-top:4px;box-shadow:0 30px 90px rgba(0,0,0,.6),0 0 0 1px rgba(232,154,60,.10)}
 .vsl video{width:100%;height:100%;object-fit:cover;display:block}
-.vsl .ov{position:absolute;inset:0;display:grid;place-items:center;background:rgba(14,15,17,.45);cursor:pointer;transition:opacity .35s}
-.vsl .ov i{width:84px;height:84px;border-radius:50%;background:rgba(242,240,234,.96);display:grid;place-items:center;
-  box-shadow:0 10px 44px rgba(0,0,0,.5);transition:transform .45s var(--e)}
+.vsl .ov{position:absolute;inset:0;display:grid;place-items:center;background:rgba(14,15,17,.35);cursor:pointer;transition:opacity .35s;border:0;padding:0}
+.vsl .ov i{width:84px;height:84px;border-radius:50%;background:rgba(242,240,234,.96);display:grid;place-items:center;box-shadow:0 10px 44px rgba(0,0,0,.5);transition:transform .45s var(--e)}
 .vsl .ov i::after{content:"";width:0;height:0;border-left:26px solid #111318;border-top:16px solid transparent;border-bottom:16px solid transparent;margin-left:7px}
 .vsl .ov:hover i{transform:scale(1.07)}
-.vsl .lbl{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);white-space:nowrap;
-  font-size:13.5px;color:var(--ink);background:rgba(14,15,17,.72);backdrop-filter:blur(8px);
-  padding:7px 15px;border-radius:999px;border:1px solid var(--line-2);pointer-events:none}
+.vsl .lbl{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);white-space:nowrap;font-size:13.5px;color:var(--ink);background:rgba(14,15,17,.72);backdrop-filter:blur(8px);padding:7px 15px;border-radius:999px;border:1px solid var(--line-2);pointer-events:none}
 .vsl.on .ov,.vsl.on .lbl{opacity:0;pointer-events:none}
-@media(max-width:560px){.vsl .ov i{width:64px;height:64px}.vsl .ov i::after{border-left-width:20px;border-top-width:12px;border-bottom-width:12px}}
+@media(max-width:560px){.vsl .ov i{width:64px;height:64px}.vsl .ov i::after{border-left-width:20px;border-top-width:12px;border-bottom-width:12px}.vsl .lbl{font-size:12px;bottom:12px}}
+.vnote{margin:-8px 0 0;font-size:12.5px;color:var(--mute-2)}
 
-/* formulaire devant la vidéo */
-.gate{position:absolute;inset:0;z-index:5;display:none;place-items:center;padding:20px;
-  background:rgba(10,11,13,.90);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
-.gate.on{display:grid}
-.gate form{width:100%;max-width:400px;display:flex;flex-direction:column;gap:11px;text-align:left}
-.gate h3{margin:0 0 3px;font-size:clamp(20px,3.4vw,26px);font-weight:500;letter-spacing:-.035em;text-align:center}
-.gate .int{font-size:13.5px;color:var(--mute);text-align:center;margin:0 0 9px}
-.gate .duo{display:flex;gap:11px}
-.gate .duo input{flex:1;min-width:0}
-.gate input{width:100%;height:46px;padding:0 15px;border-radius:12px;background:var(--card);
-  border:1px solid var(--line-2);color:var(--ink);font:400 15px var(--f);letter-spacing:-.006em}
-.gate input::placeholder{color:var(--mute-2)}
-.gate input:focus{outline:none;border-color:var(--amber);background:var(--card-2)}
-.gate .btn{width:100%;margin-top:3px;padding-left:22px}
-.gate .rgpd{font-size:11.5px;color:var(--mute-2);line-height:1.45;text-align:center;margin:4px 0 0}
-.gate .rgpd a{text-decoration:underline;text-underline-offset:2px}
-.gate .err{font-size:13px;color:#E8786A;text-align:center;min-height:0;margin:0}
-.gate .close{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;
-  background:var(--card);border:1px solid var(--line-2);color:var(--ink-2);cursor:pointer;
-  font:400 20px/1 var(--f);display:grid;place-items:center;padding:0}
-.gate .close:hover{background:var(--card-2);color:var(--ink)}
-
-/* Sous 700 px la vidéo fait moins de 400 px de haut : le formulaire
-   ne peut pas tenir dedans, il passe donc en plein écran. */
-@media(max-width:700px){
-  .gate.on{position:fixed;inset:0;z-index:100;padding:24px 20px;
-    background:rgba(10,11,13,.97);overflow-y:auto;place-items:center}
-  .gate form{max-width:360px}
-  .gate .close{position:fixed;top:max(14px,env(safe-area-inset-top,0px));right:14px}
-}
-@media(max-width:520px){.gate .duo{flex-direction:column}.gate form{gap:9px}}
-body.locked{overflow:hidden}
-
-.guar{display:flex;align-items:center;gap:14px;padding:14px 22px 14px 16px;border-radius:16px;
-  background:linear-gradient(180deg,rgba(232,154,60,.10),rgba(232,154,60,.04));
-  border:1px solid rgba(232,154,60,.28);text-align:left;max-width:100%}
-.guar>div{display:flex;flex-direction:column;gap:1px}
-.guar b{font-size:15px;font-weight:500;letter-spacing:-.02em;color:var(--ink)}
-.guar span{font-size:13.5px;color:var(--ink-2)}
-.seal{width:38px;height:38px;flex-shrink:0;border-radius:50%;background:var(--amber-2);border:1px solid rgba(232,154,60,.35);position:relative}
-.seal::after{content:"";position:absolute;left:13px;top:10px;width:8px;height:15px;border:solid var(--amber);border-width:0 2.2px 2.2px 0;transform:rotate(45deg)}
-@media(max-width:480px){.guar{gap:12px;padding:13px 16px 13px 13px}.guar span{font-size:12.5px}}
-.badges{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;list-style:none;padding:0;margin:0;font-size:14px;color:var(--ink-2)}
+.price{display:flex;align-items:baseline;gap:10px;justify-content:center}
+.price b{font-size:34px;font-weight:500;letter-spacing:-.04em}
+.price span{font-size:14px;color:var(--mute)}
+.badges{display:flex;gap:22px;flex-wrap:wrap;justify-content:center;list-style:none;padding:0;margin:0;font-size:14px;color:var(--ink-2)}
 .badges li{display:flex;align-items:center;gap:8px}
 .tick{width:16px;height:16px;border-radius:50%;background:var(--amber-2);position:relative;flex-shrink:0}
 .tick::after{content:"";position:absolute;left:5px;top:3.5px;width:4px;height:7px;border:solid var(--amber);border-width:0 1.6px 1.6px 0;transform:rotate(45deg)}
 
-section{padding-block:clamp(76px,10vw,120px)}
-.head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;margin-bottom:52px}
+section{padding-block:clamp(72px,9vw,112px)}
+.alt{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;margin-bottom:48px}
+.head p{max-width:56ch}
 
-.tem{background:var(--bg-2);border-top:1px solid var(--line)}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-@media(max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.grid{grid-template-columns:1fr;max-width:330px;margin:0 auto}}
-.vc{display:flex;flex-direction:column;gap:14px}
-.vbox{position:relative;aspect-ratio:9/16;border-radius:var(--r);overflow:hidden;background:var(--card);border:1px solid var(--line);cursor:pointer}
-.vbox video{width:100%;height:100%;object-fit:cover;display:block}
-.vbox.empty{cursor:default;display:grid;place-items:center;background:linear-gradient(170deg,#1C1D22,#131417);border-style:dashed;border-color:var(--line-2)}
-.ph{display:flex;flex-direction:column;align-items:center;gap:12px;color:var(--mute-2);font-size:13px;text-align:center;padding:0 18px}
-.ph .sq{width:46px;height:46px;border-radius:14px;border:1px solid var(--line-2);display:grid;place-items:center}
-.ph .sq::after{content:"";width:0;height:0;border-left:13px solid var(--mute-2);border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px}
-.play{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(to top,rgba(14,15,17,.55),transparent 55%);transition:opacity .3s}
-.play i{width:62px;height:62px;border-radius:50%;background:rgba(242,240,234,.94);display:grid;place-items:center;box-shadow:0 8px 30px rgba(0,0,0,.4);transition:transform .4s var(--e)}
-.play i::after{content:"";width:0;height:0;border-left:19px solid #111318;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
-.vbox:hover .play i{transform:scale(1.07)}
-.vbox.playing .play{opacity:0;pointer-events:none}
-.meta{display:flex;flex-direction:column;gap:3px;padding:0 2px}
-.meta b{font-size:15px;font-weight:500;letter-spacing:-.02em}
-.meta span{font-size:13.5px;color:var(--mute)}
-.vnote{margin:-6px 0 22px;font-size:12.5px;color:var(--mute-2)}
-.note{margin-top:34px;text-align:center;font-size:13px;color:var(--mute-2)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s}
+@media(max-width:900px){.steps{grid-template-columns:1fr;max-width:520px;margin:0 auto}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px 26px;display:flex;flex-direction:column;gap:12px}
+.num{width:36px;height:36px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;font-size:14px;color:var(--amber);background:var(--amber-2)}
+
+.two{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:stretch}
+@media(max-width:900px){.two{grid-template-columns:1fr}}
+.list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px}
+.list li{display:flex;gap:12px;align-items:flex-start;color:var(--ink-2)}
+.list li .tick{margin-top:4px}
+.list b{color:var(--ink);font-weight:500}
+.need{display:flex;flex-direction:column;gap:14px}
+.tool{display:flex;gap:14px;align-items:center;padding:16px 18px;border-radius:14px;background:var(--card-2);border:1px solid var(--line)}
+.tool .ic{width:40px;height:40px;border-radius:12px;background:var(--bg);border:1px solid var(--line-2);display:grid;place-items:center;font-weight:600;font-size:15px;flex-shrink:0}
+.tool b{display:block;font-weight:500;color:var(--ink)}
+.tool span{font-size:14px;color:var(--mute)}
+.small{font-size:13px;color:var(--mute-2)}
+
+.prompt{position:relative;max-width:820px;margin:0 auto;border-radius:var(--r);border:1px solid var(--line-2);background:#0A0B0D;padding:26px 26px 0;overflow:hidden;font:400 14px/1.7 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink-2)}
+.prompt .bar{display:flex;gap:7px;margin-bottom:18px}.prompt .bar i{width:11px;height:11px;border-radius:50%;background:var(--card-2);border:1px solid var(--line-2)}
+.prompt pre{margin:0;white-space:pre-wrap}
+.prompt .fade{height:120px;margin-top:-60px;position:relative;background:linear-gradient(transparent,#0A0B0D 75%);display:flex;align-items:flex-end;justify-content:center;padding-bottom:20px;font-family:var(--f);font-size:13.5px;color:var(--ink-2)}
+.hl{color:var(--amber)}
+
+.faq{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:0 22px}
+.faq summary{cursor:pointer;list-style:none;padding:20px 0;font-weight:500;font-size:16.5px;letter-spacing:-.02em;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--mute);font-size:22px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding:0 0 20px}
+
+.final{text-align:center}
+.final .wrap{display:flex;flex-direction:column;align-items:center;gap:22px}
+
+.notice{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);opacity:0;pointer-events:none;z-index:90;
+  background:var(--card-2);border:1px solid var(--line-2);border-radius:14px;padding:12px 18px;font-size:14px;color:var(--ink);transition:.35s var(--e);max-width:calc(100% - 32px);text-align:center}
+.notice.on{opacity:1;transform:translateX(-50%)}
 
 footer{padding-block:40px;border-top:1px solid var(--line)}
 .foot{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
@@ -147,56 +128,125 @@ footer{padding-block:40px;border-top:1px solid var(--line)}
 <body>
 
 <header><div class="wrap"><nav class="hbar">
-  <a href="/" class="logo"><i></i>Vizion LAB</a>
-  <a href="https://whop.com/" class="btn">Rejoindre<span class="arr">→</span></a>
+  <a href="/" class="logo"><i></i>Productipro</a>
+  <a href="#acheter" class="btn" data-buy>Obtenir le guide<span class="arr">→</span></a>
 </nav></div></header>
 
 <section class="hero">
   <div class="stage"></div><div class="beam"></div><div class="horizon"></div>
   <div class="wrap">
-    <span class="eyebrow">Vizion LAB</span>
-    <h1>L'IA n'a jamais été aussi puissante. <span class="g">Les premiers à s'en servir prennent la place.</span></h1>
-    <p class="sub">Dans Vizion LAB, on repère les opportunités qui marchent déjà aux US avant qu'elles arrivent en France, et grâce à nos contacts sur place, on t'explique chaque nouvelle tendance dès qu'elle sort.</p>
+    <span class="eyebrow">Guide + prompt · Claude × ElevenLabs</span>
+    <h1>Les vidéos « fond noir » qui cartonnent aux US. <span class="g">Claude te les fait en un prompt.</span></h1>
+    <p class="sub">Tu envoies une vidéo de référence à Claude, tu colles le prompt, et il te rend la vidéo finie en MP4, voix off ElevenLabs comprise. Sans montage, sans code, sans After Effects.</p>
 
     <div class="vsl" id="vsl">
-      <video id="v" poster="videos/temoignages-poster.jpg" preload="none" playsinline src="videos/temoignages.mp4"></video>
-      <div class="ov" id="ov"><i></i></div>
-      <div class="lbl">Ils témoignent · 1 min 50</div>
-
-      <div class="gate" id="gate">
-        <button type="button" class="close" id="gclose" aria-label="Fermer">×</button>
-        <form id="lead" novalidate>
-          <h3>Où on t'envoie la suite ?</h3>
-          <p class="int">La vidéo démarre juste après.</p>
-          <div class="duo">
-            <input id="prenom" name="prenom" type="text" placeholder="Prénom" autocomplete="given-name" required>
-            <input id="nom" name="nom" type="text" placeholder="Nom" autocomplete="family-name" required>
-          </div>
-          <input id="email" name="email" type="email" placeholder="Ton adresse email" autocomplete="email" required>
-          <p class="err" id="err" role="alert"></p>
-          <button type="submit" class="btn" id="go">Lancer la vidéo<span class="arr">→</span></button>
-          <p class="rgpd">Ton nom et ton email servent à t'envoyer cette vidéo et des informations sur Vizion LAB. Tu peux te désinscrire à tout moment, et demander la suppression de tes données à l'adresse indiquée dans les <a href="mentions-legales.html">mentions légales</a>.</p>
-        </form>
-      </div>
+      <video id="v" poster="videos/demo-fond-noir-poster.jpg" preload="none" playsinline src="videos/demo-fond-noir.mp4"></video>
+      <button type="button" class="ov" id="ov" aria-label="Lire la vidéo d'exemple"><i></i></button>
+      <div class="lbl">Exemple réalisé avec la méthode · 1 min 07</div>
     </div>
-    <p class="vnote">Témoignages de membres, visages floutés à leur demande. Résultats individuels, non garantis.</p>
+    <p class="vnote">Vidéo générée avec Claude et ElevenLabs à partir d'une vidéo de référence.</p>
 
-    <a href="https://whop.com/" class="btn" style="height:56px;font-size:17px">Rejoindre Vizion LAB<span class="arr">→</span></a>
-    <div class="guar">
-      <span class="seal" aria-hidden="true"></span>
-      <div><b>Pas un euro gagné en 60 jours ? Remboursé.</b><span>Intégralement, sur simple demande.</span></div>
-    </div>
+    <div class="price"><b>27 €</b><span>paiement unique · livré par mail en 2 minutes</span></div>
+    <a href="#acheter" class="btn big" data-buy>Je veux le guide<span class="arr">→</span></a>
     <ul class="badges">
-      <li><span class="tick" aria-hidden="true"></span>Sans montrer ton visage</li>
-      <li><span class="tick" aria-hidden="true"></span>5 h par semaine</li>
-      <li><span class="tick" aria-hidden="true"></span>Annulable en 1 clic</li>
+      <li><span class="tick" aria-hidden="true"></span>Aucun montage</li>
+      <li><span class="tick" aria-hidden="true"></span>Voix off incluse</li>
+      <li><span class="tick" aria-hidden="true"></span>Prompt prêt à copier-coller</li>
     </ul>
   </div>
 </section>
 
+<section class="alt">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Comment ça marche</span>
+      <h2>3 étapes. <span class="g">Le reste, c'est Claude.</span></h2>
+    </div>
+    <div class="steps">
+      <div class="card"><span class="num">1</span><h3>Envoie ta référence</h3><p>Ouvre une conversation Claude et glisse la vidéo « fond noir » dont tu veux reprendre le style.</p></div>
+      <div class="card"><span class="num">2</span><h3>Colle le prompt</h3><p>Remplis 4 champs : ton sujet, la durée, la voix, le ton. Claude analyse le style, écrit le script et génère la voix avec ElevenLabs.</p></div>
+      <div class="card"><span class="num">3</span><h3>Récupère ton MP4</h3><p>Claude anime chaque scène sur la voix et t'envoie la vidéo finie. Un détail à changer ? Les messages de correction sont dans le guide.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Un aperçu</span>
+      <h2>Le prompt qui fait tout le travail.</h2>
+      <p>Il découpe le travail en 5 étapes que Claude enchaîne seul : analyse, script, voix off, animation, rendu.</p>
+    </div>
+    <div class="prompt" aria-label="Extrait du prompt">
+      <div class="bar"><i></i><i></i><i></i></div>
+<pre>Je t'envoie une vidéo de référence. Je veux que tu crées une nouvelle vidéo dans EXACTEMENT ce style.
+
+ÉTAPE 1 — ANALYSE
+Regarde la vidéo image par image. Note le style précis : couleurs exactes, fond, lumières, personnages…
+
+ÉTAPE 2 — SCRIPT
+Sujet de ma vidéo : <span class="hl">[TON SUJET]</span>
+Durée : <span class="hl">[DURÉE]</span>
+
+ÉTAPE 3 — VOIX OFF
+Génère la voix off avec ElevenLabs : voix française <span class="hl">[masculine / féminine]</span>…</pre>
+      <div class="fade">La suite du prompt est dans le guide</div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="acheter">
+  <div class="wrap">
+    <div class="two">
+      <div class="card" style="padding:34px 30px;gap:22px">
+        <h2 style="font-size:clamp(28px,3.4vw,40px)">Ce que tu reçois</h2>
+        <ul class="list">
+          <li><span class="tick"></span><span><b>Le prompt complet</b>, testé, avec les champs à remplir.</span></li>
+          <li><span class="tick"></span><span><b>La connexion ElevenLabs à Claude</b> pas à pas, en 2 minutes.</span></li>
+          <li><span class="tick"></span><span><b>Les 3 étapes</b> de la vidéo de référence au MP4 final.</span></li>
+          <li><span class="tick"></span><span><b>Les messages de correction</b> pour ajuster un détail sans tout casser.</span></li>
+          <li><span class="tick"></span><span><b>Le format TikTok / Reels</b> : la même vidéo en vertical, en un message.</span></li>
+        </ul>
+        <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start;margin-top:6px">
+          <div class="price" style="justify-content:flex-start"><b>27 €</b><span>paiement unique</span></div>
+          <a href="#acheter" class="btn big" data-buy>Obtenir le guide<span class="arr">→</span></a>
+          <p class="small">Guide PDF envoyé par mail juste après le paiement.</p>
+        </div>
+      </div>
+      <div class="card need" style="padding:34px 30px">
+        <h3 style="font-size:22px">Ce qu'il te faut</h3>
+        <p>Deux abonnements, à prendre de ton côté (non inclus) :</p>
+        <div class="tool"><span class="ic">C</span><div><b>Claude Pro</b><span>Analyse la référence, anime et assemble la vidéo</span></div></div>
+        <div class="tool"><span class="ic">11</span><div><b>ElevenLabs</b><span>Formule Starter minimum, pour la voix off</span></div></div>
+        <p class="small">Aucune compétence en montage ou en code n'est nécessaire.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Questions</span><h2>Avant de te lancer</h2></div>
+    <div class="faq">
+      <details><summary>Je dois savoir coder ou monter des vidéos ?</summary><p>Non. Tu glisses une vidéo, tu colles un prompt, tu remplis 4 champs. Claude s'occupe de l'animation et du rendu.</p></details>
+      <details><summary>Les abonnements Claude et ElevenLabs sont inclus ?</summary><p>Non. Le guide t'apprend à t'en servir, mais il te faut un abonnement Claude Pro et un abonnement ElevenLabs (Starter minimum), à souscrire directement chez eux.</p></details>
+      <details><summary>Comment je reçois le guide ?</summary><p>Par mail, en PDF, juste après le paiement. Pense à regarder tes spams si tu ne le vois pas dans les 5 minutes, sinon écris-nous.</p></details>
+      <details><summary>Je peux reprendre n'importe quelle vidéo ?</summary><p>Tu reprends le style d'une vidéo, pas son contenu. Le guide t'explique comment écrire ton propre script pour que ta vidéo soit originale.</p></details>
+      <details><summary>Ça marche pour TikTok et Reels ?</summary><p>Oui. Un message suffit pour que Claude refasse la vidéo en format vertical 9:16.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final alt">
+  <div class="wrap">
+    <h2>Ta première vidéo « fond noir », <span class="g">ce soir.</span></h2>
+    <div class="price"><b>27 €</b><span>paiement unique</span></div>
+    <a href="#acheter" class="btn big" data-buy>Obtenir le guide<span class="arr">→</span></a>
+  </div>
+</section>
 
 <footer><div class="wrap"><div class="foot">
-  <a href="/" class="logo"><i></i>Vizion LAB</a>
+  <a href="/" class="logo"><i></i>Productipro</a>
   <nav>
     <a href="cgv.html">CGV</a>
     <a href="mentions-legales.html">Mentions légales</a>
@@ -204,68 +254,30 @@ footer{padding-block:40px;border-top:1px solid var(--line)}
   </nav>
 </div></div></footer>
 
+<div class="notice" id="notice" role="status"></div>
+
 <script>
-/* ── VSL verrouillée par le formulaire ──────────────────────── */
+/* ── Lien de paiement Stripe ─────────────────────────────────────
+   Colle ici ton lien de paiement Stripe (Payment Link, commence par
+   https://buy.stripe.com/...). Tant qu'il est vide, les boutons
+   affichent « Paiement bientôt disponible ». */
+const CHECKOUT_URL = '';
+
+document.querySelectorAll('[data-buy]').forEach(a=>{
+  if(CHECKOUT_URL){ a.href = CHECKOUT_URL; return; }
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    const n=document.getElementById('notice');
+    n.textContent='Paiement bientôt disponible. Écris-nous à contact@productipro.fr.';
+    n.classList.add('on'); clearTimeout(n._t); n._t=setTimeout(()=>n.classList.remove('on'),3500);
+  });
+});
+
+/* ── Vidéo d'exemple ─────────────────────────────────────────── */
 (function(){
-  const box=document.getElementById('vsl'), v=document.getElementById('v'),
-        ov=document.getElementById('ov'), gate=document.getElementById('gate'),
-        form=document.getElementById('lead'), err=document.getElementById('err'),
-        go=document.getElementById('go');
-  const KEY='dsa_lead_ok';
-
-  // Le visiteur déjà inscrit ne refait pas le formulaire.
-  let done=false;
-  try{ done = localStorage.getItem(KEY)==='1'; }catch(e){}
-
-  function closeGate(){
-    gate.classList.remove('on');
-    document.body.classList.remove('locked');
-  }
-
-  function play(){
-    closeGate();
-    box.classList.add('on');
-    v.controls=true;
-    v.play().catch(()=>{ v.controls=true; });
-  }
-
-  ov.addEventListener('click',()=>{
-    if(done){ play(); return; }
-    gate.classList.add('on');
-    document.body.classList.add('locked');
-    setTimeout(()=>document.getElementById('prenom').focus(),60);
-  });
-
-  document.getElementById('gclose').addEventListener('click',closeGate);
-  addEventListener('keydown',e=>{ if(e.key==='Escape') closeGate(); });
-
+  const box=document.getElementById('vsl'), v=document.getElementById('v'), ov=document.getElementById('ov');
+  ov.addEventListener('click',()=>{ box.classList.add('on'); v.controls=true; v.play().catch(()=>{}); });
   v.addEventListener('ended',()=>{ box.classList.remove('on'); v.controls=false; });
-
-  form.addEventListener('submit', async (ev)=>{
-    ev.preventDefault();
-    err.textContent='';
-    const prenom=document.getElementById('prenom').value.trim(),
-          nom=document.getElementById('nom').value.trim(),
-          email=document.getElementById('email').value.trim();
-
-    if(!prenom || !nom){ err.textContent='Indique ton prénom et ton nom.'; return; }
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ err.textContent='Cette adresse email ne semble pas valide.'; return; }
-
-    go.disabled=true; go.firstChild.textContent='Un instant…';
-    try{
-      await fetch('/api/lead',{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({prenom,nom,email})
-      });
-    }catch(e){ /* une panne réseau ne doit pas bloquer le visiteur */ }
-
-    try{ localStorage.setItem(KEY,'1'); }catch(e){}
-    done=true;
-    go.disabled=false; go.firstChild.textContent='Lancer la vidéo';
-    play();
-  });
 })();
-
 </script>
 </body></html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Merci pour ton achat — Productipro</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#0E0F11;--card:#18191D;--ink:#F2F0EA;--ink-2:#B8BBC2;--mute:#7D828B;--line:rgba(242,240,234,.08);--line-2:rgba(242,240,234,.15);--amber:#E89A3C;--amber-2:rgba(232,154,60,.14);--f:"Inter Tight",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--f);padding:24px;
+  background-image:radial-gradient(circle at 1px 1px,rgba(242,240,234,.10) 1.2px,transparent 1.6px);background-size:34px 34px}
+.box{max-width:520px;width:100%;background:var(--card);border:1px solid var(--line-2);border-radius:22px;padding:40px 32px;text-align:center;display:flex;flex-direction:column;gap:18px;align-items:center}
+.seal{width:56px;height:56px;border-radius:50%;background:var(--amber-2);border:1px solid rgba(232,154,60,.35);position:relative}
+.seal::after{content:"";position:absolute;left:20px;top:14px;width:11px;height:22px;border:solid var(--amber);border-width:0 3px 3px 0;transform:rotate(45deg)}
+h1{margin:0;font-weight:500;font-size:clamp(28px,6vw,38px);letter-spacing:-.045em;line-height:1.05}
+p{margin:0;color:var(--ink-2)}
+.small{font-size:13.5px;color:var(--mute)}
+a{color:var(--ink);text-underline-offset:3px}
+</style></head>
+<body>
+<main class="box">
+  <span class="seal" aria-hidden="true"></span>
+  <h1>Paiement confirmé, merci !</h1>
+  <p>Ton guide arrive par mail dans les 2 minutes, en PDF, à l'adresse utilisée pour le paiement.</p>
+  <p class="small">Rien reçu après 5 minutes ? Regarde tes spams, puis écris-nous à <a href="mailto:contact@productipro.fr">contact@productipro.fr</a>.</p>
+  <p class="small"><a href="/">Retour au site</a></p>
+</main>
+</body></html>

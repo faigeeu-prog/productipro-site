@@ -3,6 +3,11 @@
  "trailingSlash": false,
  "redirects": [
   {
+   "source": "/api/_assets/:path*",
+   "destination": "/",
+   "permanent": false
+  },
+  {
    "source": "/agence-skool",
    "destination": "/",
    "permanent": false
@@ -78,5 +83,10 @@
     }
    ]
   }
- ]
+ ],
+ "functions": {
+  "api/stripe-webhook.js": {
+   "includeFiles": "api/_assets/**"
+  }
+ }
 }
