@@ -25,6 +25,9 @@ import path from 'node:path';
 const PDF_PATH = path.join(process.cwd(), 'api', '_assets', 'guide-video-fond-noir.pdf');
 const PDF_NAME = 'Guide-Video-Fond-Noir-Claude-ElevenLabs.pdf';
 const TOLERANCE_S = 300; // Stripe recommande 5 minutes
+// Le compte Stripe vend aussi d'autres produits : on n'envoie le guide
+// que pour les achats faits via CE lien de paiement.
+const GUIDE_PAYMENT_LINK = process.env.GUIDE_PAYMENT_LINK || 'plink_1Ubq4pRzVntgFBrQgCJ27VDj';
 
 function readRawBody(req) {
   return new Promise((resolve, reject) => {
@@ -84,7 +87,8 @@ export default async function handler(req, res) {
   const OK_TYPES = ['checkout.session.completed', 'checkout.session.async_payment_succeeded'];
   if (!OK_TYPES.includes(event.type)) return res.status(200).json({ ignored: event.type });
   const session = event.data && event.data.object;
-  if (!session || session.payment_status !== 'paid') return res.status(200).json({ ignored: 'not_paid' });
+  if (!session || session.payment_link !== GUIDE_PAYMENT_LINK) return res.status(200).json({ ignored: 'other_product' });
+  if (session.payment_status !== 'paid') return res.status(200).json({ ignored: 'not_paid' });
 
   const email = session.customer_details && session.customer_details.email;
   const name = (session.customer_details && session.customer_details.name) || '';
