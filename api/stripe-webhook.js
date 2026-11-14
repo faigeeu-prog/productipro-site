@@ -4,7 +4,8 @@
 //
 // 1. Dans Stripe > Développeurs > Webhooks, ajoute un endpoint :
 //      URL      : https://www.productipro.fr/api/stripe-webhook
-//      Événement : checkout.session.completed
+//      Événements : checkout.session.completed
+//                   checkout.session.async_payment_succeeded (paiements différés)
 //    Stripe te donne alors un « Signing secret » (commence par whsec_).
 //
 // 2. Dans Vercel > Settings > Environment Variables :
@@ -80,7 +81,8 @@ export default async function handler(req, res) {
   try { event = JSON.parse(raw.toString('utf8')); } catch { return res.status(400).json({ error: 'bad_json' }); }
 
   // On ne traite que les paiements terminés et réglés ; le reste est ignoré.
-  if (event.type !== 'checkout.session.completed') return res.status(200).json({ ignored: event.type });
+  const OK_TYPES = ['checkout.session.completed', 'checkout.session.async_payment_succeeded'];
+  if (!OK_TYPES.includes(event.type)) return res.status(200).json({ ignored: event.type });
   const session = event.data && event.data.object;
   if (!session || session.payment_status !== 'paid') return res.status(200).json({ ignored: 'not_paid' });
 
@@ -118,8 +120,8 @@ export default async function handler(req, res) {
       headers: {
         Authorization: `Bearer ${KEY}`,
         'Content-Type': 'application/json',
-        // Si Stripe renvoie le même événement, Resend n'envoie pas le mail deux fois.
-        'Idempotency-Key': `guide-${event.id}`,
+        // Une seule commande = un seul mail, même si Stripe renvoie l'événement.
+        'Idempotency-Key': `guide-${session.id}`,
       },
       body: JSON.stringify({
         from: FROM,

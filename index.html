@@ -236,7 +236,7 @@ footer{padding-block:40px;border-top:1px solid var(--line)}
    Colle ici ton lien de paiement Stripe (Payment Link, commence par
    https://buy.stripe.com/...). Tant qu'il est vide, les boutons
    affichent « Paiement bientôt disponible ». */
-const CHECKOUT_URL = '';
+const CHECKOUT_URL = 'https://buy.stripe.com/8x2eVfalH79Yc3Ye1tbjW01';
 
 document.querySelectorAll('[data-buy]').forEach(a=>{
   if(CHECKOUT_URL){ a.href = CHECKOUT_URL; return; }
