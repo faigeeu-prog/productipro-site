@@ -10,7 +10,7 @@
 //
 // 2. Dans Vercel > Settings > Environment Variables :
 //      STRIPE_WEBHOOK_SECRET  le signing secret du webhook (whsec_...)
-//      RESEND_API_KEY         ta clé Resend (déjà utilisée par /api/lead)
+//      RESEND_API_KEY (ou RESEND_API)  ta clé Resend
 //      GUIDE_FROM             (facultatif) l'expéditeur, sur un domaine vérifié dans Resend
 //                             par défaut : Productipro <contact@productipro.fr>
 //
@@ -66,7 +66,7 @@ export default async function handler(req, res) {
   }
 
   const SECRET = process.env.STRIPE_WEBHOOK_SECRET;
-  const KEY = process.env.RESEND_API_KEY;
+  const KEY = process.env.RESEND_API_KEY || process.env.RESEND_API;
   const FROM = process.env.GUIDE_FROM || 'Productipro <contact@productipro.fr>';
 
   if (!SECRET || !KEY) {

@@ -22,7 +22,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'invalid_fields' });
   }
 
-  const KEY = process.env.RESEND_API_KEY;
+  const KEY = process.env.RESEND_API_KEY || process.env.RESEND_API;
   const TO = process.env.LEAD_TO;
   const FROM = process.env.LEAD_FROM;
 
