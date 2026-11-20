@@ -3,6 +3,36 @@
  "trailingSlash": false,
  "redirects": [
   {
+   "source": "/agence-skool",
+   "destination": "/skool-agency",
+   "permanent": true
+  },
+  {
+   "source": "/agence-gestion-communaute",
+   "destination": "/community-management-agency",
+   "permanent": true
+  },
+  {
+   "source": "/creer-communaute-skool",
+   "destination": "/how-to-create-a-skool-community",
+   "permanent": true
+  },
+  {
+   "source": "/monetiser-son-audience",
+   "destination": "/monetize-your-audience",
+   "permanent": true
+  },
+  {
+   "source": "/mentions-legales",
+   "destination": "/legal",
+   "permanent": true
+  },
+  {
+   "source": "/confidentialite",
+   "destination": "/privacy",
+   "permanent": true
+  },
+  {
    "source": "/contenu",
    "destination": "/",
    "permanent": false
