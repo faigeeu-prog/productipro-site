@@ -3,36 +3,6 @@
  "trailingSlash": false,
  "redirects": [
   {
-   "source": "/api/_assets/:path*",
-   "destination": "/",
-   "permanent": false
-  },
-  {
-   "source": "/agence-skool",
-   "destination": "/",
-   "permanent": false
-  },
-  {
-   "source": "/agence-gestion-communaute",
-   "destination": "/",
-   "permanent": false
-  },
-  {
-   "source": "/creer-communaute-skool",
-   "destination": "/",
-   "permanent": false
-  },
-  {
-   "source": "/monetiser-son-audience",
-   "destination": "/",
-   "permanent": false
-  },
-  {
-   "source": "/membra",
-   "destination": "/",
-   "permanent": false
-  },
-  {
    "source": "/contenu",
    "destination": "/",
    "permanent": false
@@ -71,6 +41,21 @@
    "source": "/automatisation-infopreneurs",
    "destination": "/",
    "permanent": false
+  },
+  {
+   "source": "/agence-generation-rendez-vous",
+   "destination": "/",
+   "permanent": false
+  },
+  {
+   "source": "/agence-cold-email",
+   "destination": "/",
+   "permanent": false
+  },
+  {
+   "source": "/prospection-b2b-externalisee",
+   "destination": "/",
+   "permanent": false
   }
  ],
  "headers": [
@@ -83,10 +68,5 @@
     }
    ]
   }
- ],
- "functions": {
-  "api/stripe-webhook.js": {
-   "includeFiles": "api/_assets/**"
-  }
- }
+ ]
 }
