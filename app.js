@@ -63,7 +63,7 @@
     if(!A)return;[A,R,P].forEach(fill);
     var a=+A.value,r=+R.value,p=+P.value,wk=a*r,yr=wk*46,t=yr*p;
     $('#o-a').textContent=fmt(a);$('#o-r').textContent=dec(r)+' h';$('#o-p').textContent=p+' €';
-    $('#o-m').textContent=fmt(wk)+' h';$('#o-s').textContent=fmt(yr)+' h';$('#o-y').textContent=fmt(yr/7);$('#o-l').textContent=dec(yr/1607);
+    $('#o-m').textContent=fmt(wk)+' h';$('#o-s').textContent=fmt(yr)+' h';$('#o-y').textContent=fmt(yr/7);$('#o-l').textContent=dec(yr/35);
     var big=$('#o-t');if(first||reduce)big.textContent=fmt(t);else tween(big,shown,t);shown=t;
   }
   [A,R,P].forEach(function(i){if(i)i.addEventListener('input',function(){calc()})});calc(true);

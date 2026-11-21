@@ -3,6 +3,11 @@
  "trailingSlash": false,
  "redirects": [
   {
+   "source": "/formation-ia-entreprise",
+   "destination": "/",
+   "permanent": false
+  },
+  {
    "source": "/agence-skool",
    "destination": "/",
    "permanent": false
