@@ -4,33 +4,68 @@
  "redirects": [
   {
    "source": "/agence-skool",
-   "destination": "/skool-agency",
-   "permanent": true
+   "destination": "/",
+   "permanent": false
   },
   {
    "source": "/agence-gestion-communaute",
-   "destination": "/community-management-agency",
-   "permanent": true
+   "destination": "/",
+   "permanent": false
   },
   {
    "source": "/creer-communaute-skool",
-   "destination": "/how-to-create-a-skool-community",
-   "permanent": true
+   "destination": "/",
+   "permanent": false
   },
   {
    "source": "/monetiser-son-audience",
-   "destination": "/monetize-your-audience",
-   "permanent": true
+   "destination": "/",
+   "permanent": false
   },
   {
-   "source": "/mentions-legales",
-   "destination": "/legal",
-   "permanent": true
+   "source": "/skool-agency",
+   "destination": "/",
+   "permanent": false
   },
   {
-   "source": "/confidentialite",
-   "destination": "/privacy",
-   "permanent": true
+   "source": "/community-management-agency",
+   "destination": "/",
+   "permanent": false
+  },
+  {
+   "source": "/how-to-create-a-skool-community",
+   "destination": "/",
+   "permanent": false
+  },
+  {
+   "source": "/monetize-your-audience",
+   "destination": "/",
+   "permanent": false
+  },
+  {
+   "source": "/legal",
+   "destination": "/mentions-legales",
+   "permanent": false
+  },
+  {
+   "source": "/privacy",
+   "destination": "/confidentialite",
+   "permanent": false
+  },
+  {
+   "source": "/agence-generation-rendez-vous",
+   "destination": "/",
+   "permanent": false
+  },
+  {
+   "source": "/agence-cold-email",
+   "destination": "/",
+   "permanent": false
+  },
+  {
+   "source": "/prospection-b2b-externalisee",
+   "destination": "/",
+   "permanent": false
   },
   {
    "source": "/contenu",
@@ -69,21 +104,6 @@
   },
   {
    "source": "/automatisation-infopreneurs",
-   "destination": "/",
-   "permanent": false
-  },
-  {
-   "source": "/agence-generation-rendez-vous",
-   "destination": "/",
-   "permanent": false
-  },
-  {
-   "source": "/agence-cold-email",
-   "destination": "/",
-   "permanent": false
-  },
-  {
-   "source": "/prospection-b2b-externalisee",
    "destination": "/",
    "permanent": false
   }
