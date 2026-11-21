@@ -3,6 +3,16 @@
  "trailingSlash": false,
  "redirects": [
   {
+   "source": "/formation-claude",
+   "destination": "/",
+   "permanent": false
+  },
+  {
+   "source": "/formation-ia-independants",
+   "destination": "/",
+   "permanent": false
+  },
+  {
    "source": "/formation-ia-entreprise",
    "destination": "/",
    "permanent": false
